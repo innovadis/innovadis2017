@@ -4,7 +4,7 @@ $inno-yellow: #ffca28;
 $inno-yellow-light: #ffd75b;
 $inno-yellow-dark: #f4b800;
 $inno-blue: #0029a8;
-$inno-blue-light: #0035d8;
+$inno-blue-light: #0035db;
 $inno-blue-dark: #001d75;
 
 $gray0: #f5f5f5;
@@ -13,37 +13,10 @@ $gray2: rgba(0, 0, 0, 0.54);
 $gray3: rgba(0, 0, 0, 0.87);
 
 $gutter: 40px;
+$border-radius: 5px;
 
-$shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
-$shadow2: 10px 20px 20px 0 rgba(0, 0, 0, 0.1);
-$shadow-button: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
-
-
-span,
-div,
-b,
-i,
-li,
-input,
-textarea,
-p {
-  font-family: 'Open Sans', sans-serif;
-  color: $gray3;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Bitter', sans-serif;
-  color: $gray3;
-}
-
-.fa {
-  font-family: 'FontAwesome'; // TODO replace with custom icons
-}
+$shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
+$shadow-large: 10px 20px 20px 0 rgba(8, 45, 60, 0.1); // Note: this is used in Header.vue JS, update there too
 
 a {
   text-decoration: none;

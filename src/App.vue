@@ -1,7 +1,6 @@
-<template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+<template lang="pug">
+#app
+  router-view
 </template>
 
 <script>
@@ -13,6 +12,7 @@ export default {
 <style lang="scss">
 @import 'src/styles/layout';
 @import 'src/styles/transition';
+@import 'src/styles/fonts';
 
 #app {
   -webkit-font-smoothing: antialiased;

@@ -1,0 +1,89 @@
+<template lang="pug">
+.orb-wrapper
+  .orb(
+    ref='orb',
+    :style='style'
+    )
+    .fa(:class='[iconClass]')
+</template>
+
+<script>
+import Anime from 'animejs'
+
+export default {
+  props: {
+    icon: String,
+    initialX: Number,
+    initialY: Number,
+    targetX: Number,
+    targetY: Number,
+    size: Number,
+    blur: Number
+  },
+
+  computed: {
+    iconClass() {
+      return 'fa-' + this.icon
+    },
+
+    style() {
+      return {
+        left: this.initialX + 'px',
+        top: this.initialY + 'px',
+        height: this.size + 'px',
+        width: this.size + 'px',
+        filter: 'blur(' + this.blur + 'px)'
+      }
+    }
+  },
+
+  mounted() {
+    Anime({
+      targets: this.$refs.orb,
+      translateX: () => {
+        return this.targetX
+      },
+      translateY: () => {
+        return this.targetY
+      },
+      skewX: ['-9deg', '-9deg'],
+      rotate: ['-10deg', '-10deg'],
+      duration: 1000 * 60 * 3,
+      loop: true,
+      direction: 'alternate',
+      easing: 'linear'
+    })
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import 'src/styles/variables';
+
+.orb-wrapper {
+  position: relative;
+
+  .orb {
+    $size: 60px;
+    $skewX: -9deg; // same as above
+    z-index: -1;
+
+    position: absolute;
+    height: $size;
+    width: $size; // background: $inno-blue;
+    background: radial-gradient(circle at center, $inno-blue-light 20%, $inno-blue-dark 100%);
+    border-radius: 47%;
+    transform: skewX($skewX) rotate(-10deg);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fa {
+      color: white;
+      font-size: 26px;
+      transform: skewX(-$skewX);
+    }
+  }
+}
+</style>

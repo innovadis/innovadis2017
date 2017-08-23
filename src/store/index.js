@@ -2,11 +2,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 const state = {
-
+  phoneMenuOpen: false
 }
 
 const mutations = {
-
+  setPhoneMenuState(state, v) {
+    state.phoneMenuOpen = v
+  }
 }
 
 Vue.use(Vuex)
