@@ -1,0 +1,55 @@
+<template lang="pug">
+.solutions
+  .text
+    h2 Oplossingen
+    h2.dot die je verder helpen
+    p Geen enkele wens is hetzelfde. Daarom bouwen wij samen met jullie een oplossing op maat. Onze visie en ervaring zorgen dat de oplossing state-of-the-art is. Wij houden van ons vak. We zijn hardwerkende specialisten, misschien wel vakidioten, die zich blijven ontwikkelen.
+
+  .image
+    img(src='https://placehold.it/850x400')
+    inno-button(label='Meer over ons', yellow, inverted)
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="scss" scoped>
+@import 'src/styles/variables';
+
+.solutions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px 0 0 0;
+
+  .text {
+    text-align: center;
+    max-width: 750px;
+
+    h2 {}
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+    img {
+      border-radius: $border-radius;
+      margin-top: 20px;
+    }
+
+    .button {
+      height: 0;
+      position: relative;
+      top: -135px;
+    }
+  }
+}
+</style>

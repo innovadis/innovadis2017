@@ -1,14 +1,18 @@
 <template lang="pug">
 div
   inno-header
+
   .page-wrapper(:class='{ "open": $store.state.phoneMenuOpen }', @click='closePhoneMenu')
     router-view
+
+  inno-footer
 </template>
 
 <script>
 export default {
   components: {
-    InnoHeader: require('src/components/Header')
+    InnoHeader: require('src/components/Header'),
+    InnoFooter: require('src/components/Footer')
   },
 
   data() {
@@ -33,11 +37,9 @@ $headerOffset: 100px;
 .page-wrapper {
   transform-origin: top;
   transition: all 0.3s ease-in-out, height 1s ease-in-out;
-  position: absolute;
-  left: 0;
-  top: 0;
-  // height: calc(100% - #{$headerOffset});
-  background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
+  // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
+  width: 100%;
+  overflow-x: hidden;
 
   &.open {
     top: 120px;

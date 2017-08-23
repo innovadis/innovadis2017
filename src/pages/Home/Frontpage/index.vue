@@ -2,14 +2,20 @@
 .page-front
   hero
 
-  feed
+  simple-feed
+
+  solutions
+
+  lets-talk
 </template>
 
 <script>
 export default {
   components: {
     Hero: require('./Hero'),
-    Feed: require('src/components/Feed')
+    SimpleFeed: require('src/components/Feed/Simple'),
+    Solutions: require('./Solutions'),
+    LetsTalk: require('./LetsTalk')
   }
 }
 </script>

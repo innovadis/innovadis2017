@@ -1,5 +1,5 @@
 <template lang="pug">
-.button(:class='{ disabled: disabled, yellow: yellow, blue: blue, primary: primary }') {{ label }}
+.button(:class='{ disabled: disabled, yellow: yellow, blue: blue, primary: primary, inverted: inverted }') {{ label }}
 </template>
 
 <script>
@@ -9,7 +9,8 @@ export default {
     label: String,
     yellow: Boolean,
     blue: Boolean,
-    primary: Boolean
+    primary: Boolean,
+    inverted: Boolean
   }
 }
 </script>
@@ -36,18 +37,41 @@ export default {
     color: $gray1;
     background: $gray0;
     cursor: not-allowed;
+
+    &:hover {
+      color: $gray1 !important;
+      background: $gray0 !important;
+    }
   }
 
   &.yellow {
     background: white;
     color: $inno-yellow;
     text-transform: none;
+
+    &.inverted {
+      background: $inno-yellow;
+      color: $gray3;
+
+      &:hover {
+        background: $inno-yellow-light;
+      }
+    }
   }
 
   &.blue {
     background: white;
     color: $inno-blue;
     text-transform: none;
+
+    &.inverted {
+      background: $inno-blue;
+      color: $gray3;
+
+      &:hover {
+        background: $inno-blue-light;
+      }
+    }
   }
 
   &.primary {
