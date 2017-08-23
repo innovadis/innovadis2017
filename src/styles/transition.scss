@@ -1,0 +1,27 @@
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slidetop-enter-active,
+.slidetop-leave-active {
+  transition: all 0.5s;
+
+  .button {
+    transition: opacity 0.5s ease-in;
+  }
+}
+
+.slidetop-enter,
+.slidetop-leave-to {
+  transform: translateY(calc(-100% - 50px));
+
+  .button {
+    opacity: 0;
+  }
+}

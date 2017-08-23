@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="114px" height="126px" viewBox="0 0 114 126" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 17</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M49.2277731,120.129348 C90.7836855,120.129348 115.717233,92.4591052 115.717233,49.9414145 C115.717233,17.5469835 97.1769028,0 65.850138,0 C24.2942257,0 0,26.3204752 0,69.5130499 C0,101.232597 17.9010084,120.129348 49.2277731,120.129348 Z" id="path-1"></path>
+        <filter x="-44.9%" y="-43.3%" width="189.9%" height="186.6%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="22.2265625" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-68.7%" y="-66.2%" width="237.5%" height="232.4%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="11.4564732" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Ontwerp" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="InnovadisHome" transform="translate(-385.000000, -632.000000)">
+            <g id="Group-17" transform="translate(441.682250, 694.450017) rotate(-195.000000) translate(-441.682250, -694.450017) translate(383.682250, 633.950017)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="cirkel" fill="#FFFFFF" xlink:href="#path-1"></use>
+                <path d="M45.4599218,125.092056 C93.7531486,125.092056 122.729085,92.935733 122.729085,43.5247981 C122.729085,5.87837148 101.182876,-14.5134429 64.7772125,-14.5134429 C16.4839857,-14.5134429 -11.7489776,16.0742787 -11.7489776,66.2695141 C-11.7489776,103.13164 9.05425855,125.092056 45.4599218,125.092056 Z" id="cirkel" fill="#0029A8" mask="url(#mask-2)"></path>
+                <path d="M-6.69350282,77.2900607 C46.5805364,77.2900607 78.54496,41.8172354 78.54496,-12.6897888 C78.54496,-54.2189502 54.7765425,-76.7139126 14.6161129,-76.7139126 C-38.6579264,-76.7139126 -69.8027493,-42.971469 -69.8027493,12.4007461 C-69.8027493,53.0647166 -46.8539324,77.2900607 -6.69350282,77.2900607 Z" id="cirkel" fill="#001D75" filter="url(#filter-3)" mask="url(#mask-2)"></path>
+                <path d="M76.2707182,72.9064211 C94.2265193,72.9064211 105,60.9504477 105,42.5790739 C105,28.5818368 96.9889503,21 83.4530387,21 C65.4972376,21 55,32.3727552 55,51.0357381 C55,64.7413661 62.7348066,72.9064211 76.2707182,72.9064211 Z" id="cirkel" fill="#1C48D0" filter="url(#filter-4)" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
