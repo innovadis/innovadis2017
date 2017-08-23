@@ -1,5 +1,5 @@
 <template lang="pug">
-.news-item(
+.item(
   :style='style'
   )
   .text
@@ -20,7 +20,7 @@ export default {
     style() {
       return {
         'background-image': `linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(${this.imageUrl})`,
-        height: (this.large ? 410 : 155) + 'px'
+        height: window.innerWidth > 600 ? (this.large ? 410 : 155) + 'px' : 200
       }
     }
   }
@@ -29,8 +29,9 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+@import 'src/styles/layout';
 
-.news-item {
+.item {
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -42,6 +43,10 @@ export default {
   margin: 10px;
   break-inside: avoid;
 
+  @include phone {
+    margin: 20px;
+  }
+
   .text {
     position: absolute;
     bottom: 20px;
@@ -50,6 +55,11 @@ export default {
     width: calc(100% - #{$gutter*2});
 
     $bottomColor: rgba(255, 255, 255, 0.7);
+
+    @include phone {
+      left: $gutter/2;
+      width: calc(100% - #{$gutter});
+    }
 
     .title {
       color: white;

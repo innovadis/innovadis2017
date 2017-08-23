@@ -17,6 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+@import 'src/styles/layout';
 
 .button {
   display: table;
@@ -32,6 +33,10 @@ export default {
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 0.3px;
+
+  @include phone {
+    font-size: 16px;
+  }
 
   &.disabled {
     color: $gray1;

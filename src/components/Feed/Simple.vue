@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+@import 'src/styles/layout';
 
 .feed {
   width: 100vw;
@@ -27,6 +28,10 @@ export default {
   display: flex;
   align-content: center;
   flex-direction: column;
+
+  @include phone {
+    padding: 60px 0;
+  }
 
   h2 {
     color: white;
@@ -38,10 +43,20 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0 auto;
+    overflow-x: auto;
+
+    @include phone {
+      flex-wrap: nowrap;
+      margin: 0;
+    }
   }
 }
 
 .grid {
   display: grid;
+
+  @include phone {
+    display: none;
+  }
 }
 </style>

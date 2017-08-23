@@ -31,6 +31,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+@import 'src/styles/layout';
 
 $headerOffset: 100px;
 
@@ -38,7 +39,7 @@ $headerOffset: 100px;
   transform-origin: top;
   transition: all 0.3s ease-in-out, height 1s ease-in-out;
   // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
-  width: 100%;
+  // width: calc(100% - #{$gutter/2});
   overflow-x: hidden;
 
   &.open {

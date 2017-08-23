@@ -18,6 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+@import 'src/styles/layout';
 
 .solutions {
   display: flex;
@@ -26,11 +27,13 @@ export default {
   flex-direction: column;
   padding: 100px 0 0 0;
 
+  @include phone {
+    padding: 60px 20px 0 20px;
+  }
+
   .text {
     text-align: center;
     max-width: 750px;
-
-    h2 {}
   }
 
   .image {
@@ -43,12 +46,21 @@ export default {
     img {
       border-radius: $border-radius;
       margin-top: 20px;
+
+      @include phone {
+        height: 220px;
+      }
     }
 
     .button {
       height: 0;
       position: relative;
       top: -135px;
+
+      @include phone {
+        top: -80px;
+        margin: 0;
+      }
     }
   }
 }

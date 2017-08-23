@@ -1,4 +1,5 @@
 @import './variables';
+@import './layout';
 
 span,
 div,
@@ -9,10 +10,15 @@ input,
 textarea,
 p {
   font-family: 'Open Sans', sans-serif;
-  // color: $gray3;
+  color: $gray3;
   font-size: 18px;
   letter-spacing: 0;
   line-height: 26px;
+
+  @include phone {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 p.intro {
@@ -30,16 +36,31 @@ h6 {
   color: $gray3;
   letter-spacing: 0;
   margin: 0;
+  font-size: 18px;
+
+  @include phone {
+    font-size: 16px;
+  }
 }
 
 h1 {
   font-size: 80px;
   line-height: 90px;
+
+  @include phone {
+    font-size: 36px;
+    line-height: 42px;
+  }
 }
 
 h2 {
   font-size: 60px;
   line-height: 70px;
+
+  @include phone {
+    font-size: 30px;
+    line-height: 30px;
+  }
 }
 
 h3 {
@@ -52,6 +73,9 @@ h3 {
   font-family: 'FontAwesome'; // TODO replace with custom icons
 }
 
-#webpack-hot-middleware-clientOverlay span {
-  color: white !important;
+#webpack-hot-middleware-clientOverlay {
+  div,
+  span {
+    color: white !important;
+  }
 }

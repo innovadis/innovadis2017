@@ -142,6 +142,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+@import 'src/styles/layout';
 
 .sendbox {
   width: 440px;
@@ -150,6 +151,11 @@ export default {
   overflow: hidden;
   background: $inno-yellow;
   box-shadow: $shadow;
+
+  @include phone {
+    width: auto;
+    min-width: auto;
+  }
 
   .before {
     display: flex;
