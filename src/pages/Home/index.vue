@@ -46,8 +46,8 @@ $headerOffset: 100px;
     border-radius: 5px;
     overflow: hidden;
     height: 95%;
-    left: calc(100vw - 150px);
-    transform: scale(0.8);
+    // left: calc(100vw - 150px);
+    transform: scale(0.8) translateX(calc(100vw - 150px));
   }
 }
 </style>

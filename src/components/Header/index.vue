@@ -1,140 +1,141 @@
 <template lang="pug">
 .header
   header.sd-header(:class='{ open: showHeader }')
-    img(src='/static/images/svg/logo.svg')
-    ul.sd-menu
-      li.sd-menu__item(data-sub="attention"): a(href="#") Aandachtsgebieden
-      li.sd-menu__item(data-sub="products"): a(href="#") Producten
-      li.sd-menu__item(data-sub="about"): a(href="#") Over ons
-      li.sd-menu__item(data-sub="news"): a(href="#") Nieuws
-      li.sd-menu__item(data-sub="contact"): a(href="#") Contact
-      li.sd-menu__item: inno-button(label='Werken bij.', yellow)
+    .wrapper
+      img(src='/static/images/svg/logo.svg')
+      ul.sd-menu
+        li.sd-menu__item(data-sub="attention"): a(href="#") Aandachtsgebieden
+        li.sd-menu__item(data-sub="products"): a(href="#") Producten
+        li.sd-menu__item(data-sub="about"): a(href="#") Over ons
+        li.sd-menu__item(data-sub="news"): a(href="#") Nieuws
+        li.sd-menu__item(data-sub="contact"): a(href="#") Contact
+        li.sd-menu__item: inno-button(label='Werken bij.', yellow)
 
-    .sd-dropdown-holder
-      .sd-dropdown__arrow
-      .sd-dropdown__bg
-        .sd-dropdown__bg-bottom
+      .sd-dropdown-holder
+        .sd-dropdown__arrow
+        .sd-dropdown__bg
+          .sd-dropdown__bg-bottom
 
-      .sd-dropdown__wrap
-        .orb
-        .sd-dropdown-menu#product(data-sub="attention")
-          .sd-dropdown-menu__content
-            .top-section
-              .col-2
-                ul
-                  li
-                    a(href="")
-                      h3 Payment
-                      p  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  li
-                    a(href="")
-                      h3 Connect
-                      p  consectetur adipisicing elit nesciunt! Assumenda, adipisci.
-                  li
-                    a(href="")
-                      h3 Atlas
-                      p  ipsum dolor sit amet, consectetur adipisicing elit. .
-                ul
-                  li
-                    a(href="")
-                      h3 Subscription
-                      p  Lorem ipsum dolor sit amet, consectetur
-                  li
-                    a(href="")
-                      h3 Relay
-                      p   amet, consectetur adipisicing elit. Nisi, sequi!
-
-            .bottom-section
-              ul
-                li: a(href="") Payment
-                li: a(href="") Connect
-                li: a(href="") Atlas
-                li: a(href="") Connect
-                li: a(href="") Atlas
-        .sd-dropdown-menu#developer(data-sub="products")
-          .sd-dropdown-menu__content
-            .top-section
-              .col-2
-                div
-                  h2.sd-menu-title Front End
-                  ul
-                    li: a(href="") Payment
-                    li: a(href="") Connect
-                    li: a(href="") Atlas
-                div
-                  h2.sd-menu-title Back End
+        .sd-dropdown__wrap
+          .orb
+          .sd-dropdown-menu#product(data-sub="attention")
+            .sd-dropdown-menu__content
+              .top-section
+                .col-2
                   ul
                     li
-                      router-link(to='/layerorbs') Payment
-                    li: a(href="") Connect
-                    li: a(href="") Atlas
-            .bottom-section.info
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam officia molestias
-        .sd-dropdown-menu(data-sub="about")
-          .sd-dropdown-menu__content
-            .top-section
-              ul
-                li: a(href="") Payment
-                li: a(href="") Connect
-                li: a(href="") Atlas
-            .bottom-section
-              ul
-                li: a(href="") Payment
-                li: a(href="") Connect
-                li: a(href="") Atlas
-        .sd-dropdown-menu#product(data-sub="news")
-          .sd-dropdown-menu__content
-            .top-section
-              .col-2
-                ul
-                  li
-                    a(href="")
-                      h3 Payment
-                      p  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  li
-                    a(href="")
-                      h3 Connect
-                      p  consectetur adipisicing elit nesciunt! Assumenda, adipisci.
-                  li
-                    a(href="")
-                      h3 Atlas
-                      p  ipsum dolor sit amet, consectetur adipisicing elit. .
-                ul
-                  li
-                    a(href="")
-                      h3 Subscription
-                      p  Lorem ipsum dolor sit amet, consectetur
-                  li
-                    a(href="")
-                      h3 Relay
-                      p   amet, consectetur adipisicing elit. Nisi, sequi!
-
-            .bottom-section
-              ul
-                li: a(href="") Payment
-                li: a(href="") Connect
-                li: a(href="") Atlas
-                li: a(href="") Connect
-                li: a(href="") Atlas
-        .sd-dropdown-menu#developer(data-sub="contact")
-          .sd-dropdown-menu__content
-            .top-section
-              .col-2
-                div
-                  h2.sd-menu-title Front End
-                  ul
-                    li: a(href="") Payment
-                    li: a(href="") Connect
-                    li: a(href="") Atlas
-                div
-                  h2.sd-menu-title Back End
+                      a(href="")
+                        h3 Payment
+                        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    li
+                      a(href="")
+                        h3 Connect
+                        p  consectetur adipisicing elit nesciunt! Assumenda, adipisci.
+                    li
+                      a(href="")
+                        h3 Atlas
+                        p  ipsum dolor sit amet, consectetur adipisicing elit. .
                   ul
                     li
-                      router-link(to='/layerorbs') Payment
-                    li: a(href="") Connect
-                    li: a(href="") Atlas
-            .bottom-section.info
-              p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam officia molestias
+                      a(href="")
+                        h3 Subscription
+                        p  Lorem ipsum dolor sit amet, consectetur
+                    li
+                      a(href="")
+                        h3 Relay
+                        p   amet, consectetur adipisicing elit. Nisi, sequi!
+
+              .bottom-section
+                ul
+                  li: a(href="") Payment
+                  li: a(href="") Connect
+                  li: a(href="") Atlas
+                  li: a(href="") Connect
+                  li: a(href="") Atlas
+          .sd-dropdown-menu#developer(data-sub="products")
+            .sd-dropdown-menu__content
+              .top-section
+                .col-2
+                  div
+                    h2.sd-menu-title Front End
+                    ul
+                      li: a(href="") Payment
+                      li: a(href="") Connect
+                      li: a(href="") Atlas
+                  div
+                    h2.sd-menu-title Back End
+                    ul
+                      li
+                        router-link(to='/layerorbs') Payment
+                      li: a(href="") Connect
+                      li: a(href="") Atlas
+              .bottom-section.info
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam officia molestias
+          .sd-dropdown-menu(data-sub="about")
+            .sd-dropdown-menu__content
+              .top-section
+                ul
+                  li: a(href="") Payment
+                  li: a(href="") Connect
+                  li: a(href="") Atlas
+              .bottom-section
+                ul
+                  li: a(href="") Payment
+                  li: a(href="") Connect
+                  li: a(href="") Atlas
+          .sd-dropdown-menu#product(data-sub="news")
+            .sd-dropdown-menu__content
+              .top-section
+                .col-2
+                  ul
+                    li
+                      a(href="")
+                        h3 Payment
+                        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    li
+                      a(href="")
+                        h3 Connect
+                        p  consectetur adipisicing elit nesciunt! Assumenda, adipisci.
+                    li
+                      a(href="")
+                        h3 Atlas
+                        p  ipsum dolor sit amet, consectetur adipisicing elit. .
+                  ul
+                    li
+                      a(href="")
+                        h3 Subscription
+                        p  Lorem ipsum dolor sit amet, consectetur
+                    li
+                      a(href="")
+                        h3 Relay
+                        p   amet, consectetur adipisicing elit. Nisi, sequi!
+
+              .bottom-section
+                ul
+                  li: a(href="") Payment
+                  li: a(href="") Connect
+                  li: a(href="") Atlas
+                  li: a(href="") Connect
+                  li: a(href="") Atlas
+          .sd-dropdown-menu#developer(data-sub="contact")
+            .sd-dropdown-menu__content
+              .top-section
+                .col-2
+                  div
+                    h2.sd-menu-title Front End
+                    ul
+                      li: a(href="") Payment
+                      li: a(href="") Connect
+                      li: a(href="") Atlas
+                  div
+                    h2.sd-menu-title Back End
+                    ul
+                      li
+                        router-link(to='/layerorbs') Payment
+                      li: a(href="") Connect
+                      li: a(href="") Atlas
+              .bottom-section.info
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam officia molestias
 
 
   header.phone-header(:class='{ "open": $store.state.phoneMenuOpen }')
@@ -333,14 +334,14 @@ $transition: 0.3s ease-in-out;
 
   header.sd-header {
     position: relative;
-    padding-top: $gutter / 2;
-    max-width: 1200px;
+    padding: $gutter / 2 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     transform: translateY(-100px);
     transition: transform 0.6s ease-out;
+    background: white;
 
     &.open {
       transform: translateY(0);
@@ -348,6 +349,14 @@ $transition: 0.3s ease-in-out;
 
     @include phone {
       display: none;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100vw;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .sd-menu {
@@ -601,6 +610,7 @@ $transition: 0.3s ease-in-out;
       align-items: flex-start;
 
       .item {
+        margin: 10px 0;
         opacity: 0;
         transform: translateX(-50px);
         transition: all $transition;

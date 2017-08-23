@@ -45,8 +45,6 @@ export default {
 footer {
   width: 100vw;
   max-width: 100%;
-  // position: absolute;
-  // bottom: 0;
 
   .top {
     background: url('/static/images/svg/footer_orbs.svg'), linear-gradient(270deg, $inno-blue 0%, $inno-blue-dark 100%);
