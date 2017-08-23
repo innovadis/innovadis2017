@@ -41,15 +41,6 @@
 export default {
   components: {
     Orb: require('src/components/Orb')
-  },
-
-  computed: {
-
-  },
-
-  mounted() {
-
-
   }
 }
 </script>
@@ -58,7 +49,6 @@ export default {
 @import 'src/styles/variables';
 
 .hero {
-  // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -74,7 +64,7 @@ export default {
 
     p,
     h1 {
-      color: #082D3C;
+      color: $gray3;
       z-index: 1;
     }
 

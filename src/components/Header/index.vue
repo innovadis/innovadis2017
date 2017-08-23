@@ -1,6 +1,6 @@
 <template lang="pug">
 .header
-  header.sd-header
+  header.sd-header(:class='{ open: showHeader }')
     img(src='/static/images/svg/logo.svg')
     ul.sd-menu
       li.sd-menu__item(data-sub="attention"): a(href="#") Aandachtsgebieden
@@ -154,17 +154,36 @@ export default {
   data() {
     return {
       selectedMenu: null,
-      phoneMenuOpen: false
+      phoneMenuOpen: false,
+      lastScrollY: null,
+      showHeader: true
     }
   },
 
   methods: {
     togglePhoneMenuState() {
       this.$store.commit('setPhoneMenuState', !this.$store.state.phoneMenuOpen)
+    },
+
+    scroll(e) {
+      if (this.lastScrollY === null) {
+        this.lastScrollY = window.scrollY
+        return
+      }
+
+      if (window.scrollY === 0 || window.scrollY < this.lastScrollY) {
+        this.showHeader = true
+      } else {
+        this.showHeader = false
+      }
+
+      this.lastScrollY = window.scrollY
     }
   },
 
   mounted() {
+    window.addEventListener('scroll', this.scroll)
+
     const menuItems = document.querySelectorAll('.sd-menu__item')
     const menuSubs = document.querySelectorAll('.sd-dropdown-menu')
     const subBg = document.querySelector('.sd-dropdown__bg')
@@ -278,7 +297,7 @@ export default {
     //  Binding mouse event to each menu items
     menuItems.forEach(el => {
       //  mouse enter event
-      el.addEventListener('mouseenter', function () {
+      el.addEventListener('mouseenter', function() {
         stopCloseTimeout()
         openDropdown(this)
       }, false)
@@ -292,6 +311,10 @@ export default {
       el.addEventListener('mouseenter', stopCloseTimeout, false)
       el.addEventListener('mouseleave', startCloseTimeout, false)
     })
+  },
+
+  destroyed() {
+    window.removeEventListener(this.scroll)
   }
 }
 </script>
@@ -316,6 +339,12 @@ $transition: 0.3s ease-in-out;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    transform: translateY(-100px);
+    transition: transform 0.6s ease-out;
+
+    &.open {
+      transform: translateY(0);
+    }
 
     @include phone {
       display: none;
@@ -349,7 +378,7 @@ $transition: 0.3s ease-in-out;
       &__item {
         position: relative;
 
-        &:hover > .sub-menu-shadow {
+        &:hover>.sub-menu-shadow {
           display: block;
         }
 
@@ -419,7 +448,6 @@ $transition: 0.3s ease-in-out;
         transition: all .25s ease;
         visibility: hidden;
         border-top: 4px solid $inno-blue; // Also in JS
-
         .orb {
           $height: 100px;
           $width: 120px;
@@ -605,7 +633,7 @@ $transition: 0.3s ease-in-out;
           transform: translateX(0);
 
           $itemCount: 6;
-          @for $i from 0 to $itemCount + 1 {
+          @for $i from 0 to $itemCount+1 {
             &:nth-child(#{$i}) {
               transition-delay: 0.1s * $i;
             }

@@ -1,20 +1,20 @@
 <template lang="pug">
-.page-front
-  hero
-
-  feed
+.feed
 </template>
 
 <script>
 export default {
-  components: {
-    Hero: require('./Hero'),
-    Feed: require('src/components/Feed')
-  }
+
 }
 </script>
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
+.feed {
+  height: 100vh;
+  width: 100vw;
+
+  background: radial-gradient(circle, #000000 0%, #082D3C 100%);
+}
 </style>

@@ -36,7 +36,8 @@ $headerOffset: 100px;
   position: absolute;
   left: 0;
   top: 0;
-  height: calc(100% - #{$headerOffset});
+  // height: calc(100% - #{$headerOffset});
+  background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
 
   &.open {
     top: 120px;
