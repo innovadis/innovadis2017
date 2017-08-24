@@ -73,7 +73,7 @@ export default {
 
 .underscore {
   &:after {
-    content: '_';
+    content: '|';
     color: $inno-yellow;
     animation: blink-animation 1s steps(2, start) infinite;
   }

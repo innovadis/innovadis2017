@@ -5,10 +5,10 @@
       img(src='/static/images/svg/logo.svg')
       ul.sd-menu
         li.sd-menu__item(data-sub="attention"): a(href="#") Aandachtsgebieden
-        li.sd-menu__item(data-sub="products"): a(href="#") Producten
-        li.sd-menu__item(data-sub="about"): a(href="#") Over ons
-        li.sd-menu__item(data-sub="news"): a(href="#") Nieuws
-        li.sd-menu__item(data-sub="contact"): a(href="#") Contact
+        li.sd-menu__item: router-link(to='/producten') Producten
+        li.sd-menu__item: router-link(to='/over') Over ons
+        li.sd-menu__item: router-link(to='/wereld') Onze wereld
+        li.sd-menu__item: router-link(to='/contact') Contact
         li.sd-menu__item: inno-button(label='Werken bij.')
 
       .sd-dropdown-holder
@@ -18,10 +18,14 @@
 
         .sd-dropdown__wrap
           .orb
-          .sd-dropdown-menu#product(data-sub="attention")
+          .sd-dropdown-menu#attention(data-sub="attention")
             .sd-dropdown-menu__content
               .top-section
-                .col-2
+                .attention-items
+                  router-link(to='/smart-health') Smart health
+                  router-link(to='/smart-industry') Smart industry
+
+                //- .col-2
                   ul
                     li
                       a(href="")
@@ -45,14 +49,15 @@
                         h3 Relay
                         p   amet, consectetur adipisicing elit. Nisi, sequi!
 
-              .bottom-section
+              //- .bottom-section
                 ul
                   li: a(href="") Payment
                   li: a(href="") Connect
                   li: a(href="") Atlas
                   li: a(href="") Connect
                   li: a(href="") Atlas
-          .sd-dropdown-menu#developer(data-sub="products")
+
+          //- .sd-dropdown-menu#developer(data-sub="products")
             .sd-dropdown-menu__content
               .top-section
                 .col-2
@@ -71,7 +76,8 @@
                       li: a(href="") Atlas
               .bottom-section.info
                 p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit totam officia molestias
-          .sd-dropdown-menu(data-sub="about")
+
+          //- .sd-dropdown-menu(data-sub="about")
             .sd-dropdown-menu__content
               .top-section
                 ul
@@ -83,7 +89,8 @@
                   li: a(href="") Payment
                   li: a(href="") Connect
                   li: a(href="") Atlas
-          .sd-dropdown-menu#product(data-sub="news")
+
+          //- .sd-dropdown-menu#product(data-sub="news")
             .sd-dropdown-menu__content
               .top-section
                 .col-2
@@ -117,7 +124,7 @@
                   li: a(href="") Atlas
                   li: a(href="") Connect
                   li: a(href="") Atlas
-          .sd-dropdown-menu#developer(data-sub="contact")
+          //- .sd-dropdown-menu#developer(data-sub="contact")
             .sd-dropdown-menu__content
               .top-section
                 .col-2
@@ -212,7 +219,7 @@ export default {
       //  get menu sub content
       var menuSubCnt = menuSub.querySelector('.sd-dropdown-menu__content')
       //  get bottom section of current sub
-      var menuSubBtm = menuSubCnt.querySelector('.bottom-section').getBoundingClientRect()
+      // var menuSubBtm = menuSubCnt.querySelector('.bottom-section').getBoundingClientRect()
       //  get height of top section
       var menuSubTop = menuSubCnt.querySelector('.top-section').getBoundingClientRect()
       //  get menu position
@@ -315,7 +322,7 @@ export default {
   },
 
   destroyed() {
-    window.removeEventListener(this.scroll)
+    window.removeEventListener('scroll', this.scroll)
   }
 }
 </script>
@@ -342,6 +349,33 @@ $transition: 0.3s ease-in-out;
     transform: translateY(-100px);
     transition: transform 0.6s ease-out;
     background: white;
+
+    .top-section {
+      background: white;
+
+      .attention-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        a {
+          border-bottom: 1px solid $gray1;
+          width: 100%;
+          text-align: center;
+          padding: 25px 0;
+          transition: color $transition;
+
+          &:last-child {
+            border: none;
+          }
+
+          &:hover {
+            color: $inno-yellow;
+          }
+        }
+      }
+    }
 
     &.open {
       transform: translateY(0);
@@ -375,12 +409,17 @@ $transition: 0.3s ease-in-out;
         font-family: Bitter;
         font-size: 20px;
         letter-spacing: 0.3px;
+        transition: color $transition;
 
         &:after {
           content: '.';
           color: $inno-yellow;
           font-weight: bold;
           margin-left: 2px;
+        }
+
+        &:hover {
+          color: $inno-yellow;
         }
       }
 
@@ -471,11 +510,12 @@ $transition: 0.3s ease-in-out;
           left: -$width/2;
           opacity: 0;
           transition: all .25s ease;
+          z-index: 1;
         }
 
         .top-section,
         .bottom-section {
-          padding: 20px;
+          // padding: 20px;
         }
       }
 
@@ -511,9 +551,10 @@ $transition: 0.3s ease-in-out;
         }
       }
     }
-    #product .sd-dropdown-menu__content {
-      width: 640px;
+    #attention .sd-dropdown-menu__content {
+      width: 300px;
     }
+
     #developer .sd-dropdown-menu__content {
       width: 400px;
     }
