@@ -1,7 +1,7 @@
 <template lang="pug">
 .sendbox
   transition(name='easeout-top', mode='out-in')
-    .after(v-if='isSent', key='divSent')
+    .after(v-if='loading', key='divSent')
       .lines
         .line
         .line
@@ -61,22 +61,49 @@ export default {
     return {
       isSent: false,
 
-      name: null,
-      email: null,
-      phoneNumber: null,
-      remarks: null
+      name: 'sef',
+      email: 'asef@asef.asef',
+      phoneNumber: 'asef',
+      remarks: null,
+
+      loading: false,
+      animationLoading: null
     }
   },
 
   methods: {
-    send() {
+    async send() {
+      this.animateLoading()
+
+      const startTimeMs = (new Date()).getTime()
+
+      await this.$store.dispatch('message/send', {
+        to: 'c.maks@innovadis.com',
+        from: this.email,
+        name: this.name,
+        phone: this.phoneNumber,
+        message: this.remarks
+      })
+
+      const endTimeMs = (new Date()).getTime()
+
+      const elapsed = endTimeMs - startTimeMs
+
+      let padTimeMs = (1200 - elapsed % 1200) - 100
+
+      if (elapsed < 1200) padTimeMs += 1200
+
+      await timeout(padTimeMs)
+
       this.isSent = true
     },
 
     async animateLoading() {
+      this.loading = true
+
       await timeout(1100)
 
-      const a = Anime({
+      this.animationLoading = Anime({
         targets: '.line',
         translateX: 1200,
         duration: (el, i) => 800 + 200 * i,
@@ -84,11 +111,11 @@ export default {
         loop: true
       })
 
-      await timeout(2000) // this should be the ajax delay
+      // await timeout(2000) // this should be the ajax delay
 
-      a.pause()
+      // a.pause()
 
-      this.animateDone()
+      // this.animateDone()
     },
 
     animateDone() {
@@ -97,7 +124,7 @@ export default {
         duration: 800,
         easing: 'easeInOutQuart',
         left: 194,
-        top: 203,
+        top: 243,
         opacity: 1
       })
 
@@ -106,7 +133,7 @@ export default {
         duration: 800,
         easing: 'easeInOutQuart',
         right: 189,
-        top: 160,
+        top: 200,
         opacity: 1
       })
 
@@ -122,7 +149,19 @@ export default {
 
   watch: {
     isSent(v) {
-      if (v) this.animateLoading()
+      if (v) {
+        this.animationLoading.pause()
+
+        // Anime({
+        //   targets: '.line',
+        //   opacity: 0,
+        //   duration: 500,
+        //   easing: 'easeInOutQuart',
+        //   loop: false
+        // })
+
+        this.animateDone()
+      }
     }
   },
 
@@ -147,6 +186,7 @@ export default {
 .sendbox {
   width: 440px;
   min-width: 440px;
+  height: 570px;
   border-radius: 5px;
   overflow: hidden;
   background: $inno-yellow;
@@ -230,17 +270,15 @@ export default {
       .short {
         height: 50px;
         transform: rotateZ(-45deg);
-        left: 0;
-        // left: 194px; // end values
-        // top: 203px;
+        left: 0; // left: 194px; // end values
+        // top: 243px;
       }
 
       .long {
         height: 100px;
         transform: rotateZ(45deg);
-        right: 0;
-        // right: 189px;
-        // top: 160px;
+        right: 0; // right: 189px;
+        // top: 200px;
       }
 
       .text {
@@ -248,9 +286,10 @@ export default {
         font-size: 22px;
         color: white;
         position: relative;
-        top: 260px;
-        left: 10px;
+        top: 300px;
+        left: 0px;
         opacity: 0;
+        text-align: center;
       }
     }
   }

@@ -1,5 +1,5 @@
 <template lang="pug">
-.button(:class='{ disabled: disabled, yellow: yellow, blue: blue, primary: primary, inverted: inverted }') {{ label }}
+.button(:class='{ disabled: disabled, yellow: yellow, blue: blue, primary: primary, inverted: inverted }', @click='click') {{ label }}
 </template>
 
 <script>
@@ -11,6 +11,12 @@ export default {
     blue: Boolean,
     primary: Boolean,
     inverted: Boolean
+  },
+
+  methods: {
+    click() {
+      this.$emit('click')
+    }
   }
 }
 </script>

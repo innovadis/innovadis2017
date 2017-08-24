@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import message from './modules/message'
+
 const state = {
   phoneMenuOpen: false
 }
@@ -17,6 +19,6 @@ export default new Vuex.Store({
   state,
   mutations,
   modules: {
-
+    message
   }
 })
