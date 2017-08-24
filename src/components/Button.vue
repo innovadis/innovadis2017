@@ -31,7 +31,6 @@ export default {
   box-shadow: $shadow;
   transition: all 0.3s ease-in-out, opacity 0.2s ease-in-out;
   cursor: pointer;
-  text-transform: uppercase;
   letter-spacing: 0.3px;
 
   @include phone {
@@ -85,12 +84,14 @@ export default {
 
     &:hover {
       box-shadow: $shadow-large;
+      color: $gray3;
+    background: $inno-yellow-light;
     }
   }
 
   &:hover {
-    background: $inno-yellow-light;
-    color: $gray3;
+    // background: $inno-yellow-light;
+    color: $inno-yellow;
     box-shadow: 4px 2px 10px 0 rgba(0, 0, 0, 0.15);
   }
 }

@@ -9,7 +9,7 @@
         li.sd-menu__item(data-sub="about"): a(href="#") Over ons
         li.sd-menu__item(data-sub="news"): a(href="#") Nieuws
         li.sd-menu__item(data-sub="contact"): a(href="#") Contact
-        li.sd-menu__item: inno-button(label='Werken bij.', yellow)
+        li.sd-menu__item: inno-button(label='Werken bij.')
 
       .sd-dropdown-holder
         .sd-dropdown__arrow
@@ -603,11 +603,16 @@ $transition: 0.3s ease-in-out;
 
     .items {
       position: absolute;
-      left: 20px;
-      top: 100px;
+      left: 0;
+      top: 75px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      background: white;
+      padding: 20px;
+      border-bottom-right-radius: $border-radius;
+      opacity: 0;
+      transition: all 0.2s ease-in;
 
       .item {
         margin: 10px 0;
@@ -638,6 +643,8 @@ $transition: 0.3s ease-in-out;
       }
 
       .items {
+        opacity: 1;
+
         .item {
           opacity: 1;
           transform: translateX(0);

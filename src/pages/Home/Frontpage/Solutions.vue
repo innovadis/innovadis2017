@@ -49,6 +49,8 @@ export default {
 
       @include phone {
         height: 220px;
+        width: 100vw;
+        border-radius: 0;
       }
     }
 

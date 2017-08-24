@@ -153,7 +153,7 @@ export default {
   box-shadow: $shadow;
 
   @include phone {
-    width: auto;
+    width: calc(100vw - #{$gutter});
     min-width: auto;
   }
 

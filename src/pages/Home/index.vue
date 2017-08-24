@@ -1,8 +1,8 @@
 <template lang="pug">
-div
+.main(:class='{ "open": $store.state.phoneMenuOpen }')
   inno-header
 
-  .page-wrapper(:class='{ "open": $store.state.phoneMenuOpen }', @click='closePhoneMenu')
+  .page-wrapper(@click='closePhoneMenu')
     router-view
 
   inno-footer
@@ -35,20 +35,21 @@ export default {
 
 $headerOffset: 100px;
 
-.page-wrapper {
-  transform-origin: top;
-  transition: all 0.3s ease-in-out, height 1s ease-in-out;
-  // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
-  // width: calc(100% - #{$gutter/2});
-  overflow-x: hidden;
+.main {
+  .page-wrapper {
+    transform-origin: top;
+    transition: all 0.3s ease-in-out, height 1s ease-in-out;
+    // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
+  }
 
   &.open {
-    top: 120px;
-    border-radius: 5px;
     overflow: hidden;
-    height: 95%;
-    // left: calc(100vw - 150px);
-    transform: scale(0.8) translateX(calc(100vw - 150px));
+
+    .page-wrapper {
+      margin-top: 50px;
+      transform: translateX(calc(100vw + 50px));
+      filter: blur(5px);
+    }
   }
 }
 </style>

@@ -78,7 +78,7 @@ footer {
       }
 
       p {
-        margin-top: 10px;
+        margin-top: 0;
       }
     }
 
@@ -87,6 +87,7 @@ footer {
 
       @include phone {
         margin-bottom: 60px;
+        width: auto;
       }
 
       .title {
@@ -94,7 +95,9 @@ footer {
       }
 
       .contact {
-        margin-top: 20px;
+        @include phone {
+          margin-top: 20px;
+        }
       }
 
       span {
@@ -136,17 +139,17 @@ footer {
     }
 
     .right {
-      width: 350px;
-
-      @include phone {
-        width: auto;
-      }
-
       a {
         font-family: 'Bitter';
         font-weight: 600;
+        margin: 0 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
 
         @include phone {
+          margin: 0;
           font-size: 12px;
         }
       }

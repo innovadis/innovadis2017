@@ -20,7 +20,7 @@ export default {
     style() {
       return {
         'background-image': `linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(${this.imageUrl})`,
-        height: window.innerWidth > 600 ? (this.large ? 410 : 155) + 'px' : 200
+        height: window.innerWidth > 600 ? (this.large ? 410 : 155) + 'px' : 200 + 'px'
       }
     }
   }
