@@ -29,7 +29,7 @@
         )
 
     h1 Wij verbinden,
-    h1.dot Organisaties
+    typing-text
     p.intro There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
     .buttons.flex.flex-justify-center.flex-column-phone.flex-align-center-phone
       inno-button(label='Smart Health', primary)
@@ -40,7 +40,8 @@
 <script>
 export default {
   components: {
-    Orb: require('src/components/Orb')
+    Orb: require('src/components/Orb'),
+    TypingText: require('src/components/TypingText')
   },
 
   computed: {
