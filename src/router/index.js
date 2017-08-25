@@ -14,6 +14,31 @@ export default new Router({
           path: '',
           name: 'home',
           component: require('src/pages/Home/Frontpage')
+        },
+        {
+          path: '/smart-health',
+          name: 'smart-health',
+          component: require('src/pages/Home/SmartHealth')
+        },
+        {
+          path: '/smart-industry',
+          name: 'smart-industry'
+        },
+        {
+          path: '/producten',
+          name: 'products'
+        },
+        {
+          path: '/wereld',
+          name: 'world'
+        },
+        {
+          path: '/over',
+          name: 'about'
+        },
+        {
+          path: '/contact',
+          name: 'contact'
         }
       ]
     }

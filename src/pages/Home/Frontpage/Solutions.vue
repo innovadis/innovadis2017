@@ -1,6 +1,6 @@
 <template lang="pug">
 .solutions
-  .text
+  .container.text-center
     h2 Oplossingen
     h2.dot die je verder helpen
     p Geen enkele wens is hetzelfde. Daarom bouwen wij samen met jullie een oplossing op maat. Onze visie en ervaring zorgen dat de oplossing state-of-the-art is. Wij houden van ons vak. We zijn hardwerkende specialisten, misschien wel vakidioten, die zich blijven ontwikkelen.
@@ -29,11 +29,6 @@ export default {
 
   @include phone {
     padding: 60px 20px 0 20px;
-  }
-
-  .text {
-    text-align: center;
-    max-width: 750px;
   }
 
   .image {

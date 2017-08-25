@@ -1,7 +1,7 @@
 <template lang="pug">
 .feed
   h2.dot Innovadis in de wereld
-  .items
+  .items.container
     item(source='Instagram', title='Luck inmaken met Tekken is te makkelijk', imageUrl='http://gearnuke.com/wp-content/uploads/2017/06/Tekken-7-1.jpg', :large='true')
     .grid
       item(source='Instagram', title='Tom\'s favoriete nummer is uitgelekt! ', imageUrl='https://www.top40.nl/uploads/subtitle/formats/40411/large.jpg')
@@ -42,8 +42,8 @@ export default {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 auto;
     overflow-x: auto;
+    max-width: $container-width + 70px;
 
     @include phablet {
       flex-wrap: nowrap;

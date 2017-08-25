@@ -1,6 +1,6 @@
 <template lang="pug">
 .letstalk
-  .wrapper
+  .container
     h2.dot Gewoon even praten of heb je vragen
     send-box
 
@@ -28,12 +28,10 @@ export default {
     padding: 60px 20px;
   }
 
-  .wrapper {
-    max-width: 850px;
+  .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
 
     @include phablet {
       flex-direction: column;

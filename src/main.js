@@ -6,11 +6,13 @@ import router from './router'
 import store from './store'
 import Vuelidate from 'vuelidate'
 import Button from 'src/components/Button'
+import ButtonAlternate from 'src/components/ButtonAlternate'
 
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
 
 Vue.component('InnoButton', Button)
+Vue.component('InnoButtonAlternate', ButtonAlternate)
 
 /* eslint-disable no-new */
 new Vue({

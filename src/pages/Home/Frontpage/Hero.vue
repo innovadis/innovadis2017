@@ -1,6 +1,6 @@
 <template lang="pug">
 .hero
-  .text(ref='text')
+  .container(ref='text')
     .orbs
       orb(
         :size='140'
@@ -28,12 +28,13 @@
         :blur='10'
         )
 
-    h1 Wij verbinden,
-    typing-text
-    p.intro There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
-    .buttons.flex.flex-justify-center.flex-column-phone.flex-align-center-phone
-      inno-button(label='Smart Health', primary)
-      inno-button(label='Smart Industry', primary)
+    .text
+      h1 Wij verbinden,
+      typing-text
+      p.intro There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
+      .buttons.flex.flex-justify-center.flex-column-phone.flex-align-center-phone
+        inno-button(label='Smart Health', primary, :to='{ name: "smart-health" }')
+        inno-button(label='Smart Industry', primary, :to='{ name: "smart-industry" }')
 
 </template>
 
@@ -116,6 +117,7 @@ export default {
   text-align: center;
   overflow: hidden;
   transform: translateX(0); // prevents orbs from causing overflow
+
   @include phone {
     height: auto;
     padding: 100px 0;

@@ -1,5 +1,5 @@
 <template lang="pug">
-.button(:class='{ disabled: disabled, yellow: yellow, blue: blue, primary: primary, inverted: inverted }', @click='click') {{ label }}
+.button(:class='{ disabled: disabled, yellow: yellow, blue: blue, primary: primary, inverted: inverted, inactive: inactive, small: small }', @click='click') {{ label }}
 </template>
 
 <script>
@@ -10,12 +10,19 @@ export default {
     yellow: Boolean,
     blue: Boolean,
     primary: Boolean,
-    inverted: Boolean
+    inverted: Boolean,
+    to: Object,
+    inactive: Boolean,
+    small: Boolean
   },
 
   methods: {
     click() {
-      this.$emit('click')
+      if (this.to) {
+        this.$router.push(this.to)
+      } else {
+        this.$emit('click')
+      }
     }
   }
 }
@@ -88,10 +95,25 @@ export default {
     padding: 28px 40px;
     background: $inno-yellow;
 
+    &.small {
+      padding: 16px 24px;
+      margin: 0;
+    }
+
     &:hover {
       box-shadow: $shadow-large;
       color: $gray3;
-    background: $inno-yellow-light;
+      background: $inno-yellow-light;
+    }
+  }
+
+  &.inactive {
+    color: $gray3;
+    box-shadow: none;
+
+    &:hover {
+      color: $gray3;
+      box-shadow: $shadow;
     }
   }
 
