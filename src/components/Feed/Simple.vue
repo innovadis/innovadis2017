@@ -29,7 +29,7 @@ export default {
   align-content: center;
   flex-direction: column;
 
-  @include phone {
+  @include phablet {
     padding: 60px 0;
   }
 
@@ -45,7 +45,7 @@ export default {
     margin: 0 auto;
     overflow-x: auto;
 
-    @include phone {
+    @include phablet {
       flex-wrap: nowrap;
       margin: 0;
     }
@@ -55,7 +55,7 @@ export default {
 .grid {
   display: grid;
 
-  @include phone {
+  @include phablet {
     display: none;
   }
 }

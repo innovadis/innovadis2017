@@ -1,13 +1,13 @@
 <template lang="pug">
 footer
-  .top.flex.flex-justify-between.flex-align-baseline.flex-column-phone
+  .top.flex.flex-justify-between.flex-align-baseline.flex-column-phablet
     .quote.flex.flex-column.text-left
       h2.title.dot innovadis
       p Innovadis is een vooruitstrevende technische organisatie die oplossingen bouwt voor de sectoren Smart Health en Smart Industry.
 
     .info.flex.flex-column.text-left
       h3.title.dot Gegevens
-      .flex.flex-justify-between.flex-column-phone
+      .flex.flex-justify-between.flex-column-phablet
         .flex.flex-column
           span Brouwerijstraat 1
           span 7523 XC Enschede
@@ -21,7 +21,7 @@ footer
       a(href='', target='_blank') Instagram
       a(href='', target='_blank') LinkedIn
 
-  .bottom.flex.flex-justify-between.flex-column-reverse-phone
+  .bottom.flex.flex-justify-between.flex-column-reverse-phablet
     .left
       router-link(to='/todo') Algemene voorwaarden
 
@@ -55,7 +55,7 @@ footer {
     background-position: center bottom;
     padding: 100px $gutter * 2 100px $gutter;
 
-    @include phone {
+    @include phablet {
       padding: 60px 20px;
       background-size: contain;
       background-position: bottom right;
@@ -68,7 +68,7 @@ footer {
     .quote {
       max-width: 380px;
 
-      @include phone {
+      @include phablet {
         margin-bottom: 40px;
       }
 
@@ -85,7 +85,7 @@ footer {
     .info {
       width: 350px;
 
-      @include phone {
+      @include phablet {
         margin-bottom: 60px;
         width: auto;
       }
@@ -95,7 +95,7 @@ footer {
       }
 
       .contact {
-        @include phone {
+        @include phablet {
           margin-top: 20px;
         }
       }
@@ -119,7 +119,7 @@ footer {
   .bottom {
     padding: 25px $gutter;
 
-    @include phone {
+    @include phablet {
       padding: 20px;
     }
 
@@ -128,7 +128,7 @@ footer {
     }
 
     .left {
-      @include phone {
+      @include phablet {
         margin-top: $gutter/2;
         text-align: center;
       }

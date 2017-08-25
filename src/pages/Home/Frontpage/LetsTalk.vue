@@ -24,7 +24,7 @@ export default {
   background: url('/static/images/frontpage_corner.png') no-repeat bottom right;
   background-size: contain;
 
-  @include phone {
+  @include phablet {
     padding: 60px 20px;
   }
 
@@ -35,15 +35,16 @@ export default {
     align-items: center;
     margin: 0 auto;
 
-    @include phone {
+    @include phablet {
       flex-direction: column;
+      max-width: 450px;
     }
 
     .sendbox {
       margin-left: $gutter;
       box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.1);
 
-      @include phone {
+      @include phablet {
         margin-left: 0;
         margin-top: 40px;
       }

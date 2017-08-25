@@ -214,6 +214,9 @@ export default {
       var header = document.querySelector('.sd-header')
       //  get menu ID
       var menuId = el.getAttribute('data-sub')
+
+      if (!menuId) return
+
       //  get related sub menu
       var menuSub = document.querySelector('.sd-dropdown-menu[data-sub="' + menuId + '"]')
       //  get menu sub content
@@ -381,7 +384,7 @@ $transition: 0.3s ease-in-out;
       transform: translateY(0);
     }
 
-    @include phone {
+    @include phablet {
       display: none;
     }
 
@@ -607,7 +610,7 @@ $transition: 0.3s ease-in-out;
     z-index: 1;
     display: none;
 
-    @include phone {
+    @include phablet {
       display: flex;
     }
 

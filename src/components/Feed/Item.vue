@@ -1,6 +1,7 @@
 <template lang="pug">
 .item(
-  :style='style'
+  :style='style',
+  :class='{ large: large }'
   )
   .text
     h3.title {{ title }}
@@ -19,8 +20,8 @@ export default {
   computed: {
     style() {
       return {
-        'background-image': `linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(${this.imageUrl})`,
-        height: window.innerWidth > 600 ? (this.large ? 410 : 155) + 'px' : 200 + 'px'
+        'background-image': `linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(${this.imageUrl})`
+        // height: window.innerWidth > 600 ? (this.large ? 410 : 155) + 'px' : 200 + 'px'
       }
     }
   }
@@ -43,8 +44,14 @@ export default {
   margin: 10px;
   break-inside: avoid;
 
-  @include phone {
+  &.large {
+    height: 570px;
+  }
+
+  @include phablet {
     margin: 20px;
+    height: 200px !important;
+    width: 100%;
   }
 
   .text {
@@ -56,7 +63,7 @@ export default {
 
     $bottomColor: rgba(255, 255, 255, 0.7);
 
-    @include phone {
+    @include phablet {
       left: $gutter/2;
       width: calc(100% - #{$gutter});
     }
