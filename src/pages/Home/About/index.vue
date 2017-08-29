@@ -9,16 +9,20 @@
       p We gaan voor duurzame relaties met al onze opdrachtgevers en partners. Opdrachtgevers waar we al meer dan 10 jaar mee samenwerken zijn geen uitzondering. Wij worden blij wanneer onze oplossingen mensen daadwerkelijk verder helpen en toegevoegde waarde leveren.
       p Innovadis verbindt.
 
-      h2.dot Cultuur
+      h2.dot.culture Cultuur
 
-      h3 Vakmanschap
-      p We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.
+      .text-left
+        .text
+          h3 Vakmanschap
+          p We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.
 
-      h3 Persoonlijk
-      p We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.
+        .text.ml
+          h3 Persoonlijk
+          p We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.
 
-      h3 Innovatie
-      p De techniek heeft voor ons geen geheimen. Onze ontwikkelaars gaan geen uitdaging uit de weg, zij zoeken ze op. Ons eeuwige verlangen om te ontdekken brengt ons langs andere werelden en geeft ons nieuwe inzichten. Het stelt ons in staat om innovatieve oplossingen te ontwikkelen voor onze opdrachtgevers en hun klanten.
+        .text
+          h3 Innovatie
+          p De techniek heeft voor ons geen geheimen. Onze ontwikkelaars gaan geen uitdaging uit de weg, zij zoeken ze op. Ons eeuwige verlangen om te ontdekken brengt ons langs andere werelden en geeft ons nieuwe inzichten. Het stelt ons in staat om innovatieve oplossingen te ontwikkelen voor onze opdrachtgevers en hun klanten.
 
   .bottom-image
 
@@ -87,6 +91,23 @@ export default {
       animation-name: pulse;
       animation-duration: 2s;
       animation-iteration-count: infinite;
+    }
+
+    .culture {
+      margin-top: 200px;
+    }
+
+    .text {
+      margin: 200px 0;
+      max-width: 550px;
+
+      &.ml {
+        margin-left: 80px;
+      }
+
+      p {
+        margin-top: 5px;
+      }
     }
   }
 
