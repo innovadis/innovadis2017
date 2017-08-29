@@ -6,7 +6,9 @@
 
   solutions
 
-  lets-talk
+  send-box-with-slot(background)
+    h2.dot Gewoon even praten of heb je vragen
+
 </template>
 
 <script>
@@ -15,7 +17,9 @@ export default {
     Hero: require('./Hero'),
     SimpleFeed: require('src/components/Feed/Simple'),
     Solutions: require('./Solutions'),
-    LetsTalk: require('./LetsTalk')
+    SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
+
+    // LetsTalk: require('./LetsTalk')
   }
 }
 </script>

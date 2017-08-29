@@ -1,6 +1,6 @@
 <template lang="pug">
-.feed
-  h2.dot Innovadis in de wereld
+.feed(:class='{ dark: dark }')
+  h2.dot {{ title }}
   .items.container
     item(source='Instagram', title='Luck inmaken met Tekken is te makkelijk', imageUrl='http://gearnuke.com/wp-content/uploads/2017/06/Tekken-7-1.jpg', :large='true')
     .grid
@@ -13,6 +13,11 @@
 export default {
   components: {
     Item: require('./Item')
+  },
+
+  props: {
+    title: String,
+    dark: Boolean
   }
 }
 </script>
@@ -23,7 +28,6 @@ export default {
 
 .feed {
   width: 100vw;
-  background: radial-gradient(circle, #000000 0%, #082D3C 100%);
   padding: 100px 0;
   display: flex;
   align-content: center;
@@ -34,7 +38,6 @@ export default {
   }
 
   h2 {
-    color: white;
     text-align: center;
   }
 
@@ -48,6 +51,14 @@ export default {
     @include phablet {
       flex-wrap: nowrap;
       margin: 0;
+    }
+  }
+
+  &.dark {
+    background: radial-gradient(circle, #000000 0%, #082D3C 100%);
+
+    h2 {
+      color: white;
     }
   }
 }

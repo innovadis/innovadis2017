@@ -1,7 +1,8 @@
 <template lang="pug">
-.letstalk
+.sendboxwithslot(:class='{ flip: flip, background: background }')
   .container
-    h2.dot Gewoon even praten of heb je vragen
+    .flex.flex-column
+      slot
     send-box
 
 </template>
@@ -10,6 +11,11 @@
 export default {
   components: {
     SendBox: require('src/components/SendBox')
+  },
+
+  props: {
+    flip: Boolean,
+    background: Boolean
   }
 }
 </script>
@@ -18,11 +24,8 @@ export default {
 @import 'src/styles/variables';
 @import 'src/styles/layout';
 
-.letstalk {
+.sendboxwithslot {
   padding: 20px 0 100px 0;
-
-  background: url('/static/images/frontpage_corner.png') no-repeat bottom right;
-  background-size: contain;
 
   @include phablet {
     padding: 60px 20px;
@@ -47,6 +50,22 @@ export default {
         margin-top: 40px;
       }
     }
+  }
+
+  &.flip {
+    .container {
+      flex-direction: row-reverse;
+
+      .sendbox {
+        margin-left: 0;
+        margin-right: $gutter;
+      }
+    }
+  }
+
+  &.background {
+    background: url('/static/images/frontpage_corner.png') no-repeat bottom right;
+    background-size: contain;
   }
 }
 </style>

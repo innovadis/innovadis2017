@@ -61,9 +61,9 @@ export default {
     return {
       isSent: false,
 
-      name: 'sef',
-      email: 'asef@asef.asef',
-      phoneNumber: 'asef',
+      name: null,
+      email: null,
+      phoneNumber: null,
       remarks: null,
 
       loading: false,
@@ -110,12 +110,6 @@ export default {
         easing: 'easeInOutQuart',
         loop: true
       })
-
-      // await timeout(2000) // this should be the ajax delay
-
-      // a.pause()
-
-      // this.animateDone()
     },
 
     animateDone() {
