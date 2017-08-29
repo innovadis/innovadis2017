@@ -34,7 +34,8 @@ export default new Router({
         },
         {
           path: '/over',
-          name: 'about'
+          name: 'about',
+          component: require('src/pages/Home/About')
         },
         {
           path: '/contact',

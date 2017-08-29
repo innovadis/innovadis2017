@@ -345,7 +345,7 @@ $transition: 0.3s ease-in-out;
 
   header.sd-header {
     position: relative;
-    padding: $gutter / 2 0;
+    height: $headerHeight;
     display: flex;
     justify-content: space-between;
     align-items: center;
