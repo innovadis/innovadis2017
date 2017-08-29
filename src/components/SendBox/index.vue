@@ -1,5 +1,5 @@
 <template lang="pug">
-.sendbox
+.sendbox(:class='{ grow: grow }', ref='sendbox')
   transition(name='easeout-top', mode='out-in')
     .after(v-if='loading', key='divSent')
       .lines
@@ -13,6 +13,9 @@
     .before(v-else, key='divInputs')
       .top
         .inputs
+          h2.dot(v-if='title') {{ title }}
+          p(v-if='text') {{ text }}
+
           custom-input(
             placeholder='Naam',
             v-model='name',
@@ -57,13 +60,19 @@ export default {
     CustomInput: require('./CustomInput')
   },
 
+  props: {
+    grow: Boolean,
+    title: String,
+    text: String
+  },
+
   data() {
     return {
       isSent: false,
 
-      name: null,
-      email: null,
-      phoneNumber: null,
+      name: 'asef',
+      email: 'asef@asef.asfe',
+      phoneNumber: '123',
       remarks: null,
 
       loading: false,
@@ -117,7 +126,7 @@ export default {
         targets: this.$refs.checkShort,
         duration: 800,
         easing: 'easeInOutQuart',
-        left: 194,
+        left: this.$refs.sendbox.clientWidth / 2 - 26,
         top: 243,
         opacity: 1
       })
@@ -126,7 +135,7 @@ export default {
         targets: this.$refs.checkLong,
         duration: 800,
         easing: 'easeInOutQuart',
-        right: 189,
+        left: this.$refs.sendbox.clientWidth / 2 + 20,
         top: 200,
         opacity: 1
       })
@@ -180,7 +189,6 @@ export default {
 .sendbox {
   width: 440px;
   min-width: 440px;
-  height: 570px;
   border-radius: 5px;
   overflow: hidden;
   background: $inno-yellow;
@@ -195,7 +203,6 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
 
     .top {
       flex-grow: 1;
@@ -203,6 +210,10 @@ export default {
 
       .inputs {
         padding: $gutter;
+
+        p {
+          margin-bottom: 30px;
+        }
       }
     }
 
@@ -214,8 +225,8 @@ export default {
   }
 
   .after {
-    height: 100%;
     background: $inno-yellow;
+    height: 570px;
 
     .lines {
       position: relative;
@@ -264,15 +275,13 @@ export default {
       .short {
         height: 50px;
         transform: rotateZ(-45deg);
-        left: 0; // left: 194px; // end values
-        // top: 243px;
+        left: 0;
       }
 
       .long {
         height: 100px;
         transform: rotateZ(45deg);
-        right: 0; // right: 189px;
-        // top: 200px;
+        right: 0;
       }
 
       .text {
@@ -284,6 +293,20 @@ export default {
         left: 0px;
         opacity: 0;
         text-align: center;
+      }
+    }
+  }
+
+  &.grow {
+    width: auto;
+    flex-grow: 1;
+    box-shadow: 0px 5px 20px rgba(8, 45, 60, 0.1);
+
+    .before {
+      .top {
+        .inputs {
+          padding: $gutter*2;
+        }
       }
     }
   }

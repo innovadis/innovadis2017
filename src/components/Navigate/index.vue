@@ -18,10 +18,6 @@
     orb(:size='60', icon='car', :initialX='-80', :initialY='-30')
     a(href='https://www.google.com/maps?f=d&daddr=Innovadis+Enschede', target='_blank') Navigeer naar Innovadis
     .fa.fa-long-arrow-right
-
-  .insurance
-
-
 </template>
 
 <script>
