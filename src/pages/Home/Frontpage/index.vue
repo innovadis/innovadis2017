@@ -2,7 +2,7 @@
 .page-front
   hero
 
-  simple-feed
+  simple-feed(dark, title='Innovadis in de wereld')
 
   solutions
 

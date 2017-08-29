@@ -17,8 +17,15 @@ export default {
     initialY: Number,
     targetX: Number,
     targetY: Number,
-    size: Number,
-    blur: Number
+    blur: Number,
+    size: {
+      type: Number,
+      default: 50
+    },
+    z: {
+      type: Number,
+      default: 0
+    }
   },
 
   computed: {
@@ -32,7 +39,8 @@ export default {
         top: this.initialY + 'px',
         height: this.size + 'px',
         width: this.size + 'px',
-        filter: 'blur(' + this.blur + 'px)'
+        filter: 'blur(' + this.blur + 'px)',
+        'z-index': this.z
       }
     }
   },
@@ -66,14 +74,14 @@ export default {
   .orb {
     $size: 60px;
     $skewX: -9deg; // same as above
-    z-index: -1;
+    $rotate: -10deg;
 
     position: absolute;
     height: $size;
     width: $size; // background: $inno-blue;
     background: radial-gradient(circle at center, $inno-blue-light 20%, $inno-blue-dark 100%);
     border-radius: 47%;
-    transform: skewX($skewX) rotate(-10deg);
+    transform: skewX($skewX) rotate($rotate);
 
     display: flex;
     justify-content: center;
@@ -82,7 +90,7 @@ export default {
     .fa {
       color: white;
       font-size: 26px;
-      transform: skewX(-$skewX);
+      transform: skewX(-$skewX) rotate(-$rotate);
     }
   }
 }

@@ -8,6 +8,7 @@
         :initialY='orbLarge.y',
         :targetX='orbLarge.targetX',
         :targetY='orbLarge.targetY',
+        :z='-1'
         )
 
       orb(
@@ -16,7 +17,8 @@
         :initialY='orbMedium.y',
         :targetX='orbMedium.targetX',
         :targetY='orbMedium.targetY',
-        :blur='5'
+        :blur='5',
+        :z='-1'
         )
 
       orb(
@@ -25,7 +27,8 @@
         :initialY='orbSmall.y',
         :targetX='orbSmall.targetX',
         :targetY='orbSmall.targetY',
-        :blur='10'
+        :blur='10',
+        :z='-1'
         )
 
     .text

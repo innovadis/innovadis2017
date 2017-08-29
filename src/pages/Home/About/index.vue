@@ -67,7 +67,7 @@ export default {
     width: 100%;
     background-color: $inno-blue-dark; // margin-bottom: 600px;
     position: relative;
-    padding-top: $headerHeight + 100px;
+    padding-top: 140px;
 
     .pulse,
     &:after {

@@ -39,7 +39,8 @@ export default new Router({
         },
         {
           path: '/contact',
-          name: 'contact'
+          name: 'contact',
+          component: require('src/pages/Home/Contact')
         }
       ]
     }
