@@ -417,7 +417,6 @@ $transition: 0.3s ease-in-out;
 
         &:after {
           content: '.';
-          color: $inno-yellow;
           font-weight: bold;
           margin-left: 2px;
         }

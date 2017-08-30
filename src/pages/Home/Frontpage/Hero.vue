@@ -111,7 +111,7 @@ export default {
 @import 'src/styles/layout';
 
 .hero {
-  height: 100vh;
+  padding: 250px 0;
   width: 100vw;
   display: flex;
   flex-direction: column;
