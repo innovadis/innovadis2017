@@ -70,9 +70,9 @@ export default {
     return {
       isSent: false,
 
-      name: 'asef',
-      email: 'asef@asef.asfe',
-      phoneNumber: '123',
+      name: null,
+      email: null,
+      phoneNumber: null,
       remarks: null,
 
       loading: false,

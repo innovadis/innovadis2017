@@ -14,7 +14,7 @@ $gray3: rgba(0, 0, 0, 0.87);
 
 $gutter: 40px;
 $border-radius: 5px;
-$container-width: 800px;
+$container-width: 850px;
 $headerHeight: 100px;
 
 $shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
@@ -38,4 +38,8 @@ a {
 .container {
   max-width: $container-width;
   margin: 0 auto;
+
+  > .padded-container {
+    padding: 0 50px;
+  }
 }

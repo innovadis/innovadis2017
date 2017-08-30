@@ -1,0 +1,34 @@
+<template lang="pug">
+.page-jobs
+  hero
+
+  job-list
+
+  inno-lab
+
+  simple-feed(
+    title='Een kijkje in de keuken'
+    )
+
+  send-box-with-slot(flip)
+    h2.dot Gewoon even praten of staat je baan er niet tussen
+
+</template>
+
+<script>
+export default {
+  components: {
+    Hero: require('./Hero'),
+    JobList: require('./List'),
+    InnoLab: require('./InnoLab'),
+    SimpleFeed: require('src/components/Feed/Simple'),
+    SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import 'src/styles/variables';
+
+
+</style>

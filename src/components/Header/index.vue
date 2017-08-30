@@ -10,7 +10,7 @@
         li.sd-menu__item: router-link(:to='{ name: "about" }') Over ons
         li.sd-menu__item: router-link(:to='{ name: "world" }') Onze wereld
         li.sd-menu__item: router-link(:to='{ name: "contact" }') Contact
-        li.sd-menu__item: inno-button(label='Werken bij.', :to='{ name: "work" }')
+        li.sd-menu__item: inno-button(label='Werken bij.', :to='{ name: "jobs" }', yellow)
 
       .sd-dropdown-holder
         .sd-dropdown__arrow

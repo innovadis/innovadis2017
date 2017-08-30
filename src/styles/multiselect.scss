@@ -1,0 +1,35 @@
+@import 'src/styles/variables';
+
+.multiselect {
+  .multiselect__element {
+    background: $inno-yellow;
+    border-bottom: 1px solid $gray1;
+    height: 55px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .multiselect__option {
+      width: 100%;
+
+      &:after {
+        background: none;
+      }
+    }
+
+    .multiselect__option--highlight {
+      background: $inno-yellow;
+    }
+
+    .multiselect__option--selected {
+      background: $inno-yellow;
+    }
+  }
+
+  .multiselect__select {
+    &:before {
+      top: 80%;
+    }
+  }
+}

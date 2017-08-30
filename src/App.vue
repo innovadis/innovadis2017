@@ -13,6 +13,7 @@ export default {
 @import 'src/styles/layout';
 @import 'src/styles/transition';
 @import 'src/styles/fonts';
+@import 'src/styles/multiselect';
 
 #app {
   -webkit-font-smoothing: antialiased;
