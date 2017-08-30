@@ -56,9 +56,17 @@ export default {
     .container {
       flex-direction: row-reverse;
 
+      @include phone {
+        flex-direction: column;
+      }
+
       .sendbox {
         margin-left: 0;
         margin-right: $gutter;
+
+        @include phone {
+          margin-right: 0;
+        }
       }
     }
   }

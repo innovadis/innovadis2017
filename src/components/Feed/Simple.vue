@@ -1,6 +1,7 @@
 <template lang="pug">
 .feed(:class='{ dark: dark }')
-  h2.dot {{ title }}
+  .container
+    h2.dot {{ title }}
   .items.container
     item(source='Instagram', title='Luck inmaken met Tekken is te makkelijk', imageUrl='http://gearnuke.com/wp-content/uploads/2017/06/Tekken-7-1.jpg', :large='true')
     .grid
@@ -39,6 +40,10 @@ export default {
 
   h2 {
     text-align: center;
+
+    @include phone {
+      text-align: left;
+    }
   }
 
   .items {

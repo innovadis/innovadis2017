@@ -43,10 +43,15 @@ export default {
 
     .hours {
       margin: 0 20px 0 10px;
+      white-space: nowrap;
     }
 
     .tech {
       margin-left: 10px;
+      white-space: nowrap;
+      max-width: 120px;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
     .fa {

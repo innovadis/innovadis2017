@@ -8,11 +8,11 @@
 
   .contact.flex.flex-column.text-left.flex-justify-center.full-height
     h3 Innovadis
-    span Brouwerijstraat 1
-    span 7523 XC Enschede
+    span {{ address }}
+    span {{ postalCode }}
     br
-    a(href='tel:+31538507500') 053 - 850 75 00
-    a(href='mailto:info@innovadis.com') info@innovadis.com
+    a(:href='"tel:" + phoneNumber ') {{ phoneNumberLabel }}
+    a(:href='"mailto:" + email ') {{ email }}
 
   .navigate
     orb(:size='60', icon='car', :initialX='-80', :initialY='-30')
@@ -31,6 +31,8 @@ export default {
     Tree: require('./Tree'),
     Explosion: require('./Explosion')
   },
+
+  props: ['address', 'postalCode', 'phoneNumber', 'phoneNumberLabel', 'email'],
 
   data() {
     return {

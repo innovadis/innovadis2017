@@ -49,7 +49,7 @@ export default {
   }
 
   @include phablet {
-    margin: 20px;
+    margin: 20px 0;
     height: 200px !important;
     width: 100%;
   }

@@ -1,3 +1,5 @@
+@import 'src/styles/layout';
+
 $background: #082D3C;
 
 $inno-yellow: #ffca28;
@@ -40,7 +42,26 @@ a {
   max-width: $container-width;
   margin: 0 auto;
 
+  @include phone {
+    padding: 0 $gutter/2;
+  }
+
   > .padded-container {
     padding: 0 50px;
+
+    @include phone {
+      padding: 0;
+    }
+  }
+}
+
+.hero {
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include phone {
+    height: 200px;
   }
 }

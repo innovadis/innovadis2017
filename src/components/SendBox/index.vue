@@ -302,10 +302,19 @@ export default {
     flex-grow: 1;
     box-shadow: 0px 5px 20px rgba(8, 45, 60, 0.1);
 
+    @include phablet {
+      flex-grow: 0;
+      margin: 0 $gutter/2;
+    }
+
     .before {
       .top {
         .inputs {
           padding: $gutter*2;
+
+          @include phone {
+            padding: $gutter/2;
+          }
         }
       }
     }
