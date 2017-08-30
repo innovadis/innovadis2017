@@ -42,7 +42,7 @@ a {
   max-width: $container-width;
   margin: 0 auto;
 
-  @include phone {
+  @include phablet {
     padding: 0 $gutter/2;
   }
 
@@ -63,5 +63,37 @@ a {
 
   @include phone {
     height: 200px;
+  }
+}
+
+.job-details {
+  span,
+  .icon {
+    color: $gray2;
+  }
+
+  .icon {
+    margin-right: 10px;
+  }
+
+  .hours {
+    margin: 0 20px 0 10px;
+    white-space: nowrap;
+  }
+
+  .tech {
+    margin-left: 10px;
+    white-space: nowrap;
+    max-width: calc(100vw - 270px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @include phone {
+      max-width: 85vw;
+    }
+  }
+
+  .fa {
+    font-size: 32px;
   }
 }

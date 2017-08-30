@@ -41,7 +41,7 @@ export default {
 @import 'src/styles/layout';
 
 .hero {
-  background: url('https://placehold.it/720x1440');
+  background-image: url('https://placehold.it/720x1440');
 
   @include phone {
     position: relative;

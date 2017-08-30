@@ -15,7 +15,7 @@
         )
 
     .list.flex.flex-column
-      job-item(v-for='n in 5')
+      job-item(v-for='n in 5', :key='n')
 
 </template>
 

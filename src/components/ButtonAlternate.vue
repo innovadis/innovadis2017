@@ -16,7 +16,11 @@ export default {
 
   methods: {
     click() {
-      this.$router.push(this.to)
+      if (this.to) {
+        this.$router.push(this.to)
+      } else {
+        this.$emit('click')
+      }
     }
   }
 }

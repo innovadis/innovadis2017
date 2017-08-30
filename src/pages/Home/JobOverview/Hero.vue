@@ -12,7 +12,7 @@ export default {
 @import 'src/styles/variables';
 
 .hero {
-  background: url('https://placehold.it/720x1440');
+  background-image: url('https://placehold.it/720x1440');
 
   h1 {
     color: white;

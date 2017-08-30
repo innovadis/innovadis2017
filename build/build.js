@@ -17,8 +17,7 @@ spinner.start()
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
 
-  fs.copySync(path.join(__dirname, '..', 'static/root/_redirects'), path.join(__dirname, '..', 'dist/_redirects')) // TODO copy folder
-  fs.copySync(path.join(__dirname, '..', 'static/root/manifest.json'), path.join(__dirname, '..', 'dist/manifest.json'))
+  fs.copySync(path.join(__dirname, '..', 'static/root/_redirects'), path.join(__dirname, '..', 'dist/_redirects'))
 
   webpack(webpackConfig, function (err, stats) {
     spinner.stop()

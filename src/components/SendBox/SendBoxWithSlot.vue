@@ -28,7 +28,7 @@ export default {
   padding: 20px 0 100px 0;
 
   @include phablet {
-    padding: 60px 20px;
+    // padding: 60px 20px;
   }
 
   .container {

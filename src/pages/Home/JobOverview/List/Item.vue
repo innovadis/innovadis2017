@@ -2,7 +2,7 @@
 router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='{ name: "job", params: { id: 123 } }')
   .flex.flex-column
     h3.title Senior Front-end developer
-    .details.flex.flex-align-center
+    .job-details.flex.flex-align-center
       .fa.fa-clock-o
       span.hours 40 uur
       .fa.fa-laptop
@@ -30,33 +30,15 @@ export default {
     background: $gray0;
   }
 
+  .job-details {
+    .tech {
+      max-width: calc(100vw - 250px);
+    }
+  }
+
   .title {
     color: $inno-blue;
     margin-bottom: 20px;
-  }
-
-  .details {
-    span,
-    .fa {
-      color: $gray2;
-    }
-
-    .hours {
-      margin: 0 20px 0 10px;
-      white-space: nowrap;
-    }
-
-    .tech {
-      margin-left: 10px;
-      white-space: nowrap;
-      max-width: 120px;
-      text-overflow: ellipsis;
-      overflow: hidden;
-    }
-
-    .fa {
-      font-size: 32px;
-    }
   }
 }
 </style>

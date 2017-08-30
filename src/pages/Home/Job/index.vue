@@ -1,16 +1,18 @@
 <template lang="pug">
 .page-job
   .container
-    inno-button-alternate(yellow, label='Naar werken bij', left)
+    inno-button-alternate(yellow, label='Naar werken bij', left, :to='{ name: "jobs" }')
     h1.dot Senior Back-end developer
     p.intro There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
 
-    .details.flex.flex-align-center.flex-justify-between
-      .flex
-        .fa.fa-clock-o
-        span.hours 40 uur
-        .fa.fa-laptop
-        span.tech Vue.JS, HTML, CSS, JavaScript
+    .job-details.flex.flex-align-center.flex-justify-between.flex-column-phone.flex-align-start-phone
+      .flex.flex-column-phone
+        .hours.flex.flex-align-center
+          .icon.fa.fa-clock-o
+          span 40 uur
+        .tech.flex.flex-align-center
+          .icon.fa.fa-laptop
+          span Vue.JS, HTML, CSS, JavaScript
       inno-button(primary, label='Afspraak maken', small)
 
     .divider
@@ -54,6 +56,10 @@ export default {
 .page-job {
   padding-top: 100px;
 
+  @include phone {
+    padding-top: 0;
+  }
+
   .divider {
     border-bottom: 1px solid $gray1;
     margin: $gutter/2 0 $gutter 0;
@@ -62,22 +68,12 @@ export default {
     position: relative;
   }
 
-  .details {
-    span,
-    .fa {
-      color: $gray2;
-    }
-
-    .hours {
-      margin: 0 20px 0 10px;
-    }
-
-    .tech {
-      margin-left: 10px;
-    }
-
-    .fa {
-      font-size: 32px;
+  @include phone {
+    .job-details {
+      .tech {
+        margin: 15px 0;
+        margin-left: 5px;
+      }
     }
   }
 

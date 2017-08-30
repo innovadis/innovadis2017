@@ -148,14 +148,15 @@
 
   header.phone-header(:class='{ "open": $store.state.phoneMenuOpen }')
     .icon-menu(@click='togglePhoneMenuState')
-    img(src='/static/images/svg/logo.svg')
-    .items
-      h3.item.dot Aandachtsgebieden
-      h3.item.dot Producten
-      h3.item.dot Over ons
-      h3.item.dot Onze wereld
-      h3.item.dot Contact
-      inno-button.item(label='Werken bij.', yellow)
+    router-link.flex.flex-align-center.cp(:to='{ name: "home" }', tag='div')
+      img(src='/static/images/svg/logo.svg')
+    .items(v-if='$store.state.phoneMenuOpen')
+      h3.item.dot Aandachtsgebieden (todo)
+      router-link.item.dot(:to='{ name: "products" }', tag='h3') Producten
+      router-link.item.dot(:to='{ name: "about" }', tag='h3') Over ons
+      router-link.item.dot(:to='{ name: "world" }', tag='h3') Onze wereld
+      router-link.item.dot(:to='{ name: "contact" }', tag='h3') Contact
+      inno-button.item(label='Werken bij.', yellow, :to='{ name: "jobs" }')
 </template>
 
 <script>
@@ -163,7 +164,6 @@ export default {
   data() {
     return {
       selectedMenu: null,
-      phoneMenuOpen: false,
       lastScrollY: null,
       showHeader: true
     }
