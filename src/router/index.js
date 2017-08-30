@@ -52,6 +52,11 @@ const router = new Router({
           path: '/vacature/:id',
           name: 'job',
           component: require('src/pages/Home/Job')
+        },
+        {
+          path: '/cases/:name',
+          name: 'case',
+          component: require('src/pages/Home/Case')
         }
       ]
     }

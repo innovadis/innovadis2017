@@ -7,9 +7,11 @@ import store from './store'
 import Vuelidate from 'vuelidate'
 import Button from 'src/components/Button'
 import ButtonAlternate from 'src/components/ButtonAlternate'
+import VueInView from 'vueinview'
 
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
+Vue.use(VueInView)
 
 Vue.component('InnoButton', Button)
 Vue.component('InnoButtonAlternate', ButtonAlternate)

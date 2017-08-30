@@ -5,7 +5,7 @@
     .text
       h3 Participatie naar een hoger niveau.
       p Have seen an explosion in the popularity of herbs and alternative medicine in general, as people increasingly seek miracle cures that can help them when their doctor or regular pharmacy cannot. The connection to traditional communities also appeals to those who want to go back to a more spiritual
-      inno-button(label='Bekijk de case', primary, small)
+      inno-button(label='Bekijk de case', primary, small, :to='{ name: "case", params: { name: "socialhof" } }')
 </template>
 
 <script>

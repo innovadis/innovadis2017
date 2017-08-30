@@ -94,6 +94,7 @@ export default {
   &.primary {
     padding: 28px 40px;
     background: $inno-yellow;
+    min-width: 130px;
 
     &.small {
       padding: 16px 24px;
