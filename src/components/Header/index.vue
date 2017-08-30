@@ -393,7 +393,7 @@ $transition: 0.3s ease-in-out;
       display: flex;
       justify-content: space-between;
       width: 100vw;
-      max-width: 1200px;
+      max-width: $pageWidth;
       margin: 0 auto;
     }
 

@@ -1,5 +1,5 @@
 <template lang="pug">
-.jobitem.flex.flex-justify-between.flex-align-center
+router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='{ name: "job", params: { id: 123 } }')
   .flex.flex-column
     h3.title Senior Front-end developer
     .details.flex.flex-align-center

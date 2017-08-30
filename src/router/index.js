@@ -45,7 +45,12 @@ export default new Router({
         {
           path: '/vacatures',
           name: 'jobs',
-          component: require('src/pages/Home/Jobs')
+          component: require('src/pages/Home/JobOverview')
+        },
+        {
+          path: '/vacature/:id',
+          name: 'job',
+          component: require('src/pages/Home/Job')
         }
       ]
     }
