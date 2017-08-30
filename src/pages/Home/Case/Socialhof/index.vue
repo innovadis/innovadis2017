@@ -18,12 +18,16 @@
         p Socialhof is de communicatietool van De Vriezenhof. De tool brengt alle communicatie bij elkaar en het combineert bestaande tools op één plek die voor iedereen binnen De Vriezenhof toegankelijk is. Alle digitale communicatie vindt er plaats, van privé chats tot groep chats, belangrijke mededelingen, openbare berichten tot het delen van bestanden en het bijhouden van agenda's en dagmenu’s.
       phone-orbs
 
+  send-box-with-slot(flip)
+    h2.dot Vraag een demo aan
+    p Meer weten of wil je een demo? Neem dan contact met ons op of laat een berichtje achter. Vinden we leuk!
 </template>
 
 <script>
 export default {
   components: {
-    PhoneOrbs: require('./PhoneOrbs')
+    PhoneOrbs: require('./PhoneOrbs'),
+    SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
   }
 }
 </script>
@@ -47,6 +51,10 @@ export default {
   .hero {
     margin-top: $gutter;
     background-image: url('/static/cases/socialhof/banner.png');
+  }
+
+  .sendboxwithslot {
+    margin-top: 100px;
   }
 }
 </style>
