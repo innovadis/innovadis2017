@@ -56,9 +56,10 @@ export default {
   }
 
   @include phablet {
-    margin: 20px 0;
+    margin: 10px $gutter/2;
+    padding: 0;
     height: 200px !important;
-    width: 100%;
+    width: calc(100% - #{$gutter});
   }
 
   .text {

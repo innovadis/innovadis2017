@@ -1,7 +1,8 @@
 <template lang="pug">
-.complex.flex
+.complex.flex.flex-column-phone
   .controls.flex.flex-column.flex-justify-center
-    h1.dot Onze wereld
+    h1.dot.hidden-phone Onze wereld
+    .phone X Filters
     p Gebruik de filters hieronder om berichten te zoeken.
     multiselect(
       v-model='marketSelected',
@@ -52,9 +53,10 @@
           .date Datum:
             span {{ dialogItem.created }}
           .likes <3 {{ dialogItem.likes }}
-        a(:href='dialogItem.url', target='_blank')
-          orb(:size='40')
-          span Volgen
+        .wrapper
+          a(:href='dialogItem.url', target='_blank')
+            orb(:size='40')
+            span Volgen
       .image(:style='{ "background-image": "url(" + dialogItem.imageUrl + ")" }')
 
 </template>
@@ -133,6 +135,24 @@ export default {
     width: 300px;
     text-align: left;
 
+    .phone {
+      display: none;
+      color: white;
+      font-size: 26px;
+    }
+
+    @include phone {
+      margin: $gutter/2;
+      width: auto;
+      padding-top: $headerHeight + 30px;
+      padding-bottom: 120px;
+      text-align: center;
+
+      .phone {
+        display: block;
+      }
+    }
+
     h1 {
       font-size: 80px;
       color: white;
@@ -153,6 +173,11 @@ export default {
     width: 930px;
     padding-bottom: 100px;
 
+    @include phone {
+      overflow: auto;
+      width: auto;
+    }
+
     .news-items {
       height: 100%;
       padding: $gutter;
@@ -163,8 +188,22 @@ export default {
       flex-direction: row;
       flex-wrap: wrap;
 
+      @include phone {
+        width: auto;
+        padding: 0;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+      }
+
       .grid {
         display: grid;
+
+        @include phone {
+          display: flex;
+          flex-direction: column;
+          width: 100vw;
+        }
       }
     }
   }
@@ -174,6 +213,11 @@ export default {
     height: 100%;
     display: flex;
 
+    @include phone {
+      flex-direction: column-reverse;
+      width: 100vw;
+    }
+
     .info {
       width: calc(50% - #{$gutter*2});
       padding: 0 $gutter;
@@ -182,6 +226,16 @@ export default {
       flex-direction: column;
       justify-content: center;
       position: relative;
+
+      @include phone {
+        width: auto;
+        max-width: calc(100% - #{$gutter*2});
+        padding: $gutter/2;
+        justify-content: flex-start;
+        height: auto;
+        flex-grow: 1;
+        padding-bottom: 100px;
+      }
 
       .divider {
         border-bottom: 1px solid $gray1;
@@ -198,27 +252,33 @@ export default {
         }
       }
 
-      a {
-        font-weight: bold;
-        box-shadow: $shadow;
-        display: table;
-        height: 40px;
-        padding: 10px 20px;
-        border-radius: $border-radius;
-        transition: background-color 0.2s ease-out;
+      .wrapper {
         position: absolute;
         bottom: $gutter/2;
-        left: 230px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
 
-        &:hover {
-          background: $gray0;
-        }
+        a {
+          font-weight: bold;
+          box-shadow: $shadow;
+          display: table;
+          height: 40px;
+          padding: 10px 20px;
+          border-radius: $border-radius;
+          transition: background-color 0.2s ease-out;
 
-        span {
-          margin-left: 50px;
-          position: relative;
-          top: 7px;
-          color: $gray2;
+          &:hover {
+            background: $gray0;
+          }
+
+          span {
+            margin-left: 50px;
+            position: relative;
+            top: 7px;
+            color: $gray2;
+          }
         }
       }
     }
@@ -229,6 +289,11 @@ export default {
       background-repeat: no-repeat !important;
       height: 100%;
       width: 50%;
+
+      @include phone {
+        width: 100%;
+        height: 50%;
+      }
     }
   }
 }

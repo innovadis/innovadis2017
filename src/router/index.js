@@ -32,7 +32,10 @@ const router = new Router({
         {
           path: '/wereld',
           name: 'world',
-          component: require('src/pages/Home/World')
+          component: require('src/pages/Home/World'),
+          meta: {
+            hideFooter: true
+          }
         },
         {
           path: '/over',

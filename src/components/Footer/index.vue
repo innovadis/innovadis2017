@@ -1,5 +1,5 @@
 <template lang="pug">
-footer
+footer(v-if='!$route.meta.hideFooter')
   .top
     .container.flex.flex-justify-between.flex-align-baseline.flex-column-phablet
       .quote.flex.flex-column.text-left

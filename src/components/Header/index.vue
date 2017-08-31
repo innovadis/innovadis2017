@@ -609,6 +609,7 @@ $transition: 0.3s ease-in-out;
     width: 100vw;
     z-index: 1;
     display: none;
+    transition: background $transition;
 
     @include phablet {
       display: flex;
@@ -652,7 +653,7 @@ $transition: 0.3s ease-in-out;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      background: white;
+      // background: white;
       padding: 20px;
       border-bottom-right-radius: $border-radius;
       opacity: 0;
@@ -672,6 +673,8 @@ $transition: 0.3s ease-in-out;
     }
 
     &.open {
+      background: transparent;
+
       .icon-menu {
         background: transparent;
 

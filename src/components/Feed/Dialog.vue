@@ -4,7 +4,6 @@
       .modal-wrapper
         .modal-container
           slot
-          //- (@click="$emit('close')")
 </template>
 
 <script>
@@ -50,5 +49,10 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
   border-radius: $border-radius;
   overflow: hidden;
+
+  @include phone {
+    margin: $gutter/2;
+    width: calc(100% - #{$gutter*2});
+  }
 }
 </style>
