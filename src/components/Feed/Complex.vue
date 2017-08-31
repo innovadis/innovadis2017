@@ -126,7 +126,7 @@ export default {
 @import 'src/styles/variables';
 
 .complex {
-  height: 100vh;
+  height: calc(100vh - #{$headerHeight});
   width: 100vw;
   background: $background;
 
