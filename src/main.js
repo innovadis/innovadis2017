@@ -8,6 +8,9 @@ import Vuelidate from 'vuelidate'
 import Button from 'src/components/Button'
 import ButtonAlternate from 'src/components/ButtonAlternate'
 import VueInView from 'vueinview'
+import Moment from 'moment'
+
+Moment.locale('nl')
 
 Vue.config.productionTip = false
 Vue.use(Vuelidate)

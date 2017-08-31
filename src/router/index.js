@@ -31,7 +31,8 @@ const router = new Router({
         },
         {
           path: '/wereld',
-          name: 'world'
+          name: 'world',
+          component: require('src/pages/Home/World')
         },
         {
           path: '/over',

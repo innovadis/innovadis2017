@@ -36,16 +36,23 @@ export default {
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
-  height: 235px;
+  height: 170px;
   width: 415px - $gutter*2;
   border-radius: 5px;
   position: relative;
   padding: $gutter;
   margin: 10px;
   break-inside: avoid;
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   &.large {
-    height: 570px;
+    height: 440px;
   }
 
   @include phablet {
@@ -73,6 +80,8 @@ export default {
       border-bottom: 1px solid $bottomColor;
       padding-bottom: 10px;
       margin: 0;
+      max-height: 48px;
+      overflow: hidden;
     }
 
     .source {
