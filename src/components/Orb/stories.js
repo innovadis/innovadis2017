@@ -23,7 +23,7 @@ storiesOf('Orb', module)
   }))
   .add('orb with icon (nyi)', () => ({
     components: { Orb },
-    template: '<orb icon="beer"></orb>'
+    template: '<orb icon="birthday-cake"></orb>'
   }))
   .add('orb with x/y offset', () => ({
     components: { Orb },

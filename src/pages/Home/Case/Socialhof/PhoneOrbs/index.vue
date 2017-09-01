@@ -1,11 +1,11 @@
 <template lang="pug">
 .phone-container(v-inview:once.enter='animateOrbs')
   .phone
-  orb.orb(ref='orb0', icon='beer')
-  orb.orb(ref='orb1', icon='camera')
-  orb.orb(ref='orb2', icon='user')
-  orb.orb(ref='orb3', icon='film')
-  orb.orb(ref='orb4', icon='comments')
+  orb.orb(ref='orb0', icon='birthday-cake')
+  orb.orb(ref='orb1', icon='birthday-cake')
+  orb.orb(ref='orb2', icon='birthday-cake')
+  orb.orb(ref='orb3', icon='birthday-cake')
+  orb.orb(ref='orb4', icon='birthday-cake')
   orb-path.path(ref='path0')
   orb-path.path(ref='path1')
   orb-path.path(ref='path2')

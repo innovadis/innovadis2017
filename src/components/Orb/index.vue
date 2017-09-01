@@ -89,7 +89,7 @@ export default {
 
     i {
       color: white;
-      font-size: 36px;
+      font-size: 28px;
       transform: skewX(-$skewX) rotate(-$rotate);
     }
   }
