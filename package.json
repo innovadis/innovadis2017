@@ -11,6 +11,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "@storybook/vue": "^3.2.8",
     "animejs": "^2.0.2",
     "axios": "^0.16.2",
     "fs-extra": "^4.0.1",

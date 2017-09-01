@@ -49,7 +49,7 @@ export default {
 @import 'src/styles/layout';
 
 .button {
-  display: flex;
+  display: table;
   align-items: center;
   background: white;
   padding: 20px;
