@@ -358,7 +358,7 @@ $transition: 0.3s ease-in-out;
     align-items: center;
     margin: 0 auto;
     transform: translateY(-100px);
-    transition: transform 0.6s ease-out;
+    transition: transform 0.5s cubic-bezier(0, 0, 0.25, 1.05);
     background: white;
 
     .top-section {
@@ -660,8 +660,7 @@ $transition: 0.3s ease-in-out;
       top: 75px;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      // background: white;
+      align-items: flex-start; // background: white;
       padding: 20px;
       border-bottom-right-radius: $border-radius;
       opacity: 0;
