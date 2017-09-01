@@ -1,5 +1,15 @@
 <template lang="pug">
-.button(:class='{ disabled: disabled, yellow: yellow, blue: blue, primary: primary, inverted: inverted, inactive: inactive, small: small }', @click='click') {{ label }}
+.button(:class=`{
+  disabled: disabled,
+  yellow: yellow,
+  blue: blue,
+  primary: primary,
+  inverted: inverted,
+  inactive: inactive,
+  small: small,
+  transparent: transparent,
+  nomargin: nomargin
+  }`, @click='click') {{ label }}
 </template>
 
 <script>
@@ -13,7 +23,9 @@ export default {
     inverted: Boolean,
     to: Object,
     inactive: Boolean,
-    small: Boolean
+    small: Boolean,
+    nomargin: Boolean,
+    transparent: Boolean
   },
 
   methods: {
@@ -50,6 +62,10 @@ export default {
     font-size: 16px;
   }
 
+  &.nomargin {
+    margin: 0;
+  }
+
   &.disabled {
     color: $gray1;
     background: $gray0;
@@ -59,6 +75,11 @@ export default {
       color: $gray1 !important;
       background: $gray0 !important;
     }
+  }
+
+  &.transparent {
+    background: transparent;
+    color: white;
   }
 
   &.yellow {
@@ -96,16 +117,16 @@ export default {
     background: $inno-yellow;
     min-width: 130px;
 
-    &.small {
-      padding: 16px 24px;
-      margin: 0;
-    }
-
     &:hover {
       box-shadow: $shadow-large;
       color: $gray3;
       background: $inno-yellow-light;
     }
+  }
+
+  &.small {
+    padding: 16px 24px;
+    margin: 0;
   }
 
   &.inactive {

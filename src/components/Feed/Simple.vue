@@ -3,10 +3,10 @@
   .container
     h2.dot {{ title }}
   .items.container
-    item(source='Instagram', title='Luck inmaken met Tekken is te makkelijk', imageUrl='http://gearnuke.com/wp-content/uploads/2017/06/Tekken-7-1.jpg', :large='true')
-    .grid
-      item(source='Instagram', title='Tom\'s favoriete nummer is uitgelekt! ', imageUrl='https://www.top40.nl/uploads/subtitle/formats/40411/large.jpg')
-      item(source='Instagram', title='Innovadis 1', imageUrl='https://image-store.slidesharecdn.com/746e3ad9-43c8-4d51-b1dc-37f83e83bd48-original.png')
+      item(:item='instagram.items[0]', type='instagram', large)
+      .grid
+        item(:item='instagram.items[1]', type='instagram')
+        item(:item='instagram.items[2]', type='instagram')
 
 </template>
 
@@ -19,6 +19,12 @@ export default {
   props: {
     title: String,
     dark: Boolean
+  },
+
+  data() {
+    return {
+      instagram: require('./rickandmorty.json')
+    }
   }
 }
 </script>
@@ -51,6 +57,7 @@ export default {
     flex-direction: row;
     flex-wrap: wrap;
     overflow-x: auto;
+    overflow-y: hidden;
     max-width: $container-width + 70px;
 
     @include phablet {
