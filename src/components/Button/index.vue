@@ -8,7 +8,8 @@
   inactive: inactive,
   small: small,
   transparent: transparent,
-  nomargin: nomargin
+  nomargin: nomargin,
+  "with-icon": !!icon
   }`, @click='click'
   )
     i(v-if='icon', :class='"icons8-" + icon')
@@ -50,7 +51,6 @@ export default {
 
 .button {
   display: table;
-  align-items: center;
   background: white;
   padding: 20px;
   font-weight: bold;
@@ -70,6 +70,11 @@ export default {
   i {
     font-size: 36px;
     margin-right: 10px;
+  }
+
+  &.with-icon {
+    display: flex;
+    align-items: center;
   }
 
   &.nomargin {
