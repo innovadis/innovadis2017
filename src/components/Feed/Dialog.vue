@@ -42,6 +42,7 @@ export default {
   height: 75vh;
   max-height: 600px;
   width: 1200px;
+  max-width: 90vw;
   margin: 0px auto;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
