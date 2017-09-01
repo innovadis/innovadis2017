@@ -53,7 +53,7 @@ export default {
 
   @include phone {
     margin: $gutter/2;
-    width: calc(100% - #{$gutter*2});
+    max-width: calc(100vw - #{$gutter});
   }
 }
 </style>

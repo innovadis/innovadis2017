@@ -2,8 +2,12 @@
 .complex.flex.flex-column-phone
   .controls.flex.flex-column.flex-justify-center
     h1.dot.hidden-phone Onze wereld
-    .filter-phone(@click='controlsOpen = false') X Filters
+    .filter-phone(@click='controlsOpen = false')
+      i.icons8-delete
+      | Filters
+
     p Gebruik de filters hieronder om berichten te zoeken.
+
     multiselect(
       v-model='marketSelected',
       :options='marketOptions',
@@ -37,7 +41,10 @@
       inno-button(primary, small, label='Toepassen')
 
   .no-scrollbar(:class='{ down: controlsOpen }')
-    .filter-phone(@click='controlsOpen = true') = Filters
+    .filter-phone(@click='controlsOpen = true')
+      i.icons8-sorting-options
+      | Filters
+
     .news-items
       item(:item='instagram.items[0]', type='instagram', large)
       .grid
@@ -102,9 +109,17 @@ export default {
     text-align: center;
     cursor: pointer;
     padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      color: white;
+      font-size: 38px;
+      margin-right: 10px;
+    }
 
     @include phone {
-      display: block;
+      display: flex;
     }
   }
 
@@ -190,8 +205,11 @@ export default {
         @include phone {
           display: flex;
           flex-direction: column;
-          width: 100vw;
-          margin-left: $gutter;
+          width: 100vw; // margin-left: $gutter;
+
+          .item {
+            margin: 10px auto;
+          }
         }
       }
     }

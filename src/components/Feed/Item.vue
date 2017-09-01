@@ -1,5 +1,5 @@
 <template lang="pug">
-div
+.flex.flex-justify-center
   .item(
     :style='style',
     :class='{ large: large }',
@@ -20,7 +20,9 @@ div
         .flex.flex-justify-between.flex-align-center
           .date Datum:
             span {{ feedItem.created }}
-          .likes <3 {{ feedItem.likes }}
+          .likes
+            i.icons8-like-filled
+            | {{ feedItem.likes }}
         .wrapper
           a(:href='feedItem.url', target='_blank')
             orb(:size='40')
@@ -156,7 +158,7 @@ export default {
 
   @include phone {
     flex-direction: column-reverse;
-    width: 100vw;
+    // width: 100vw;
   }
 
   .info {
@@ -190,6 +192,17 @@ export default {
       span {
         margin-left: 10px;
         font-style: normal;
+      }
+    }
+
+    .likes {
+      display: flex;
+      align-items: center;
+
+      i {
+        font-size: 36px;
+        margin-right: 5px;
+        color: $inno-yellow;
       }
     }
 
