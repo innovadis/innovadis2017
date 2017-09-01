@@ -59,6 +59,7 @@ export default {
     @include phablet {
       flex-wrap: nowrap;
       margin: 0;
+      justify-content: center;
     }
   }
 
