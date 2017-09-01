@@ -33,11 +33,11 @@
     .image
 
   .logos
-    img.logo(src='https://www.jaarbeurs.nl/images/logo-share.png')
-    img.logo(src='https://www.jaarbeurs.nl/images/logo-share.png')
-    img.logo(src='https://www.jaarbeurs.nl/images/logo-share.png')
-    img.logo(src='https://www.jaarbeurs.nl/images/logo-share.png')
-    img.logo(src='https://www.jaarbeurs.nl/images/logo-share.png')
+    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
+    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
+    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
+    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
+    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
 </template>
 
 <script>

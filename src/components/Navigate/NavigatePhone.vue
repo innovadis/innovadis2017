@@ -18,7 +18,7 @@
 <script>
 export default {
   components: {
-    Orb: require('src/components/Orb'),
+    Orb: require('src/components/Orb')
   },
 
   props: ['address', 'postalCode', 'phoneNumber', 'phoneNumberLabel', 'email']
