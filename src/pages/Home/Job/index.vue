@@ -8,10 +8,10 @@
     .job-details.flex.flex-align-center.flex-justify-between.flex-column-phone.flex-align-start-phone
       .flex.flex-column-phone
         .hours.flex.flex-align-center
-          .icon.fa.fa-clock-o
+          i.mr.icons8-clock
           span 40 uur
         .tech.flex.flex-align-center
-          .icon.fa.fa-laptop
+          i.mr.icons8-fantasy
           span Vue.JS, HTML, CSS, JavaScript
       inno-button(primary, label='Afspraak maken', small)
 
@@ -97,5 +97,9 @@ export default {
   .sendboxwithslot {
     margin-top: $gutter;
   }
+}
+
+i.mr {
+  margin-right: 10px;
 }
 </style>

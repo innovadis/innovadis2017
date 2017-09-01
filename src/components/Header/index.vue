@@ -218,6 +218,8 @@ export default {
 
       if (!menuId) return
 
+      var menuBg = document.querySelector('.sd-dropdown__bg')
+
       //  get related sub menu
       var menuSub = document.querySelector('.sd-dropdown-menu[data-sub="' + menuId + '"]')
       //  get menu sub content
@@ -234,6 +236,9 @@ export default {
       var menuWrap = document.querySelector('.sd-dropdown__wrap')
       var orb = menuWrap.querySelector('.orb')
 
+      // holder.style.display = 'flex'
+
+      menuBg.style.visibility = 'visible'
       menuWrap.style.visibility = 'visible'
       menuWrap.style['box-shadow'] = '10px 20px 20px 0 rgba(0, 0, 0, 0.1)'
       menuWrap.style['border-top-color'] = '#002a90'
@@ -279,6 +284,7 @@ export default {
     }
 
     function closeDropdown() {
+      var menuBg = document.querySelector('.sd-dropdown__bg')
       var menuWrap = document.querySelector('.sd-dropdown__wrap')
       var orb = menuWrap.querySelector('.orb')
 
@@ -298,6 +304,7 @@ export default {
       // unset selected menu
       self.selectedMenu = null
 
+      menuBg.style.visibility = 'hidden'
       menuWrap.style.visibility = 'hidden'
       menuWrap.style['box-shadow'] = 'none'
       menuWrap.style['border-top-color'] = 'transparent'
@@ -478,6 +485,7 @@ $transition: 0.3s ease-in-out;
         border-radius: 5px;
         overflow: hidden;
         z-index: -1;
+        visibility: hidden;
 
         &-bottom {
           background-color: #fafafa;

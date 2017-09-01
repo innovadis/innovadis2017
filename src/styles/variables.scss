@@ -68,12 +68,12 @@ a {
 
 .job-details {
   span,
-  .icon {
+  i {
     color: $gray2;
   }
 
-  .icon {
-    margin-right: 10px;
+  i {
+    font-size: 32px;
   }
 
   .hours {
@@ -91,9 +91,5 @@ a {
     @include phone {
       max-width: 85vw;
     }
-  }
-
-  .fa {
-    font-size: 32px;
   }
 }

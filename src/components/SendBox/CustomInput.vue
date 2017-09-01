@@ -23,7 +23,7 @@
 
   transition(name='fade')
     .valid(v-if='valid')
-      .fa.fa-check
+      i.icons8-ok
 </template>
 
 <script>
@@ -101,12 +101,9 @@ export default {
     right: 0;
     top: 4px;
 
-    .fa {
-      font-size: 18px;
-      border: 2px solid $inno-yellow;
+    i {
+      font-size: 36px;
       color: $inno-yellow;
-      border-radius: 50%;
-      padding: 5px;
     }
   }
 }

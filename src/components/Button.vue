@@ -9,7 +9,10 @@
   small: small,
   transparent: transparent,
   nomargin: nomargin
-  }`, @click='click') {{ label }}
+  }`, @click='click'
+  )
+    i(v-if='icon', :class='"icons8-" + icon')
+    | {{ label }}
 </template>
 
 <script>
@@ -25,7 +28,8 @@ export default {
     inactive: Boolean,
     small: Boolean,
     nomargin: Boolean,
-    transparent: Boolean
+    transparent: Boolean,
+    icon: String
   },
 
   methods: {
@@ -45,7 +49,8 @@ export default {
 @import 'src/styles/layout';
 
 .button {
-  display: table;
+  display: flex;
+  align-items: center;
   background: white;
   padding: 20px;
   font-weight: bold;
@@ -60,6 +65,11 @@ export default {
 
   @include phone {
     font-size: 16px;
+  }
+
+  i {
+    font-size: 36px;
+    margin-right: 10px;
   }
 
   &.nomargin {
@@ -87,6 +97,10 @@ export default {
     color: $inno-yellow;
     text-transform: none;
 
+    i {
+      color: $inno-yellow;
+    }
+
     &.inverted {
       background: $inno-yellow;
       color: $gray3;
@@ -101,6 +115,10 @@ export default {
     background: white;
     color: $inno-blue;
     text-transform: none;
+
+    i {
+      color: $inno-blue;
+    }
 
     &.inverted {
       background: $inno-blue;
@@ -133,9 +151,17 @@ export default {
     color: $gray3;
     box-shadow: none;
 
+    i {
+      color: $gray3;
+    }
+
     &:hover {
       color: $gray3;
       box-shadow: $shadow;
+
+      i {
+        color: $gray3;
+      }
     }
   }
 
@@ -143,6 +169,10 @@ export default {
     // background: $inno-yellow-light;
     color: $inno-yellow;
     box-shadow: 4px 2px 10px 0 rgba(0, 0, 0, 0.15);
+
+    i {
+      color: $inno-yellow;
+    }
   }
 }
 </style>

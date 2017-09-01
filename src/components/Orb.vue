@@ -4,7 +4,7 @@
     ref='orb',
     :style='style'
     )
-    .fa(:class='[iconClass]')
+    i(:class='[iconClass]')
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
 
   computed: {
     iconClass() {
-      return 'fa-' + this.icon
+      return 'icons8-' + this.icon
     },
 
     style() {
@@ -87,9 +87,9 @@ export default {
     justify-content: center;
     align-items: center;
 
-    .fa {
+    i {
       color: white;
-      font-size: 26px;
+      font-size: 36px;
       transform: skewX(-$skewX) rotate(-$rotate);
     }
   }

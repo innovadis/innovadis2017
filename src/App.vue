@@ -10,6 +10,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import 'src/assets/icons/scss/styles';
 @import 'src/styles/layout';
 @import 'src/styles/transition';
 @import 'src/styles/fonts';

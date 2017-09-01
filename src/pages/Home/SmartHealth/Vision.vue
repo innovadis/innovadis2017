@@ -5,9 +5,9 @@
 
   .select-box
     .options
-      inno-button(label='Lore ipsum dolar', blue, :inactive='selectedOption !== 0', @click='selectedOption = 0')
-      inno-button(label='Lore ipsum dolar', blue, :inactive='selectedOption !== 1', @click='selectedOption = 1')
-      inno-button(label='Lore ipsum dolar', blue, :inactive='selectedOption !== 2', @click='selectedOption = 2')
+      inno-button(label='Lore ipsum dolar', icon='refresh' blue, :inactive='selectedOption !== 0', @click='selectedOption = 0')
+      inno-button(label='Lore ipsum dolar', icon='router', blue, :inactive='selectedOption !== 1', @click='selectedOption = 1')
+      inno-button(label='Lore ipsum dolar', icon='database-view', blue, :inactive='selectedOption !== 2', @click='selectedOption = 2')
 
     transition(name='fade', mode='out-in')
       .box(v-if='selectedOption === 0', key='box0')

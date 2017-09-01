@@ -1,8 +1,8 @@
 <template lang="pug">
 .button(@click='click', :class='{ yellow: yellow }')
-  .arrow(v-if='left') <--
+  .arrow(v-if='left'): i.icons8-advance.flip
   | {{ label }}
-  .arrow(v-if='!left') -->
+  .arrow(v-if='!left'): i.icons8-advance
 </template>
 
 <script>
@@ -33,22 +33,29 @@ export default {
   cursor: pointer;
   color: white;
   padding: 15px 0;
-  transition: all 0.2s ease-in-out;
-  transform-origin: left center;
   display: flex;
+  align-items: center;
 
   &.yellow {
     color: $inno-yellow;
 
     &:hover {
       color: $inno-yellow-dark;
-      transform: scale(1.1);
     }
   }
 
   .arrow {
-    margin: 0 10px;
-    color: $inno-yellow;
+    display: flex;
+
+    i {
+      font-size: 28px;
+      margin: 0 10px;
+      color: $inno-yellow;
+
+      &.flip {
+        transform: rotate(180deg);
+      }
+    }
   }
 }
 </style>

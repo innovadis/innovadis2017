@@ -72,7 +72,7 @@ footer {
     }
 
     .quote {
-      max-width: 380px;
+      max-width: 280px;
 
       @include phablet {
         margin-bottom: 40px;

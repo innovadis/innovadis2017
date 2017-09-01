@@ -3,9 +3,9 @@ router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='
   .flex.flex-column
     h3.title Senior Front-end developer
     .job-details.flex.flex-align-center
-      .fa.fa-clock-o
+      i.icons8-clock
       span.hours 40 uur
-      .fa.fa-laptop
+      i.icons8-fantasy
       span.tech Vue.JS, HTML, CSS, JavaScript
 
   inno-button-alternate(yellow)

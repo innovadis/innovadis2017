@@ -11,7 +11,7 @@
     orb(:size='60', icon='car', :initialX='-30', :initialY='-70')
     .flex.flex-align-center
       a(href='https://www.google.com/maps?f=d&daddr=Innovadis+Enschede', target='_blank') Navigeer naar Innovadis
-      .fa.fa-long-arrow-right
+      i.icons8-advance
 
 </template>
 
@@ -55,6 +55,10 @@ export default {
 
     a {
       margin-right: 10px;
+    }
+
+    i {
+      font-size: 36px;
     }
   }
 }
