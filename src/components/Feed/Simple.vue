@@ -46,10 +46,6 @@ export default {
 
   h2 {
     text-align: center;
-
-    @include phone {
-      text-align: left;
-    }
   }
 
   .items {
