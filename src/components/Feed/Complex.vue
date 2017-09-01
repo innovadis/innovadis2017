@@ -1,8 +1,8 @@
 <template lang="pug">
-.complex.flex.flex-column-phone
+.complex.flex.flex-column-phablet(:class='{ "controls-open": controlsOpen }')
   .controls.flex.flex-column.flex-justify-center
-    h1.dot.hidden-phone Onze wereld
-    .filter-phone(@click='controlsOpen = false')
+    h1.dot.hidden-phablet Onze wereld
+    .filter-phablet(@click='controlsOpen = false')
       i.icons8-delete
       | Filters
 
@@ -41,7 +41,7 @@
       inno-button(primary, small, label='Toepassen')
 
   .no-scrollbar(:class='{ down: controlsOpen }')
-    .filter-phone(@click='controlsOpen = true')
+    .filter-phablet(@click='controlsOpen = true')
       i.icons8-sorting-options
       | Filters
 
@@ -98,11 +98,15 @@ export default {
   width: 100vw;
   background: $background;
 
-  @include phone {
+  @include phablet {
     height: calc(100vh - #{$headerHeight} + 25px);
+
+    &.controls-open {
+      overflow: hidden;
+    }
   }
 
-  .filter-phone {
+  .filter-phablet {
     display: none;
     color: white;
     font-size: 26px;
@@ -118,7 +122,7 @@ export default {
       margin-right: 10px;
     }
 
-    @include phone {
+    @include phablet {
       display: flex;
     }
   }
@@ -128,7 +132,7 @@ export default {
     width: 300px;
     text-align: left;
 
-    @include phone {
+    @include phablet {
       margin: $gutter/2;
       width: auto;
       height: calc(100vh - #{$headerHeight*2});
@@ -137,13 +141,14 @@ export default {
       background: $background;
       margin: 0;
       padding: 20px;
+      align-self: center;
     }
 
     .buttons {
       display: none;
       margin-top: 10px;
 
-      @include phone {
+      @include phablet {
         display: flex;
       }
     }
@@ -168,7 +173,7 @@ export default {
     width: 930px;
     padding-bottom: 100px;
 
-    @include phone {
+    @include phablet {
       overflow: auto;
       width: 100vw;
       height: 100vh;
@@ -191,7 +196,7 @@ export default {
       flex-direction: row;
       flex-wrap: wrap;
 
-      @include phone {
+      @include phablet {
         width: auto;
         padding: 0;
         height: auto;
@@ -202,10 +207,10 @@ export default {
       .grid {
         display: grid;
 
-        @include phone {
+        @include phablet {
           display: flex;
           flex-direction: column;
-          width: 100vw; // margin-left: $gutter;
+          width: 100vw;
 
           .item {
             margin: 10px auto;

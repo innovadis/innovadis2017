@@ -41,7 +41,7 @@ export default {
     transition: all 0.3s ease-in-out, height 1s ease-in-out;
     // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
 
-    @include phone {
+    @include phablet {
       padding-top: $headerHeight - 25px;
     }
   }
