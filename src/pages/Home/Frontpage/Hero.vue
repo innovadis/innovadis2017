@@ -34,7 +34,7 @@
     .text
       h1 Wij verbinden,
       typing-text
-      p.intro There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
+      p.intro Als een vooruitstrevende technische organisatie geloven wij, naast de kracht van de techniek vooral in de kracht van de mens. Wij vinden dat techniek en internet op die manier bijdragen aan een betere wereld.
       .buttons.flex.flex-justify-center.flex-column-phone.flex-align-center-phone
         inno-button(label='Smart Industry', primary, :to='{ name: "smart-industry" }')
         inno-button(label='Smart Health', primary, :to='{ name: "smart-health" }')
