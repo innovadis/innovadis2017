@@ -180,7 +180,7 @@ export default {
         return
       }
 
-      if (window.scrollY === 0 || window.scrollY < this.lastScrollY) {
+      if (window.scrollY <= 0 || window.scrollY < this.lastScrollY) {
         this.showHeader = true
       } else {
         this.showHeader = false
