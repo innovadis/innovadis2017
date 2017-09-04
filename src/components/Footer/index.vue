@@ -4,7 +4,7 @@ footer(v-if='!$route.meta.hideFooter')
     .container.flex.flex-justify-between.flex-align-baseline.flex-column-phablet
       .quote.flex.flex-column.text-left
         h2.title.dot innovadis
-        p Innovadis is een vooruitstrevende technische organisatie die oplossingen bouwt voor de sectoren Smart Health en Smart Industry.
+        p Voor de industry en health bouwen en koppelen we smart systemen waardoor routinetaken verdwijnen en er tijd overblijft voor zaken die echt belangrijk zijn. 
 
       .info.flex.flex-column.text-left
         h3.title.dot Gegevens
@@ -29,7 +29,7 @@ footer(v-if='!$route.meta.hideFooter')
 
       .right
         .links.flex.flex-justify-between
-          router-link(:to='{ name: "world" }') Nieuws.
+          router-link(:to='{ name: "world" }') Onze wereld.
           router-link(:to='{ name: "jobs" }') Werken bij.
           router-link(:to='{ name: "contact" }') Contact.
 
