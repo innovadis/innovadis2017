@@ -48,8 +48,6 @@ export default {
 
   .download {
     line-height: 36px;
-    position: relative;
-    left: -21px;
 
     a {
       margin-left: 5px;
