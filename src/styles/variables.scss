@@ -22,7 +22,6 @@ $pageWidth: 1200px;
 
 $shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15);
 $shadow-large: 10px 20px 20px 0 rgba(8, 45, 60, 0.1); // Note: this is used in Header.vue JS, update there too
-
 a {
   text-decoration: none;
 }
@@ -31,10 +30,31 @@ a {
   cursor: pointer;
 }
 
+.pt {
+  padding-top: 100px;
+}
+
 .dot {
   &:after {
     content: '.';
     color: $inno-yellow;
+  }
+}
+
+ul {
+  li {
+    list-style-type: none;
+    position: relative;
+    margin: 20px 0;
+
+    &:before {
+      content: '• ';
+      color: $inno-yellow;
+      position: absolute;
+      left: -22px;
+      font-size: 20px;
+      top: 2px;
+    }
   }
 }
 
@@ -46,7 +66,7 @@ a {
     padding: 0 $gutter/2;
   }
 
-  > .padded-container {
+  >.padded-container {
     padding: 0 50px;
 
     @include phone {

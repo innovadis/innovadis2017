@@ -13,14 +13,14 @@ footer(v-if='!$route.meta.hideFooter')
             span Brouwerijstraat 1
             span 7523 XC Enschede
           .contact.flex.flex-column
-            span +31 (0)53 850 7500
-            span info@innovadis.com
+            span: a(href='tel:+31538507500') +31 (0)53 850 7500
+            span: a(href='mailto:info@innovadis.com') info@innovadis.com
 
       .social.flex.flex-column.text-left
         h3.title.dot Blijf op de hoogte
-        a(href='', target='_blank') Facebook
-        a(href='', target='_blank') Instagram
-        a(href='', target='_blank') LinkedIn
+        a(href='https://www.facebook.com/Innovadis/', target='_blank') Facebook
+        a(href='https://www.instagram.com/innovadis/', target='_blank') Instagram
+        a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
 
   .bottom
     .container.flex.flex-justify-between.flex-column-reverse-phablet
@@ -29,10 +29,9 @@ footer(v-if='!$route.meta.hideFooter')
 
       .right
         .links.flex.flex-justify-between
-          router-link(to='/todo') Nieuws.
-          router-link(to='/todo') Contact.
-          router-link(to='/todo') Werken bij.
-          router-link(to='/todo') Support.
+          router-link(:to='{ name: "world" }') Nieuws.
+          router-link(:to='{ name: "jobs" }') Werken bij.
+          router-link(:to='{ name: "contact" }') Contact.
 
 </template>
 
@@ -57,7 +56,7 @@ footer {
   .top {
     background: url('/static/images/svg/footer_orbs.svg'), linear-gradient(270deg, $inno-blue 0%, $inno-blue-dark 100%);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 100% contain;
     background-position: center bottom;
     padding: 100px $gutter * 2 100px $gutter;
 
@@ -164,10 +163,8 @@ footer {
 
   a {
     transition: all 0.2s ease-in-out;
-    transform-origin: left;
 
     &:hover {
-      transform: scale(1.2);
       color: $inno-yellow;
     }
   }

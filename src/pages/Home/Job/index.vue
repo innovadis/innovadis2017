@@ -1,6 +1,6 @@
 <template lang="pug">
 .page-job
-  .container
+  .container.pt
     inno-button-alternate(yellow, label='Naar werken bij', left, :to='{ name: "jobs" }')
     h1.dot Senior Back-end developer
     p.intro There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
@@ -54,8 +54,6 @@ export default {
 @import 'src/styles/variables';
 
 .page-job {
-  padding-top: 100px;
-
   @include phone {
     padding-top: 0;
   }
@@ -73,23 +71,6 @@ export default {
       .tech {
         margin: 15px 0;
         margin-left: 5px;
-      }
-    }
-  }
-
-  ul {
-    li {
-      list-style-type: none;
-      position: relative;
-      margin: 20px 0;
-
-      &:before {
-        content: '• ';
-        color: $inno-yellow;
-        position: absolute;
-        left: -22px;
-        font-size: 20px;
-        top: 2px;
       }
     }
   }

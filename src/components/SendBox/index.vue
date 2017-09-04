@@ -82,12 +82,14 @@ export default {
 
   methods: {
     async send() {
+      if (this.$v.$invalid) return
+
       this.animateLoading()
 
       const startTimeMs = (new Date()).getTime()
 
       await this.$store.dispatch('message/send', {
-        to: 'c.maks@innovadis.com',
+        to: 'c.maks@innovadis.com', // TODO
         from: this.email,
         name: this.name,
         phone: this.phoneNumber,

@@ -23,8 +23,8 @@
             .sd-dropdown-menu__content
               .top-section
                 .attention-items
-                  router-link(:to='{ name: "smart-health" }') Smart health
-                  router-link(:to='{ name: "smart-industry" }') Smart industry
+                  router-link(:to='{ name: "smart-industry" }') Smart Industry
+                  router-link(:to='{ name: "smart-health" }') Smart Health
 
                 //- .col-2
                   ul
@@ -436,7 +436,11 @@ $transition: 0.3s ease-in-out;
       &__item {
         position: relative;
 
-        &:hover>.sub-menu-shadow {
+        &:before {
+          content: none;
+        }
+
+        &:hover > .sub-menu-shadow {
           display: block;
         }
 

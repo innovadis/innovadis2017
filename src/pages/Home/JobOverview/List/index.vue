@@ -2,7 +2,7 @@
 .joblist
   .container
     h2.dot Bekijk de vacatures
-    p Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.
+    p Zoals de brouwer van zijn bier houdt, zo houden onze ontwerpers van hun getekende vormen en onze ontwikkelaars van hun geschreven code. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek.  Bekijk onze vacatures en wie weet maak jij binnenkort deel uit van ons gepassioneerde team. Bel of mail voor een vrijblijvend oriënterend gesprek.
 
     .flex
       multiselect(

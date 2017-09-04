@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from 'src/store'
+import SmoothScroll from 'smooth-scroll'
 
 Vue.use(Router)
 
@@ -61,6 +62,11 @@ const router = new Router({
           path: '/cases/:name',
           name: 'case',
           component: require('src/pages/Home/Case')
+        },
+        {
+          path: '/event/:name',
+          name: 'event',
+          component: require('src/pages/Home/Event')
         }
       ]
     }
@@ -69,6 +75,9 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   store.commit('setPhoneMenuState', false)
+
+  const scroll = new SmoothScroll()
+  scroll.animateScroll(0)
 
   next()
 })
