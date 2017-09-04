@@ -1,6 +1,6 @@
 <template lang="pug">
 .feed(:class='{ dark: dark }')
-  .container.flex.flex-justify-start.full-width
+  .title.container
     h2.dot {{ title }}
   .items.container
       item(:item='instagram.items[0]', type='instagram', large)
@@ -40,12 +40,13 @@ export default {
   align-content: center;
   flex-direction: column;
 
-  @include phablet {
-    padding: 60px 0;
+  h2 {
+    text-align: center; // ios
   }
 
-  h2 {
-    // text-align: left;
+  @include phablet {
+    padding: 60px 0;
+    justify-content: center;
   }
 
   .items {

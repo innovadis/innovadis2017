@@ -42,7 +42,8 @@ export default {
 @import 'src/styles/variables';
 
 .vision {
-  padding: 100px 0;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
   h2.short {
     max-width: 400px;

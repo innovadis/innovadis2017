@@ -635,7 +635,8 @@ $transition: 0.3s ease-in-out;
       width: $width;
       background: black;
       position: absolute;
-      left: 20px;
+      left: 25px;
+      top: 35px;
       transition: background $transition;
 
       &:after,

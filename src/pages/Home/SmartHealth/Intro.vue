@@ -18,6 +18,10 @@ export default {
 div.intro {
   padding: 250px 0 $gutter 0;
 
+  @include phablet {
+    padding-top: 100px;
+  }
+
   p {
     margin-right: 100px;
   }

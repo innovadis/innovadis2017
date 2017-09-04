@@ -38,9 +38,7 @@ export default {
   .page-wrapper {
     padding-top: $headerHeight;
     transform-origin: top;
-    transition: all 0.3s ease-in-out, height 1s ease-in-out;
-    // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
-
+    transition: all 0.3s ease-in-out, height 1s ease-in-out; // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
     @include phablet {
       padding-top: $headerHeight - 25px;
     }
@@ -52,9 +50,16 @@ export default {
     .page-wrapper {
       overflow: hidden;
       padding-top: 0;
-      transform: translateX(calc(100vw - 75px));
       border-radius: $border-radius;
       box-shadow: -8px 0px 10px $gray1;
+
+      @include phone {
+        transform: translateX(calc(100vw - 75px));
+      }
+
+      @include tablet {
+        transform: translateX(calc(500px));
+      }
     }
   }
 }

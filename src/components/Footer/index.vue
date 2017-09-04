@@ -8,7 +8,7 @@ footer(v-if='!$route.meta.hideFooter')
 
       .info.flex.flex-column.text-left
         h3.title.dot Gegevens
-        .flex.flex-justify-between.flex-column-phablet
+        .flex.flex-justify-between.flex-column-phone
           .flex.flex-column
             span Brouwerijstraat 1
             span 7523 XC Enschede
@@ -23,10 +23,7 @@ footer(v-if='!$route.meta.hideFooter')
         a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
 
   .bottom
-    .container.flex.flex-justify-between.flex-column-reverse-phablet
-      .left
-        router-link(:to='{ name: "conditions" }') Algemene voorwaarden
-
+    .container.flex.flex-justify-end.flex-column-reverse-phablet
       .right
         .links.flex.flex-justify-between
           router-link(:to='{ name: "world" }') Onze wereld.
@@ -77,6 +74,10 @@ footer {
         margin-bottom: 40px;
       }
 
+      @include tablet {
+        max-width: 500px;
+      }
+
       .title {
         margin: 0;
         font-size: 30px;
@@ -100,8 +101,12 @@ footer {
       }
 
       .contact {
-        @include phablet {
+        @include phone {
           margin-top: 20px;
+        }
+
+        @include phablet {
+          margin-left: 80px;
         }
       }
 
@@ -130,17 +135,6 @@ footer {
 
     a {
       color: $gray3;
-    }
-
-    .left {
-      @include phablet {
-        margin-top: $gutter/2;
-        text-align: center;
-      }
-
-      a {
-        font-size: 14px;
-      }
     }
 
     .right {

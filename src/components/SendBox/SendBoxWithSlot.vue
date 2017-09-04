@@ -37,7 +37,7 @@ export default {
     align-items: center;
 
     @include phablet {
-      flex-direction: column;
+      flex-direction: column !important;
       max-width: 450px;
     }
 

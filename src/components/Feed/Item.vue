@@ -17,7 +17,7 @@
       .info
         h3 {{ feedItem.title }}
         .divider
-        .flex.flex-justify-between.flex-align-center
+        .flex.flex-justify-between.flex-align-center.flex-column-phablet
           .date Datum:
             span {{ feedItem.created }}
           .likes

@@ -40,7 +40,7 @@
       inno-button.ma-0(label='Reset', nomargin, small, transparent)
       inno-button(primary, small, label='Toepassen')
 
-  .no-scrollbar(:class='{ down: controlsOpen }')
+  .no-scrollbar
     .filter-phablet(@click='controlsOpen = true')
       i.icons8-sorting-options
       | Filters
@@ -100,10 +100,6 @@ export default {
 
   @include phablet {
     height: calc(100vh - #{$headerHeight} + 25px);
-
-    &.controls-open {
-      overflow: hidden;
-    }
   }
 
   .filter-phablet {
@@ -134,14 +130,17 @@ export default {
 
     @include phablet {
       margin: $gutter/2;
-      width: auto;
-      height: calc(100vh - #{$headerHeight*2});
-      text-align: center;
-      position: absolute;
+      width: calc(100vw - #{$gutter});
+      min-height: calc(100vh - #{$headerHeight}); // min-height: 100vh;
+      text-align: center; // position: absolute;
+      // top: 0;
+      // left: 0;
       background: $background;
       margin: 0;
       padding: 20px;
       align-self: center;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(-100vh);
     }
 
     .buttons {
@@ -176,14 +175,16 @@ export default {
     @include phablet {
       overflow: auto;
       width: 100vw;
-      height: 100vh;
+      min-height: 100vh;
       z-index: 2;
+      padding-top: $headerHeight - 25px; // position: absolute;
+      // top: $headerHeight - 10px;
+      // left: 0;
       background: $background;
-      transition: margin-top 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      transform: translateY(-100vh);
 
-      &.down {
-        margin-top: 100vh;
-      }
+      &.down {}
     }
 
     .news-items {
@@ -195,6 +196,10 @@ export default {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+
+      @media (max-width: 1400px) {
+        width: 410px;
+      }
 
       @include phablet {
         width: auto;
@@ -216,6 +221,20 @@ export default {
             margin: 10px auto;
           }
         }
+      }
+    }
+  }
+
+  &.controls-open {
+    @include phablet {
+      overflow: hidden;
+
+      .controls {
+        transform: translateY(0);
+      }
+
+      .no-scrollbar {
+        transform: translateY(0);
       }
     }
   }

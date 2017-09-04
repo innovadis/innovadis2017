@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name='modal')
-    .modal-mask(@click='click')
+    .modal-mask(@click='click', @touchstart='click')
       .modal-wrapper
         .modal-container
           slot
@@ -10,7 +10,7 @@
 export default {
   methods: {
     click(e) {
-      if ((new Array(...e.path[0].classList)).includes('modal-wrapper')) { // TODO this prob doesnt work on IE and safari maybe
+      if ((new Array(...e.path[0].classList)).includes('modal-wrapper')) { // TODO this doesnt work on safari
         this.$emit('close')
       }
     }
