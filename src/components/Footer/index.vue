@@ -25,7 +25,7 @@ footer(v-if='!$route.meta.hideFooter')
   .bottom
     .container.flex.flex-justify-between.flex-column-reverse-phablet
       .left
-        router-link(to='/todo') Algemene voorwaarden
+        router-link(:to='{ name: "conditions" }') Algemene voorwaarden
 
       .right
         .links.flex.flex-justify-between

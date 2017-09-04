@@ -67,6 +67,11 @@ const router = new Router({
           path: '/event/:name',
           name: 'event',
           component: require('src/pages/Home/Event')
+        },
+        {
+          path: '/voorwaarden',
+          name: 'conditions',
+          component: require('src/pages/Home/Conditions')
         }
       ]
     }

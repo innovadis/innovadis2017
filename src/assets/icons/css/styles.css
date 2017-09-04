@@ -15,12 +15,12 @@
 
 @font-face {
   font-family: "Innovadis-2017";
-  src: url("../fonts/Innovadis-2017_54c27295d256890146e60dab94369ce2.eot");
-  src: url("../fonts/Innovadis-2017_54c27295d256890146e60dab94369ce2.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/Innovadis-2017_54c27295d256890146e60dab94369ce2.woff2") format("woff2"),
-       url("../fonts/Innovadis-2017_54c27295d256890146e60dab94369ce2.woff") format("woff"),
-       url("../fonts/Innovadis-2017_54c27295d256890146e60dab94369ce2.ttf") format("truetype"),
-       url("../fonts/Innovadis-2017_54c27295d256890146e60dab94369ce2.svg#Innovadis-2017") format("svg");
+  src: url("../fonts/Innovadis-2017_3a03230c9ac4be12c2e2c911055dd775.eot");
+  src: url("../fonts/Innovadis-2017_3a03230c9ac4be12c2e2c911055dd775.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Innovadis-2017_3a03230c9ac4be12c2e2c911055dd775.woff2") format("woff2"),
+       url("../fonts/Innovadis-2017_3a03230c9ac4be12c2e2c911055dd775.woff") format("woff"),
+       url("../fonts/Innovadis-2017_3a03230c9ac4be12c2e2c911055dd775.ttf") format("truetype"),
+       url("../fonts/Innovadis-2017_3a03230c9ac4be12c2e2c911055dd775.svg#Innovadis-2017") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -28,7 +28,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Innovadis-2017";
-    src: url("../fonts/Innovadis-2017_54c27295d256890146e60dab94369ce2.svg#Innovadis-2017") format("svg");
+    src: url("../fonts/Innovadis-2017_3a03230c9ac4be12c2e2c911055dd775.svg#Innovadis-2017") format("svg");
   }
 }
 
@@ -41,12 +41,14 @@
 .icons8-collapse-arrow:before,
 .icons8-database-view:before,
 .icons8-delete:before,
+.icons8-download:before,
 .icons8-driver:before,
 .icons8-expand-arrow:before,
 .icons8-fantasy:before,
 .icons8-like-filled:before,
 .icons8-menu:before,
 .icons8-minion-2:before,
+.icons8-no-entry:before,
 .icons8-ok:before,
 .icons8-order-on-the-way:before,
 .icons8-play:before,
@@ -74,12 +76,14 @@
 .icons8-collapse-arrow:before { content: "\f105"; }
 .icons8-database-view:before { content: "\f102"; }
 .icons8-delete:before { content: "\f10e"; }
+.icons8-download:before { content: "\f115"; }
 .icons8-driver:before { content: "\f10b"; }
 .icons8-expand-arrow:before { content: "\f106"; }
 .icons8-fantasy:before { content: "\f108"; }
 .icons8-like-filled:before { content: "\f10a"; }
 .icons8-menu:before { content: "\f10c"; }
 .icons8-minion-2:before { content: "\f111"; }
+.icons8-no-entry:before { content: "\f114"; }
 .icons8-ok:before { content: "\f100"; }
 .icons8-order-on-the-way:before { content: "\f112"; }
 .icons8-play:before { content: "\f104"; }
