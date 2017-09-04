@@ -5,8 +5,8 @@
     p Innovadis maakt gebruik van de leveringsvoorwaarden opgesteld in de ICT~Office Voorwaarden. Onderstaand vindt u een lijst met verschillende modules, waarin de diensten en producten van Innovadis zijn opgenomen.
     p Innovadis zal opdrachtgever de mogelijkheid bieden om kennis te nemen van eventuele prijswijzigingen. Indien Opdrachtgever niet instemt met een prijswijziging is Opdrachtgever slechts gerechtigd de overeenkomst te beëindigen met ingang van de datum dat de prijswijziging van kracht zal zijn, indien de totale prijsverhoging gedurende 1 (één) jaar het door het CBS gepubliceerde inflatiecijfer van het actuele jaar (dan wel het voorafgaande jaar voor prijsverhogingen aangekondigd voor het volgende jaar) met meer dan 5% overschrijdt.
 
-    h3.dot.pt ICT Office Voorwaarden
-    p
+    br
+    h3.dot ICT Office Voorwaarden
 
     .download.flex.flex-align-center
       i.icons8-download
