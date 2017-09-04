@@ -3,8 +3,8 @@
   .container
     img.phone(src='/static/cases/socialhof/phone.png')
     .text
-      h3 Participatie naar een hoger niveau.
-      p Have seen an explosion in the popularity of herbs and alternative medicine in general, as people increasingly seek miracle cures that can help them when their doctor or regular pharmacy cannot. The connection to traditional communities also appeals to those who want to go back to a more spiritual
+      h3 Case Socialhof
+      p Innovadis heeft voor Woon- en zorgcentrum De Vriezenhof het platform Socialhof gerealiseerd. De Vriezenhof wil met het platform een bijdragen leveren aan de interne communicatie door het uitwisselen van informatie leuk en gemakkelijk te maken. Het platform ondersteunt en faciliteert de medewerkers, de bewoners en de familie van de bewoners.
       inno-button(label='Bekijk de case', primary, small, :to='{ name: "case", params: { name: "socialhof" } }')
 </template>
 
