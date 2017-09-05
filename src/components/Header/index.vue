@@ -419,7 +419,7 @@ $transition: 0.3s ease-in-out;
         text-decoration: none;
         color: $gray3;
         font-family: Bitter;
-        font-size: 20px;
+        font-size: 18px;
         letter-spacing: 0.3px;
         transition: color $transition;
 
@@ -448,6 +448,7 @@ $transition: 0.3s ease-in-out;
         .button {
           margin: 0;
           margin-left: $gutter / 4;
+          font-size: 18px;
         }
       }
 

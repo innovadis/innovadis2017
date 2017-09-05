@@ -9,8 +9,6 @@
       p We gaan voor duurzame relaties met al onze opdrachtgevers en partners. Opdrachtgevers waar we al meer dan 10 jaar mee samenwerken zijn geen uitzondering. Wij worden blij wanneer onze oplossingen mensen daadwerkelijk verder helpen en toegevoegde waarde leveren.
       p Innovadis verbindt.
 
-      h2.dot.culture Cultuur
-
       .text-left
         .text
           h3 Vakmanschap
@@ -41,6 +39,14 @@
 </template>
 
 <script>
+
+// TODO fade in orbs, then pulse
+// background moving based on mouse position
+// 2 layer background
+// hero 100vh
+// every text also 100vh or nearly
+// moving orbs on background
+// see if i can get icons working in storybook
 export default {
 
 }

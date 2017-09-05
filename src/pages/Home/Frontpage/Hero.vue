@@ -119,6 +119,7 @@ export default {
   text-align: center;
   overflow: hidden;
   transform: translateX(0); // prevents orbs from causing overflow
+  background: linear-gradient(to bottom, transparent, transparent 50%, transparentize(#e7e7e7, 0.6) 80%, #d0d0d0 100%);
 
   @include phone {
     height: auto;
