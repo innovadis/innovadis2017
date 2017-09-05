@@ -8,6 +8,10 @@
         item(:item='instagram.items[1]', type='instagram')
         item(:item='instagram.items[2]', type='instagram')
 
+  .swipe.flex.flex-justify-center.flex-align-center
+    i.icons8-swipe-left
+    | Swipe naar links
+
 </template>
 
 <script>
@@ -60,7 +64,7 @@ export default {
     @include phablet {
       flex-wrap: nowrap;
       margin: 0;
-      justify-content: center;
+      justify-content: flex-start;
     }
   }
 
@@ -77,7 +81,24 @@ export default {
   display: grid;
 
   @include phablet {
-    display: none;
+    display: flex;
+  }
+}
+
+.swipe {
+  display: none;
+
+  @include phablet {
+    display: flex;
+  }
+
+  i {
+    font-size: 40px;
+  }
+
+  &,
+  i {
+    color: white;
   }
 }
 </style>
