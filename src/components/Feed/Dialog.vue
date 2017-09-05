@@ -30,7 +30,7 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, .5);
   display: table;
-  transition: opacity .3s ease;
+  transition: all 0.5s ease-out;
 }
 
 .modal-wrapper {
@@ -46,7 +46,7 @@ export default {
   margin: 0px auto;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-  transition: all .3s ease;
+  transition: all 0.5s ease-out;
   font-family: Helvetica, Arial, sans-serif;
   border-radius: $border-radius;
   overflow: hidden;

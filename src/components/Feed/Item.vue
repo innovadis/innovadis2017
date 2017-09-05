@@ -104,7 +104,7 @@ export default {
   break-inside: avoid;
   cursor: pointer;
 
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease-out;
 
   &:hover {
     transform: scale(1.05);

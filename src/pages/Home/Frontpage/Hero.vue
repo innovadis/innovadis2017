@@ -112,6 +112,7 @@ export default {
 
 .hero {
   width: 100vw;
+  height: calc(100vh - #{$headerHeight});
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -5,7 +5,8 @@
   blue: blue,
   primary: primary,
   inverted: inverted,
-  inactive: inactive,
+  inactive: inactive === true,
+  active: inactive === false,
   small: small,
   transparent: transparent,
   nomargin: nomargin,
@@ -55,7 +56,7 @@ export default {
   padding: 20px;
   font-weight: bold;
   font-family: Bitter;
-  font-size: 20px;
+  font-size: 18px;
   margin: 30px $gutter;
   border-radius: $border-radius;
   box-shadow: $shadow;
@@ -166,6 +167,17 @@ export default {
 
       i {
         color: $gray3;
+      }
+    }
+  }
+
+  &.active {
+    &:hover { // blue only right now
+      color: $inno-blue;
+      box-shadow: $shadow;
+
+      i {
+        color: $inno-blue;
       }
     }
   }

@@ -53,6 +53,10 @@ export default {
     margin-top: 80px;
   }
 
+  .button {
+    font-family: 'OpenSans', sans-serif;
+  }
+
   .select-box {
     display: flex;
 
