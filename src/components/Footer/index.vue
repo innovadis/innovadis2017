@@ -3,7 +3,7 @@ footer(v-if='!$route.meta.hideFooter')
   .top
     .container.flex.flex-justify-between.flex-align-baseline.flex-column-phablet
       .quote.flex.flex-column.text-left
-        h2.title.dot innovadis
+        h2.title innovadis.
         p Voor de industry en health bouwen en koppelen we smart systemen waardoor routinetaken verdwijnen en er tijd overblijft voor zaken die echt belangrijk zijn. 
 
       .info.flex.flex-column.text-left
@@ -140,7 +140,6 @@ footer {
     .right {
       a {
         font-family: 'Bitter';
-        font-weight: 600;
         margin: 0 20px;
 
         &:last-child {
