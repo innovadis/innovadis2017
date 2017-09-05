@@ -24,7 +24,7 @@
       h3 Ben jij dit?
       p Slso known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.
 
-      ul
+      ul.list
         li Also known as the wedding bands.
         li The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions.
         li Such as anniversaries, childbirth or anything.

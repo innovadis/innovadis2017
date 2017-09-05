@@ -10,7 +10,7 @@
     h2.dot Tijd voor een doorbraak
     p Eternity bands are a classy and stylish innovation to storm the market. These are often gifted for a marriage anniversary or at the time of giving birth to a child. These eternity bands need no occasion to be gifted and can be given as gifts whenever one wishes to.
     p Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.
-    ul
+    ul.list
       li Eternity bands are a classy and stylish
       li Innovation to storm the market.
       li These are often gifted for a marriage anniversary or at the time of giving birth to a child.
