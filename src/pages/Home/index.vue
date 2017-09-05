@@ -52,6 +52,7 @@ export default {
       padding-top: 0;
       border-radius: $border-radius;
       box-shadow: -8px 0px 10px $gray1;
+      // filter: blur(2px);
 
       @include phone {
         transform: translateX(calc(100vw - 75px));

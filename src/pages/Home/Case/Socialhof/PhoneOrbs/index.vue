@@ -68,28 +68,44 @@ export default {
   width: 50%;
   left: 20%;
   top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include phablet {
+    left: 0;
+    top: 140px;
+  }
+
+  @include phone {
+    width: 100%;
+  }
 
   .phone {
     background: url('/static/cases/socialhof/phone.png') no-repeat center;
     background-size: contain;
     height: 500px;
+    width: 100%;
     position: relative;
-    left: -55px;
     z-index: 1;
+    left: -40px;
   }
 
   .orb {
     $size: 60px;
     position: absolute;
-    left: -100px - $size/2;
+    left: calc(50% - 300px - #{$size/2});
     top: -100px - $size/2;
-    transform: translate(300px, 200px);
     visibility: hidden;
+
+    @include phone {
+      display: none;
+    }
   }
 
   .path {
     position: absolute;
-    left: -100px;
+    left: calc(50% - 300px);
     top: -100px;
   }
 }

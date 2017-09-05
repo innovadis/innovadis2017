@@ -12,8 +12,8 @@
         h2.dot Door en voor de zorg
         p Innovadis heeft voor Woon- en zorgcentrum De Vriezenhof het platform Socialhof gerealiseerd. De Vriezenhof wil met het platform een bijdragen leveren aan de interne communicatie door het uitwisselen van informatie leuk en gemakkelijk te maken. Het platform ondersteunt en faciliteert de medewerkers, de bewoners en de familie van de bewoners.
 
-    .container.pt.flex.flex-justify-center
-      .text.flex.flex-column
+    .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center
+      .padded-container.flex.flex-column.small
         h3 Eén platform voor alle leuke en nuttige informatie.
         p Socialhof is de communicatietool van De Vriezenhof. De tool brengt alle communicatie bij elkaar en het combineert bestaande tools op één plek die voor iedereen binnen De Vriezenhof toegankelijk is. Alle digitale communicatie vindt er plaats, van privé chats tot groep chats, belangrijke mededelingen, openbare berichten tot het delen van bestanden en het bijhouden van agenda's en dagmenu’s.
       phone-orbs
@@ -38,9 +38,13 @@ export default {
 .case-socialhof {
   .gray {
     background: linear-gradient(180deg, #FFFFFF 0%, #F1F1F1 100%);
+  }
 
-    .text {
-      max-width: 50%;
+  .small {
+    max-width: 50%;
+
+    @include phablet {
+      max-width: none;
     }
   }
 
@@ -51,6 +55,10 @@ export default {
 
   .sendboxwithslot {
     margin-top: 100px;
+
+    @include phablet {
+      margin-top: 200px;
+    }
   }
 }
 </style>

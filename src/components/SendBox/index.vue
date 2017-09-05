@@ -123,7 +123,7 @@ export default {
       })
     },
 
-    animateDone() {
+    animateDone() { // TODO doesnt work on ios
       Anime({
         targets: this.$refs.checkShort,
         duration: 800,

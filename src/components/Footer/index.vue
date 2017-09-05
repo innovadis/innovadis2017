@@ -105,7 +105,7 @@ footer {
           margin-top: 20px;
         }
 
-        @include phablet {
+        @include tablet {
           margin-left: 80px;
         }
       }
