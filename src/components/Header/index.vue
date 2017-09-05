@@ -150,7 +150,7 @@
     .icon-menu(@click='togglePhoneMenuState')
     router-link.flex.flex-align-center.cp(:to='{ name: "home" }', tag='div')
       img(src='/static/images/svg/logo.svg')
-    .items(v-if='$store.state.phoneMenuOpen')
+    .items
       h3.item.dot Aandachtsgebieden (todo)
       router-link.item.dot(:to='{ name: "products" }', tag='h3') Producten
       router-link.item.dot(:to='{ name: "about" }', tag='h3') Over ons
@@ -193,6 +193,7 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.scroll)
 
+    // This code is the Stripe header menu taken from a codepen
     const menuItems = document.querySelectorAll('.sd-menu__item')
     const menuSubs = document.querySelectorAll('.sd-dropdown-menu')
     const subBg = document.querySelector('.sd-dropdown__bg')
@@ -670,6 +671,7 @@ $transition: 0.3s ease-in-out;
       border-bottom-right-radius: $border-radius;
       opacity: 0;
       transition: all 0.2s ease-in;
+      visibility: hidden;
 
       .item {
         margin: 10px 0;
@@ -703,6 +705,7 @@ $transition: 0.3s ease-in-out;
 
       .items {
         opacity: 1;
+        visibility: visible;
 
         .item {
           opacity: 1;
