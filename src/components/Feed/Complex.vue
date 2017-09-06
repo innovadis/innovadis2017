@@ -1,5 +1,5 @@
 <template lang="pug">
-.complex.flex.flex-column-phablet(:class='{ "controls-open": controlsOpen }')
+.complex.flex.flex-column-phablet(:class='{ "controls-open": controlsOpen }', @wheel='scroll')
   .controls.flex.flex-column.flex-justify-center
     h1.dot.hidden-phablet Onze wereld
     .filter-phablet(@click='controlsOpen = false')
@@ -45,13 +45,13 @@
       i.icons8-sorting-options
       | Filters
 
-    .news-items
-      item(:item='instagram.items[0]', type='instagram', large)
+    .news-items(ref='newsItems')
+      item(:item='instagram.items[0]', type='instagram', large, @dialogOpen='dialogOpen')
       .grid
-        item(:item='instagram.items[1]', type='instagram')
-        item(:item='instagram.items[2]', type='instagram')
+        item(:item='instagram.items[1]', type='instagram', @dialogOpen='dialogOpen')
+        item(:item='instagram.items[2]', type='instagram', @dialogOpen='dialogOpen')
 
-      item(:item='item', type='instagram', v-for='item in instagram.items.slice(3)', :key='item.url')
+      item(:item='item', type='instagram', v-for='item in instagram.items.slice(3)', :key='item.url', @dialogOpen='dialogOpen')
 
 </template>
 
@@ -78,7 +78,21 @@ export default {
 
       instagram: require('./rickandmorty.json'),
 
-      controlsOpen: false
+      controlsOpen: false,
+
+      anyDialogOpen: false
+    }
+  },
+
+  methods: {
+    scroll(e) { // TODO check ipad
+      if (this.anyDialogOpen) return
+
+      this.$refs.newsItems.scrollTop += e.deltaY
+    },
+
+    dialogOpen(open) {
+      this.anyDialogOpen = open
     }
   },
 
@@ -86,6 +100,18 @@ export default {
     // const res = await axios.get('https://www.instagram.com/rickandmorty/media/')
 
     // this.instagramItems = res.data
+  },
+
+  mounted() {
+    const arrows = document.querySelectorAll('.multiselect__select')
+
+    for (const arrow of arrows) {
+      const chevron = document.createElement('i')
+      chevron.classList.add('multiselect-chevron-down')
+      chevron.classList.add('icons8-expand-arrow')
+
+      arrow.parentNode.replaceChild(chevron, arrow)
+    }
   }
 }
 </script>
@@ -244,33 +270,5 @@ export default {
 <style lang="scss">
 @import 'src/styles/variables';
 
-.complex {
-  .multiselect {
-    .multiselect__element {
-      background: $inno-yellow;
-      border-bottom: 1px solid $gray1;
-      height: 55px;
-      padding-left: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .multiselect__option {
-        width: 100%;
-
-        &:after {
-          background: none;
-        }
-      }
-
-      .multiselect__option--highlight {
-        background: $inno-yellow;
-      }
-
-      .multiselect__option--selected {
-        background: $inno-yellow;
-      }
-    }
-  }
-}
+.complex {}
 </style>

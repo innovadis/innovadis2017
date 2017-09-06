@@ -26,6 +26,7 @@
           custom-input(
             placeholder='Email adres',
             v-model='email',
+            required,
             type='email',
             :valid='!$v.email.$invalid && !!email'
             )

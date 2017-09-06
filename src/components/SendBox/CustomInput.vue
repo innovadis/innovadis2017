@@ -1,5 +1,5 @@
 <template lang="pug">
-.field(:class='{ required: required }')
+.field(:class='{ required: required, valid: valid }')
   input(
     v-if='type === "text"',
     type='text',
@@ -11,7 +11,8 @@
     v-if='type === "email"',
     type='email',
     :placeholder='placeholder',
-    v-model='model'
+    v-model='model',
+    :class='{ invalid: model && !valid }'
     )
 
   textarea(
@@ -64,7 +65,7 @@ export default {
     margin-bottom: 30px;
   }
 
-  &.required {
+  &.required:not(.valid) {
     &:after {
       content: '*';
       position: absolute;
@@ -82,6 +83,11 @@ export default {
     width: 100%;
     padding: 10px 2px;
     font-size: 18px;
+    transition: border-bottom-color 0.3s ease-in-out;
+
+    &.invalid {
+      border-bottom-color: red;
+    }
 
     &:focus {
       outline: none;

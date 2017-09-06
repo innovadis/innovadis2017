@@ -83,6 +83,12 @@ export default {
 
       return feedItem
     }
+  },
+
+  watch: {
+    dialogDetailOpen(v) {
+      this.$emit('dialogOpen', v)
+    }
   }
 }
 </script>

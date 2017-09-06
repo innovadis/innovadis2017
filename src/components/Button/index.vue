@@ -27,7 +27,7 @@ export default {
     primary: Boolean,
     inverted: Boolean,
     to: Object,
-    inactive: Boolean,
+    inactive: null,
     small: Boolean,
     nomargin: Boolean,
     transparent: Boolean,

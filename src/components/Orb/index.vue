@@ -1,10 +1,12 @@
 <template lang="pug">
-.orb-wrapper
-  .orb(
-    ref='orb',
-    :style='style'
-    )
-    i(:class='[iconClass]')
+.orb-wrapper(v-inview:once.enter='showOrb')
+  transition(name='showorb')
+    .fade-in(v-show='show')
+      .orb(l
+        ref='orb',
+        :style='style'
+        )
+        i(:class='[iconClass]')
 </template>
 
 <script>
@@ -28,6 +30,12 @@ export default {
     }
   },
 
+  data() {
+    return {
+      show: false
+    }
+  },
+
   computed: {
     iconClass() {
       return 'icons8-' + this.icon
@@ -45,22 +53,34 @@ export default {
     }
   },
 
-  mounted() {
-    Anime({
-      targets: this.$refs.orb,
-      translateX: () => {
-        return this.targetX
-      },
-      translateY: () => {
-        return this.targetY
-      },
-      skewX: ['-9deg', '-9deg'],
-      rotate: ['-10deg', '-10deg'],
-      duration: 1000 * 60 * 3,
-      loop: true,
-      direction: 'alternate',
-      easing: 'linear'
-    })
+  methods: {
+    showOrb() {
+      this.show = true
+    },
+
+    animate() {
+      Anime({
+        targets: this.$refs.orb,
+        translateX: () => {
+          return this.targetX
+        },
+        translateY: () => {
+          return this.targetY
+        },
+        skewX: ['-9deg', '-9deg'],
+        rotate: ['-10deg', '-10deg'],
+        duration: 1000 * 60 * 3,
+        loop: true,
+        direction: 'alternate',
+        easing: 'linear'
+      })
+    }
+  },
+
+  watch: {
+    show(v) {
+      if (v) this.animate()
+    }
   }
 }
 </script>
@@ -94,4 +114,15 @@ export default {
     }
   }
 }
+
+.showorb-enter-active,
+.showorb-leave-active {
+  transition: all 1s ease-in-out 0.5s;
+}
+.showorb-enter,
+.showorb-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
 </style>

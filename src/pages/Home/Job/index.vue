@@ -13,7 +13,7 @@
         .tech.flex.flex-align-center
           i.mr.icons8-fantasy
           span Vue.JS, HTML, CSS, JavaScript
-      inno-button(primary, label='Afspraak maken', small)
+      inno-button(primary, label='Afspraak maken', small, @click='scrollToSendbox')
 
     .divider
 
@@ -36,16 +36,29 @@
       h3 Onze wereld
       p Also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.
 
-    send-box-with-slot
+    send-box-with-slot(ref='sendbox')
       h2.dot Laten we elkaar wat beter leren kennen
 
 
 </template>
 
 <script>
+import SmoothScroll from 'smooth-scroll'
+
 export default {
   components: {
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
+  },
+
+  methods: {
+    scrollToSendbox() {
+      const scroll = new SmoothScroll()
+      scroll.init({
+        speed: 1000
+      })
+
+      scroll.animateScroll(this.$refs.sendbox.$el.offsetTop)
+    }
   }
 }
 </script>
