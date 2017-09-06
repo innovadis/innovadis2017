@@ -1,26 +1,45 @@
 <template lang="pug">
 .page-about
-  .blue
-    .pulse
-    .white.container.text-center
-      h1 Wij verbinden,
-      h1.dot organisaties
-      p Sinds 1994 bedenken- en bouwen we samen met onze opdrachtgevers innovatieve internetoplossingen. De kracht zit hem in onze teams die samen met onze opdrachtgevers de best mogelijke oplossing bedenkt die aansluit bij jullie strategie. Onze teams bestaan uit ervaren consultants, ontwikkelaars en designers die periodiek werkende software opleveren. Voorbeelden van onze oplossingen zijn webshops, portalen, PIM/ MDM, apps en maatwerk applicaties.
-      p We gaan voor duurzame relaties met al onze opdrachtgevers en partners. Opdrachtgevers waar we al meer dan 10 jaar mee samenwerken zijn geen uitzondering. Wij worden blij wanneer onze oplossingen mensen daadwerkelijk verder helpen en toegevoegde waarde leveren.
-      p Innovadis verbindt.
+  .blue(@mousemove='mousemove')
+    .orbs
+      orb(
+        :size='140'
+        :initialX='orbLarge.x',
+        :initialY='orbLarge.y',
+        :targetX='orbLarge.targetX',
+        :targetY='orbLarge.targetY',
+        :z='-1'
+        )
+    .layer-lines(:style='layerLinesStyle', ref='layerLines')
+    .layer-stars(:style='layerStarsStyle', ref='layerStars')
+    .container.text-center
+      .vh
+        h1 Wij verbinden,
+        h1.dot organisaties
+        p Sinds 1994 bedenken- en bouwen we samen met onze opdrachtgevers innovatieve internetoplossingen. De kracht zit hem in onze teams die samen met onze opdrachtgevers de best mogelijke oplossing bedenkt die aansluit bij jullie strategie. Onze teams bestaan uit ervaren consultants, ontwikkelaars en designers die periodiek werkende software opleveren. Voorbeelden van onze oplossingen zijn webshops, portalen, PIM/ MDM, apps en maatwerk applicaties.
+        p We gaan voor duurzame relaties met al onze opdrachtgevers en partners. Opdrachtgevers waar we al meer dan 10 jaar mee samenwerken zijn geen uitzondering. Wij worden blij wanneer onze oplossingen mensen daadwerkelijk verder helpen en toegevoegde waarde leveren.
+        p Innovadis verbindt.
 
-      .text-left
-        .text
+      .flex.vh
+        white-orb
+        .flex.flex-column
           h3 Vakmanschap
           p We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.
 
-        .text.ml
+      .flex.vh.flex-row-reverse
+        white-orb
+        .flex.flex-column
           h3 Persoonlijk
           p We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.
 
-        .text
+      .flex.vh
+        white-orb
+        .flex.flex-column
           h3 Innovatie
           p De techniek heeft voor ons geen geheimen. Onze ontwikkelaars gaan geen uitdaging uit de weg, zij zoeken ze op. Ons eeuwige verlangen om te ontdekken brengt ons langs andere werelden en geeft ons nieuwe inzichten. Het stelt ons in staat om innovatieve oplossingen te ontwikkelen voor onze opdrachtgevers en hun klanten.
+
+  .pulse-container
+    .pulse
 
   .bottom-image
 
@@ -40,47 +59,141 @@
 
 <script>
 
-// TODO fade in orbs, then pulse
-// background moving based on mouse position
-// 2 layer background
-// hero 100vh
-// every text also 100vh or nearly
-// moving orbs on background
-// see if i can get icons working in storybook
-export default {
+// TODO see if i can get icons working in storybook
 
+export default {
+  components: {
+    Orb: require('src/components/Orb'),
+    WhiteOrb: require('./WhiteOrb')
+  },
+
+  data() {
+    return {
+      layerLinesOffsetX: 0,
+      layerLinesOffsetY: 0,
+
+      layerStarsOffsetX: 0,
+      layerStarsOffsetY: 0
+    }
+  },
+
+  computed: {
+    layerLinesStyle() {
+      return {
+        'background-position-x': this.layerLinesOffsetX + 'px',
+        'background-position-y': this.layerLinesOffsetY + 'px'
+      }
+    },
+
+    layerStarsStyle() {
+      return {
+        'background-position-x': this.layerStarsOffsetX + 'px',
+        'background-position-y': this.layerStarsOffsetY + 'px'
+      }
+    },
+
+    orbLarge() {
+      if (window.innerWidth < 600) {
+        return {
+          x: 100, // TODO mobile
+          y: 500,
+          targetX: 200,
+          targetY: -50
+        }
+      } else {
+        return {
+          x: 100,
+          y: 390,
+          targetX: 600,
+          targetY: -100
+        }
+      }
+    }
+  },
+
+  methods: {
+    mousemove(e) {
+      const LINES_FACTOR = 0.02
+      const STARS_FACTOR = 0.05
+      const X_OFFSET = 50 // in .layer-stars and .layer-lines this is $xOffset
+
+      this.layerLinesOffsetX = (e.clientX - this.$refs.layerLines.clientWidth / 2) * LINES_FACTOR - X_OFFSET
+      this.layerLinesOffsetY = (e.clientY - this.$refs.layerLines.clientHeight / 2) * LINES_FACTOR
+
+      this.layerStarsOffsetX = (e.clientX - this.$refs.layerStars.clientWidth / 2) * STARS_FACTOR - X_OFFSET
+      this.layerStarsOffsetY = (e.clientY - this.$refs.layerStars.clientHeight / 2) * STARS_FACTOR
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+.vh {
+  height: 100vh;
+}
 
 .page-about {
   display: flex;
   justify-content: center;
   flex-direction: column;
 
-  .white {
+  .blue {
+    width: 100%; // background-color: $inno-blue-dark;
+    // background: url('https://placehold.it/500/001d75?text=background');
+    background: url('/static/images/about_layer_background.png') no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-top: 140px;
+    z-index: 0;
+
     h1,
     h2,
     h3,
     p {
       color: white;
     }
+
+    .orbs {
+      height: 100%;
+      width: 100%;
+    }
+
+    .layer-lines {
+      background: url('/static/images/about_layer_lines.png') no-repeat;
+    }
+
+    .layer-stars {
+      background: url('/static/images/about_layer_stars.png') no-repeat;
+    }
+
+    .layer-lines,
+    .layer-stars {
+      $xOffset: 50px;
+
+      width: 100%;
+      height: 100%;
+      background-size: calc(100% + #{$xOffset*2});
+      background-origin: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .culture {
+      margin-top: 200px;
+    }
   }
 
-  .blue {
-    width: 100%;
-    background-color: $inno-blue-dark; // margin-bottom: 600px;
+  .pulse-container {
     position: relative;
-    padding-top: 140px;
 
     .pulse,
     &:after {
       $height: 600px;
       $width: 120vw;
 
-      background-color: $inno-blue-dark;
+      background-color: #00196a; // TODO  not inno dark?
       content: '';
       height: $height;
       width: $width;
@@ -92,28 +205,16 @@ export default {
       z-index: -1; // TODO remove this for cool effect on text
     }
 
+    &:after {
+      // background: linear-gradient(to bottom,  #001a6a 60%, rgba(0, 29, 117, 0.56) 90%);
+      // filter: blur(5px);
+    }
+
     .pulse {
       filter: blur(10px);
       animation-name: pulse;
       animation-duration: 2s;
       animation-iteration-count: infinite;
-    }
-
-    .culture {
-      margin-top: 200px;
-    }
-
-    .text {
-      margin: 200px 0;
-      max-width: 550px;
-
-      &.ml {
-        margin-left: 80px;
-      }
-
-      p {
-        margin-top: 5px;
-      }
     }
   }
 
@@ -122,7 +223,7 @@ export default {
     background-size: cover;
     height: 1000px;
     width: 100vw;
-    z-index: -2;
+    z-index: -3;
   }
 
   .bottom {
