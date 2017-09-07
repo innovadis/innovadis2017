@@ -72,16 +72,22 @@ const router = new Router({
           path: '/voorwaarden',
           name: 'conditions',
           component: require('src/pages/Home/Conditions')
+        },
+        {
+          path: '404',
+          component: require('src/pages/Home/NotFound'),
+          meta: {
+            hideFooter: true
+          }
+        },
+        {
+          path: '*', // must be last
+          component: require('src/pages/Home/NotFound'),
+          meta: {
+            hideFooter: true
+          }
         }
       ]
-    },
-    {
-      path: '404',
-      component: require('src/pages/NotFound')
-    },
-    {
-      path: '*', // must be last
-      component: require('src/pages/NotFound')
     }
   ]
 })
