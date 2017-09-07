@@ -74,6 +74,14 @@ const router = new Router({
           component: require('src/pages/Home/Conditions')
         }
       ]
+    },
+    {
+      path: '404',
+      component: require('src/pages/NotFound')
+    },
+    {
+      path: '*', // must be last
+      component: require('src/pages/NotFound')
     }
   ]
 })
