@@ -10,7 +10,7 @@
 export default {
   methods: {
     click(e) {
-      if ((new Array(...e.path[0].classList)).includes('modal-wrapper')) { // TODO this doesnt work on safari
+      if ((new Array(...e.target.classList)).includes('modal-wrapper')) {
         this.$emit('close')
       }
     }

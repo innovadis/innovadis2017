@@ -71,9 +71,9 @@ export default {
     return {
       isSent: false,
 
-      name: null,
-      email: null,
-      phoneNumber: null,
+      name: 'asef',
+      email: 'asef@asef.asef',
+      phoneNumber: '123',
       remarks: null,
 
       loading: false,
@@ -124,13 +124,13 @@ export default {
       })
     },
 
-    animateDone() { // TODO doesnt work on ios
+    animateDone() {
       Anime({
         targets: this.$refs.checkShort,
         duration: 800,
         easing: 'easeInOutQuart',
-        left: this.$refs.sendbox.clientWidth / 2 - 26,
-        top: 243,
+        left: this.$refs.sendbox.clientWidth / 2 - 26 + 'px',
+        top: '243px',
         opacity: 1
       })
 
@@ -138,8 +138,8 @@ export default {
         targets: this.$refs.checkLong,
         duration: 800,
         easing: 'easeInOutQuart',
-        left: this.$refs.sendbox.clientWidth / 2 + 20,
-        top: 200,
+        right: this.$refs.sendbox.clientWidth / 2 - 32 + 'px',
+        top: '200px',
         opacity: 1
       })
 
