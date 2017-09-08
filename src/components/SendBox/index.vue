@@ -20,7 +20,8 @@
             placeholder='Naam',
             v-model='name',
             type='text',
-            required
+            required,
+            @enter='send'
             )
 
           custom-input(
@@ -28,14 +29,16 @@
             v-model='email',
             required,
             type='email',
-            :valid='!$v.email.$invalid && !!email'
+            :valid='!$v.email.$invalid && !!email',
+            @enter='send'
             )
 
           custom-input(
             placeholder='Telefoonnummer',
             v-model='phoneNumber',
             type='text',
-            required
+            required,
+            @enter='send'
             )
 
           custom-input(
@@ -71,9 +74,9 @@ export default {
     return {
       isSent: false,
 
-      name: 'asef',
-      email: 'asef@asef.asef',
-      phoneNumber: '123',
+      name: null,
+      email: null,
+      phoneNumber: null,
       remarks: null,
 
       loading: false,
@@ -138,7 +141,7 @@ export default {
         targets: this.$refs.checkLong,
         duration: 800,
         easing: 'easeInOutQuart',
-        right: this.$refs.sendbox.clientWidth / 2 - 32 + 'px',
+        right: this.$refs.sendbox.clientWidth / 2 - 31 + 'px',
         top: '200px',
         opacity: 1
       })

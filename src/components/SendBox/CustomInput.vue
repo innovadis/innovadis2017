@@ -4,7 +4,8 @@
     v-if='type === "text"',
     type='text',
     :placeholder='placeholder',
-    v-model='model'
+    v-model='model',
+    @keydown.enter='enter'
     )
 
   input(
@@ -12,7 +13,8 @@
     type='email',
     :placeholder='placeholder',
     v-model='model',
-    :class='{ invalid: model && !valid }'
+    :class='{ invalid: model && !valid }',
+    @keydown.enter='enter'
     )
 
   textarea(
@@ -44,6 +46,12 @@ export default {
   data() {
     return {
       model: this.value
+    }
+  },
+
+  methods: {
+    enter() {
+      this.$emit('enter')
     }
   },
 

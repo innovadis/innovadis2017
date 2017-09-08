@@ -194,9 +194,15 @@ export default {
   }
 
   .no-scrollbar {
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     width: 930px;
     padding-bottom: 100px;
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent;
+    }
 
     @include phablet {
       overflow: auto;
