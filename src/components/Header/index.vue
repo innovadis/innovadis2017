@@ -359,7 +359,7 @@ $transition: 0.3s ease-in-out;
     align-items: center;
     margin: 0 auto;
     transform: translateY(-100px);
-    transition: transform 0.5s cubic-bezier(0, 0, 0.25, 1.05);
+    transition: transform 0.5s cubic-bezier(0.69, 0.4, 0.75, 0.54) 0.2s;
     background: white;
 
     .top-section {
@@ -391,6 +391,7 @@ $transition: 0.3s ease-in-out;
 
     &.open {
       transform: translateY(0);
+      transition-delay: 0s;
     }
 
     @include phablet {
@@ -441,7 +442,7 @@ $transition: 0.3s ease-in-out;
           content: none;
         }
 
-        &:hover > .sub-menu-shadow {
+        &:hover>.sub-menu-shadow {
           display: block;
         }
 
