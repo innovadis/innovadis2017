@@ -3,7 +3,8 @@ footer(v-if='!$route.meta.hideFooter')
   .top
     .container.flex.flex-justify-between.flex-align-baseline.flex-column-phablet
       .quote.flex.flex-column.text-left
-        h2.title innovadis.
+        .flex
+          img.logo(src='/static/images/svg/logo_white.svg')
         p Voor de industry en health bouwen en koppelen we smart systemen waardoor routinetaken verdwijnen en er tijd overblijft voor zaken die echt belangrijk zijn. 
 
       .info.flex.flex-column.text-left
@@ -78,9 +79,8 @@ footer {
         max-width: 500px;
       }
 
-      .title {
-        margin: 0;
-        font-size: 30px;
+      .logo {
+        margin-bottom: 20px;
       }
 
       p {

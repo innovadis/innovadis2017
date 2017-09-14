@@ -6,9 +6,8 @@
         img(src='/static/images/svg/logo.svg')
       ul.sd-menu
         li.sd-menu__item(data-sub="attention"): a(href="#") Aandachtsgebieden
-        li.sd-menu__item: router-link(:to='{ name: "products" }') Producten
-        li.sd-menu__item: router-link(:to='{ name: "about" }') Over ons
-        li.sd-menu__item: router-link(:to='{ name: "world" }') Onze wereld
+        //- li.sd-menu__item(data-sub="products"): a(href="#") Producten
+        li.sd-menu__item(data-sub="about"): a(href="#") Over ons
         li.sd-menu__item: router-link(:to='{ name: "contact" }') Contact
         li.sd-menu__item: inno-button(label='Werken bij.', :to='{ name: "jobs" }', yellow)
 
@@ -25,6 +24,20 @@
                 .attention-items
                   router-link(:to='{ name: "smart-industry" }') Smart Industry
                   router-link(:to='{ name: "smart-health" }') Smart Health
+
+          //- .sd-dropdown-menu#attention(data-sub="products")
+            .sd-dropdown-menu__content
+              .top-section
+                .attention-items
+                  router-link(:to='{ name: "product ellie" }') Ellie
+
+          .sd-dropdown-menu#attention(data-sub="about")
+            .sd-dropdown-menu__content
+              .top-section
+                .attention-items
+                  router-link(:to='{ name: "about" }') Onze cultuur
+                  router-link(:to='{ name: "world" }') Onze wereld
+                  router-link(:to='{ name: "partners" }') Onze partners
 
                 //- .col-2
                   ul

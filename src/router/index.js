@@ -44,12 +44,17 @@ const router = new Router({
           component: require('src/pages/Home/About')
         },
         {
+          path: '/partners',
+          name: 'partners',
+          component: require('src/pages/Home/Partners')
+        },
+        {
           path: '/contact',
           name: 'contact',
           component: require('src/pages/Home/Contact')
         },
         {
-          path: '/vacatures',
+          path: '/werkenbij',
           name: 'jobs',
           component: require('src/pages/Home/JobOverview')
         },

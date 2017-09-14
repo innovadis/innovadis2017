@@ -49,12 +49,9 @@
 
     .image
 
-  .logos
-    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
-    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
-    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
-    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
-    img.logo(src='http://cataloniarentals.com/catalonia/images/logo.png')
+  send-box-with-slot
+    h2.dot Gewoon even praten of heb je vragen
+
 </template>
 
 <script>
@@ -64,7 +61,8 @@
 export default {
   components: {
     Orb: require('src/components/Orb'),
-    WhiteOrb: require('./WhiteOrb')
+    WhiteOrb: require('./WhiteOrb'),
+    SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
   },
 
   data() {
@@ -235,17 +233,6 @@ export default {
       height: 400px;
       width: 100%;
       border-radius: $border-radius;
-    }
-  }
-
-  .logos {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: $gutter;
-    margin: $gutter;
-
-    .logo {
-      height: 200px;
     }
   }
 }
