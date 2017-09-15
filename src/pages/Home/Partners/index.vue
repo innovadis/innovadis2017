@@ -6,15 +6,15 @@
 
   .map
     .background
-    google-map(:center='partners.umbraco.location', :zoom='6', :options='options', ref='map')
+    google-map.hidden-phone(:center='partners.umbraco.location', :zoom='6', :options='options', ref='map')
       google-map-marker(
         :position.sync='selectedPartner.location',
         v-if='selectedPartner'
         :opacity='markerOpacityNumber',
         :icon="{ path: 'M0,5a5,5 0 1,0 10,0a5,5 0 1,0 -10,0', fillColor: 'rgba(255, 255, 255, 1)', fillOpacity: 1, strokeWeight: 0, scale: 3 }"
         )
-    .gradient
-    .radial-gradient
+    .gradient.hidden-phone
+    .radial-gradient.hidden-phone
     .partners.flex.flex-align-center
       .names.flex.flex-column
         .name(v-for='partner in partnerObjects', @click='setSelectedPartner(partner.key)', :class='{ selected: selectedPartnerKey === partner.key }') {{ partner.name }}
@@ -238,6 +238,10 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
   margin-top: 100px;
   position: relative;
 
+  @include phone {
+    height: 1000px;
+  }
+
   .radial-gradient,
   .background,
   .partners,
@@ -267,8 +271,19 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
   }
 
   .partners {
+    display: flex;
+
+    @include phone {
+      flex-direction: column;
+      margin: $gutter 0;
+    }
+
     .names {
       margin-left: 50px;
+
+      @include phone {
+        margin-left: 0;
+      }
 
       .name {
         color: white;
@@ -292,6 +307,11 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
       background: white;
       border-radius: $border-radius;
       max-width: 400px;
+
+      @include phone {
+        margin-left: 0;
+        margin: $gutter;
+      }
 
       .logo {
         background-size: contain !important;
