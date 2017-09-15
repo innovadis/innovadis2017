@@ -5,9 +5,16 @@
     p.intro Bij Innovadis geloven we in samenwerkingen met technology & business partners. Wij werken intensief samen met onze partners om onze klanten daadwerkelijk verder helpen en toegevoegde waarde te bieden.
 
   .map
-    google-map(:center='partners.umbraco.location', :zoom='6', :options='options')
-      google-map-marker(:position.sync='partners.umbraco.location')
+    .background
+    google-map(:center='partners.umbraco.location', :zoom='6', :options='options', ref='map')
+      google-map-marker(
+        :position.sync='selectedPartner.location',
+        v-if='selectedPartner'
+        :opacity='markerOpacityNumber',
+        :icon="{ path: 'M0,5a5,5 0 1,0 10,0a5,5 0 1,0 -10,0', fillColor: 'rgba(255, 255, 255, 1)', fillOpacity: 1, strokeWeight: 0, scale: 3 }"
+        )
     .gradient
+    .radial-gradient
     .partners.flex.flex-align-center
       .names.flex.flex-column
         .name(v-for='partner in partnerObjects', @click='setSelectedPartner(partner.key)', :class='{ selected: selectedPartnerKey === partner.key }') {{ partner.name }}
@@ -24,6 +31,8 @@
 
 <script>
 import { load, Map, Marker } from 'vue2-google-maps'
+
+const STEPS = 150     // The number of steps that each panTo action will undergo
 
 load({
   key: 'AIzaSyBqGIVa9BAbTJKqxQrw5uDl8Y36GaUamBk'
@@ -119,7 +128,11 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
         }
       },
 
-      selectedPartnerKey: 'umbraco'
+      markerOpacity: 0,
+      markerOpacityTimeout: null,
+      selectedPartnerKey: 'umbraco',
+      panPath: [],   // An array of points the current panning action will use
+      panQueue: []  // An array of subsequent panTo actions to take
     }
   },
 
@@ -135,6 +148,10 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
 
     selectedPartner() {
       return this.partners[this.selectedPartnerKey]
+    },
+
+    markerOpacityNumber() { // Because: https://github.com/juliangarnier/anime/issues/116
+      return typeof this.markerOpacity === 'string' ? parseFloat(this.markerOpacity) : this.markerOpacity
     }
   },
 
@@ -142,10 +159,73 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
     setSelectedPartner(key) {
       this.selectedPartnerKey = null
 
+      this.panTo(this.partners[key].location.lat, this.partners[key].location.lng)
+      // this.$refs.map.panTo(this.partners[key].location)
+
+      this.markerOpacity = 0
+
+      this.increaseMarkerOpacity()
+
       setTimeout(() => {
         this.selectedPartnerKey = key
       }, 300)
+    },
+
+    increaseMarkerOpacity() {
+      this.markerOpacityTimeout = setTimeout(() => {
+        this.markerOpacity += 0.05
+
+        if (this.markerOpacity < 1) this.increaseMarkerOpacity()
+      }, 50)
+    },
+
+    panTo(newLat, newLng) {
+      const { panPath, panQueue } = this
+      const map = this.$refs.map
+
+      if (panPath.length > 0) {
+        // We are already panning...queue this up for next move
+        panQueue.push([newLat, newLng])
+      } else {
+        // Lets compute the points we'll use
+        panPath.push('LAZY SYNCRONIZED LOCK')  // make length non-zero - 'release' this before calling setTimeout
+        var curLat = map.$mapObject.getCenter().lat()
+        var curLng = map.$mapObject.getCenter().lng()
+        var dLat = (newLat - curLat) / STEPS
+        var dLng = (newLng - curLng) / STEPS
+
+        for (var i = 0; i < STEPS; i++) {
+          panPath.push([curLat + dLat * i, curLng + dLng * i])
+        }
+        panPath.push([newLat, newLng])
+        panPath.shift()      // LAZY SYNCRONIZED LOCK
+        setTimeout(this.doPan, 5)
+      }
+    },
+
+    doPan() {
+      const { panPath, panQueue } = this
+      const map = this.$refs.map
+
+      var next = panPath.shift()
+      if (next != null) {
+        // Continue our current pan action
+        map.panTo(new google.maps.LatLng(next[0], next[1]))
+        setTimeout(this.doPan, 5)
+      } else {
+        // We are finished with this pan - check if there are any queue'd up locations to pan to
+        var queued = panQueue.shift()
+        if (queued != null) {
+          this.panTo(queued[0], queued[1])
+        }
+      }
     }
+  },
+
+  mounted() {
+    setTimeout(() => {
+      this.increaseMarkerOpacity()
+    }, 1000)
   }
 }
 </script>
@@ -158,6 +238,8 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
   margin-top: 100px;
   position: relative;
 
+  .radial-gradient,
+  .background,
   .partners,
   .vue-map-container,
   .gradient {
@@ -168,12 +250,20 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
     left: 0;
   }
 
+  .background {
+    background: $inno-blue-dark;
+  }
+
   .vue-map-container {
     margin-left: 25%;
   }
 
   .gradient {
     background: linear-gradient(to right, $inno-blue-dark, $inno-blue-dark 30%, transparent 60%);
+  }
+
+  .radial-gradient {
+    background-image: radial-gradient(circle farthest-corner at 80% center, transparent, $inno-blue-dark 35%);
   }
 
   .partners {
@@ -222,6 +312,12 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
 </style>
 
 <style lang="scss">
+@import 'src/styles/variables';
+
+.gm-style {
+  background: $inno-blue-dark;
+}
+
 .gmnoprint a,
 .gmnoprint span {
   display: none;
