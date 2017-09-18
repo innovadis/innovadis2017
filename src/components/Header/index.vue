@@ -164,11 +164,11 @@
     router-link.flex.flex-align-center.cp(:to='{ name: "home" }', tag='div')
       img(src='/static/images/svg/logo.svg')
     .items
-      h3.item.dot Aandachtsgebieden (todo)
-      router-link.item.dot(:to='{ name: "products" }', tag='h3') Producten
-      router-link.item.dot(:to='{ name: "about" }', tag='h3') Over ons
-      router-link.item.dot(:to='{ name: "world" }', tag='h3') Onze wereld
-      router-link.item.dot(:to='{ name: "contact" }', tag='h3') Contact
+      h3.item Aandachtsgebieden (todo)
+      router-link.item(:to='{ name: "products" }', tag='h3') Producten
+      router-link.item(:to='{ name: "about" }', tag='h3') Over ons
+      router-link.item(:to='{ name: "world" }', tag='h3') Onze wereld
+      router-link.item(:to='{ name: "contact" }', tag='h3') Contact
       inno-button.item(label='Werken bij.', yellow, :to='{ name: "jobs" }')
 </template>
 

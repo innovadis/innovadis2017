@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import message from './modules/message'
+import blog from './modules/blog'
+import news from './modules/news'
+import events from './modules/events'
+import jobs from './modules/jobs'
 
 const state = {
   phoneMenuOpen: false
@@ -19,6 +23,10 @@ export default new Vuex.Store({
   state,
   mutations,
   modules: {
-    message
+    message,
+    blog,
+    news,
+    events,
+    jobs
   }
 })

@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
-    "build": "node build/build.js",
+    "build": "npm run fetchContent && node build/build.js",
+    "fetchContent": "node build/headless.js",
     "lint": "eslint --ext .js,.vue src",
     "storybook": "start-storybook -p 8086"
   },

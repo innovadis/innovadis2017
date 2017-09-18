@@ -19,6 +19,11 @@ Vue.use(VueInView)
 Vue.component('InnoButton', Button)
 Vue.component('InnoButtonAlternate', ButtonAlternate)
 
+store.dispatch('blog/load')
+store.dispatch('news/load')
+store.dispatch('jobs/load')
+store.dispatch('events/load')
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
