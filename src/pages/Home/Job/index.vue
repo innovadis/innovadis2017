@@ -81,7 +81,7 @@ export default {
       { property: 'og:description', content: 'short intro' },
       { property: 'og:locale', content: 'nl_NL' },
       { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: 'todo' },
+      { property: 'og:image', content: 'todo' }, // only if you want to overwrite default
       { property: 'og:url', content: 'todo' }
     ]
 
