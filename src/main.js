@@ -9,12 +9,14 @@ import Button from 'src/components/Button'
 import ButtonAlternate from 'src/components/ButtonAlternate'
 import VueInView from 'vueinview'
 import Moment from 'moment'
+import VueHead from 'vue-head'
 
 Moment.locale('nl')
 
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
 Vue.use(VueInView)
+Vue.use(VueHead)
 
 Vue.component('InnoButton', Button)
 Vue.component('InnoButtonAlternate', ButtonAlternate)
