@@ -77,6 +77,33 @@ export default {
     PhonesOverlap: require('./PhonesOverlap'),
     Macbook: require('./Macbook'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
+  },
+
+  head: {
+    title: {
+      inner: 'test'
+    },
+    meta: [
+      // Google+
+      { itemprop: 'name', content: 'Content Title' },
+      { itemprop: 'description', content: 'Content Title' },
+      { itemprop: 'image', content: 'Content Title' },
+
+      // Twitter
+      { name: 'twitter:title', content: 'Content Title' },
+      { name: 'twitter:description', content: 'Content Title' },
+      { name: 'twitter:image', content: 'Content Title' },
+
+      // Facebook
+      { property: 'og:title', content: 'Content Title' },
+      { property: 'og:description', content: 'short intro' },
+      { property: 'og:locale', content: 'nl_NL' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:image', content: 'todo' }, // only if you want to overwrite default
+      { property: 'og:url', content: 'todo' }
+    ]
+
+    // TODO meta tags, og, twitter, etc
   }
 }
 </script>

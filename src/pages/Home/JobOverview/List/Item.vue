@@ -1,19 +1,21 @@
 <template lang="pug">
 router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='{ name: "job", params: { id: 123 } }')
   .flex.flex-column
-    h3.title Senior Front-end developer
+    h3.title {{ job.title }}
     .job-details.flex.flex-align-center
       i.icons8-clock
-      span.hours 40 uur
+      span.hours {{ job.hours }} uur
       i.icons8-fantasy
-      span.tech Vue.JS, HTML, CSS, JavaScript
+      span.tech {{ job.tech }}
 
   inno-button-alternate(yellow)
 </template>
 
 <script>
 export default {
-
+  props: {
+    job: Object
+  }
 }
 </script>
 
@@ -25,6 +27,10 @@ export default {
   border-bottom: 1px solid $gray1;
   transition: background 0.2s ease-in-out;
   cursor: pointer;
+
+  &:last-child {
+    border-bottom: none;
+  }
 
   &:hover {
     background: $gray0;

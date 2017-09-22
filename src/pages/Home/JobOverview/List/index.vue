@@ -6,6 +6,7 @@
 
     .flex
       multiselect(
+        v-if='jobs.length > 0 && jobTypeOptions.length > 1',
         v-model='selectedJobType',
         :options='jobTypeOptions'
         placeholder='Selecteer type vacature',
@@ -15,7 +16,9 @@
         )
 
     .list.flex.flex-column
-      job-item(v-for='n in 5', :key='n')
+      //- TODO transitions not yet working
+      transition-group(name='list', tag='div')
+        job-item(v-for='(job, i) in jobs', :key='i', :job='job.content.nl')
 
 </template>
 
@@ -30,8 +33,17 @@ export default {
 
   data() {
     return {
-      selectedJobType: null,
-      jobTypeOptions: ['Developer', 'Designer', 'Stage en afstuderen', 'Product owner']
+      selectedJobType: null
+    }
+  },
+
+  computed: {
+    jobTypeOptions() {
+      return [...new Set(this.jobs.map(x => x.content.nl.jobType))] // new Set is for deduping
+    },
+
+    jobs() {
+      return this.$store.state.jobs.all.filter(x => !this.selectedJobType || x.content.nl.jobType === this.selectedJobType)
     }
   }
 }
@@ -44,12 +56,20 @@ export default {
   padding: 100px 0;
 
   .multiselect {
-    max-width: 300px;
-    // margin: 20px;
+    max-width: 300px; // margin: 20px;
   }
 
   .list {
     margin-top: 20px;
+  }
+}
+</style>
+
+<style lang="scss">
+.joblist {
+  .multiselect__option,
+  .multiselect__input {
+    text-transform: capitalize;
   }
 }
 </style>
