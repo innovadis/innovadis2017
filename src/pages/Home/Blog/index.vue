@@ -1,28 +1,18 @@
   <template lang="pug">
 .page-event
   .container.pt
-    h1.dot Innovadis en partners lanceren een Smart Industry event
-    p.intro There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
+    h1.dot {{ blogItem.title }}
+    p.intro {{ blogItem.lead }}
 
-  .image(:style='{ background: "url(https://placehold.it/720?text=image)" }')
+  .image(:style='{ background: "url(" + blogItem.heroImage + ")" }')
+    .info
+      h5.type Blog
+      .author Door: {{ blogItem.author }}
+      .date Publicatiedatum: {{ date }}
 
-  .container.pt
-    h2.dot Tijd voor een doorbraak
-    p Eternity bands are a classy and stylish innovation to storm the market. These are often gifted for a marriage anniversary or at the time of giving birth to a child. These eternity bands need no occasion to be gifted and can be given as gifts whenever one wishes to.
-    p Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.
-    ul.list
-      li Eternity bands are a classy and stylish
-      li Innovation to storm the market.
-      li These are often gifted for a marriage anniversary or at the time of giving birth to a child.
-      li These are often gifted for a marriage anniversary or at the time of giving birth to a child.
+  .container.pt(v-html='blogItem.body')
 
-    p Eternity bands are a classy and stylish innovation to storm the market. These are often gifted for a marriage anniversary or at the time of giving birth to a child. These eternity bands need no occasion to be gifted and can be given as gifts whenever one wishes to.
-
-  .container.pt
-    h2.dot Tijd voor een doorbraak
-    p Eternity bands are a classy and stylish innovation to storm the market. These are often gifted for a marriage anniversary or at the time of giving birth to a child. These eternity bands need no occasion to be gifted and can be given as gifts whenever one wishes to.
-
-    social-share
+  social-share
 
   send-box-with-slot(flip)
     h2.dot Vragen over dit artikel?
@@ -43,7 +33,11 @@ export default {
     blogItem() {
       if (this.$store.state.blog.all.length === 0) return
 
-      return this.$store.state.blog.all[0]
+      return this.$store.state.blog.all[0].content.nl
+    },
+
+    date() {
+      return (new Date(this.blogItem.publish_date)).toDateString()
     }
   },
 
@@ -87,6 +81,33 @@ export default {
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+    position: relative;
+
+    .info {
+      position: absolute;
+      bottom: 20px;
+      left: calc(50vw - 300px);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+
+      @include phone {
+        left: 0;
+      }
+
+      .type {
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
+
+      .type,
+      div {
+        color: white;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 1);
+      }
+    }
   }
 
   .feed {
