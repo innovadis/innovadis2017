@@ -499,7 +499,7 @@ $transition: 0.3s ease-in-out;
 
       &__bg {
         width: 450px;
-        height: 400px; // background-color: white;
+        height: 0px;
         opacity: 0;
         transition: .25s ease;
         border-radius: 5px;
