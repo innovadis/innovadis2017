@@ -2,13 +2,37 @@
 .share.flex.flex-align-center.flex-column
   b Deel dit bericht.
   .flex.flex-justify-center
-    .button.facebook Facebook
-    .button.linkedin LinkedIn
+    a.button.facebook(@click='sharePopup($event, "facebook")') Facebook
+    a.button.linkedin(@click='sharePopup($event, "linkedin")') LinkedIn
 </template>
 
 <script>
-export default {
+const networks = {
+  facebook: { width: 600, height: 300, link: 'https://www.facebook.com/sharer/sharer.php?u=' + window.location.href },
+  // twitter: { width: 600, height: 254 },
+  // google: { width: 515, height: 490 },
+  linkedin: { width: 600, height: 473, link: 'https://www.linkedin.com/cws/share?url=' + window.location.href }
+}
 
+export default {
+  methods: {
+    sharePopup(e, network) {
+      e.preventDefault()
+
+      var popup = function(network) {
+        const options = 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,'
+
+        const height = networks[network].height
+        const width = networks[network].width
+        var y = window.top.outerHeight / 2 + window.top.screenY - (height / 2)
+        var x = window.top.outerWidth / 2 + window.top.screenX - (width / 2)
+
+        window.open(networks[network].link, '', options + 'height=' + height + ',width=' + width + ',top=' + y + ',left=' + x)
+      }
+
+      popup(network)
+    }
+  }
 }
 </script>
 

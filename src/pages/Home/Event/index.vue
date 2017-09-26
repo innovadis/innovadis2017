@@ -21,6 +21,7 @@
     h2.dot {{ eventItem.bottomTitle }}
     p {{ eventItem.bottomText }}
 
+
   .video: youtube(:video-id='youtubeId', player-width='800px', player-height='450px')
 
   //- TODO connect
