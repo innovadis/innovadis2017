@@ -29,6 +29,7 @@
     "vue-head": "^2.0.11",
     "vue-multiselect": "^2.0.2",
     "vue-router": "^2.6.0",
+    "vue-youtube-embed": "^2.1.2",
     "vue2-google-maps": "^0.8.2",
     "vueinview": "github:rachmanzz/vue-inview",
     "vuelidate": "^0.5.0",

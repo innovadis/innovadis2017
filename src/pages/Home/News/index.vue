@@ -1,62 +1,38 @@
   <template lang="pug">
 .page-event
   .container.pt
-    h1.dot {{ eventItem.title }}
-    p.intro {{ eventItem.lead }}
+    h1.dot {{ newsItem.title }}
+    p.intro {{ newsItem.lead }}
 
-  .image(:style='{ background: "url(" + eventItem.heroImage + ")" }')
-
-  .container.pt(v-html='eventItem.body')
-
-  .container.pt(v-if='eventItem.program.length > 0')
-    h2.dot Programma
-    p {{ eventItem.programLead }}
-    program(:data='eventItem.program')
-
-  .container.pt(v-if='eventItem.bottomTitle')
-    h2.dot {{ eventItem.bottomTitle }}
-    p {{ eventItem.bottomText }}
-
-  .video: youtube(:video-id='youtubeId', player-width='800px', player-height='450px')
+  .container(v-html='newsItem.body')
 
   //- TODO connect
   social-share
 
   send-box-with-slot(flip)
-    h2.dot Aanmelden voor het event
+    h2 Vragen over dit bericht?
 
   simple-feed(title='Gerelateerd')
 
 </template>
 
 <script>
-import Vue from 'vue'
-import VueYoutubeEmbed, { YouTubePlayer as Youtube, getIdFromURL } from 'vue-youtube-embed'
-
-Vue.use(VueYoutubeEmbed, { global: false })
-
 export default {
   components: {
-    Program: require('./Program'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     SimpleFeed: require('src/components/Feed/Simple'),
-    SocialShare: require('src/components/SocialShare'),
-    Youtube
+    SocialShare: require('src/components/SocialShare')
   },
 
   computed: {
-    eventItem() {
-      if (this.$store.state.events.all.length === 0) return
+    newsItem() {
+      if (this.$store.state.news.all.length === 0) return
 
-      return this.$store.state.events.all[0].content.nl
+      return this.$store.state.news.all[0].content.nl
     },
 
     date() {
-      return (new Date(this.eventItem.publish_date)).toDateString() // TODO ?
-    },
-
-    youtubeId() {
-      return getIdFromURL(this.eventItem.video)
+      return (new Date(this.newsItem.publish_date)).toDateString() // TODO ?
     }
   },
 
@@ -92,6 +68,11 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
+.intro {
+  // font-weight: bold;
+  margin-bottom: 40px;
+}
+
 .page-event {
   .image {
     width: 100%;
@@ -102,9 +83,14 @@ export default {
   }
 
   .video {
-    margin: $gutter 0;
-    display: flex;
-    justify-content: center;
+    background: url('https://placehold.it/600?text=video') no-repeat center;
+    background-size: cover;
+    height: 450px;
+    width: 120%;
+    position: relative;
+    left: -10%;
+    margin-bottom: $gutter;
+    border-radius: $border-radius;
   }
 
   .share {

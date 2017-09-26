@@ -69,9 +69,14 @@ const router = new Router({
           component: require('src/pages/Home/Case')
         },
         {
-          path: '/event/:name',
+          path: '/evenement/:name',
           name: 'event',
           component: require('src/pages/Home/Event')
+        },
+        {
+          path: '/nieuws/:name',
+          name: 'news',
+          component: require('src/pages/Home/News')
         },
         {
           path: '/blog/:name',
