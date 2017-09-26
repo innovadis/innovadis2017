@@ -24,7 +24,6 @@
 
   .video: youtube(:video-id='youtubeId', player-width='800px', player-height='450px')
 
-  //- TODO connect
   social-share
 
   send-box-with-slot(flip, :subject='"Aanmelding voor evenement: " + this.eventItem.title')

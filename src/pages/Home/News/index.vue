@@ -9,7 +9,6 @@
   .container.pt
     .date Publicatiedatum: {{ date }}
 
-  //- TODO connect
   social-share
 
   send-box-with-slot(flip, :subject='"Reactie op nieuwsbericht: " + this.newsItem.title')
