@@ -67,7 +67,8 @@ export default {
   props: {
     grow: Boolean,
     title: String,
-    text: String
+    text: String,
+    subject: String
   },
 
   data() {
@@ -94,6 +95,7 @@ export default {
 
       await this.$store.dispatch('message/send', {
         to: 'c.maks@innovadis.com', // TODO
+        subject: this.subject,
         from: this.email,
         name: this.name,
         phone: this.phoneNumber,

@@ -9,7 +9,7 @@ const mutations = {
 }
 
 const actions = {
-  async send(context, { to, from, name, phone, message }) {
+  async send(context, { to, from, name, phone, message, subject }) {
     function timeout(ms) {
       return new Promise(resolve => setTimeout(resolve, ms))
     }
@@ -18,7 +18,7 @@ const actions = {
 
     return // TODO enable message
     await axios.post('https://formspree.io/' + to, {
-      _subject: `Nieuw bericht van ${name} via contactformulier Innovadis.com`,
+      _subject: subject || `Nieuw bericht van ${name} via contactformulier Innovadis.com`,
       email: from,
       name,
       phone,

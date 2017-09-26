@@ -14,7 +14,7 @@
 
   social-share
 
-  send-box-with-slot(flip)
+  send-box-with-slot(flip, :subject='"Reactie op blog artikel: " + this.blogItem.title')
     h2.dot Vragen over dit artikel?
 
   simple-feed(title='Gerelateerd')

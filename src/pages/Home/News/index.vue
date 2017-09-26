@@ -12,7 +12,7 @@
   //- TODO connect
   social-share
 
-  send-box-with-slot(flip)
+  send-box-with-slot(flip, :subject='"Reactie op nieuwsbericht: " + this.newsItem.title')
     h2 Vragen over dit bericht?
 
   simple-feed(title='Gerelateerd')

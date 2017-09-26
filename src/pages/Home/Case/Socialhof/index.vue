@@ -62,7 +62,7 @@
         macbook
 
 
-  send-box-with-slot(flip)
+  send-box-with-slot(flip, subject='Reactie op Socialhof case')
     h2.dot Vraag een demo aan
     p Meer weten of wil je een demo? Neem dan contact met ons op of laat een berichtje achter. Vinden we leuk!
 </template>

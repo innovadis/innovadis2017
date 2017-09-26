@@ -10,7 +10,7 @@
     title='Een kijkje in de keuken'
     )
 
-  send-box-with-slot(flip)
+  send-box-with-slot(flip, subject='Reactie op vacture overzicht pagina')
     h2.dot Gewoon even praten of staat je baan er niet tussen
 
 </template>

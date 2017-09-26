@@ -19,7 +19,7 @@
 
     .padded-container(v-html='job.body')
 
-    send-box-with-slot(ref='sendbox')
+    send-box-with-slot(ref='sendbox', :subject='"Reactie op vacature: " + this.job.title')
       h2.dot Laten we elkaar wat beter leren kennen
 
 

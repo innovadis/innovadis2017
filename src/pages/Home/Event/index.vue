@@ -26,7 +26,7 @@
   //- TODO connect
   social-share
 
-  send-box-with-slot(flip)
+  send-box-with-slot(flip, :subject='"Aanmelding voor evenement: " + this.eventItem.title')
     h2.dot Aanmelden voor het event
 
   simple-feed(title='Gerelateerd')
