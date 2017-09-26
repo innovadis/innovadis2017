@@ -4,7 +4,7 @@
     h1.dot {{ blogItem.title }}
     p.intro {{ blogItem.lead }}
 
-  .image(:style='{ background: "url(" + blogItem.heroImage + ")" }')
+  .hero-image(:style='{ background: "url(" + blogItem.heroImage + ")" }')
     .info
       h5.type Blog
       .author Door: {{ blogItem.author }}
@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import Moment from 'moment'
+
 export default {
   components: {
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
@@ -37,7 +39,7 @@ export default {
     },
 
     date() {
-      return (new Date(this.blogItem.publish_date)).toDateString()
+      return Moment(this.blogItem.publish_date).format('DD MMMM YYYY')
     }
   },
 
@@ -74,42 +76,6 @@ export default {
 @import 'src/styles/variables';
 
 .page-event {
-  .image {
-    // TODO global class?
-    width: 100%;
-    height: 800px;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    position: relative;
-
-    .info {
-      position: absolute;
-      bottom: 20px;
-      left: calc(50vw - 300px);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-
-      @include phone {
-        left: 0;
-      }
-
-      .type {
-        border-bottom: 1px solid white;
-        padding-bottom: 10px;
-        margin-bottom: 10px;
-        font-size: 18px;
-      }
-
-      .type,
-      div {
-        color: white;
-        text-shadow: 0 0 3px rgba(0, 0, 0, 1);
-      }
-    }
-  }
-
   .feed {
     padding-top: 0;
   }

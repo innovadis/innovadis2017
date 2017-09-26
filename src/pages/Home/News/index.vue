@@ -6,6 +6,9 @@
 
   .container(v-html='newsItem.body')
 
+  .container.pt
+    .date Publicatiedatum: {{ date }}
+
   //- TODO connect
   social-share
 
@@ -17,6 +20,8 @@
 </template>
 
 <script>
+import Moment from 'moment'
+
 export default {
   components: {
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
@@ -32,7 +37,7 @@ export default {
     },
 
     date() {
-      return (new Date(this.newsItem.publish_date)).toDateString() // TODO ?
+      return Moment(this.newsItem.publish_date).format('DD MMMM YYYY')
     }
   },
 

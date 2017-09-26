@@ -4,7 +4,11 @@
     h1.dot {{ eventItem.title }}
     p.intro {{ eventItem.lead }}
 
-  .image(:style='{ background: "url(" + eventItem.heroImage + ")" }')
+  .hero-image(:style='{ background: "url(" + eventItem.heroImage + ")" }')
+    .info
+      h5.type Evenement
+      .author Door: {{ eventItem.author }}
+      .date Publicatiedatum: {{ date }}
 
   .container.pt(v-html='eventItem.body')
 
@@ -32,6 +36,7 @@
 <script>
 import Vue from 'vue'
 import VueYoutubeEmbed, { YouTubePlayer as Youtube, getIdFromURL } from 'vue-youtube-embed'
+import Moment from 'moment'
 
 Vue.use(VueYoutubeEmbed, { global: false })
 
@@ -52,7 +57,7 @@ export default {
     },
 
     date() {
-      return (new Date(this.eventItem.publish_date)).toDateString() // TODO ?
+      return Moment(this.eventItem.publish_date).format('DD MMMM YYYY')
     },
 
     youtubeId() {
@@ -93,14 +98,6 @@ export default {
 @import 'src/styles/variables';
 
 .page-event {
-  .image {
-    width: 100%;
-    height: 800px;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-  }
-
   .video {
     margin: $gutter 0;
     display: flex;
