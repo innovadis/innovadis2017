@@ -50,6 +50,18 @@ export default {
     SocialShare: require('src/components/SocialShare')
   },
 
+  computed: {
+    eventItem() {
+      if (this.$store.state.events.all.length === 0) return
+
+      return this.$store.state.events.all[0].content.nl
+    },
+
+    date() {
+      return (new Date(this.eventItem.publish_date)).toDateString() // TODO ?
+    }
+  },
+
   head: {
     title: {
       inner: 'test'

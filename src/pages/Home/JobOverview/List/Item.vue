@@ -1,5 +1,5 @@
 <template lang="pug">
-router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='{ name: "job", params: { id: 123 } }')
+router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='{ name: "job", params: { slug } }')
   .flex.flex-column
     h3.title {{ job.title }}
     .job-details.flex.flex-align-center
@@ -12,9 +12,17 @@ router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='
 </template>
 
 <script>
+import Slug from 'slug'
+
 export default {
   props: {
     job: Object
+  },
+
+  computed: {
+    slug() {
+      return Slug(this.job.title)
+    }
   }
 }
 </script>

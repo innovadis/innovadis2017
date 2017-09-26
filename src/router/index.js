@@ -54,12 +54,12 @@ const router = new Router({
           component: require('src/pages/Home/Contact')
         },
         {
-          path: '/werkenbij',
+          path: '/werkenbij', // Note: also in Job/index.vue
           name: 'jobs',
           component: require('src/pages/Home/JobOverview')
         },
         {
-          path: '/vacature/:id',
+          path: '/vacature/:slug',
           name: 'job',
           component: require('src/pages/Home/Job')
         },

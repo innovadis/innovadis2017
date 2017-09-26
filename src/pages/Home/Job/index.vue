@@ -27,10 +27,17 @@
 
 <script>
 import SmoothScroll from 'smooth-scroll'
+import Slug from 'slug'
 
 export default {
   components: {
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
+  },
+
+  data() {
+    return {
+      job: null
+    }
   },
 
   methods: {
@@ -44,11 +51,21 @@ export default {
     }
   },
 
-  computed: {
-    job() {
-      if (this.$store.state.jobs.all.length === 0) return
+  created() {
+    if (this.$store.state.jobs.all.length === 0) return
 
-      return this.$store.state.jobs.all[0].content.nl
+    const job = this.$store.state.jobs.all.find(x => Slug(x.content.nl.title) === this.$route.params.slug)
+
+    if (!job) {
+      // Note: this is the preferred way but it causes the target router-view to be empty for unknown reason. So workaround with window.location
+      // this.$router.push({
+      //   name: 'jobs'
+      // })
+
+      window.location = '/werkenbij'
+
+    } else {
+      this.job = job.content.nl
     }
   },
 
