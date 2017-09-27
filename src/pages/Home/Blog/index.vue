@@ -17,12 +17,14 @@
   send-box-with-slot(flip, :subject='"Reactie op blog artikel: " + this.blogItem.title')
     h2.dot Vragen over dit artikel?
 
-  simple-feed(title='Gerelateerd')
+  //- TODO related how?
+  simple-feed(title='Gerelateerd', feedGetter='contentAll')
 
 </template>
 
 <script>
 import Moment from 'moment'
+import Slug from 'slug'
 
 export default {
   components: {
@@ -33,9 +35,9 @@ export default {
 
   computed: {
     blogItem() {
-      if (this.$store.state.blog.all.length === 0) return
+      if (this.$store.state.feed.blog.length === 0) return
 
-      return this.$store.state.blog.all[0].content.nl
+      return this.$store.state.feed.blog.find(x => Slug(x.title) === this.$route.params.name)
     },
 
     date() {

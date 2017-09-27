@@ -2,9 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import message from './modules/message'
-import blog from './modules/blog'
-import news from './modules/news'
-import events from './modules/events'
+import feed from './modules/feed'
 import jobs from './modules/jobs'
 
 const state = {
@@ -24,9 +22,7 @@ export default new Vuex.Store({
   mutations,
   modules: {
     message,
-    blog,
-    news,
-    events,
+    feed,
     jobs
   }
 })

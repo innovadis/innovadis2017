@@ -3,11 +3,11 @@
   .item(
     :style='style',
     :class='{ large: large }',
-    @click='dialogDetailOpen = true'
+    @click='openItem'
     )
     .text
       h3.title {{ feedItem.title }}
-      .source {{ type }}
+      .source {{ feedItem.type }}
 
   news-dialog(
     v-if='dialogDetailOpen',
@@ -32,6 +32,7 @@
 
 <script>
 import Moment from 'moment'
+import Slug from 'slug'
 
 export default {
   components: {
@@ -40,7 +41,6 @@ export default {
   },
 
   props: {
-    type: String,
     item: Object,
     large: Boolean
   },
@@ -49,10 +49,6 @@ export default {
     return {
       dialogDetailOpen: false
     }
-  },
-
-  methods: {
-
   },
 
   computed: {
@@ -64,24 +60,54 @@ export default {
     },
 
     feedItem() {
-      let feedItem = null
+      let feedItem = {}
 
-      switch (this.type) {
+      feedItem.created = Moment(this.item.feedCreated).format('DD MMMM YYYY')
+
+      switch (this.item.feedType) {
         case 'instagram':
-          feedItem = {
-            type: this.type,
-            imageUrl: this.item.images.standard_resolution.url,
-            title: this.item.caption ? this.item.caption.text : '',
-            created: Moment(this.item.created_time * 1000).format('DD MMMM YYYY'),
-            likes: this.item.likes.count,
-            url: this.item.link
-          }
+          feedItem.type = 'Instagram'
+          feedItem.imageUrl = this.item.images.standard_resolution.url
+          feedItem.title = this.item.caption ? this.item.caption.text : ''
+          feedItem.likes = this.item.likes.count
+          feedItem.url = this.item.link
+          break
+        case 'blog':
+          feedItem.type = 'Blog'
+          feedItem.imageUrl = this.item.heroImage // TODO thumbnail?
+          feedItem.title = this.item.title
+          break
+
+        case 'news':
+          feedItem.type = 'Nieuws'
+          feedItem.title = this.item.title
+          break
+
+        case 'event':
+          feedItem.type = 'Evenement'
+          feedItem.imageUrl = this.item.heroImage // TODO thumbnail?
+          feedItem.title = this.item.title
           break
         default:
           throw new Error('unknown type')
       }
 
       return feedItem
+    }
+  },
+
+  methods: {
+    openItem() {
+      if (this.item.feedType === 'instagram') {
+        this.dialogDetailOpen = true
+      } else {
+        this.$router.push({
+          name: this.item.feedType,
+          params: {
+            name: Slug(this.item.title)
+          }
+        })
+      }
     }
   },
 
@@ -110,7 +136,7 @@ export default {
   break-inside: avoid;
   cursor: pointer;
 
-  transition: all 0.4s ease-out;
+  transition: all 0.2s ease-out;
 
   &:hover {
     transform: scale(1.05);
@@ -154,7 +180,6 @@ export default {
     .source {
       color: $bottomColor;
       margin-top: 10px;
-      text-transform: capitalize;
     }
   }
 }
@@ -165,8 +190,7 @@ export default {
   display: flex;
 
   @include phone {
-    flex-direction: column-reverse;
-    // width: 100vw;
+    flex-direction: column-reverse; // width: 100vw;
   }
 
   .info {

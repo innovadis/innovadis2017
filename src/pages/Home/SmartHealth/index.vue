@@ -12,7 +12,7 @@
     h3 Wij helpen de zorg graag vooruit.
     p Have seen an explosion in the popularity of herbs and alternative medicine in general, as people increasingly seek miracle cures that can help them when their doctor or regular pharmacy cannot. The connection to traditional communities also appeals to those who want to go back to a more spiritual
 
-  simple-feed(title='Laatste nieuws in de zorg')
+  simple-feed(title='Laatste nieuws in de zorg', feedGetter='contentAll')
 </template>
 
 <script>

@@ -374,6 +374,7 @@ $transition: 0.3s ease-in-out;
     transform: translateY(-100px);
     transition: transform 0.5s cubic-bezier(0.69, 0.4, 0.75, 0.54) 0.2s;
     background: white;
+    padding: 0 $gutter;
 
     .top-section {
       background: white;

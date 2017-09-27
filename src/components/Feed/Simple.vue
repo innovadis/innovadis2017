@@ -3,10 +3,10 @@
   .title.container
     h2.dot {{ title }}
   .items.container
-      item(:item='instagram.items[0]', type='instagram', large)
+      item(:item='feedItems[0]', large)
       .grid
-        item(:item='instagram.items[1]', type='instagram')
-        item(:item='instagram.items[2]', type='instagram')
+        item(:item='feedItems[1]')
+        item(:item='feedItems[2]')
 
   .swipe.flex.flex-justify-center.flex-align-center
     i.icons8-swipe-left
@@ -22,12 +22,16 @@ export default {
 
   props: {
     title: String,
-    dark: Boolean
+    dark: Boolean,
+    feedGetter: {
+      type: String,
+      default: 'contentAll'
+    }
   },
 
-  data() {
-    return {
-      instagram: require('./rickandmorty.json')
+  computed: {
+    feedItems() {
+      return this.$store.getters['feed/' + this.feedGetter]
     }
   }
 }

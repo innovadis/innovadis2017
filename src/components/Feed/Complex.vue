@@ -76,8 +76,6 @@ export default {
       tagSelected: null,
       tagOptions: ['todo'],
 
-      instagram: require('./rickandmorty.json'),
-
       controlsOpen: false,
 
       anyDialogOpen: false

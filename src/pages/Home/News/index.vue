@@ -14,12 +14,13 @@
   send-box-with-slot(flip, :subject='"Reactie op nieuwsbericht: " + this.newsItem.title')
     h2 Vragen over dit bericht?
 
-  simple-feed(title='Gerelateerd')
+  simple-feed(title='Gerelateerd', feedGetter='contentAll')
 
 </template>
 
 <script>
 import Moment from 'moment'
+import Slug from 'slug'
 
 export default {
   components: {
@@ -30,9 +31,9 @@ export default {
 
   computed: {
     newsItem() {
-      if (this.$store.state.news.all.length === 0) return
+      if (this.$store.state.feed.news.length === 0) return
 
-      return this.$store.state.news.all[0].content.nl
+      return this.$store.state.feed.news.find(x => Slug(x.title) === this.$route.params.name)
     },
 
     date() {

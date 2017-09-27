@@ -2,7 +2,7 @@
 .page-front
   hero
 
-  simple-feed(dark, title='Innovadis in de wereld')
+  simple-feed(dark, title='Innovadis in de wereld', feedGetter='contentFrontpage')
 
   solutions
 

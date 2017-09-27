@@ -29,7 +29,7 @@
   send-box-with-slot(flip, :subject='"Aanmelding voor evenement: " + this.eventItem.title')
     h2.dot Aanmelden voor het event
 
-  simple-feed(title='Gerelateerd')
+  simple-feed(title='Gerelateerd', feedGetter='contentAll')
 
 </template>
 
@@ -37,6 +37,7 @@
 import Vue from 'vue'
 import VueYoutubeEmbed, { YouTubePlayer as Youtube, getIdFromURL } from 'vue-youtube-embed'
 import Moment from 'moment'
+import Slug from 'slug'
 
 Vue.use(VueYoutubeEmbed, { global: false })
 
@@ -51,9 +52,9 @@ export default {
 
   computed: {
     eventItem() {
-      if (this.$store.state.events.all.length === 0) return
+      if (this.$store.state.feed.events.length === 0) return
 
-      return this.$store.state.events.all[0].content.nl
+      return this.$store.state.feed.events.find(x => Slug(x.title) === this.$route.params.name)
     },
 
     date() {
