@@ -1,5 +1,5 @@
   <template lang="pug">
-.page-event
+.page-event(v-if='blogItem')
   .container.pt
     h1.dot {{ blogItem.title }}
     p.intro {{ blogItem.lead }}

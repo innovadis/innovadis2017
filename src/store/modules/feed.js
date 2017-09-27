@@ -1,6 +1,10 @@
 import axios from 'axios'
 import store from 'src/store'
 
+function timeout(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
 const state = {
   instagram: [],
   news: [],
@@ -58,6 +62,8 @@ const actions = {
       console.log(instagramRes)
       console.log(instagramObject)
     } else {
+      await timeout(500)
+
       instagramObject = require('src/assets/rickandmorty.json') // TODO remove from src
     }
 
