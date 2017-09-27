@@ -9,45 +9,68 @@ const state = {
 }
 
 const mutations = {
-  load(state) {
-    state.blog = require('src/../headless/content/blog.json').map(x => {
+  setBlog(state, blog) {
+    state.blog = blog
+  },
+
+  setNews(state, news) {
+    state.news = news
+  },
+
+  setEvents(state, events) {
+    state.events = events
+  },
+
+  setInstagram(state, instagram) {
+    state.instagram = instagram
+  }
+}
+
+const actions = {
+  async load(context) {
+    const blog = require('src/../headless/content/blog.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'blog',
         feedCreated: new Date(x.content.nl.publish_date)
       })
     })
 
-    state.news = require('src/../headless/content/news.json').map(x => {
+    const news = require('src/../headless/content/news.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'news',
         feedCreated: new Date(x.content.nl.publish_date)
       })
     })
 
-    state.events = require('src/../headless/content/events.json').map(x => {
+    const events = require('src/../headless/content/events.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'event',
         feedCreated: new Date(x.content.nl.publish_date)
       })
     })
 
+    let instagramObject
+
     if (process.env.NODE_ENV === 'production') {
-      // TODO
+      const instagramRes = await axios.get('https://www.instagram.com/innovadis/media/')
+
+      instagramObject = instagramRes.data
     } else {
-      const instagram = require('src/assets/rickandmorty.json') // TODO remove from src
-
-      state.instagram = instagram.items.map(x => {
-        return Object.assign(x, {
-          feedType: 'instagram',
-          feedCreated: new Date(x.created_time * 1000)
-        })
-      })
+      instagramObject = require('src/assets/rickandmorty.json') // TODO remove from src
     }
+
+    const instagram = instagramObject.items.map(x => {
+      return Object.assign(x, {
+        feedType: 'instagram',
+        feedCreated: new Date(x.created_time * 1000)
+      })
+    })
+
+    context.commit('setBlog', blog)
+    context.commit('setNews', news)
+    context.commit('setEvents', events)
+    context.commit('setInstagram', instagram)
   }
-}
-
-const actions = {
-
 }
 
 const getters = {
@@ -92,8 +115,8 @@ const getters = {
    * Event rules:
    */
 
-   // TODO smarthealth special getter? smartindustry
-   // TODO jobs page getter?
+  // TODO smarthealth special getter? smartindustry
+  // TODO jobs page getter?
 }
 
 export default {
