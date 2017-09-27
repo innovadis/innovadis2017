@@ -55,6 +55,8 @@ const actions = {
       const instagramRes = await axios.get('/proxy/instagram/innovadis/media/')
 
       instagramObject = instagramRes.data
+      console.log(instagramRes)
+      console.log(instagramObject)
     } else {
       instagramObject = require('src/assets/rickandmorty.json') // TODO remove from src
     }
