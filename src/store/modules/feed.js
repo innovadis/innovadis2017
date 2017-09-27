@@ -56,7 +56,7 @@ const actions = {
     let instagramObject
 
     if (process.env.NODE_ENV === 'production') {
-      const instagramRes = await axios.get('/proxy/instagram/innovadis/media/')
+      const instagramRes = await axios.get('https://innovadis2018.netlify.com/proxy/instagram/innovadis/media/')
 
       instagramObject = instagramRes.data
       console.log(instagramRes)
