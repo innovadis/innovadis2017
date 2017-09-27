@@ -52,7 +52,7 @@ const actions = {
     let instagramObject
 
     if (process.env.NODE_ENV === 'production') {
-      const instagramRes = await axios.get('https://www.instagram.com/innovadis/media/')
+      const instagramRes = await axios.get('/proxy/instagram/innovadis/media/')
 
       instagramObject = instagramRes.data
     } else {

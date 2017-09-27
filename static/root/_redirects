@@ -1,1 +1,3 @@
 /*    /index.html   200
+
+/proxy/instagram/*  https://www.instagram.com/:splat  200
