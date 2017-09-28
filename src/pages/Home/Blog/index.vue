@@ -33,6 +33,12 @@ export default {
     SocialShare: require('src/components/SocialShare')
   },
 
+  data() {
+    return {
+      googleTitle: ''
+    }
+  },
+
   computed: {
     blogItem() {
       if (this.$store.state.feed.blog.length === 0) return
@@ -47,11 +53,11 @@ export default {
 
   head: {
     title: {
-      inner: 'test'
+      inner: 'Blog'
     },
     meta: [
       // Google+
-      { itemprop: 'name', content: 'Content Title' },
+      { itemprop: 'name', content: this.googleTitle },
       { itemprop: 'description', content: 'Content Title' },
       { itemprop: 'image', content: 'Content Title' },
 
@@ -70,7 +76,24 @@ export default {
     ]
 
     // TODO meta tags, og, twitter, etc
+  },
+
+  mounted() {
+    // this.googleTitle  = this.blogItem.title
+
+    this.$emit('updateHead')
   }
+
+  // watch: {
+  //   'blogItem': {
+  //     handler: function(v) {
+  //       console.log('123')
+  //       this.$emit('updateHead')
+  //     },
+  //     immediate: true,
+  //     deep: true
+  //   }
+  // }
 }
 </script>
 

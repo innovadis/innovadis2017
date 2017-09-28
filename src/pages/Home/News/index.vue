@@ -43,7 +43,7 @@ export default {
 
   head: {
     title: {
-      inner: 'test'
+      inner: 'Nieuws'
     },
     meta: [
       // Google+

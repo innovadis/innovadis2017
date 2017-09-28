@@ -68,7 +68,7 @@ export default {
 
   head: {
     title: {
-      inner: 'test'
+      inner: 'Evenement'
     },
     meta: [
       // Google+

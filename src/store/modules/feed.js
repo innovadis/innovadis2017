@@ -13,25 +13,7 @@ const state = {
 }
 
 const mutations = {
-  setBlog(state, blog) {
-    state.blog = blog
-  },
-
-  setNews(state, news) {
-    state.news = news
-  },
-
-  setEvents(state, events) {
-    state.events = events
-  },
-
-  setInstagram(state, instagram) {
-    state.instagram = instagram
-  }
-}
-
-const actions = {
-  async load(context) {
+  load(state) {
     const blog = require('src/../headless/content/blog.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'blog',
@@ -53,6 +35,18 @@ const actions = {
       })
     })
 
+    state.blog = blog
+    state.news = news
+    state.events = events
+  },
+
+  setInstagram(state, instagram) {
+    state.instagram = instagram
+  }
+}
+
+const actions = {
+  async load(context) {
     let instagramObject
 
     if (process.env.NODE_ENV === 'production') {
@@ -74,9 +68,6 @@ const actions = {
       })
     })
 
-    context.commit('setBlog', blog)
-    context.commit('setNews', news)
-    context.commit('setEvents', events)
     context.commit('setInstagram', instagram)
   }
 }

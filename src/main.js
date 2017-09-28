@@ -21,6 +21,7 @@ Vue.use(VueHead)
 Vue.component('InnoButton', Button)
 Vue.component('InnoButtonAlternate', ButtonAlternate)
 
+store.commit('feed/load')
 store.dispatch('feed/load')
 store.dispatch('jobs/load')
 

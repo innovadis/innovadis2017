@@ -80,7 +80,7 @@ export default {
 
   head: {
     title: {
-      inner: 'test'
+      inner: 'Socialhof'
     },
     meta: [
       // Google+

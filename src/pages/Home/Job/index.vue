@@ -70,7 +70,7 @@ export default {
 
   head: {
     title: {
-      inner: 'test'
+      inner: 'Vacature'
     },
     meta: [
       // Google+
