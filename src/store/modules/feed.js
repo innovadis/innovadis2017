@@ -17,21 +17,24 @@ const mutations = {
     const blog = require('src/../headless/content/blog.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'blog',
-        feedCreated: new Date(x.content.nl.publish_date)
+        feedCreated: new Date(x.content.nl.publish_date),
+        feedId: 'blog' + x.content.nl.title
       })
     })
 
     const news = require('src/../headless/content/news.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'news',
-        feedCreated: new Date(x.content.nl.publish_date)
+        feedCreated: new Date(x.content.nl.publish_date),
+        feedId: 'news' + x.content.nl.title
       })
     })
 
     const events = require('src/../headless/content/events.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'event',
-        feedCreated: new Date(x.content.nl.publish_date)
+        feedCreated: new Date(x.content.nl.publish_date),
+        feedId: 'event' + x.content.nl.title
       })
     })
 
@@ -53,8 +56,6 @@ const actions = {
       const instagramRes = await axios.get('https://innovadis2018.netlify.com/proxy/instagram/innovadis/media/')
 
       instagramObject = instagramRes.data
-      console.log(instagramRes)
-      console.log(instagramObject)
     } else {
       await timeout(500)
 
@@ -64,7 +65,8 @@ const actions = {
     const instagram = instagramObject.items.map(x => {
       return Object.assign(x, {
         feedType: 'instagram',
-        feedCreated: new Date(x.created_time * 1000)
+        feedCreated: new Date(x.created_time * 1000),
+        feedId: x.id
       })
     })
 
@@ -79,6 +81,10 @@ const getters = {
     all.sort((a, b) => b.feedCreated.toISOString().localeCompare(a.feedCreated.toISOString()))
 
     return all
+  },
+
+  contentNone() {
+    return []
   },
 
   /**
@@ -99,6 +105,60 @@ const getters = {
     }
 
     return all
+  },
+
+  /**
+   * For Complex feed if Smart Health is selected
+   * - show only blog with type 'smart-health'
+   * - show only news/events/instagram with tag 'smart-health'
+   */
+  contentMarketSmartHealth(state) {
+    const MARKET = 'smart-health'
+
+    const events = state.events.filter(x => x.tags.includes(MARKET))
+    const news = state.news.filter(x => x.tags.includes(MARKET))
+    const blog = state.blog.filter(x => x.blogType === MARKET)
+
+    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET))
+
+    const items = [].concat(events, news, blog, instagram)
+
+    return items
+  },
+
+  /**
+ * For Complex feed if Smart Industry is selected
+ * - show only blog with type 'smart-industry'
+ * - show only news/events/instagram with tag 'smart-industry'
+ */
+  contentMarketSmartIndustry(state) {
+    const MARKET = 'smart-industry'
+
+    const events = state.events.filter(x => x.tags.includes(MARKET))
+    const news = state.news.filter(x => x.tags.includes(MARKET))
+    const blog = state.blog.filter(x => x.blogType === MARKET)
+
+    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET))
+
+    const items = [].concat(events, news, blog, instagram)
+
+    return items
+  },
+
+  contentBlog(state) {
+    return state.blog
+  },
+
+  contentNews(state) {
+    return state.news
+  },
+
+  contentEvents(state) {
+    return state.events
+  },
+
+  contentInstagram(state) {
+    return state.instagram
   }
 
   /**

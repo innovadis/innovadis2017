@@ -27,6 +27,18 @@
     }
   }
 
+  .multiselect__input {
+    font-weight: bold;
+
+    &:placeholder-shown {
+      font-weight: normal;
+    }
+
+    &::placeholder {
+      color: $gray2 !important;
+    }
+  }
+
   .multiselect__select {
     &:before {
       top: 80%;

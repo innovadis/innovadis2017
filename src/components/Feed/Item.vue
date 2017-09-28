@@ -1,5 +1,5 @@
 <template lang="pug">
-.flex.flex-justify-center(v-if='item')
+.flex.flex-justify-center
   .item(
     :style='style',
     :class='{ large: large }',

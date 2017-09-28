@@ -14,7 +14,10 @@
       placeholder='Selecteer een markt',
       select-label='',
       deselect-label='',
-      selected-label=''
+      selected-label='',
+      track-by='key',
+      label='label',
+      @input='marketChange'
       )
 
     multiselect(
@@ -23,7 +26,10 @@
       placeholder='Selecteer een medium',
       select-label='',
       deselect-label='',
-      selected-label=''
+      selected-label='',
+      track-by='key',
+      label='label',
+      @input='mediaChange'
       )
 
     multiselect(
@@ -46,18 +52,19 @@
       | Filters
 
     .news-items(ref='newsItems')
-      item(:item='instagram.items[0]', type='instagram', large, @dialogOpen='dialogOpen')
-      .grid
-        item(:item='instagram.items[1]', type='instagram', @dialogOpen='dialogOpen')
-        item(:item='instagram.items[2]', type='instagram', @dialogOpen='dialogOpen')
+      .flex
+        transition-group(name='feedlist', mode='out-in', tag='div')
+          item(:item='item', v-for='item in oddItems', :key='item.feedId', @dialogOpen='dialogOpen')
 
-      item(:item='item', type='instagram', v-for='item in instagram.items.slice(3)', :key='item.url', @dialogOpen='dialogOpen')
+        transition-group(name='feedlist', mode='out-in', tag='div')
+          item(:item='item', v-for='item in evenItems', :key='item.feedId', @dialogOpen='dialogOpen')
 
 </template>
 
 <script>
 import Multiselect from 'src/../node_modules/vue-multiselect/src/Multiselect'
-// import axios from 'axios'
+
+const TRANSITION_DURATION = 0
 
 export default {
   components: {
@@ -68,18 +75,80 @@ export default {
   data() {
     return {
       marketSelected: null,
-      marketOptions: ['Smart health', 'Smart industry'],
+      marketOptions: [
+        {
+          key: 'smart-health',
+          label: 'Smart Health'
+        },
+        {
+          key: 'smart-industry',
+          label: 'Smart Industry'
+        }
+      ],
 
       mediaSelected: null,
-      mediaOptions: ['Instagram', 'Facebook', 'Twitter'],
+      mediaOptions: [
+        {
+          key: 'instagram',
+          label: 'Instagram'
+        },
+        {
+          key: 'blog',
+          label: 'Blog'
+        },
+        {
+          key: 'news',
+          label: 'Nieuws'
+        },
+        {
+          key: 'event',
+          label: 'Evenementen'
+        }
+      ],
 
       tagSelected: null,
       tagOptions: ['todo'],
 
       controlsOpen: false,
 
-      anyDialogOpen: false
+      anyDialogOpen: false,
+
+      feedGetter: 'contentAll'
     }
+  },
+
+  computed: {
+    feedItems() {
+      return this.$store.getters['feed/' + this.feedGetter]
+    },
+
+    oddItems() {
+      const odd = []
+
+      for (var index = 0; index < this.feedItems.length; index++) {
+        var element = this.feedItems[index]
+
+        if (index % 2 === 0) {
+          odd.push(element)
+        }
+      }
+
+      return odd
+    },
+
+    evenItems() {
+      const even = []
+
+      for (var index = 0; index < this.feedItems.length; index++) {
+        var element = this.feedItems[index]
+
+        if (index % 2 === 1) {
+          even.push(element)
+        }
+      }
+
+      return even
+    },
   },
 
   methods: {
@@ -91,13 +160,47 @@ export default {
 
     dialogOpen(open) {
       this.anyDialogOpen = open
+    },
+
+    marketChange(v) {
+      this.mediaSelected = null
+
+      // this.feedGetter = 'contentNone'
+
+      setTimeout(() => {
+        if (!v) {
+          this.feedGetter = 'contentAll'
+        } else if (v.key === 'smart-industry') {
+          this.feedGetter = 'contentMarketSmartIndustry'
+        } else if (v.key === 'smart-health') {
+          this.feedGetter = 'contentMarketSmartHealth'
+        } else {
+          throw new Error('invalid market')
+        }
+      }, TRANSITION_DURATION)
+    },
+
+    mediaChange(v) {
+      this.marketSelected = null
+
+      // this.feedGetter = 'contentNone'
+
+      setTimeout(() => {
+        if (!v) {
+          this.feedGetter = 'contentAll'
+        } else if (v.key === 'blog') {
+          this.feedGetter = 'contentBlog'
+        } else if (v.key === 'news') {
+          this.feedGetter = 'contentNews'
+        } else if (v.key === 'event') {
+          this.feedGetter = 'contentEvents'
+        } else if (v.key === 'instagram') {
+          this.feedGetter = 'contentInstagram'
+        } else {
+          throw new Error('invalid media')
+        }
+      }, TRANSITION_DURATION)
     }
-  },
-
-  async created() {
-    // const res = await axios.get('https://www.instagram.com/rickandmorty/media/')
-
-    // this.instagramItems = res.data
   },
 
   mounted() {
@@ -156,9 +259,7 @@ export default {
       margin: $gutter/2;
       width: calc(100vw - #{$gutter});
       min-height: calc(100vh - #{$headerHeight}); // min-height: 100vh;
-      text-align: center; // position: absolute;
-      // top: 0;
-      // left: 0;
+      text-align: center;
       background: $background;
       margin: 0;
       padding: 20px;
@@ -195,7 +296,6 @@ export default {
     overflow-x: hidden;
     overflow-y: auto;
     width: 930px;
-    padding-bottom: 100px;
 
     &::-webkit-scrollbar {
       width: 0px;
@@ -207,25 +307,15 @@ export default {
       width: 100vw;
       min-height: 100vh;
       z-index: 2;
-      padding-top: $headerHeight - 25px; // position: absolute;
-      // top: $headerHeight - 10px;
-      // left: 0;
+      padding-top: $headerHeight - 25px;
       background: $background;
       transition: all 0.5s ease-in-out;
       transform: translateY(-100vh);
-
-      &.down {}
     }
 
     .news-items {
-      height: 100%;
       padding: $gutter;
       width: 890px;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
 
       @media (max-width: 1400px) {
         width: 410px;
@@ -269,10 +359,29 @@ export default {
     }
   }
 }
-</style>
 
-<style lang="scss">
-@import 'src/styles/variables';
+// Transition
+.feedlist-item {
+  display: inline-block;
+  margin-right: 10px;
+}
 
-.complex {}
+.feedlist-leave-active {
+  height: 0;
+}
+
+.feedlist-enter-active,
+.feedlist-leave-active {
+  transition: all 1s ease-in-out;
+}
+
+.feedlist-enter,
+.feedlist-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.feedlist-move {
+  transition: transform 1s;
+}
 </style>
