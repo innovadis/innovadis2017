@@ -1,6 +1,10 @@
 import axios from 'axios'
 import store from 'src/store'
 
+const MARKET_SMART_INDUSTRY = 'smart-industry'
+const MARKET_SMART_HEALTH = 'smart-health'
+const HASHTAG_REGEX = new RegExp(/(#[a-z0-9][a-z0-9\-_]*)/ig)
+
 function timeout(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -113,13 +117,11 @@ const getters = {
    * - show only news/events/instagram with tag 'smart-health'
    */
   contentMarketSmartHealth(state) {
-    const MARKET = 'smart-health'
+    const events = state.events.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
+    const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
+    const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
 
-    const events = state.events.filter(x => x.tags.includes(MARKET))
-    const news = state.news.filter(x => x.tags.includes(MARKET))
-    const blog = state.blog.filter(x => x.blogType === MARKET)
-
-    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET))
+    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET_SMART_HEALTH))
 
     const items = [].concat(events, news, blog, instagram)
 
@@ -132,13 +134,11 @@ const getters = {
  * - show only news/events/instagram with tag 'smart-industry'
  */
   contentMarketSmartIndustry(state) {
-    const MARKET = 'smart-industry'
+    const events = state.events.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
+    const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
+    const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
 
-    const events = state.events.filter(x => x.tags.includes(MARKET))
-    const news = state.news.filter(x => x.tags.includes(MARKET))
-    const blog = state.blog.filter(x => x.blogType === MARKET)
-
-    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET))
+    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET_SMART_INDUSTRY))
 
     const items = [].concat(events, news, blog, instagram)
 
@@ -159,7 +159,7 @@ const getters = {
 
   contentInstagram(state) {
     return state.instagram
-  }
+  },
 
   /**
    * Blog rules:
@@ -176,6 +176,40 @@ const getters = {
 
   // TODO smarthealth special getter? smartindustry
   // TODO jobs page getter?
+
+  tags(state) {
+    let tags = [].concat(
+      state.events.reduce((acc, val) => { return acc.concat(val.tags) }, []),
+      state.blog.reduce((acc, val) => { return acc.concat(val.tags) }, []),
+      state.news.reduce((acc, val) => { return acc.concat(val.tags) }, [])
+    )
+
+    for (const post of state.instagram) {
+      if (post.caption) {
+        const hashtags = post.caption.text.match(HASHTAG_REGEX)
+
+        if (hashtags) {
+          for (const tag of hashtags) {
+            tags.push(tag.replace('#', ''))
+          }
+        }
+      }
+    }
+
+    tags = [...new Set(tags)] // dedupe
+
+    {
+      const index = tags.findIndex(x => x === MARKET_SMART_HEALTH)
+      if (index >= 0) tags.splice(index, 1)
+    }
+
+    {
+      const index = tags.findIndex(x => x === MARKET_SMART_INDUSTRY)
+      if (index >= 0) tags.splice(index, 1)
+    }
+
+    return tags
+  }
 }
 
 export default {

@@ -32,14 +32,15 @@
       @input='mediaChange'
       )
 
-    multiselect(
+    multiselect.multiselect-tags(
       v-model='tagSelected',
-      :options='tagOptions',
+      :options='$store.getters["feed/tags"]',
       placeholder='Zoek op tags',
       :multiple='true',
       select-label='',
       deselect-label='',
-      selected-label=''
+      selected-label='',
+      @input='tagChange'
       )
 
     .buttons.flex.flex-align-center.flex-justify-between
@@ -63,8 +64,6 @@
 
 <script>
 import Multiselect from 'src/../node_modules/vue-multiselect/src/Multiselect'
-
-const TRANSITION_DURATION = 0
 
 export default {
   components: {
@@ -106,8 +105,7 @@ export default {
         }
       ],
 
-      tagSelected: null,
-      tagOptions: ['todo'],
+      tagSelected: [],
 
       controlsOpen: false,
 
@@ -119,7 +117,17 @@ export default {
 
   computed: {
     feedItems() {
-      return this.$store.getters['feed/' + this.feedGetter]
+      const items = this.$store.getters['feed/' + this.feedGetter]
+
+      if (this.tagSelected.length > 0) {
+        let filteredItems = items.filter(x => (x.tags && x.tags.some(y => this.tagSelected.includes(y))))
+
+        filteredItems = filteredItems.concat(items.filter(x => x.caption && this.tagSelected.some(y => x.caption.text.includes('#' + y))))
+
+        return filteredItems
+      }
+
+      return items
     },
 
     oddItems() {
@@ -148,7 +156,7 @@ export default {
       }
 
       return even
-    },
+    }
   },
 
   methods: {
@@ -164,42 +172,43 @@ export default {
 
     marketChange(v) {
       this.mediaSelected = null
+      this.tagSelected = []
 
-      // this.feedGetter = 'contentNone'
-
-      setTimeout(() => {
-        if (!v) {
-          this.feedGetter = 'contentAll'
-        } else if (v.key === 'smart-industry') {
-          this.feedGetter = 'contentMarketSmartIndustry'
-        } else if (v.key === 'smart-health') {
-          this.feedGetter = 'contentMarketSmartHealth'
-        } else {
-          throw new Error('invalid market')
-        }
-      }, TRANSITION_DURATION)
+      if (!v) {
+        this.feedGetter = 'contentAll'
+      } else if (v.key === 'smart-industry') {
+        this.feedGetter = 'contentMarketSmartIndustry'
+      } else if (v.key === 'smart-health') {
+        this.feedGetter = 'contentMarketSmartHealth'
+      } else {
+        throw new Error('invalid market')
+      }
     },
 
     mediaChange(v) {
       this.marketSelected = null
+      this.tagSelected = []
 
-      // this.feedGetter = 'contentNone'
+      if (!v) {
+        this.feedGetter = 'contentAll'
+      } else if (v.key === 'blog') {
+        this.feedGetter = 'contentBlog'
+      } else if (v.key === 'news') {
+        this.feedGetter = 'contentNews'
+      } else if (v.key === 'event') {
+        this.feedGetter = 'contentEvents'
+      } else if (v.key === 'instagram') {
+        this.feedGetter = 'contentInstagram'
+      } else {
+        throw new Error('invalid media')
+      }
+    },
 
-      setTimeout(() => {
-        if (!v) {
-          this.feedGetter = 'contentAll'
-        } else if (v.key === 'blog') {
-          this.feedGetter = 'contentBlog'
-        } else if (v.key === 'news') {
-          this.feedGetter = 'contentNews'
-        } else if (v.key === 'event') {
-          this.feedGetter = 'contentEvents'
-        } else if (v.key === 'instagram') {
-          this.feedGetter = 'contentInstagram'
-        } else {
-          throw new Error('invalid media')
-        }
-      }, TRANSITION_DURATION)
+    tagChange(v) {
+      this.marketSelected = null
+      this.mediaSelected = null
+
+      this.feedGetter = 'contentAll'
     }
   },
 
@@ -289,6 +298,17 @@ export default {
 
     .multiselect {
       margin: 10px 0;
+
+      &.multiselect-tags {
+        /deep/ .multiselect__element {
+          height: 45px !important;
+          padding-left: 10px;
+        }
+
+        /deep/ .multiselect__option {
+          padding: 8px;
+        }
+      }
     }
   }
 

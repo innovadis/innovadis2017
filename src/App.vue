@@ -16,6 +16,7 @@ export default {
 @import 'src/styles/fonts';
 @import 'src/styles/multiselect';
 @import 'src/styles/hero-image';
+@import 'src/styles/scrollbar';
 
 #app {
   -webkit-font-smoothing: antialiased;
