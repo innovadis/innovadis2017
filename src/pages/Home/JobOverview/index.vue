@@ -23,12 +23,16 @@ export default {
     InnoLab: require('./InnoLab'),
     SimpleFeed: require('src/components/Feed/Simple'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
+  },
+
+  head: {
+    title: {
+      inner: 'Werken bij'
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
-
-
 </style>

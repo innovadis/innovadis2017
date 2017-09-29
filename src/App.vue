@@ -5,7 +5,15 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+
+  head: {
+    meta() {
+      return [
+        { property: 'og:url', content: window.location.href }
+      ]
+    }
+  }
 }
 </script>
 

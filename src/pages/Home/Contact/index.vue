@@ -18,6 +18,12 @@ export default {
     Hero: require('./Hero'),
     Support: require('./Support'),
     SendBox: require('src/components/SendBox')
+  },
+
+  head: {
+    title: {
+      inner: 'Contact'
+    }
   }
 }
 </script>

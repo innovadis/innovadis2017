@@ -121,6 +121,12 @@ export default {
       this.layerStarsOffsetX = (e.clientX - this.$refs.layerStars.clientWidth / 2) * STARS_FACTOR - X_OFFSET
       this.layerStarsOffsetY = (e.clientY - this.$refs.layerStars.clientHeight / 2) * STARS_FACTOR
     }
+  },
+
+  head: {
+    title: {
+      inner: 'Onze cultuur'
+    }
   }
 }
 </script>
@@ -171,7 +177,7 @@ export default {
 
       width: 100%;
       height: 100%;
-      background-size: calc(100% + #{$xOffset*2});
+      background-size: calc(100%+#{$xOffset*2});
       background-origin: center;
       position: absolute;
       top: 0;

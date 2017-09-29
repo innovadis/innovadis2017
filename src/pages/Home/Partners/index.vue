@@ -226,6 +226,12 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
     setTimeout(() => {
       this.increaseMarkerOpacity()
     }, 1000)
+  },
+
+  head: {
+    title: {
+      inner: 'Onze partners'
+    }
   }
 }
 </script>

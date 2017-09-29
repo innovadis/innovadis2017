@@ -24,6 +24,12 @@ export default {
     InnoCase: require('./Case'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     SimpleFeed: require('src/components/Feed/Simple')
+  },
+
+  head: {
+    title: {
+      inner: 'Smart Health'
+    }
   }
 }
 </script>

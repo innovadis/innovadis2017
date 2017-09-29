@@ -1,8 +1,8 @@
 <template lang="pug">
 .case-socialhof
   .container.pt
-    h1.dot Socialhof
-    p.intro De Vriezenhof is een vooruitstrevende zorginstelling in Vriezenveen, die wonen, welzijn dagbesteding, huishoudelijke ondersteuning en wijkverpleging en -verzorging biedt. Er zijn de laatste jaren grote verbeteringen doorgevoerd. Een belangrijke basis voor de verbeteringen is dat de medewerkers in zelfsturende teams werken. Het blijkt echter dat medewerkers van verschillende teams daardoor minder contact hebben. Om teams van elkaar te kunnen laten leren, om successen te vieren en om elkaar en anderen te vertellen wat er allemaal gebeurt in en rondom De Vriezenhof, is er behoefte aan een platform die dat mogelijk maakt en stimuleert.
+    h1.dot {{ title }}
+    p.intro {{ lead }}
 
   .hero
 
@@ -78,31 +78,32 @@ export default {
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
   },
 
+  data() {
+    return {
+      title: 'Socialhof',
+      lead: 'De Vriezenhof is een vooruitstrevende zorginstelling in Vriezenveen, die wonen, welzijn dagbesteding, huishoudelijke ondersteuning en wijkverpleging en -verzorging biedt. Er zijn de laatste jaren grote verbeteringen doorgevoerd. Een belangrijke basis voor de verbeteringen is dat de medewerkers in zelfsturende teams werken. Het blijkt echter dat medewerkers van verschillende teams daardoor minder contact hebben. Om teams van elkaar te kunnen laten leren, om successen te vieren en om elkaar en anderen te vertellen wat er allemaal gebeurt in en rondom De Vriezenhof, is er behoefte aan een platform die dat mogelijk maakt en stimuleert.'
+    }
+  },
+
   head: {
     title: {
       inner: 'Socialhof'
     },
-    meta: [
-      // Google+
-      { itemprop: 'name', content: 'Content Title' },
-      { itemprop: 'description', content: 'Content Title' },
-      { itemprop: 'image', content: 'Content Title' },
+    meta() {
+      return [
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.lead },
 
-      // Twitter
-      { name: 'twitter:title', content: 'Content Title' },
-      { name: 'twitter:description', content: 'Content Title' },
-      { name: 'twitter:image', content: 'Content Title' },
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.lead },
 
-      // Facebook
-      { property: 'og:title', content: 'Content Title' },
-      { property: 'og:description', content: 'short intro' },
-      { property: 'og:locale', content: 'nl_NL' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: 'todo' }, // only if you want to overwrite default
-      { property: 'og:url', content: 'todo' }
-    ]
-
-    // TODO meta tags, og, twitter, etc
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.lead }
+      ]
+    }
   }
 }
 </script>

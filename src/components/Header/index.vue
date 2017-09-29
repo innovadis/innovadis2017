@@ -250,8 +250,6 @@ export default {
       var menuWrap = document.querySelector('.sd-dropdown__wrap')
       var orb = menuWrap.querySelector('.orb')
 
-      // holder.style.display = 'flex'
-
       menuBg.style.visibility = 'visible'
       menuWrap.style.visibility = 'visible'
       menuWrap.style['box-shadow'] = '10px 20px 20px 0 rgba(0, 0, 0, 0.1)'
