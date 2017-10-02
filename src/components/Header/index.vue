@@ -27,10 +27,15 @@ header
     router-link.flex.flex-align-center.cp(:to='{ name: "home" }', tag='div')
       img(src='/static/images/svg/logo.svg')
     .items
-      h3.item Aandachtsgebieden (todo)
-      router-link.item(:to='{ name: "products" }', tag='h3') Producten
+      h3.item Aandachtsgebieden
+      router-link.item.indent(tag='h3', :to='{ name: "smart-industry" }', @click.native='closeMenu(true)') Smart Industry
+      router-link.item.indent(tag='h3', :to='{ name: "smart-health" }', @click.native='closeMenu(true)') Smart Health
+
       router-link.item(:to='{ name: "about" }', tag='h3') Over ons
-      router-link.item(:to='{ name: "world" }', tag='h3') Onze wereld
+      router-link.item.indent(tag='h3', :to='{ name: "about" }', @click.native='closeMenu(true)') Onze cultuur
+      router-link.item.indent(tag='h3', :to='{ name: "world" }', @click.native='closeMenu(true)') Onze wereld
+      router-link.item.indent(tag='h3', :to='{ name: "partners" }', @click.native='closeMenu(true)') Onze partners
+
       router-link.item(:to='{ name: "contact" }', tag='h3') Contact
       inno-button.item(label='Werken bij.', yellow, :to='{ name: "jobs" }')
 </template>
@@ -288,6 +293,10 @@ $transition: 0.3s ease-in-out;
       transform: translateX(-50px);
       transition: all $transition;
       transition-delay: 0;
+
+      &.indent {
+        margin-left: 20px;
+      }
     }
 
     .button {
@@ -320,7 +329,7 @@ $transition: 0.3s ease-in-out;
         opacity: 1;
         transform: translateX(0);
 
-        $itemCount: 6;
+        $itemCount: 9;
         @for $i from 0 to $itemCount+1 {
           &:nth-child(#{$i}) {
             transition-delay: 0.1s * $i;
