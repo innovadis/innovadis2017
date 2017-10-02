@@ -190,7 +190,7 @@ const getters = {
 
         if (hashtags) {
           for (const tag of hashtags) {
-            tags.push(tag.replace('#', ''))
+            tags.push(tag.replace('#', '').toLowerCase())
           }
         }
       }
