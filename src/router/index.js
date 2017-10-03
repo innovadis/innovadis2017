@@ -27,7 +27,7 @@ const router = new Router({
           name: 'smart-industry'
         },
         {
-          path: '/producten',
+          path: '/producten', // NYI
           name: 'products'
         },
         {
@@ -59,27 +59,27 @@ const router = new Router({
           component: require('src/pages/Home/JobOverview')
         },
         {
-          path: '/vacature/:slug',
+          path: '/vacature/:slug', // Note: also in build/sitemap.js
           name: 'job',
           component: require('src/pages/Home/Job')
         },
         {
-          path: '/cases/:name',
+          path: '/cases/:name', // Note: also in build/sitemap.js
           name: 'case',
           component: require('src/pages/Home/Case')
         },
         {
-          path: '/evenement/:name',
+          path: '/evenement/:name', // Note: also in build/sitemap.js
           name: 'event',
           component: require('src/pages/Home/Event')
         },
         {
-          path: '/nieuws/:name',
+          path: '/nieuws/:name', // Note: also in build/sitemap.js
           name: 'news',
           component: require('src/pages/Home/News')
         },
         {
-          path: '/blog/:name',
+          path: '/blog/:name', // Note: also in build/sitemap.js
           name: 'blog',
           component: require('src/pages/Home/Blog')
         },
