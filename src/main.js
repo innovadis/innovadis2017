@@ -10,6 +10,14 @@ import ButtonAlternate from 'src/components/ButtonAlternate'
 import VueInView from 'vueinview'
 import Moment from 'moment'
 import VueHead from 'vue-head'
+import VueAnalytics from 'vue-analytics'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-5365402-7',
+  router,
+  checkDuplicatedScript: true,
+  disableScriptLoader: process.env.NODE_ENV !== 'production'
+})
 
 Moment.locale('nl')
 
