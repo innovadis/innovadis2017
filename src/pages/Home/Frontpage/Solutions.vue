@@ -1,13 +1,13 @@
 <template lang="pug">
 .solutions
   .container.text-center
-    h2 Oplossingen
-    h2.dot die je verder helpen
-    p Geen enkele wens is hetzelfde. Daarom bouwen wij samen met jullie een oplossing op maat. Onze visie en ervaring zorgen dat de oplossing state-of-the-art is. Wij houden van ons vak. We zijn hardwerkende specialisten, misschien wel vakidioten, die zich blijven ontwikkelen.
+    h2 Innovadis,
+    h2.dot niet zomaar een IT-bedrijf
+    p Wij verbeteren de wereld met innovatieve IT-oplossingen waar onze opdrachtgevers en hun klanten blij van worden. We lopen voorop als het gaat om kennis en werken in enthousiaste teams samen met onze opdrachtgevers aan succes en een duurzame relatie.
 
   .image
     img(src='https://placehold.it/850x400')
-    inno-button(label='Meer over ons', yellow, inverted)
+    inno-button(label='De Innovadis manier', yellow, inverted)
 </template>
 
 <script>

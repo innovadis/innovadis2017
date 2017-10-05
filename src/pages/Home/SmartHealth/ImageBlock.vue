@@ -2,7 +2,7 @@
 .image-block
   .container
     .text
-      p There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
+      p TODO There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
 </template>
 
 <script>

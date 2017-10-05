@@ -25,6 +25,10 @@ $shadow-large: 10px 20px 20px 0 rgba(8, 45, 60, 0.1); // Note: this is used in H
 
 a {
   text-decoration: none;
+
+  &:visited {
+    color: initial;
+  }
 }
 
 .cp {

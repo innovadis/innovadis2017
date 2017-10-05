@@ -2,7 +2,9 @@
 .page-partners
   .container.pt
     h1.dot Onze partners
-    p.intro Bij Innovadis geloven we in samenwerkingen met technology & business partners. Wij werken intensief samen met onze partners om onze klanten daadwerkelijk verder helpen en toegevoegde waarde te bieden.
+    p.intro Bij Innovadis lopen we graag voorop, maar hoe houd je alle ontwikkelingen nog bij? Wij geloven dat door samen te werken met innovatieve partners, we gezamenlijk de meeste waarde kunnen creëren voor onze opdrachtgevers. Niet alleen praktisch, maar vooral ook leuk!
+
+    p.intro Lees hier meer over onze strategische partners van nu. En denk je dat je zelf een van onze partners van de toekomst kunt worden, aarzel niet om contact op te nemen.
 
   .map
     .background
@@ -22,7 +24,7 @@
       transition(name='slidetop', mode='out-in')
         .card.flex.flex-column(v-if='selectedPartner', :key='selectedPartner.key')
           .logo(:style='{ background: "url(" + selectedPartner.logo + ")" }')
-          b {{ selectedPartner.lead }}
+          b(v-if='selectedPartner.lead') {{ selectedPartner.lead }}
           p.text {{ selectedPartner.text }}
 
   send-box-with-slot.pt(flip)
@@ -61,7 +63,7 @@ export default {
           },
           logo: '/static/images/logos/umbraco.png',
           name: 'Umbraco',
-          lead: 'Innovadis is Umbraco partner',
+          lead: '',
           text: `Wij zijn officieel Umbraco Partner. Dat betekend dat wij altijd op de hoogte zijn van de nieuwste ontwikkelingen en kennis op Umbraco gebied. Hiermee heb je de zekerheid van een ervaren partner in het implementeren van Umbraco oplossingen. Wij hebben onder andere  Umbraco implementaties verzorgd voor Ardanta (ASR Verzekeringen), AXA Stenman Industries en DBC. Wil je meer weten over onze Umbraco cases of wil je een demo van de mogelijkheden van Umbraco? Neem dan contact met ons op!`
         },
         dynamicweb: {
@@ -71,8 +73,8 @@ export default {
           },
           logo: '/static/images/logos/dynamicweb.png',
           name: 'DynamicWeb',
-          lead: 'Innovadis is DynamicWeb partner',
-          text: 'todo'
+          lead: '',
+          text: 'Dynmicweb en Innovadis werken al sinds 2006 samen. Als premium sollution partner ontwikkelen wij een deel van onze oplossingen op het Dynamicweb All-in-one business platform. Dit platform combineert e-commerce, marketing en content management en vormt voor veel van onze klanten het fundament voor hun online omgeving. Dynamicweb is een Deens softwarebedrijf met wereldwijd meer dan 200 partners die gebruik maken van de software.'
         },
         syncforce: {
           location: {
@@ -81,10 +83,8 @@ export default {
           },
           logo: '/static/images/logos/syncforce.png',
           name: 'SyncForce',
-          lead: 'Innovadis is SyncForce partner',
-          text: `SyncForce Portfolio Lifecycle Management cloud helpt merkfabrikanten om producten sneller op de markt te brengen in een multichannel wereld. Door alle productinformatie- en digital assets te centraliseren wordt een consistente digitale beschikbaarheid mogelijk over alle kanalen heen. SyncForce is de ‘single source of truth’ als het gaat om product portfolio content. Via one click distributie is het mogelijk om vanuit PIM/DAM direct te publiceren naar digitale kanalen (website, webshop, portals en datapools) en documenten (datasheets, product linecards en catalogi).
-
-Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ Vredestein, Pentair, AXA Security en Morssinkhof Groep`
+          lead: '',
+          text: `Met de digitalisering van de wereld, stijgt ook de vraag naar goede content en efficiënte content distributie. Bij een groot deel van onze oplossingen is content key. Met SyncForce bieden we onze klanten een goede basis voor dit vraagstuk. SyncForce Portfolio Lifecycle Management cloud helpt merkfabrikanten om producten sneller op de markt te brengen in een multichannel wereld. Door alle productinformatie- en digital assets te centraliseren wordt een consistente digitale beschikbaarheid mogelijk over alle kanalen heen. Via one click distributie is het mogelijk om vanuit PIM/DAM direct te publiceren naar digitale kanalen (website, webshop, portals en datapools) en documenten (datasheets, product linecards en catalogi).`
         },
         ceecee: {
           location: {
@@ -103,8 +103,8 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
           },
           logo: '/static/images/logos/inextenso.png',
           name: 'Inextenso',
-          lead: 'Innovadis is Inextenso partner',
-          text: 'todo'
+          lead: '',
+          text: 'Inextenzo en Innovadis hebben samen een unieke propositie gecreëerd. Gezamenlijk helpen we onze opdrachtgever bij het verbeteren van klantwaarde, door op basis van duidelijke doelen en strategie slimme online oplossingen te ontwikkelen. Daarmee helpen de specialisten van Inextenzo onze opdrachtgevers om meer waarde te halen uit relaties. Zo worden klantrelaties gebouwd, gevierd, verlengd en worden klanten ambassadeurs.'
         },
         microsoft: {
           location: {
@@ -113,8 +113,8 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
           },
           logo: '/static/images/logos/microsoft.png',
           name: 'Microsoft',
-          lead: 'Innovadis is Microsoft partner',
-          text: 'todo'
+          lead: '',
+          text: 'Bij de meeste oplossingen die we realiseren maken we gebruik van tooling en systemen van Microsoft. Dankzij onze aantoonbare ervaring en onze gecertificeerde medewerkers zijn wij al meer dan tien jaar Silver Partner van Microsoft. Daardoor krijgen we uit eerste hand de nieuwste informatie en middelen en beschikken onze opdrachtgevers over een stevig fundament voor hun oplossingen.'
         },
         saxion: {
           location: {
@@ -122,9 +122,11 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
             lng: 6.8843052
           },
           logo: '/static/images/logos/saxion.png',
-          name: 'Saxion',
-          lead: 'Innovadis is Saxion partner',
-          text: 'todo'
+          name: 'Saxion & UT',
+          lead: '',
+          text: `De Universiteit en Saxion zijn belangrijke partners voor Innovadis. Afstudeerders en stagiaires van verschillende opleidingen maken deel uit van ons team. Ze leren ons over de nieuwste ontwikkelingen en technieken. Daarnaast werken we samen met de Universiteit in een Europees innovatieproject op het gebied van logistiek en Big Data. Met Saxion werken we aan een onderzoeksproject op het gebied van Smart Industry en Internet of Things.
+
+Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
         }
       },
 
@@ -243,6 +245,7 @@ Opdrachtgevers die gebruik maken van onze oplossingen zijn onder andere Apollo/ 
   height: 800px;
   margin-top: 100px;
   position: relative;
+  overflow: hidden;
 
   @include phone {
     height: 1000px;

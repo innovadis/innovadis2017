@@ -1,31 +1,31 @@
 <template lang="pug">
 .vision.container
   h2.dot.short Onze visie voor de zorg
-  p More and more people are opting to live the herbal life: moving away from chemicals and scientific medicines, and taking traditional herbs to do everything from losing weight to relieving pain.
+  p TODO More and more people are opting to live the herbal life: moving away from chemicals and scientific medicines, and taking traditional herbs to do everything from losing weight to relieving pain.
 
   .select-box
     .options
-      inno-button(label='Lore ipsum dolar', icon='refresh' blue, :inactive='selectedOption !== 0', @click='selectedOption = 0')
-      inno-button(label='Lore ipsum dolar', icon='router', blue, :inactive='selectedOption !== 1', @click='selectedOption = 1')
-      inno-button(label='Lore ipsum dolar', icon='database-view', blue, :inactive='selectedOption !== 2', @click='selectedOption = 2')
+      inno-button(label='Zelfredzaamheid verhogen', icon='refresh' blue, :inactive='selectedOption !== 0', @click='selectedOption = 0')
+      inno-button(label='Efficiency verbeteren', icon='router', blue, :inactive='selectedOption !== 1', @click='selectedOption = 1')
+      inno-button(label='Eenzaamheid verminderen', icon='database-view', blue, :inactive='selectedOption !== 2', @click='selectedOption = 2')
 
     transition(name='fade', mode='out-in')
       .box(v-if='selectedOption === 0', key='box0')
-        p Have seen an explosion in the popularity of herbs and alternative medicine in general, as people increasingly seek miracle cures that can help them when their doctor or regular pharmacy cannot. The connection to traditional communities also appeals to those who want to go back to a more spiritual
-        inno-button-alternate(label='Lees er meer over...', yellow)
+        p Met smart-homes en intelligente toepassingen laten we mensen zolang mogelijk de regie over het eigen leven behouden.
+        //- inno-button-alternate(label='Lees er meer over...', yellow)
 
       .box(v-if='selectedOption === 1', key='box1')
-        p 2Have seen an explosion in the popularity of herbs and alternative medicine in general, as people increasingly seek miracle cures that can help them when their doctor or regular pharmacy cannot. The connection to traditional communities also appeals to those who want to go back to a more spiritual
-        inno-button-alternate(label='Lees er meer over...', yellow)
+        p Met praktische apps en door het koppelen van systemen, verlichten we de administratieve last van de zorgverleners, waardoor er meer tijd is voor contact met de cliënt.
+        //- inno-button-alternate(label='Lees er meer over...', yellow)
 
       .box(v-if='selectedOption === 2', key='box2')
-        p 3Have seen an explosion in the popularity of herbs and alternative medicine in general, as people increasingly seek miracle cures that can help them when their doctor or regular pharmacy cannot. The connection to traditional communities also appeals to those who want to go back to a more spiritual
-        inno-button-alternate(label='Lees er meer over...', yellow)
+        p Met toegankelijke en gebruikersvriendelijke portalen de communicatie tussen cliënten onderling en tussen cliënten en zorgverleners stimuleren.
+        //- inno-button-alternate(label='Lees er meer over...', yellow)
 
-  h2.dot.margin-top Innovadis in de zorg
-  p Eternity bands are a classy and stylish innovation to storm the market. These are often gifted for a marriage anniversary or at the time of giving birth to a child. These eternity bands need no occasion to be gifted and can be given as gifts whenever one wishes to.
+  h2.dot.margin-top Smart health in de praktijk
+  p Dat Smart health bij Innovadis niet bij een visie blijft, bewijzen de ervaringen van onze opdrachtgevers. Voor veel bedrijven binnen de sector zijn wij gesprekspartner, adviseur maar bovenal leverancier van hoogwaardige technologische oplossingen die bijdragen aan hun succes.
 
-  p Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.
+  p Wij geloven in de kracht van samenwerken, bundelen en delen van kennis en samen tot de beste oplossing komen. Binnen de zorg werken we o.a. voor Livio en De Vriezenhof.
 </template>
 
 <script>
@@ -63,6 +63,8 @@ export default {
     .box {
       max-width: 50%;
       margin-left: $gutter;
+      display: flex;
+      align-items: center;
     }
   }
 }

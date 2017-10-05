@@ -7,7 +7,7 @@
   solutions
 
   send-box-with-slot(background)
-    h2.dot Gewoon even praten of heb je vragen
+    h2 Persoonlijk contact?
 
 </template>
 

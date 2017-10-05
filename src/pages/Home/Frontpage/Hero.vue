@@ -34,7 +34,7 @@
     .text
       h1 Wij verbinden,
       typing-text
-      p.intro Als een vooruitstrevende technische organisatie geloven wij, naast de kracht van de techniek vooral in de kracht van de mens. Wij vinden dat techniek en internet op die manier bijdragen aan een betere wereld.
+      p.intro De mens is uniek! Innovadis gelooft dat, door de mens als individu of team centraal te stellen, IT en techniek pas echt bijdragen aan het succes van onze opdrachtgevers. Slimme toepassingen, waardoor er tijd overblijft voor dingen die echt belangrijk zijn.
       .buttons.flex.flex-justify-center.flex-column-phone.flex-align-center-phone
         inno-button(label='Smart Industry', primary, :to='{ name: "smart-industry" }')
         inno-button(label='Smart Health', primary, :to='{ name: "smart-health" }')
