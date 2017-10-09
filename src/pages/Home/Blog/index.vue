@@ -17,8 +17,10 @@
   send-box-with-slot(flip, :subject='"Reactie op blog artikel: " + this.blogItem.title')
     h2 Vragen over dit artikel?
 
-  //- TODO related how?
-  simple-feed(title='Ook interessant', feedGetter='contentAll')
+  simple-feed(
+    title='Ook interessant',
+    :items='feedItems'
+    )
 
 </template>
 
@@ -48,6 +50,10 @@ export default {
 
     date() {
       return Moment(this.blogItem.publish_date).format('DD MMMM YYYY')
+    },
+
+    feedItems () {
+      return this.$store.getters['feed/contentTags'](this.blogItem.tags, this.blogItem.title)
     }
   },
 

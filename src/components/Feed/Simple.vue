@@ -1,12 +1,12 @@
 <template lang="pug">
-.feed(:class='{ dark: dark }')
+.feed(:class='{ dark: dark }', v-if='feedItems.length > 0')
   .title.container
     h2.dot {{ title }}
   .items.container
       item(:item='feedItems[0]', large)
       .grid
-        item(:item='feedItems[1]')
-        item(:item='feedItems[2]')
+        item(:item='feedItems[1]', v-if='feedItems.length > 1')
+        item(:item='feedItems[2]', v-if='feedItems.length > 2')
 
   .swipe.flex.flex-justify-center.flex-align-center
     i.icons8-swipe-left
@@ -26,11 +26,14 @@ export default {
     feedGetter: {
       type: String,
       default: 'contentAll'
-    }
+    },
+    items: Array
   },
 
   computed: {
     feedItems() {
+      if (this.items !== undefined) return this.items
+
       return this.$store.getters['feed/' + this.feedGetter]
     }
   }

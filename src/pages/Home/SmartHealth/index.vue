@@ -12,7 +12,10 @@
     h3 Wij helpen de zorg graag vooruit.
     p Wij vinden het onze plicht hier een bijdrage aan te leveren. Heeft uw organisatie vragen of plannen op dit gebied, neem dan contact op. Wij denken graag mee over mogelijkheden en haalbaarheid en zijn bereid mee te investeren in pilotprojecten.
 
-  simple-feed(title='Onze wereld in de Health', feedGetter='contentAll')
+  simple-feed(
+    title='Onze wereld in de Health',
+    feedGetter='contentTagSmartHealth'
+    )
 </template>
 
 <script>
@@ -40,5 +43,4 @@ export default {
 .margin-top {
   margin-top: 160px;
 }
-
 </style>

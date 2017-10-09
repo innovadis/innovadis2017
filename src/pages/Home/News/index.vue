@@ -16,7 +16,10 @@
   send-box-with-slot(flip, :subject='"Reactie op nieuwsbericht: " + this.newsItem.title')
     h2 Vragen over dit bericht?
 
-  simple-feed(title='Ook interessant', feedGetter='contentAll')
+  simple-feed(
+    title='Ook interessant',
+    :items='feedItems'
+    )
 
 </template>
 
@@ -40,6 +43,10 @@ export default {
 
     date() {
       return Moment(this.newsItem.publish_date).format('DD MMMM YYYY')
+    },
+
+    feedItems() {
+      return this.$store.getters['feed/contentTags'](this.newsItem.tags, this.newsItem.title)
     }
   },
 

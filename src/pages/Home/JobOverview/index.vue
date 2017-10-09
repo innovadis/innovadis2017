@@ -7,7 +7,8 @@
   inno-lab
 
   simple-feed(
-    title='Een kijkje in de keuken'
+    title='Een kijkje in de keuken',
+    feedGetter='contentInstagram'
     )
 
   send-box-with-slot(flip, subject='Reactie op vacture overzicht pagina')

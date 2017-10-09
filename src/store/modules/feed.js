@@ -121,7 +121,7 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
 
-    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET_SMART_HEALTH))
+    const instagram = state.instagram.filter(x => x.caption && x.caption.text.toLowerCase().includes('#' + MARKET_SMART_HEALTH))
 
     const items = [].concat(events, news, blog, instagram)
 
@@ -138,7 +138,7 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
 
-    const instagram = state.instagram.filter(x => x.caption && x.caption.text.includes('#' + MARKET_SMART_INDUSTRY))
+    const instagram = state.instagram.filter(x => x.caption && x.caption.text.toLowerCase().includes('#' + MARKET_SMART_INDUSTRY))
 
     const items = [].concat(events, news, blog, instagram)
 
@@ -161,21 +161,37 @@ const getters = {
     return state.instagram
   },
 
-  /**
-   * Blog rules:
-   * -
-   */
+  contentTagSmartHealth(state) {
+    const events = state.events.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
+    const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
+    const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
 
-  /**
-   * News rules:
-   */
+    const items = [].concat(events, news, blog)
 
-  /**
-   * Event rules:
-   */
+    return items
+  },
 
-  // TODO smarthealth special getter? smartindustry
-  // TODO jobs page getter?
+  contentTags(state) {
+    const allItems = store.getters['feed/contentAll']
+
+    const itemsWithTags = (tags, filterTitle) => {
+      const items = allItems.filter(item => {
+        if (item.feedType === 'instagram') {
+          if (item.caption && tags.some(t => item.caption.text.toLowerCase().includes('#' + t.toLowerCase()))) {
+            return item
+          }
+        } else {
+          if (item.title !== filterTitle && tags.some(t => item.tags.includes(t.toLowerCase()))) return item
+        }
+      })
+
+      if (items.length === 0) return allItems.filter(x => x.title !== filterTitle)
+
+      return items
+    }
+
+    return itemsWithTags
+  },
 
   tags(state) {
     let tags = [].concat(
