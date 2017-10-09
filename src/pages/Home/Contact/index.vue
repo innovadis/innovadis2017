@@ -8,7 +8,8 @@
     send-box(
       grow,
       title='Stuur ons een bericht',
-      text='Laat hieronder je gegevens achter en we berichten of bellen je terug.'
+      text='Laat hieronder uw gegevens achter en we berichten of bellen u terug.',
+      to='support@innovadis.com'
       )
 </template>
 

@@ -56,15 +56,15 @@ export default {
         disableDefaultUI: true
       },
       partners: {
-        umbraco: {
+        ceecee: {
           location: {
-            lat: 55.4130313,
-            lng: 10.3323377
+            lat: 52.232979,
+            lng: 6.8879623
           },
-          logo: '/static/images/logos/umbraco.png',
-          name: 'Umbraco',
-          lead: '',
-          text: `Wij zijn officieel Umbraco Partner. Dat betekend dat wij altijd op de hoogte zijn van de nieuwste ontwikkelingen en kennis op Umbraco gebied. Hiermee heb je de zekerheid van een ervaren partner in het implementeren van Umbraco oplossingen. Wij hebben onder andere  Umbraco implementaties verzorgd voor Ardanta (ASR Verzekeringen), AXA Stenman Industries en DBC. Wil je meer weten over onze Umbraco cases of wil je een demo van de mogelijkheden van Umbraco? Neem dan contact met ons op!`
+          logo: '/static/images/logos/ceecee.png',
+          name: 'CeeCee Community',
+          lead: 'Lid CeeCee Community',
+          text: `CeeCee is een inspirerende werk- en ontmoetings- plek voor creatieven in media, technologie, ICT, design en architectuur. Dé plek om succesvolle innovaties te co-creëren en wereldbestormende ideeën te ontwikkelen. Als lid van de CeeCee community versterken we elkaar als creatieve ondernemers in onze activiteiten en vormen we samen een professioneel en uitdagend werkklimaat.`
         },
         dynamicweb: {
           location: {
@@ -76,33 +76,13 @@ export default {
           lead: '',
           text: 'Dynmicweb en Innovadis werken al sinds 2006 samen. Als premium sollution partner ontwikkelen wij een deel van onze oplossingen op het Dynamicweb All-in-one business platform. Dit platform combineert e-commerce, marketing en content management en vormt voor veel van onze klanten het fundament voor hun online omgeving. Dynamicweb is een Deens softwarebedrijf met wereldwijd meer dan 200 partners die gebruik maken van de software.'
         },
-        syncforce: {
-          location: {
-            lat: 51.3936263,
-            lng: 5.4491639
-          },
-          logo: '/static/images/logos/syncforce.png',
-          name: 'SyncForce',
-          lead: '',
-          text: `Met de digitalisering van de wereld, stijgt ook de vraag naar goede content en efficiënte content distributie. Bij een groot deel van onze oplossingen is content key. Met SyncForce bieden we onze klanten een goede basis voor dit vraagstuk. SyncForce Portfolio Lifecycle Management cloud helpt merkfabrikanten om producten sneller op de markt te brengen in een multichannel wereld. Door alle productinformatie- en digital assets te centraliseren wordt een consistente digitale beschikbaarheid mogelijk over alle kanalen heen. Via one click distributie is het mogelijk om vanuit PIM/DAM direct te publiceren naar digitale kanalen (website, webshop, portals en datapools) en documenten (datasheets, product linecards en catalogi).`
-        },
-        ceecee: {
-          location: {
-            lat: 52.232979,
-            lng: 6.8879623
-          },
-          logo: '/static/images/logos/ceecee.png',
-          name: 'CeeCee Community',
-          lead: 'Lid CeeCee Community',
-          text: `CeeCee is een inspirerende werk- en ontmoetings- plek voor creatieven in media, technologie, ICT, design en architectuur. Dé plek om succesvolle innovaties te co-creëren en wereldbestormende ideeën te ontwikkelen. Als lid van de CeeCee community versterken we elkaar als creatieve ondernemers in onze activiteiten en vormen we samen een professioneel en uitdagend werkklimaat.`
-        },
         inextenso: {
           location: {
             lat: 52.3102499,
             lng: 6.9358725
           },
           logo: '/static/images/logos/inextenso.png',
-          name: 'Inextenso',
+          name: 'Inextenzo',
           lead: '',
           text: 'Inextenzo en Innovadis hebben samen een unieke propositie gecreëerd. Gezamenlijk helpen we onze opdrachtgever bij het verbeteren van klantwaarde, door op basis van duidelijke doelen en strategie slimme online oplossingen te ontwikkelen. Daarmee helpen de specialisten van Inextenzo onze opdrachtgevers om meer waarde te halen uit relaties. Zo worden klantrelaties gebouwd, gevierd, verlengd en worden klanten ambassadeurs.'
         },
@@ -127,7 +107,27 @@ export default {
           text: `De Universiteit en Saxion zijn belangrijke partners voor Innovadis. Afstudeerders en stagiaires van verschillende opleidingen maken deel uit van ons team. Ze leren ons over de nieuwste ontwikkelingen en technieken. Daarnaast werken we samen met de Universiteit in een Europees innovatieproject op het gebied van logistiek en Big Data. Met Saxion werken we aan een onderzoeksproject op het gebied van Smart Industry en Internet of Things.
 
 Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
-        }
+        },
+        syncforce: {
+          location: {
+            lat: 51.3936263,
+            lng: 5.4491639
+          },
+          logo: '/static/images/logos/syncforce.png',
+          name: 'SyncForce',
+          lead: '',
+          text: `Met de digitalisering van de wereld, stijgt ook de vraag naar goede content en efficiënte content distributie. Bij een groot deel van onze oplossingen is content key. Met SyncForce bieden we onze klanten een goede basis voor dit vraagstuk. SyncForce Portfolio Lifecycle Management cloud helpt merkfabrikanten om producten sneller op de markt te brengen in een multichannel wereld. Door alle productinformatie- en digital assets te centraliseren wordt een consistente digitale beschikbaarheid mogelijk over alle kanalen heen. Via one click distributie is het mogelijk om vanuit PIM/DAM direct te publiceren naar digitale kanalen (website, webshop, portals en datapools), documenten en catalogi.`
+        },
+        umbraco: {
+          location: {
+            lat: 55.4130313,
+            lng: 10.3323377
+          },
+          logo: '/static/images/logos/umbraco.png',
+          name: 'Umbraco',
+          lead: '',
+          text: `Wij zijn officieel Umbraco Partner. Dat betekend dat wij altijd op de hoogte zijn van de nieuwste ontwikkelingen en kennis op Umbraco gebied. Hiermee heb je de zekerheid van een ervaren partner in het implementeren van Umbraco oplossingen. Wij hebben onder andere  Umbraco implementaties verzorgd voor Ardanta (ASR Verzekeringen), AXA Stenman Industries en DBC. Wil je meer weten over onze Umbraco cases of wil je een demo van de mogelijkheden van Umbraco? Neem dan contact met ons op!`
+        },
       },
 
       markerOpacity: 0,

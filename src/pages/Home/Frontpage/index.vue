@@ -7,7 +7,7 @@
   solutions
 
   send-box-with-slot(background)
-    h2 Persoonlijk contact?
+    h2.dot Laat een bericht achter
 
 </template>
 

@@ -147,11 +147,9 @@ export default {
   }
 
   @include phablet {
-    margin: 10px 20px 10px 0;
-    padding: 0;
-    width: 80vw !important;
-    height: 100%;
-    max-height: 400px;
+    margin: 10px 10px 10px 0;
+    width: 80%;
+    max-width: 500px;
   }
 
   .text {

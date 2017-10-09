@@ -4,7 +4,8 @@
     .flex.flex-column
       slot
     send-box(
-      :subject='subject'
+      :subject='subject',
+      :to='to'
       )
 
 </template>
@@ -18,7 +19,8 @@ export default {
   props: {
     flip: Boolean,
     background: Boolean,
-    subject: String
+    subject: String,
+    to: String
   }
 }
 </script>

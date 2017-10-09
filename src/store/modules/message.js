@@ -14,6 +14,8 @@ const actions = {
       return new Promise(resolve => setTimeout(resolve, ms))
     }
 
+    if (!to) to = 'a.vandijk@innovadis.com'
+
     await timeout(500)
 
     return // TODO enable message

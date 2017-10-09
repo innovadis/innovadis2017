@@ -10,10 +10,9 @@ footer(v-if='!$route.meta.hideFooter')
       .info.flex.flex-column.text-left
         h3.title.dot Gegevens
         .flex.flex-justify-between.flex-column-phone
-          .flex.flex-column
+          .contact.flex.flex-column
             span Brouwerijstraat 1
             span 7523 XC Enschede
-          .contact.flex.flex-column
             span: a(href='tel:+31538507500') +31 (0)53 850 7500
             span: a(href='mailto:info@innovadis.com') info@innovadis.com
 
@@ -23,7 +22,7 @@ footer(v-if='!$route.meta.hideFooter')
         a(href='https://www.instagram.com/innovadis/', target='_blank') Instagram
         a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
 
-  .bottom
+  //- .bottom
     .container.flex.flex-justify-end.flex-column-reverse-phablet
       .right
         .links.flex.flex-justify-between
@@ -69,7 +68,7 @@ footer {
     }
 
     .quote {
-      max-width: 280px;
+      max-width: 320px;
 
       @include phablet {
         margin-bottom: 40px;
@@ -101,13 +100,7 @@ footer {
       }
 
       .contact {
-        @include phone {
-          margin-top: 20px;
-        }
 
-        @include tablet {
-          margin-left: 80px;
-        }
       }
 
       span {

@@ -46,7 +46,7 @@ export default {
         speed: 1000
       })
 
-      scroll.animateScroll(this.$refs.sendbox.$el.offsetTop)
+      scroll.animateScroll(this.$refs.sendbox.$el.offsetTop - 180)
     }
   },
 

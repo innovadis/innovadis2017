@@ -68,7 +68,8 @@ export default {
     grow: Boolean,
     title: String,
     text: String,
-    subject: String
+    subject: String,
+    to: String
   },
 
   data() {
@@ -94,7 +95,7 @@ export default {
       const startTimeMs = (new Date()).getTime()
 
       await this.$store.dispatch('message/send', {
-        to: 'c.maks@innovadis.com', // TODO
+        to: this.to,
         subject: this.subject,
         from: this.email,
         name: this.name,

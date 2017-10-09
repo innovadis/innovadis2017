@@ -15,10 +15,10 @@
   social-share
 
   send-box-with-slot(flip, :subject='"Reactie op blog artikel: " + this.blogItem.title')
-    h2.dot Vragen over dit artikel?
+    h2 Vragen over dit artikel?
 
   //- TODO related how?
-  simple-feed(title='Gerelateerd', feedGetter='contentAll')
+  simple-feed(title='Ook interessant', feedGetter='contentAll')
 
 </template>
 

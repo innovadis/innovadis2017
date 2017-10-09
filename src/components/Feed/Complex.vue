@@ -1,5 +1,5 @@
 <template lang="pug">
-.complex.flex.flex-column-phablet(:class='{ "controls-open": controlsOpen }', @wheel='scroll')
+.complex.flex.flex-column-phablet(:class='{ "controls-open": controlsOpen }')
   .controls.flex.flex-column.flex-justify-center
     h1.dot.hidden-phablet Onze wereld
     .filter-phablet(@click='controlsOpen = false')
@@ -43,16 +43,24 @@
       @input='tagChange'
       )
 
+    .reset(@click='reset')
+      a Reset
+      i.icons8-delete
+
     .buttons.flex.flex-align-center.flex-justify-between
-      inno-button.ma-0(label='Reset', nomargin, small, transparent)
-      inno-button(primary, small, label='Toepassen')
+      inno-button.ma-0(label='Reset', nomargin, small, transparent, @click='reset()')
+      inno-button(primary, small, label='Toepassen', @click='controlsOpen = false')
 
   .no-scrollbar
     .filter-phablet(@click='controlsOpen = true')
       i.icons8-sorting-options
       | Filters
 
-    .news-items(ref='newsItems')
+    .news-items(v-if='mobileVersion')
+      transition-group(name='feedlist', mode='out-in', tag='div')
+        item(:item='item', v-for='item in feedItems', :key='item.feedId', @dialogOpen='dialogOpen')
+
+    .news-items(ref='newsItems', v-else)
       .flex
         transition-group(name='feedlist', mode='out-in', tag='div')
           item(:item='item', v-for='item in oddItems', :key='item.feedId', @dialogOpen='dialogOpen')
@@ -73,6 +81,7 @@ export default {
 
   data() {
     return {
+      mobileVersion: window.innerWidth <= 900,
       marketSelected: null,
       marketOptions: [
         {
@@ -160,12 +169,6 @@ export default {
   },
 
   methods: {
-    scroll(e) { // TODO check ipad
-      if (this.anyDialogOpen) return
-
-      this.$refs.newsItems.scrollTop += e.deltaY
-    },
-
     dialogOpen(open) {
       this.anyDialogOpen = open
     },
@@ -209,6 +212,18 @@ export default {
       this.mediaSelected = null
 
       this.feedGetter = 'contentAll'
+    },
+
+    reset() {
+      this.marketSelected = null
+      this.mediaSelected = null
+      this.tagSelected = []
+
+      this.feedGetter = 'contentAll'
+    },
+
+    resizeEvent() {
+      this.mobileVersion = window.innerWidth <= 900
     }
   },
 
@@ -222,6 +237,12 @@ export default {
 
       arrow.parentNode.replaceChild(chevron, arrow)
     }
+
+    window.addEventListener('resize', this.resizeEvent)
+  },
+
+  destroyed() {
+    window.removeEventListener('resize', this.resizeEvent)
   }
 }
 </script>
@@ -310,6 +331,26 @@ export default {
         }
       }
     }
+
+    .reset {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      margin-top: 5px;
+      cursor: pointer;
+
+      @include phablet {
+        display: none;
+      }
+
+      i {
+        color: white;
+        margin-left: 5px;
+        font-size: 24px;
+        margin-top: 2px;
+      }
+    }
   }
 
   .no-scrollbar {
@@ -326,7 +367,6 @@ export default {
       overflow: auto;
       width: 100vw;
       min-height: 100vh;
-      z-index: 2;
       padding-top: $headerHeight - 25px;
       background: $background;
       transition: all 0.5s ease-in-out;

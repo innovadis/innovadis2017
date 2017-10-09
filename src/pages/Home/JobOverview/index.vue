@@ -11,7 +11,7 @@
     )
 
   send-box-with-slot(flip, subject='Reactie op vacture overzicht pagina')
-    h2.dot Gewoon even praten of staat je baan er niet tussen
+    h2 Staat je baan er niet tussen?
 
 </template>
 

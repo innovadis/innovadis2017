@@ -2,7 +2,7 @@
 .image-block
   .container
     .text
-      p TODO There is something about parenthood that gives us a sense of history and a deeply rooted desire to send on into the next generation the great things we have discovered about life.
+      p Met onze kennis en ervaring van de afgelopen twintig jaar en de huidige technologische ontwikkelingen, hebben wij alles in handen om hier een bijdrage aan te leveren. Dat noemen wij Smart Health.
 </template>
 
 <script>

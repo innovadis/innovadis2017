@@ -2,7 +2,9 @@
 .page-event
   .container.pt
     h1.dot {{ newsItem.title }}
-    p.intro {{ newsItem.lead }}
+    b: p.intro {{ newsItem.lead }}
+
+  //- .hero-image(:style='{ background: "url(" + newsItem.heroImage + ")" }', v-if='newsItem.heroImage')
 
   .container(v-html='newsItem.body')
 
@@ -14,7 +16,7 @@
   send-box-with-slot(flip, :subject='"Reactie op nieuwsbericht: " + this.newsItem.title')
     h2 Vragen over dit bericht?
 
-  simple-feed(title='Gerelateerd', feedGetter='contentAll')
+  simple-feed(title='Ook interessant', feedGetter='contentAll')
 
 </template>
 
@@ -79,6 +81,10 @@ export default {
     background-position: center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+  }
+
+  .hero-image {
+    height: 400px;
   }
 
   .video {

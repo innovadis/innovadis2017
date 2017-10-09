@@ -10,9 +10,9 @@
 
   send-box-with-slot.margin-top(flip, subject='Reactie op Smart Health pagina')
     h3 Wij helpen de zorg graag vooruit.
-    p TODO Have seen an explosion in the popularity of herbs and alternative medicine in general, as people increasingly seek miracle cures that can help them when their doctor or regular pharmacy cannot. The connection to traditional communities also appeals to those who want to go back to a more spiritual
+    p Wij vinden het onze plicht hier een bijdrage aan te leveren. Heeft uw organisatie vragen of plannen op dit gebied, neem dan contact op. Wij denken graag mee over mogelijkheden en haalbaarheid en zijn bereid mee te investeren in pilotprojecten.
 
-  simple-feed(title='Laatste nieuws in de zorg', feedGetter='contentAll')
+  simple-feed(title='Onze wereld in de Health', feedGetter='contentAll')
 </template>
 
 <script>
