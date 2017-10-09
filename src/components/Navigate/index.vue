@@ -15,7 +15,7 @@
     a(:href='"mailto:" + email ') {{ email }}
 
   .navigate
-    orb(:size='60', icon='driver', :initialX='-80', :initialY='-30')
+    orb(:size='60', icon='driver', :initialX='-100', :initialY='-50')
     a(href='https://www.google.com/maps?f=d&daddr=Innovadis+Enschede', target='_blank') Navigeer naar Innovadis
     i.icons8-advance
 </template>

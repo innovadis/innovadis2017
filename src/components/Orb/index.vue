@@ -2,11 +2,30 @@
 .orb-wrapper(v-inview:once.enter='showOrb')
   transition(name='showorb')
     .fade-in(v-show='show')
-      .orb(l
+      //- .orb(l
         ref='orb',
         :style='style'
         )
         i(:class='[iconClass]')
+
+      i(:class='[iconClass]', :style='{ left: initialX + size/2 + 6 + "px", top: initialY + size/2 + 6 + "px" }')
+
+      svg.orb(xmlns='http://www.w3.org/2000/svg', filter='url(#goo)', fill='#0029a8', :style='style', ref='orb')
+        defs
+          filter#goo
+            // tympanus.net/codrops/creative-gooey-effects
+            feGaussianBlur(in='SourceGraphic', stdDeviation='0', result='blur')
+              feColorMatrix(in='blur', mode='matrix', values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9', result='goo')
+                feComposite(in='SourceGraphic', in2='goo', operator='atop')
+        g
+          circle(:r='size/2', :cy='size/2-ORB_WOBBLE', :cx='size/2')
+            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"0 "+ (size/2-ORB_WOBBLE).toString() +" "+ (size/2).toString()', :to='"360 "+ (size/2-ORB_WOBBLE).toString() +" "+ (size/2).toString()', dur='10s', repeatCount='indefinite')
+          circle(:r='size/2', :cy='size/2+ORB_WOBBLE', :cx='size/2')
+            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"360 "+ (size/2+ORB_WOBBLE).toString() +" "+ (size/2).toString()', :to='"0 "+ (size/2+ORB_WOBBLE).toString() +" "+ (size/2).toString()', dur='20s', repeatCount='indefinite')
+          circle(:r='size/2', :cy='size/2', :cx='size/2-ORB_WOBBLE')
+            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"0 "+ (size/2).toString() +" "+ (size/2-ORB_WOBBLE).toString()', :to='"360 "+ (size/2).toString() +" "+ (size/2-ORB_WOBBLE).toString()', dur='30s', repeatCount='indefinite')
+          circle(:r='size/2', :cy='size/2', :cx='size/2+ORB_WOBBLE')
+            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"360 "+ (size/2).toString() +" "+ (size/2+ORB_WOBBLE).toString()', :to='"0 "+ (size/2).toString() +" "+ (size/2+ORB_WOBBLE).toString()', dur='25s', repeatCount='indefinite')
 </template>
 
 <script>
@@ -45,11 +64,15 @@ export default {
       return {
         left: this.initialX + 'px',
         top: this.initialY + 'px',
-        height: this.size + 'px',
-        width: this.size + 'px',
+        height: this.size * 2 + 'px',
+        width: this.size * 2 + 'px',
         filter: 'blur(' + this.blur + 'px)',
         'z-index': this.z
       }
+    },
+
+    ORB_WOBBLE() {
+      return 3
     }
   },
 
@@ -92,26 +115,20 @@ export default {
   position: relative;
 
   .orb {
-    $size: 60px;
-    $skewX: -9deg; // same as above
-    $rotate: -10deg;
-
     position: absolute;
-    height: $size;
-    width: $size; // background: $inno-blue;
-    background: radial-gradient(circle at center, $inno-blue-light 20%, $inno-blue-dark 100%);
-    border-radius: 47%;
-    transform: skewX($skewX) rotate($rotate);
-
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    filter: drop-shadow( 5px 5px 5px rgba(0, 0, 0, 0.5));
+  }
 
-    i {
-      color: white;
-      font-size: 28px;
-      transform: skewX(-$skewX) rotate(-$rotate);
-    }
+  i {
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    left: 0;
+    z-index: 1;
   }
 }
 
@@ -119,10 +136,10 @@ export default {
 .showorb-leave-active {
   transition: all 1s ease-in-out 0.5s;
 }
+
 .showorb-enter,
 .showorb-leave-to {
   transform: translateY(-10px);
   opacity: 0;
 }
-
 </style>
