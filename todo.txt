@@ -1,3 +1,6 @@
 innovadis manier -> over cultuur, tom maik bart foto hier
 
 placeholder bij nieuws image, image optioneel
+
+
+fix mobile complex feed popup position
