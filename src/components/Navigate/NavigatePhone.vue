@@ -8,7 +8,7 @@
   a(:href='"mailto:" + email ') {{ email }}
 
   .navigate.flex.flex-column.flex-align-center
-    orb(:size='60', icon='driver', :initialX='-30', :initialY='-70')
+    orb(:size='60', icon='driver', :initialX='-50', :initialY='-90', :shadow='false')
     .flex.flex-align-center
       a(href='https://www.google.com/maps?f=d&daddr=Innovadis+Enschede', target='_blank') Navigeer naar Innovadis
       i.icons8-advance

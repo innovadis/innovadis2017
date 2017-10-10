@@ -20,12 +20,17 @@ footer(v-if='!$route.meta.hideFooter')
       .social.flex.flex-column
         .flex.flex-column
           h3.title Blijf op de hoogte.
-          a(href='https://www.facebook.com/Innovadis/', target='_blank') Facebook
+          .item.flex.flex-align-center
+            i.icons8-facebook
+            a(href='https://www.facebook.com/Innovadis/', target='_blank') Facebook
 
-          .flex.flex-align-center
+          .item.flex.flex-align-center
             i.icons8-instagram
             a(href='https://www.instagram.com/innovadis/', target='_blank') Instagram
-          a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
+
+          .item.flex.flex-align-center
+            i.icons8-linkedin
+            a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
 
         router-link.conditions(:to='{ name: "conditions" }') Algemene voorwaarden
 
@@ -107,9 +112,7 @@ footer {
         margin-bottom: 10px;
       }
 
-      .contact {
-
-      }
+      .contact {}
 
       span {
         line-height: 30px;
@@ -117,16 +120,27 @@ footer {
     }
 
     .social {
-      a {
-        line-height: 30px;
-      }
-
       .title {
         margin-bottom: 10px;
       }
 
+      .item {
+        i {
+          font-size: 24px;
+          margin-right: 10px;
+        }
+
+        a {
+          line-height: 30px;
+        }
+
+        .title {
+          margin-bottom: 10px;
+        }
+      }
+
       .conditions {
-        margin-top: 28px;
+        margin-top: 30px;
         font-size: 14px;
       }
     }
