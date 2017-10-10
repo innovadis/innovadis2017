@@ -10,9 +10,9 @@
       .author Door: {{ eventItem.author }}
       .date Publicatiedatum: {{ date }}
 
-  .container.pt(v-html='eventItem.body')
+  .content-body.container(v-html='eventItem.body')
 
-  .container.pt(v-if='eventItem.program.length > 0')
+  .container(v-if='eventItem.program.length > 0')
     h2.dot Programma
     p {{ eventItem.programLead }}
     program(:data='eventItem.program')
@@ -31,7 +31,8 @@
 
   simple-feed(
     title='Ook interessant',
-    :items='feedItems'
+    :items='feedItems',
+    dark
     )
 
 </template>
@@ -100,54 +101,14 @@ export default {
 @import 'src/styles/variables';
 
 .page-event {
+  .content-body {
+    margin-bottom: 60px;
+  }
+
   .video {
     margin: $gutter 0;
     display: flex;
     justify-content: center;
-  }
-
-  .share {
-    margin: 80px 0;
-    padding-bottom: 10px;
-    border-bottom: 1px solid $gray1;
-    width: 120%;
-    position: relative;
-    left: -10%;
-
-    .button {
-      margin: 10px 10px;
-      color: white;
-      border-radius: 3px;
-      padding: 10px 20px;
-      font-family: Bitter;
-      font-weight: bold;
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        box-shadow: $shadow;
-      }
-    }
-
-    .facebook {
-      background-color: #33599A;
-
-      &:hover {
-        background-color: lighten(#33599A, 5%);
-      }
-    }
-
-    .linkedin {
-      background-color: #0079B8;
-
-      &:hover {
-        background-color: lighten(#0079B8, 5%);
-      }
-    }
-  }
-
-  .feed {
-    padding-top: 0;
   }
 }
 </style>

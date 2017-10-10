@@ -1,7 +1,6 @@
 <template lang="pug">
 .page-job(v-if='job')
   .container.pt
-    inno-button-alternate(yellow, label='Naar werken bij', left, :to='{ name: "jobs" }')
     h1.dot {{ job.title }}
     p.intro {{ job.lead }}
 

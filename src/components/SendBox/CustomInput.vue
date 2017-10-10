@@ -79,7 +79,6 @@ export default {
       position: absolute;
       right: 0;
       top: 15px;
-      color: #0035DB;
       font-weight: bold;
     }
   }

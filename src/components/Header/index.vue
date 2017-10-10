@@ -6,7 +6,7 @@ header
         img.logo(src='/static/images/svg/logo.svg')
 
       .header-menus(ref='headerMenus')
-        .menu(@mousemove='openMenu("attentionAreas")', @mouseleave='closeMenu', ref='menuAttentionAreas') Aandachtsgebieden.
+        .menu(@mousemove='openMenu("attentionAreas")', @mouseleave='closeMenu', ref='menuAttentionAreas') Vakgebieden.
         .menu(@mousemove='openMenu("about")', @mouseleave='closeMenu', ref='menuAbout') Over ons.
         .menu: router-link(:to='{ name: "contact" }') Contact.
         .menu: inno-button(label='Werken bij.', :to='{ name: "jobs" }', yellow)
@@ -27,17 +27,21 @@ header
     router-link.flex.flex-align-center.cp(:to='{ name: "home" }', tag='div')
       img(src='/static/images/svg/logo.svg')
     .items
-      h3.item Aandachtsgebieden
-      router-link.item.indent(tag='h3', :to='{ name: "smart-industry" }', @click.native='closeMenu(true)') Smart Industry
-      router-link.item.indent(tag='h3', :to='{ name: "smart-health" }', @click.native='closeMenu(true)') Smart Health
+      section.areas.flex.flex-column
+        h4.item Vakgebieden.
+        .flex.flex-justify-around.full-width.flex-wrap
+          inno-button.item.bold(label='Smart Industry', primary, small, :to='{ name: "smart-industry" }', @click.native='closeMenu(true)')
+          inno-button.item.bold(label='Smart Health', primary, small, :to='{ name: "smart-health" }', @click.native='closeMenu(true)')
 
-      router-link.item(:to='{ name: "about" }', tag='h3') Over ons
-      router-link.item.indent(tag='h3', :to='{ name: "about" }', @click.native='closeMenu(true)') Onze cultuur
-      router-link.item.indent(tag='h3', :to='{ name: "world" }', @click.native='closeMenu(true)') Onze wereld
-      router-link.item.indent(tag='h3', :to='{ name: "partners" }', @click.native='closeMenu(true)') Onze partners
+      section.about
+        router-link.item(:to='{ name: "about" }', tag='h4') Over ons.
+        router-link.item.indent.bold(tag='h3', :to='{ name: "about" }', @click.native='closeMenu(true)') Onze cultuur
+        router-link.item.indent.bold(tag='h3', :to='{ name: "world" }', @click.native='closeMenu(true)') Onze wereld
+        router-link.item.indent.bold(tag='h3', :to='{ name: "partners" }', @click.native='closeMenu(true)') Onze partners
 
-      router-link.item(:to='{ name: "contact" }', tag='h3') Contact
-      inno-button.item(label='Werken bij.', yellow, :to='{ name: "jobs" }')
+      section.contact.flex.flex-justify-around.full-width.flex-wrap.flex-align-center
+        router-link.item.bold(:to='{ name: "contact" }', tag='h3') Contact
+        inno-button.item(label='Werken bij.', yellow, :to='{ name: "jobs" }')
 </template>
 
 <script>
@@ -123,7 +127,7 @@ $transition: 0.3s ease-in-out;
   display: flex;
   height: $headerHeight;
   background: white;
-  z-index: 1;
+  z-index: 2;
 
   @include phablet {
     display: none;
@@ -153,6 +157,7 @@ $transition: 0.3s ease-in-out;
         cursor: pointer;
         transition: all $transition;
 
+        a:hover,
         &:hover {
           color: $inno-blue;
         }
@@ -199,6 +204,7 @@ $transition: 0.3s ease-in-out;
 
         &:hover {
           font-weight: bold;
+          color: $inno-blue;
         }
 
         &:last-child {
@@ -278,14 +284,24 @@ $transition: 0.3s ease-in-out;
     position: absolute;
     left: 0;
     top: 75px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; // background: white;
+    width: 90%; // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start; // background: white;
     padding: 20px;
     border-bottom-right-radius: $border-radius;
     opacity: 0;
     transition: all 0.2s ease-in;
     visibility: hidden;
+
+    section {
+      &:first-child {
+        margin-bottom: 20px;
+      }
+
+      &:last-child {
+        margin-top: $gutter;
+      }
+    }
 
     .item {
       margin: 10px 0;
@@ -293,15 +309,29 @@ $transition: 0.3s ease-in-out;
       transform: translateX(-50px);
       transition: all $transition;
       transition-delay: 0;
+      text-align: center;
+      font-weight: normal;
 
       &.indent {
         margin-left: 20px;
+        margin: 20px 0;
+      }
+
+      &.bold {
+        font-weight: bold;
       }
     }
 
     .button {
-      margin: 20px 0 0 0;
+      font-size: 20px;
     }
+
+    .areas {
+      .button {
+        margin-bottom: 20px;
+      }
+    }
+
   }
 
   &.open {

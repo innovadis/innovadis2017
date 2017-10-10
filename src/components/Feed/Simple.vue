@@ -3,10 +3,13 @@
   .title.container
     h2.dot {{ title }}
   .items.container
-      item(:item='feedItems[0]', large)
-      .grid
-        item(:item='feedItems[1]', v-if='feedItems.length > 1')
-        item(:item='feedItems[2]', v-if='feedItems.length > 2')
+    item(:item='feedItems[0]', large)
+    .grid
+      item(:item='feedItems[1]', v-if='feedItems.length > 1')
+      item(:item='feedItems[2]', v-if='feedItems.length > 2')
+
+    .flex.flex-justify-center.flex-grow-1
+      inno-button(label='Meer', primary, small)
 
   .swipe.flex.flex-justify-center.flex-align-center
     i.icons8-swipe-left
@@ -50,6 +53,10 @@ export default {
   display: flex;
   align-content: center;
   flex-direction: column;
+
+  .title {
+    margin-bottom: $gutter/2;
+  }
 
   h2 {
     text-align: center; // ios

@@ -40,12 +40,14 @@
       select-label='',
       deselect-label='',
       selected-label='',
-      @input='tagChange'
+      @input='tagChange',
+      :close-on-select='false'
       )
 
-    .reset(@click='reset')
-      a Reset
-      i.icons8-delete
+    transition(name='fade')
+      .reset(@click='reset', v-if='canReset')
+        i.icons8-delete
+        a Reset
 
     .buttons.flex.flex-align-center.flex-justify-between
       inno-button.ma-0(label='Reset', nomargin, small, transparent, @click='reset()')
@@ -165,6 +167,10 @@ export default {
       }
 
       return even
+    },
+
+    canReset() {
+      return this.mediaSelected !== null || this.tagSelected.length !== 0 || this.marketSelected !== null
     }
   },
 
@@ -336,7 +342,6 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
       margin-top: 5px;
       cursor: pointer;
 
@@ -344,11 +349,22 @@ export default {
         display: none;
       }
 
-      i {
+      i,
+      a {
         color: white;
-        margin-left: 5px;
+      }
+
+      i {
+        margin-right: 5px;
         font-size: 24px;
         margin-top: 2px;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &:hover {
+        i {
+          transform: rotate(180deg);
+        }
       }
     }
   }

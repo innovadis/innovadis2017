@@ -5,12 +5,12 @@
   support
 
   .flex.flex-justify-center.container
-    send-box(
-      grow,
-      title='Stuur ons een bericht',
+    send-box-with-slot(
+      flip,
       text='Laat hieronder uw gegevens achter en we berichten of bellen u terug.',
       to='support@innovadis.com'
       )
+      h2.dot Stuur ons een bericht
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
   components: {
     Hero: require('./Hero'),
     Support: require('./Support'),
-    SendBox: require('src/components/SendBox')
+    SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
   },
 
   head: {

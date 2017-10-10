@@ -5,6 +5,18 @@
   background-size: cover !important;
   background-repeat: no-repeat !important;
   position: relative;
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent 30%);
+  }
 
   .info {
     position: absolute;
@@ -13,6 +25,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 
     @include phablet {
       left: 0;

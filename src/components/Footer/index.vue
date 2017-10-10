@@ -8,19 +8,26 @@ footer(v-if='!$route.meta.hideFooter')
         p Voor de industry en health bouwen en koppelen we smart systemen waardoor routinetaken verdwijnen en er tijd overblijft voor zaken die echt belangrijk zijn. 
 
       .info.flex.flex-column.text-left
-        h3.title.dot Gegevens
+        h3.title Gegevens.
         .flex.flex-justify-between.flex-column-phone
           .contact.flex.flex-column
             span Brouwerijstraat 1
             span 7523 XC Enschede
+            br
             span: a(href='tel:+31538507500') +31 (0)53 850 7500
             span: a(href='mailto:info@innovadis.com') info@innovadis.com
 
-      .social.flex.flex-column.text-left
-        h3.title.dot Blijf op de hoogte
-        a(href='https://www.facebook.com/Innovadis/', target='_blank') Facebook
-        a(href='https://www.instagram.com/innovadis/', target='_blank') Instagram
-        a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
+      .social.flex.flex-column
+        .flex.flex-column
+          h3.title Blijf op de hoogte.
+          a(href='https://www.facebook.com/Innovadis/', target='_blank') Facebook
+
+          .flex.flex-align-center
+            i.icons8-instagram
+            a(href='https://www.instagram.com/innovadis/', target='_blank') Instagram
+          a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
+
+        router-link.conditions(:to='{ name: "conditions" }') Algemene voorwaarden
 
   //- .bottom
     .container.flex.flex-justify-end.flex-column-reverse-phablet
@@ -68,7 +75,7 @@ footer {
     }
 
     .quote {
-      max-width: 320px;
+      max-width: 300px;
 
       @include phablet {
         margin-bottom: 40px;
@@ -84,6 +91,7 @@ footer {
 
       p {
         margin-top: 0;
+        line-height: 28px;
       }
     }
 
@@ -115,6 +123,11 @@ footer {
 
       .title {
         margin-bottom: 10px;
+      }
+
+      .conditions {
+        margin-top: 28px;
+        font-size: 14px;
       }
     }
   }

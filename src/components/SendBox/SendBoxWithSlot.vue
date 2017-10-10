@@ -48,7 +48,7 @@ export default {
 
     .sendbox {
       margin-left: $gutter;
-      box-shadow: 0 10px 22px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 7px 22px 0 rgba(0, 0, 0, 0.1);
 
       @include phablet {
         margin-left: 0;

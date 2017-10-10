@@ -140,6 +140,11 @@ export default {
       z-index: 1;
     }
 
+    .intro {
+      margin-top: 35px;
+      margin-bottom: 0;
+    }
+
     .buttons {
       z-index: 1;
 

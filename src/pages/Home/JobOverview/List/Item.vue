@@ -7,8 +7,6 @@ router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='
       span.hours {{ job.hours }} uur
       i.icons8-fantasy
       span.tech {{ job.tech }}
-
-  inno-button-alternate(yellow)
 </template>
 
 <script>
@@ -31,17 +29,21 @@ export default {
 @import 'src/styles/variables';
 
 .jobitem {
-  padding: 20px 20px 20px 0;
+  padding: 20px;
+  border-radius: $border-radius;
   border-bottom: 1px solid $gray1;
   transition: background 0.2s ease-in-out;
   cursor: pointer;
+  box-shadow: $shadow;
+  transition: $transition;
+  margin-bottom: $gutter;
 
   &:last-child {
     border-bottom: none;
   }
 
   &:hover {
-    background: $gray0;
+    box-shadow: $shadow-large;
   }
 
   .job-details {

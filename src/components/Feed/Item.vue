@@ -25,7 +25,7 @@
             | {{ feedItem.likes }}
         .wrapper
           a(:href='feedItem.url', target='_blank')
-            orb(:size='40')
+            orb(:size='30', :initialX='-20', :initialY='-15', icon='instagram')
             span Volgen
       .image(:style='{ "background-image": "url(" + feedItem.imageUrl + ")" }')
 </template>
@@ -233,6 +233,10 @@ export default {
         font-size: 36px;
         margin-right: 5px;
         color: $inno-yellow;
+        animation-name: pulse;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
       }
     }
 
@@ -278,6 +282,22 @@ export default {
       width: 100%;
       height: 50%;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 </style>

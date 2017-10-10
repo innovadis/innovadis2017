@@ -54,19 +54,18 @@ export default {
   }
 
   .button {
-    font-family: 'OpenSans', sans-serif;
+    font-family: Bitter;
   }
 
   .select-box {
     display: flex;
 
     .box {
-      max-width: 50%;
+      max-width: 40%;
       margin-left: $gutter;
       display: flex;
       align-items: center;
     }
   }
 }
-
 </style>

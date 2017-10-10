@@ -127,12 +127,12 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
           name: 'Umbraco',
           lead: '',
           text: `Wij zijn officieel Umbraco Partner. Dat betekend dat wij altijd op de hoogte zijn van de nieuwste ontwikkelingen en kennis op Umbraco gebied. Hiermee heb je de zekerheid van een ervaren partner in het implementeren van Umbraco oplossingen. Wij hebben onder andere  Umbraco implementaties verzorgd voor Ardanta (ASR Verzekeringen), AXA Stenman Industries en DBC. Wil je meer weten over onze Umbraco cases of wil je een demo van de mogelijkheden van Umbraco? Neem dan contact met ons op!`
-        },
+        }
       },
 
       markerOpacity: 0,
       markerOpacityTimeout: null,
-      selectedPartnerKey: 'umbraco',
+      selectedPartnerKey: 'ceecee',
       panPath: [],   // An array of points the current panning action will use
       panQueue: []  // An array of subsequent panTo actions to take
     }

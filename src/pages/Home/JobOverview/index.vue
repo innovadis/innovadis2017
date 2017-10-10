@@ -8,10 +8,11 @@
 
   simple-feed(
     title='Een kijkje in de keuken',
-    feedGetter='contentInstagram'
+    feedGetter='contentInstagram',
+    dark
     )
 
-  send-box-with-slot(flip, subject='Reactie op vacture overzicht pagina')
+  send-box-with-slot.pt(flip, subject='Reactie op vacture overzicht pagina')
     h2 Staat je baan er niet tussen?
 
 </template>

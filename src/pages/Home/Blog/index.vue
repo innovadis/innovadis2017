@@ -10,7 +10,7 @@
       .author Door: {{ blogItem.author }}
       .date Publicatiedatum: {{ date }}
 
-  .container.pt(v-html='blogItem.body')
+  .content-body.container(v-html='blogItem.body')
 
   social-share
 
@@ -19,7 +19,8 @@
 
   simple-feed(
     title='Ook interessant',
-    :items='feedItems'
+    :items='feedItems',
+    dark
     )
 
 </template>
@@ -52,7 +53,7 @@ export default {
       return Moment(this.blogItem.publish_date).format('DD MMMM YYYY')
     },
 
-    feedItems () {
+    feedItems() {
       return this.$store.getters['feed/contentTags'](this.blogItem.tags, this.blogItem.title)
     }
   },
@@ -106,9 +107,4 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
-.page-event {
-  .feed {
-    padding-top: 0;
-  }
-}
 </style>

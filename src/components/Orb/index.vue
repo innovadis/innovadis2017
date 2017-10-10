@@ -39,6 +39,10 @@ export default {
     targetX: Number,
     targetY: Number,
     blur: Number,
+    shadow: {
+      type: Boolean,
+      default: true
+    },
     size: {
       type: Number,
       default: 50
@@ -61,7 +65,7 @@ export default {
     },
 
     style() {
-      return {
+      const style = {
         left: this.initialX + 'px',
         top: this.initialY + 'px',
         height: this.size * 2 + 'px',
@@ -69,6 +73,12 @@ export default {
         filter: 'blur(' + this.blur + 'px)',
         'z-index': this.z
       }
+
+      if (this.shadow === false) {
+        style['filter'] = 'none'
+      }
+
+      return style
     },
 
     ORB_WOBBLE() {
@@ -120,7 +130,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow( 5px 5px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(10px 50px 15px rgba(0, 0, 0, 0.2));
   }
 
   i {

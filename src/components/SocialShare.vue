@@ -40,8 +40,8 @@ export default {
 @import 'src/styles/variables';
 
 .share {
-  margin: 80px 0;
-  padding-bottom: 10px;
+  padding: $gutter 0 60px 0;
+  margin-bottom: 80px;
   border-bottom: 1px solid $gray1;
   width: 120%;
   position: relative;
