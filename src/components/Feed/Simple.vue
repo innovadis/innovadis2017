@@ -8,8 +8,8 @@
       item(:item='feedItems[1]', v-if='feedItems.length > 1')
       item(:item='feedItems[2]', v-if='feedItems.length > 2')
 
-    .flex.flex-justify-center.flex-grow-1
-      inno-button(label='Meer', primary, small)
+    .more.flex.flex-justify-center.flex-grow-1
+      inno-button.text-center(label='Meer', primary, small, :to='{ name: "world" }')
 
   .swipe.flex.flex-justify-center.flex-align-center
     i.icons8-swipe-left
@@ -60,6 +60,10 @@ export default {
 
   h2 {
     text-align: center; // ios
+  }
+
+  .more {
+    margin-top: $gutter - 10px;
   }
 
   @include phablet {
