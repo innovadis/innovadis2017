@@ -36,12 +36,6 @@ export default {
     SocialShare: require('src/components/SocialShare')
   },
 
-  data() {
-    return {
-      googleTitle: ''
-    }
-  },
-
   computed: {
     blogItem() {
       if (this.$store.state.feed.blog.length === 0) return
@@ -62,27 +56,21 @@ export default {
     title: {
       inner: 'Blog'
     },
-    meta: [
-      // Google+
-      { itemprop: 'name', content: this.googleTitle },
-      { itemprop: 'description', content: 'Content Title' },
-      { itemprop: 'image', content: 'Content Title' },
+    meta() {
+      return [
+        // Google+
+        { itemprop: 'name', content: this.blogItem.title },
+        { itemprop: 'description', content: this.blogItem.lead },
 
-      // Twitter
-      { name: 'twitter:title', content: 'Content Title' },
-      { name: 'twitter:description', content: 'Content Title' },
-      { name: 'twitter:image', content: 'Content Title' },
+        // Twitter
+        { name: 'twitter:title', content: this.blogItem.title },
+        { name: 'twitter:description', content: this.blogItem.lead },
 
-      // Facebook
-      { property: 'og:title', content: 'Content Title' },
-      { property: 'og:description', content: 'short intro' },
-      { property: 'og:locale', content: 'nl_NL' },
-      { property: 'og:type', content: 'website' },
-      { property: 'og:image', content: 'todo' }, // only if you want to overwrite default
-      { property: 'og:url', content: 'todo' }
-    ]
-
-    // TODO meta tags, og, twitter, etc
+        // Facebook
+        { property: 'og:title', content: this.blogItem.title },
+        { property: 'og:description', content: this.blogItem.lead }
+      ]
+    }
   },
 
   mounted() {
@@ -106,5 +94,4 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
-
 </style>

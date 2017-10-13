@@ -8,8 +8,6 @@ fix mobile complex feed popup position
 fix simple feed mobile
 
 
-feed item padding same
-
 blog: meta tags, title & desc
 
 partners: naar microsft sneller
