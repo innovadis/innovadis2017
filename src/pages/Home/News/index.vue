@@ -4,7 +4,7 @@
     h1.dot {{ newsItem.title }}
     b: p.intro {{ newsItem.lead }}
 
-  //- .hero-image(:style='{ background: "url(" + newsItem.heroImage + ")" }', v-if='newsItem.heroImage')
+  .hero-image(:style='{ background: "url(" + newsItem.heroImage + ")" }', v-if='newsItem.heroImage')
 
   .container(v-html='newsItem.body')
 
