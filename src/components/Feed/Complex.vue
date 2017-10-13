@@ -301,7 +301,8 @@ export default {
       padding: 20px;
       align-self: center;
       transition: all 0.5s ease-in-out;
-      transform: translateY(-100vh);
+      position: relative;
+      top: -100vh;
     }
 
     .buttons {
@@ -386,7 +387,8 @@ export default {
       padding-top: $headerHeight - 25px;
       background: $background;
       transition: all 0.5s ease-in-out;
-      transform: translateY(-100vh);
+      position: relative;
+      top: -100vh;
     }
 
     .news-items {
@@ -427,11 +429,11 @@ export default {
       overflow: hidden;
 
       .controls {
-        transform: translateY(0);
+        top: 0;
       }
 
       .no-scrollbar {
-        transform: translateY(0);
+        top: 0;
       }
     }
   }

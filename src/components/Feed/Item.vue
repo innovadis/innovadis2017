@@ -3,15 +3,17 @@
   .item(
     :style='style',
     :class='{ large: large }',
-    @click='openItem'
+    @click='openItem',
+    ref='item'
     )
     .text
       h3.title {{ feedItem.title }}
       .source {{ feedItem.type }}
 
   news-dialog(
-    v-if='dialogDetailOpen',
-    @close='dialogDetailOpen = false'
+    v-show='dialogDetailOpen',
+    @close='dialogDetailOpen = false',
+    v-model='dialogDetailOpen'
     )
     .dialog-content
       .info
@@ -113,7 +115,7 @@ export default {
 
   watch: {
     dialogDetailOpen(v) {
-      this.$emit('dialogOpen', v)
+      this.$emit('dialogOpen', v, this)
     }
   }
 }
@@ -232,6 +234,10 @@ export default {
     .likes {
       display: flex;
       align-items: center;
+
+      @include phablet {
+        margin-top: 20px;
+      }
 
       i {
         font-size: 36px;
