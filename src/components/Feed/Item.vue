@@ -171,8 +171,10 @@ export default {
       border-bottom: 1px solid $bottomColor;
       padding-bottom: 10px;
       margin: 0;
-      max-height: 48px;
+      max-height: 108px;
       overflow: hidden;
+      display: flex;
+      align-items: flex-start;
     }
 
     .source {
