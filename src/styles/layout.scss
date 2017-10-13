@@ -63,7 +63,7 @@ $props: (
 }
 
 @mixin desktop {
-  @media (max-width: $tablet-width) {
+  @media (min-width: $tablet-width) {
     @content;
   }
 }

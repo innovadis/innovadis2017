@@ -143,7 +143,9 @@ export default {
   }
 
   &.large {
-    height: 440px;
+    @include desktop {
+      height: 440px;
+    }
   }
 
   @include phablet {

@@ -392,6 +392,7 @@ export default {
     .news-items {
       padding: $gutter;
       width: 890px;
+      margin: 0 20px;
 
       @media (max-width: 1400px) {
         width: 410px;

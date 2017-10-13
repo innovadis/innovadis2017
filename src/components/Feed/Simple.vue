@@ -10,11 +10,6 @@
 
     .more.flex.flex-justify-center.flex-grow-1
       inno-button.text-center(label='Meer', primary, small, :to='{ name: "world" }')
-
-  .swipe.flex.flex-justify-center.flex-align-center
-    i.icons8-swipe-left
-    | Swipe naar links
-
 </template>
 
 <script>
@@ -81,6 +76,7 @@ export default {
 
     @include phablet {
       flex-wrap: nowrap;
+      flex-direction: column;
       margin: 0;
       justify-content: flex-start;
     }
@@ -100,6 +96,7 @@ export default {
 
   @include phablet {
     display: flex;
+    flex-direction: column;
   }
 }
 
