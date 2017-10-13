@@ -6,8 +6,3 @@ placeholder bij nieuws image, image optioneel
 fix mobile complex feed popup position
 
 fix simple feed mobile
-
-
-blog: meta tags, title & desc
-
-partners: naar microsft sneller
