@@ -52,8 +52,7 @@ export default {
     .page-wrapper {
       overflow: hidden;
       border-radius: $border-radius;
-      // box-shadow: -8px 0px 10px $gray1;
-      // filter: blur(2px);
+      filter: blur(7px);
 
       @include phone {
         transform: translateX(100vw);

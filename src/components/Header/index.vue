@@ -292,6 +292,7 @@ $transition: 0.3s ease-in-out;
     opacity: 0;
     transition: all 0.2s ease-in;
     visibility: hidden;
+    max-width: 460px;
 
     section {
       &:first-child {

@@ -163,6 +163,10 @@ export default {
   .contact {
     margin-left: 60px;
 
+    @include phablet {
+      margin-left: 100px;
+    }
+
     h3 {
       font-family: Bitter;
       margin-bottom: 5px;
