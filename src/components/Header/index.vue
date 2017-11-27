@@ -134,7 +134,7 @@ $transition: 0.3s ease-in-out;
   }
 
   img.logo {
-    margin: $gutter;
+    margin: $gutter $gutter $gutter 0;
   }
 
   .wrapper {

@@ -67,7 +67,7 @@ footer {
     background-repeat: no-repeat;
     background-size: 100% contain;
     background-position: center bottom;
-    padding: 100px $gutter * 2 100px $gutter;
+    padding: 100px $gutter 100px $gutter;
 
     @include phablet {
       padding: 60px 20px;
