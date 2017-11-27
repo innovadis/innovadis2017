@@ -2,12 +2,14 @@
 .image-block
   .container
     .text
-      p Met onze kennis en ervaring van de afgelopen twintig jaar en de huidige technologische ontwikkelingen, hebben wij alles in handen om hier een bijdrage aan te leveren. Dat noemen wij Smart Health.
+      p {{ text }}
 </template>
 
 <script>
 export default {
-
+  props: {
+    text: String
+  }
 }
 </script>
 

@@ -1,10 +1,9 @@
-innovadis manier -> over cultuur, tom maik bart foto hier
 
 footer: orbs intead of background
 
-fix mobile header
-
 WACHTEN:
+innovadis manier -> over cultuur, tom maik bart foto hier
+  - sarina maakt foto's
 
 placeholder bij nieuws image, image optioneel (niet tonen in bericht zelf, alleen overview)
   - luck maakt placeholder

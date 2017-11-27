@@ -24,11 +24,8 @@ const router = new Router({
         },
         {
           path: '/smart-industry',
-          name: 'smart-industry'
-        },
-        {
-          path: '/producten', // NYI
-          name: 'products'
+          name: 'smart-industry',
+          component: require('src/pages/Home/SmartIndustry')
         },
         {
           path: '/wereld',

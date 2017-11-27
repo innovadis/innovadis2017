@@ -171,6 +171,16 @@ const getters = {
     return items
   },
 
+  contentTagSmartIndustry(state) {
+    const events = state.events.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
+    const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
+    const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
+
+    const items = [].concat(events, news, blog)
+
+    return items
+  },
+
   contentTags(state) {
     const allItems = store.getters['feed/contentAll']
 
