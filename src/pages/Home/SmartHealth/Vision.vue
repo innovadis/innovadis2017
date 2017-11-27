@@ -60,11 +60,20 @@ export default {
   .select-box {
     display: flex;
 
+    @include phone {
+      flex-direction: column;
+    }
+
     .box {
       max-width: 40%;
       margin-left: $gutter;
       display: flex;
       align-items: center;
+
+      @include phone {
+        max-width: initial;
+        margin: 0;
+      }
     }
   }
 }

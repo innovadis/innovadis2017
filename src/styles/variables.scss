@@ -39,6 +39,10 @@ a {
 
 .pt {
   padding-top: 100px !important;
+
+  @include phone {
+    padding-top: 40px !important;
+  }
 }
 
 .dot {

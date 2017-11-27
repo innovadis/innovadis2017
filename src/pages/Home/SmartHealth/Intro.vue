@@ -22,6 +22,10 @@ div.intro {
     padding-top: 100px;
   }
 
+  @include phone {
+    padding-top: 40px;
+  }
+
   p {
     margin-right: 100px;
   }

@@ -1,7 +1,5 @@
 innovadis manier -> over cultuur, tom maik bart foto hier
 
-partners: naar microsft sneller
-
 footer: orbs intead of background
 
 fix mobile header

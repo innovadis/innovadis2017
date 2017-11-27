@@ -35,6 +35,10 @@ export default {
     right: 0;
     top: -60px;
     width: 290px;
+
+    @include phablet {
+      display: none;
+    }
   }
 }
 </style>
