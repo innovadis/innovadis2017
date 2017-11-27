@@ -9,7 +9,7 @@
       item(:item='feedItems[2]', v-if='feedItems.length > 2')
 
   .more.flex.flex-justify-center.flex-grow-1
-    inno-button.text-center(label='Meer', primary, small, :to='{ name: "world" }')
+    inno-button.text-center(label='Lees meer', primary, small, :to='{ name: "world" }')
 </template>
 
 <script>

@@ -13,7 +13,7 @@
         :position.sync='selectedPartner.location',
         v-if='selectedPartner'
         :opacity='markerOpacityNumber',
-        :icon="{ path: 'M 0.000 3.000 L 3.527 4.854 L 2.853 0.927 L 5.706 -1.854 L 1.763 -2.427 L 0.000 -6.000 L -1.763 -2.427 L -5.706 -1.854 L -2.853 0.927 L -3.527 4.854 L 0.000 3.000', fillColor: 'rgba(255, 255, 255, 1)', fillOpacity: 1, strokeWeight: 0, scale: 3 }"
+        :icon="{ path: 'M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0', fillColor: 'rgba(255, 255, 255, 1)', fillOpacity: 1, strokeWeight: 0, scale: 0.2 }"
         )
     .gradient.hidden-phone
     .radial-gradient.hidden-phone

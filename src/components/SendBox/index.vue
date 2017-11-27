@@ -37,7 +37,6 @@
             placeholder='Telefoonnummer',
             v-model='phoneNumber',
             type='text',
-            required,
             @enter='send'
             )
 
@@ -181,11 +180,9 @@ export default {
     name: {
       required
     },
+
     email: {
       email
-    },
-    phoneNumber: {
-      required
     }
   }
 }

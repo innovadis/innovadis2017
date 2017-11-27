@@ -1,5 +1,5 @@
 <template lang="pug">
-.intro.flex.flex-justify-center.flex-align-center.flex-column
+.intro.pt.flex.flex-justify-center.flex-align-center.flex-column
   .container
     h1 Wij verbinden,
     h1.dot in de Smart Health
@@ -16,7 +16,6 @@ export default {
 @import 'src/styles/variables';
 
 div.intro {
-  padding: 250px 0 $gutter 0;
 
   @include phablet {
     padding-top: 100px;
