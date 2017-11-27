@@ -29,7 +29,7 @@
             v-model='email',
             required,
             type='email',
-            :valid='!$v.email.$invalid && !!email',
+            :valid='!$v.email.$invalid && email',
             @enter='send'
             )
 

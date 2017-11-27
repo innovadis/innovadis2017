@@ -13,7 +13,7 @@
     type='email',
     :placeholder='placeholder',
     v-model='model',
-    :class='{ invalid: model && !valid }',
+    :class='{ invalid: model && valid === false }',
     @keydown.enter='enter'
     )
 
@@ -25,8 +25,11 @@
     )
 
   transition(name='fade')
-    .valid(v-if='valid')
+    .icon-valid(v-if='valid')
       i.icons8-ok
+  transition(name='fade')
+    .icon-invalid(v-if='valid === false')
+      i.icons8-attention-sign
 </template>
 
 <script>
@@ -40,23 +43,26 @@ export default {
       type: Number,
       default: 3
     },
-    valid: Boolean
+    valid: {
+      type: null,
+      default: null
+    }
   },
 
-  data() {
+  data () {
     return {
       model: this.value
     }
   },
 
   methods: {
-    enter() {
+    enter () {
       this.$emit('enter')
     }
   },
 
   watch: {
-    model(v) {
+    model (v) {
       this.$emit('input', v)
     }
   }
@@ -64,7 +70,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .field {
   position: relative;
@@ -75,7 +81,7 @@ export default {
 
   &.required:not(.valid) {
     &:after {
-      content: '*';
+      // content: "*";
       position: absolute;
       right: 0;
       top: 15px;
@@ -109,7 +115,8 @@ export default {
     resize: none;
   }
 
-  .valid {
+  .icon-invalid,
+  .icon-valid {
     position: absolute;
     right: 0;
     top: 4px;
@@ -117,6 +124,12 @@ export default {
     i {
       font-size: 36px;
       color: $inno-yellow;
+    }
+  }
+
+  .icon-invalid {
+    i {
+      color: red;
     }
   }
 }
