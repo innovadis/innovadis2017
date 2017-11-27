@@ -45,7 +45,7 @@
       )
 
     transition(name='fade')
-      .reset(@click='reset', v-if='canReset')
+      .reset(@click='reset', v-show='canReset')
         i.icons8-delete
         a Reset
 

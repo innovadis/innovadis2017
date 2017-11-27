@@ -8,8 +8,8 @@
       item(:item='feedItems[1]', v-if='feedItems.length > 1')
       item(:item='feedItems[2]', v-if='feedItems.length > 2')
 
-    .more.flex.flex-justify-center.flex-grow-1
-      inno-button.text-center(label='Meer', primary, small, :to='{ name: "world" }')
+  .more.flex.flex-justify-center.flex-grow-1
+    inno-button.text-center(label='Meer', primary, small, :to='{ name: "world" }')
 </template>
 
 <script>
