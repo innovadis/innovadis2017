@@ -34,8 +34,6 @@
 <script>
 import { load, Map, Marker } from 'vue2-google-maps'
 
-const STEPS = 150     // The number of steps that each panTo action will undergo
-
 load({
   key: 'AIzaSyBqGIVa9BAbTJKqxQrw5uDl8Y36GaUamBk'
   // v: '3.24',                // Google Maps API version
@@ -132,6 +130,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
 
       markerOpacity: 0,
       markerOpacityTimeout: null,
+      lastSelectedPartnerKey: null,
       selectedPartnerKey: 'ceecee',
       panPath: [],   // An array of points the current panning action will use
       panQueue: []  // An array of subsequent panTo actions to take
@@ -159,18 +158,15 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
 
   methods: {
     setSelectedPartner(key) {
-      this.selectedPartnerKey = null
+      this.selectedPartnerKey = key
 
       this.panTo(this.partners[key].location.lat, this.partners[key].location.lng)
-      // this.$refs.map.panTo(this.partners[key].location)
 
       this.markerOpacity = 0
 
       this.increaseMarkerOpacity()
 
-      setTimeout(() => {
-        this.selectedPartnerKey = key
-      }, 300)
+      this.lastSelectedPartnerKey = this.selectedPartnerKey
     },
 
     increaseMarkerOpacity() {
@@ -185,6 +181,12 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
       const { panPath, panQueue } = this
       const map = this.$refs.map
 
+      let steps = 150 // Amount of steps between 2 panning points
+
+      if (this.selectedPartnerKey === 'microsoft' || this.lastSelectedPartnerKey === 'microsoft') {
+        steps = 50 // Because Microsoft is so far away from the rest, speed it up
+      }
+
       if (panPath.length > 0) {
         // We are already panning...queue this up for next move
         panQueue.push([newLat, newLng])
@@ -193,10 +195,10 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
         panPath.push('LAZY SYNCRONIZED LOCK')  // make length non-zero - 'release' this before calling setTimeout
         var curLat = map.$mapObject.getCenter().lat()
         var curLng = map.$mapObject.getCenter().lng()
-        var dLat = (newLat - curLat) / STEPS
-        var dLng = (newLng - curLng) / STEPS
+        var dLat = (newLat - curLat) / steps
+        var dLng = (newLng - curLng) / steps
 
-        for (var i = 0; i < STEPS; i++) {
+        for (var i = 0; i < steps; i++) {
           panPath.push([curLat + dLat * i, curLng + dLng * i])
         }
         panPath.push([newLat, newLng])

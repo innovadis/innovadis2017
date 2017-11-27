@@ -71,24 +71,7 @@ export default {
         { property: 'og:description', content: this.blogItem.lead }
       ]
     }
-  },
-
-  mounted() {
-    // this.googleTitle  = this.blogItem.title
-
-    this.$emit('updateHead')
   }
-
-  // watch: {
-  //   'blogItem': {
-  //     handler: function(v) {
-  //       console.log('123')
-  //       this.$emit('updateHead')
-  //     },
-  //     immediate: true,
-  //     deep: true
-  //   }
-  // }
 }
 </script>
 

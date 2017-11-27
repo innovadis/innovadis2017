@@ -1,11 +1,5 @@
 innovadis manier -> over cultuur, tom maik bart foto hier
 
-algemene voorwaarden footer onder social, klein, italic
-
-feed item padding same
-
-blog: meta tags, title & desc
-
 partners: naar microsft sneller
 
 footer: orbs intead of background
