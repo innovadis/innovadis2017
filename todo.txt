@@ -1,13 +1,5 @@
 innovadis manier -> over cultuur, tom maik bart foto hier
 
-placeholder bij nieuws image, image optioneel
-
-
-fix mobile complex feed popup position
-
-fix simple feed mobile
-
-
 algemene voorwaarden footer onder social, klein, italic
 
 feed item padding same
@@ -19,3 +11,8 @@ partners: naar microsft sneller
 footer: orbs intead of background
 
 fix mobile header
+
+WACHTEN:
+
+placeholder bij nieuws image, image optioneel (niet tonen in bericht zelf, alleen overview)
+  - luck maakt placeholder

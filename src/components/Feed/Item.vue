@@ -213,7 +213,7 @@ export default {
       justify-content: flex-start;
       height: auto;
       flex-grow: 1;
-      padding-bottom: 100px;
+      padding-bottom: 140px;
     }
 
     .divider {
