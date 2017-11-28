@@ -1,6 +1,4 @@
-require('babel-polyfill')
-require('es6-promise').polyfill()
-require('es6-object-assign').polyfill()
+import 'es6-promise/auto'
 
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
