@@ -11,13 +11,16 @@ export default {
     label: String,
     to: Object,
     yellow: Boolean,
-    left: Boolean
+    left: Boolean,
+    href: String
   },
 
   methods: {
-    click() {
+    click () {
       if (this.to) {
         this.$router.push(this.to)
+      } else if (this.href) {
+        window.location = this.href
       } else {
         this.$emit('click')
       }
@@ -27,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .button {
   cursor: pointer;

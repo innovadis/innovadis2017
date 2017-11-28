@@ -68,8 +68,8 @@ export default {
       const style = {
         left: this.initialX + 'px',
         top: this.initialY + 'px',
-        height: this.size * 2 + 'px',
-        width: this.size * 2 + 'px',
+        height: this.size + 'px',
+        width: this.size + 'px',
         filter: 'blur(' + this.blur + 'px)',
         'z-index': this.z
       }

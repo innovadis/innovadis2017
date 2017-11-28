@@ -1,6 +1,11 @@
 <template lang="pug">
-.hero.flex.flex-align-center.flex-justify-end.flex-column.flex-justify-center-phone
-  h1.dot Contact
+.flex.flex-align-center.flex-justify-end.flex-column.flex-justify-center-phone
+  .container.pt
+    h1.dot Contact
+    p.intro Als echte IT-professionals kunnen we alles automatiseren, maar uiteindelijk vinden ook wij persoonlijk contact leuker. Heb je ondersteuning nodig, een supportvraag, een (IT)-uitdaging waar we ons in vast mogen bijten of wil je een van onze medewerkers spreken?
+
+  .hero
+
   navigate.hidden-phone(
     :address='address',
     :postalCode='postalCode',
@@ -41,21 +46,13 @@ export default {
 @import 'src/styles/layout';
 
 .hero {
-  background-image: url('https://placehold.it/720x1440');
+  background-image: url('/static/images/contact_hero.png');
+  width: 100vw;
+  margin-bottom: -200px;
+}
 
-  @include phone {
-    position: relative;
-    margin-bottom: 180px;
-
-    .navigate-phone {
-      position: absolute;
-      top: 140px;
-    }
-  }
-
-  h1 {
-    color: white;
-  }
+.carcrash {
+  box-shadow: 0 10px 20px 0 $gray1;
 }
 
 </style>
