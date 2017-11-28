@@ -1,4 +1,4 @@
-// import 'es6-promise/auto'
+import 'es6-promise/auto'
 
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
@@ -38,8 +38,8 @@ store.dispatch('jobs/load')
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
-  store,
+  router: router,
+  store: store,
   template: '<App/>',
   components: { App }
 })
