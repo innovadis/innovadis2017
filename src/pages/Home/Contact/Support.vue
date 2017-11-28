@@ -2,7 +2,7 @@
 .support
   .container
     h2.dot Support en ondersteuning
-    .flex.flex-justify-between
+    .flex.flex-justify-between.flex-column-phone.flex-align-center-phone
       .box.flex.flex-column
         p Telefonische ondersteuning tijdens kantoortijden (8.30 - 17.00 uur).
         a.yellow(href='tel:+31538507503') +31 (0)53 850 7503
@@ -25,8 +25,16 @@ export default {
 .support {
   padding: 100px 0;
 
+  @include phone {
+    padding: $gutter 0;
+  }
+
   .box {
     width: 45%;
+
+    @include phone {
+      width: auto;
+    }
   }
 
   .yellow {

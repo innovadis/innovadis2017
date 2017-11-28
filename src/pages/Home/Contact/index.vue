@@ -11,6 +11,7 @@
       to='support@innovadis.com'
       )
       h2.dot Stuur ons een bericht
+      p Laat hiernaast je gegevens achter en we berichten of bellen je terug.
 </template>
 
 <script>
