@@ -1,4 +1,6 @@
 require('babel-polyfill')
+require('es6-promise').polyfill()
+require('es6-object-assign').polyfill()
 
 import Vue from 'vue'
 import Vuex from 'vuex'
