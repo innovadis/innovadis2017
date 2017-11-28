@@ -1,5 +1,5 @@
 <template lang="pug">
-.carcrash
+.carcrash(v-inview:enter='timelinePark')
   buildings.buildings(ref='buildings')
   car.car(ref='car', @click.native='resetButCrash')
   tree.tree1(ref='tree1')
@@ -106,10 +106,6 @@ export default {
 
       this.timelineCrash()
     }
-  },
-
-  mounted() {
-    this.timelinePark()
   }
 }
 </script>
