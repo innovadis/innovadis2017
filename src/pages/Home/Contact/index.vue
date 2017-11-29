@@ -4,14 +4,14 @@
 
   support
 
-  .flex.flex-justify-center.container
-    send-box-with-slot(
-      flip,
-      text='Laat hieronder uw gegevens achter en we berichten of bellen u terug.',
-      to='support@innovadis.com'
-      )
-      h2.dot Stuur ons een bericht
-      p Laat hiernaast je gegevens achter en we berichten of bellen je terug.
+  send-box-with-slot(
+    backgroundUrl='/static/images/contact_corner.png',
+    flip,
+    text='Laat hieronder uw gegevens achter en we berichten of bellen u terug.',
+    to='support@innovadis.com'
+    )
+    h2.dot Stuur ons een bericht
+    p Laat hiernaast je gegevens achter en we berichten of bellen je terug.
 </template>
 
 <script>
@@ -33,7 +33,4 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
-.page-contact {
-  padding-bottom: 100px;
-}
 </style>

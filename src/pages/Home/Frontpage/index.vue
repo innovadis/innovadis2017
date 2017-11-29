@@ -6,7 +6,9 @@
 
   solutions
 
-  send-box-with-slot(background)
+  send-box-with-slot(
+    backgroundUrl='/static/images/frontpage_corner.png'
+    )
     h2.dot Laat een bericht achter
 
 </template>

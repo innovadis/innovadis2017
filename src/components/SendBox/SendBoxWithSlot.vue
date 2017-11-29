@@ -1,5 +1,5 @@
 <template lang="pug">
-.sendboxwithslot(:class='{ flip: flip, background: background }')
+.sendboxwithslot(:class='{ flip: flip }', :style='{ background: "url(" + backgroundUrl + ")" }')
   .container
     .flex.flex-column
       slot
@@ -18,7 +18,7 @@ export default {
 
   props: {
     flip: Boolean,
-    background: Boolean,
+    backgroundUrl: String,
     subject: String,
     to: String
   }
@@ -26,11 +26,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
-@import 'src/styles/layout';
+@import "src/styles/variables";
+@import "src/styles/layout";
 
 .sendboxwithslot {
   padding: 20px 0 100px 0;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: bottom right !important;
 
   @include phablet {
     // padding: 60px 20px;
@@ -74,11 +77,6 @@ export default {
         }
       }
     }
-  }
-
-  &.background {
-    background: url('/static/images/frontpage_corner.png') no-repeat bottom right;
-    background-size: contain;
   }
 }
 </style>
