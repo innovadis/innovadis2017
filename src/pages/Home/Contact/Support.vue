@@ -8,7 +8,7 @@
         a.yellow(href='tel:+31538507503') +31 (0)53 850 7503
       .box.flex.flex-column
         p Meld 24 uur per dag online problemen of storingen en blijf op de hoogte van de status van uw meldingen.
-        button-alternate(yellow, label='Conmtact via ons supportportaal', href='https://innovadissupport.zendesk.com')
+        button-alternate(yellow, label='Contact via ons supportportaal', href='https://innovadissupport.zendesk.com')
 </template>
 
 <script>
