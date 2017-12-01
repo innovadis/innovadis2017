@@ -1,5 +1,5 @@
 <template lang="pug">
-.image-block
+.image-block(:style='{ background: "url(" + imageUrl + ")" }')
   .container
     .text
       p {{ text }}
@@ -8,7 +8,8 @@
 <script>
 export default {
   props: {
-    text: String
+    text: String,
+    imageUrl: String
   }
 }
 </script>
@@ -19,8 +20,9 @@ export default {
 .image-block {
   height: 750px;
   width: 100vw;
-  background: url('https://placehold.it/750x1440') no-repeat center;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
   position: relative;
 
   .text {

@@ -1,17 +1,13 @@
 <template lang="pug">
 .switchbox(ref='switchbox')
-  .icons
-    i.icons8-like-filled(@click='selectIndex(0)', :class='{ active: selectedIndex === 0 }')
-    i.icons8-like-filled(@click='selectIndex(1)', :class='{ active: selectedIndex === 1 }')
-    i.icons8-like-filled(@click='selectIndex(2)', :class='{ active: selectedIndex === 2 }')
-
   transition-group(name='slideleft', mode='out-in')
     box(
       v-if='selectedIndex === 0',
       key='box0',
       title='Vakmanschap',
       text='Jarenlange ervaring en intensief speurwerk heeft ons veel kennis gebracht. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. Kwaliteit is voor ons geen cijfer maar een blije relatie waarmee we aan het einde van de reis een groot stuk taart eten.',
-      imageUrl='https://placehold.it/300/300'
+      imageUrl='/static/images/cover/cultuur_vakmanschap.jpg',
+      iconUrl='/static/images/svg/innovadis_vakmanschap_icon.svg'
       )
 
     box(
@@ -19,7 +15,8 @@
       key='box1',
       title='Vakmanschap1',
       text='Jarenlange ervaring en intensief speurwerk heeft ons veel kennis gebracht. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. Kwaliteit is voor ons geen cijfer maar een blije relatie waarmee we aan het einde van de reis een groot stuk taart eten.',
-      imageUrl='https://placehold.it/300/300'
+      imageUrl='/static/images/cover/cultuur_persoonlijk.jpg',
+      iconUrl='/static/images/svg/innovadis_persoonlijk_icon.svg'
       )
 
     box(
@@ -27,7 +24,8 @@
       key='box2',
       title='Vakmanschap2',
       text='Jarenlange ervaring en intensief speurwerk heeft ons veel kennis gebracht. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. Kwaliteit is voor ons geen cijfer maar een blije relatie waarmee we aan het einde van de reis een groot stuk taart eten.',
-      imageUrl='https://placehold.it/300/300'
+      imageUrl='/static/images/cover/cultuur_collegas.jpg',
+      iconUrl='/static/images/svg/innovadis_innovatie_icon.svg'
       )
 </template>
 

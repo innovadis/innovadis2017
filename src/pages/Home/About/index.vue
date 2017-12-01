@@ -15,7 +15,7 @@
     p Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle.
 
   .flex.flex-justify-center
-    img(src='/static/images/frontpage_people.png')
+    img(src='/static/images/cover/meeting1.png')
 
 </template>
 

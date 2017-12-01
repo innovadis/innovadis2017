@@ -2,7 +2,10 @@
 .page-smartindustry
   intro
 
-  image-block(text='Belangrijke thema’s zijn goede (product-) content, integratie met systemen, selfservice en personalisatie. Bovendien zijn steeds meer apparaten verbonden met het web, waardoor Internet of Things (IoT) en big data een belangrijkere rol gaat spelen. En vergeet ook de vraagstukken op het gebied van beveiliging niet. Dat noemen wij Smart Industry. Welkom in de wereld van Innovadis.')
+  image-block(
+    text='Belangrijke thema’s zijn goede (product-) content, integratie met systemen, selfservice en personalisatie. Bovendien zijn steeds meer apparaten verbonden met het web, waardoor Internet of Things (IoT) en big data een belangrijkere rol gaat spelen. En vergeet ook de vraagstukken op het gebied van beveiliging niet. Dat noemen wij Smart Industry. Welkom in de wereld van Innovadis.',
+    imageUrl='/static/images/cover/smartindustry.jpg'
+    )
 
   .container.pt
     h2.dot Voor welke uitdaging staat uw bedrijf

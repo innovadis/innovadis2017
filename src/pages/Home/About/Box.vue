@@ -3,6 +3,8 @@
   .image(:style='{ background: "url(" + imageUrl + ")" }')
   .flex.flex-justify-center
     orb(:size='100', :initialX='-70', :initialY='-70', :shadow='false')
+    .relative
+      .icon(:style='{ background: "url(" + iconUrl + ")" }', v-inview:class='["visible"]')
   .text
     h4 {{ title }}
     p {{ text }}
@@ -18,7 +20,8 @@ export default {
   props: {
     title: String,
     text: String,
-    imageUrl: String
+    imageUrl: String,
+    iconUrl: String
   }
 }
 </script>
@@ -28,6 +31,25 @@ export default {
 
 .box {
   box-shadow: $shadow-large;
+
+  .relative {
+    position: relative;
+
+    .icon {
+      $size: 50px;
+      height: $size;
+      width: $size;
+      position: absolute;
+      top: -$size/2;
+      left: -$size/2;
+      opacity: 0;
+      transition: opacity 0.5s ease-out 1.5s;
+
+      &.visible {
+        opacity: 1;
+      }
+    }
+  }
 
   .image {
     border-top-right-radius: $border-radius;

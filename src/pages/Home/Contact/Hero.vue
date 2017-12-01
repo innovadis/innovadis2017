@@ -46,7 +46,7 @@ export default {
 @import 'src/styles/layout';
 
 .hero {
-  background-image: url('/static/images/contact_hero.png');
+  background-image: url('/static/images/cover/contact.jpg');
   width: 100vw;
   margin-bottom: -200px;
 }

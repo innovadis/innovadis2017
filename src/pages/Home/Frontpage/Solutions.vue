@@ -6,7 +6,7 @@
     p Wij verbeteren de wereld met innovatieve IT-oplossingen waar onze opdrachtgevers en hun klanten blij van worden. We lopen voorop als het gaat om kennis en werken in enthousiaste teams samen met onze opdrachtgevers aan succes en een duurzame relatie.
 
   .image
-    img(src='/static/images/frontpage_people.png')
+    img(src='/static/images/cover/meeting2.jpg')
     inno-button(label='De Innovadis manier', yellow, inverted, :to='{ name: "world" }')
 </template>
 
