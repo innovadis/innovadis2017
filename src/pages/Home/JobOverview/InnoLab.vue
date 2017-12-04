@@ -23,7 +23,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  background: url('https://placehold.it/600?text=image') no-repeat center;
+  background: url('/static/images/cover/innolab.jpg') no-repeat center;
   background-size: cover;
 }
 
