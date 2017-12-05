@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .inno-lab {
   height: 600px;
@@ -23,8 +23,13 @@ export default {
   justify-content: center;
   align-items: center;
 
-  background: url('/static/images/cover/innolab.jpg') no-repeat center;
+  background: url("/static/images/cover/innolab.jpg") no-repeat center;
   background-size: cover;
-}
 
+  h2,
+  p {
+    color: white;
+    text-shadow: 1px 1px 2px $gray3;
+  }
+}
 </style>

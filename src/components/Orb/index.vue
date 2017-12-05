@@ -18,14 +18,18 @@
               feColorMatrix(in='blur', mode='matrix', values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9', result='goo')
                 feComposite(in='SourceGraphic', in2='goo', operator='atop')
         g
-          circle(:r='size/2', :cy='size/2-ORB_WOBBLE', :cx='size/2')
-            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"0 "+ (size/2-ORB_WOBBLE).toString() +" "+ (size/2).toString()', :to='"360 "+ (size/2-ORB_WOBBLE).toString() +" "+ (size/2).toString()', dur='10s', repeatCount='indefinite')
-          circle(:r='size/2', :cy='size/2+ORB_WOBBLE', :cx='size/2')
-            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"360 "+ (size/2+ORB_WOBBLE).toString() +" "+ (size/2).toString()', :to='"0 "+ (size/2+ORB_WOBBLE).toString() +" "+ (size/2).toString()', dur='20s', repeatCount='indefinite')
-          circle(:r='size/2', :cy='size/2', :cx='size/2-ORB_WOBBLE')
-            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"0 "+ (size/2).toString() +" "+ (size/2-ORB_WOBBLE).toString()', :to='"360 "+ (size/2).toString() +" "+ (size/2-ORB_WOBBLE).toString()', dur='30s', repeatCount='indefinite')
-          circle(:r='size/2', :cy='size/2', :cx='size/2+ORB_WOBBLE')
-            animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"360 "+ (size/2).toString() +" "+ (size/2+ORB_WOBBLE).toString()', :to='"0 "+ (size/2).toString() +" "+ (size/2+ORB_WOBBLE).toString()', dur='25s', repeatCount='indefinite')
+          template(v-if='single')
+            circle(:r='size/2', :cy='size/2', :cx='size/2')
+
+          template(v-else)
+            circle(:r='size/2', :cy='size/2-ORB_WOBBLE', :cx='size/2')
+              animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"0 "+ (size/2-ORB_WOBBLE).toString() +" "+ (size/2).toString()', :to='"360 "+ (size/2-ORB_WOBBLE).toString() +" "+ (size/2).toString()', dur='10s', repeatCount='indefinite')
+            circle(:r='size/2', :cy='size/2+ORB_WOBBLE', :cx='size/2')
+              animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"360 "+ (size/2+ORB_WOBBLE).toString() +" "+ (size/2).toString()', :to='"0 "+ (size/2+ORB_WOBBLE).toString() +" "+ (size/2).toString()', dur='20s', repeatCount='indefinite')
+            circle(:r='size/2', :cy='size/2', :cx='size/2-ORB_WOBBLE')
+              animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"0 "+ (size/2).toString() +" "+ (size/2-ORB_WOBBLE).toString()', :to='"360 "+ (size/2).toString() +" "+ (size/2-ORB_WOBBLE).toString()', dur='30s', repeatCount='indefinite')
+            circle(:r='size/2', :cy='size/2', :cx='size/2+ORB_WOBBLE')
+              animateTransform(attributeType='xml', attributeName='transform', type='rotate', :from='"360 "+ (size/2).toString() +" "+ (size/2+ORB_WOBBLE).toString()', :to='"0 "+ (size/2).toString() +" "+ (size/2+ORB_WOBBLE).toString()', dur='25s', repeatCount='indefinite')
 </template>
 
 <script>
@@ -39,6 +43,10 @@ export default {
     targetX: Number,
     targetY: Number,
     blur: Number,
+    single: {
+      type: Boolean,
+      default: false
+    },
     shadow: {
       type: Boolean,
       default: true
