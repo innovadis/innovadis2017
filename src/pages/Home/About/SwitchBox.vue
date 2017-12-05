@@ -1,6 +1,6 @@
 <template lang="pug">
 .switchbox(ref='switchbox')
-  transition-group(name='slideleft', mode='out-in')
+  transition-group.flex.f.flex-justify-center(name='flyleft', mode='out-in')
     box(
       v-if='selectedIndex === 0',
       key='box0',
@@ -29,8 +29,7 @@
       )
 
   .icons
-    i.icons8-advance.flip(@click='changeIndex(-1)', :class='{ hidden: selectedIndex === 0 }')
-    i.icons8-advance(@click='changeIndex(1)', :class='{ hidden: selectedIndex === 2 }')
+    i.icons8-refresh(@click='next')
 </template>
 
 <script>
@@ -53,8 +52,13 @@ export default {
   },
 
   methods: {
-    changeIndex (delta) {
-      this.selectedIndex = Math.min(2, Math.max(0, this.selectedIndex + delta))
+    next() {
+      if (this.selectedIndex === 2) {
+        this.selectedIndex = 0
+        return
+      }
+
+      this.selectedIndex += 1
     }
   }
 }
@@ -64,11 +68,12 @@ export default {
 @import "src/styles/variables";
 
 .switchbox {
-  width: 442px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
+  justify-content: space-between;
+  height: 750px;
 
   .icons {
     margin: 20px;
@@ -103,20 +108,21 @@ export default {
   }
 }
 
-$slideLeftDuration: 0.7s;
-
-.slideleft-enter-active,
-.slideleft-leave-active {
-  transition: all $slideLeftDuration ease-in-out;
+.flyleft-enter-active,
+.flyleft-leave-active {
+  transition: all 0.5s ease;
 }
 
-.slideleft-enter-active {
-  transition-delay: $slideLeftDuration;
+.flyleft-enter,
+.flyleft-leave-to {
+  opacity: 0.5;
 }
 
-.slideleft-enter,
-.slideleft-leave-to {
-  transform: translateX(-100px);
-  opacity: 0;
+.flyleft-enter {
+  transform: translateX(100vw) rotate(15deg);
+}
+
+.flyleft-leave-to {
+  transform: translateX(-100vw) rotate(5deg);
 }
 </style>

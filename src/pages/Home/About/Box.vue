@@ -31,6 +31,8 @@ export default {
 
 .box {
   box-shadow: $shadow-large;
+  width: 442px;
+  position: absolute;
 
   .relative {
     position: relative;

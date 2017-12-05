@@ -82,6 +82,10 @@ export default {
       top: -200px;
       left: 0;
       z-index: -1;
+
+      @include phablet {
+        display: none;
+      }
     }
 
     &:after {
@@ -94,6 +98,10 @@ export default {
       bottom: 0;
       right: 0;
       z-index: -1;
+
+      @include phone {
+        display: none;
+      }
     }
   }
 
