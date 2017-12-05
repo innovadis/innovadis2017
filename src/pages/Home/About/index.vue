@@ -47,8 +47,8 @@ export default {
     }
 
     &:before {
-      background: $inno-yellow;
-      content: '';
+      background: $inno-yellow-light;
+      content: "";
       height: 100%;
       width: 100%;
       position: absolute;
@@ -64,8 +64,37 @@ export default {
 
   .yellow {
     padding: 100px 0 140px 0;
-    background: $inno-yellow;
     position: relative;
+    z-index: 0;
+    height: 660px; // because switchbox is absolute due to animation
+    background: linear-gradient(
+      to top,
+      $inno-yellow 0%,
+      $inno-yellow-light 100%
+    );
+
+    &:before {
+      background: url("/static/images/about_corner_top.svg") no-repeat top left;
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: -200px;
+      left: 0;
+      z-index: -1;
+    }
+
+    &:after {
+      background: url("/static/images/about_corner_bottom.svg") no-repeat bottom
+        right;
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+    }
   }
 
   img {

@@ -19,24 +19,6 @@
   opacity: 0;
 }
 
-// Slide left
-$slideLeftDuration: 0.7s;
-
-.slideleft-enter-active,
-.slideleft-leave-active {
-  transition: all $slideLeftDuration ease-in-out;
-}
-
-.slideleft-enter-active {
-  transition-delay: $slideLeftDuration;
-}
-
-.slideleft-enter,
-.slideleft-leave-to {
-  transform: translateX(-100px);
-  opacity: 0;
-}
-
 // Modal
 .modal-enter,
 .modal-leave-active {

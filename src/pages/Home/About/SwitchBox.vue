@@ -27,6 +27,10 @@
       imageUrl='/static/images/cover/cultuur_collegas.jpg',
       iconUrl='/static/images/svg/innovadis_innovatie_icon.svg'
       )
+
+  .icons
+    i.icons8-advance.flip(@click='changeIndex(-1)', :class='{ hidden: selectedIndex === 0 }')
+    i.icons8-advance(@click='changeIndex(1)', :class='{ hidden: selectedIndex === 2 }')
 </template>
 
 <script>
@@ -49,12 +53,8 @@ export default {
   },
 
   methods: {
-    selectIndex (i) {
-      this.selectedIndex = i
-
-      if (window.innerWidth > 900) {
-        scroll.animateScroll(this.$refs.switchbox.scrollHeight - 20)
-      }
+    changeIndex (delta) {
+      this.selectedIndex = Math.min(2, Math.max(0, this.selectedIndex + delta))
     }
   }
 }
@@ -68,27 +68,55 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
 
   .icons {
     margin: 20px;
+    z-index: 1;
 
     i {
       font-size: 40px;
       margin: 0 15px;
       border-radius: 50%;
-      padding: 0 7px;
+      padding: 5px 6px;
       cursor: pointer;
       transition: $transition;
+      display: inline-block;
 
-      &.active {
+      &:hover {
+        box-shadow: 0 4px 5px 0 $gray1;
         color: $inno-blue;
       }
 
-      &:hover,
-      &.active {
-        box-shadow: 0 4px 5px 0 $gray1;
+      &.flip {
+        transform: rotate(180deg);
+
+        &:hover {
+          box-shadow: 0 -4px 5px 0 $gray1;
+        }
+      }
+
+      &.hidden {
+        visibility: hidden;
       }
     }
   }
+}
+
+$slideLeftDuration: 0.7s;
+
+.slideleft-enter-active,
+.slideleft-leave-active {
+  transition: all $slideLeftDuration ease-in-out;
+}
+
+.slideleft-enter-active {
+  transition-delay: $slideLeftDuration;
+}
+
+.slideleft-enter,
+.slideleft-leave-to {
+  transform: translateX(-100px);
+  opacity: 0;
 }
 </style>
