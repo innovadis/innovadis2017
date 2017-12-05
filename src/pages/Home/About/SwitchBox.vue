@@ -1,5 +1,9 @@
 <template lang="pug">
 .switchbox(ref='switchbox')
+  icon-effect(iconUrl='/static/images/svg/innovadis_vakmanschap_icon_black.svg', ref='iconEffect0')
+  icon-effect(iconUrl='/static/images/svg/innovadis_persoonlijk_icon_black.svg', ref='iconEffect1')
+  icon-effect(iconUrl='/static/images/svg/innovadis_innovatie_icon_black.svg', ref='iconEffect2')
+
   transition-group.flex.f.flex-justify-center(name='flyleft', mode='out-in')
     box(
       v-if='selectedIndex === 0',
@@ -42,7 +46,8 @@ scroll.init({
 
 export default {
   components: {
-    Box: require('./Box')
+    Box: require('./Box'),
+    IconEffect: require('./IconEffect')
   },
 
   data () {
@@ -52,13 +57,19 @@ export default {
   },
 
   methods: {
-    next() {
+    setSelectedIndex (index) {
+      this.selectedIndex = index
+
+      this.$refs['iconEffect' + index].animate()
+    },
+
+    next () {
       if (this.selectedIndex === 2) {
-        this.selectedIndex = 0
+        this.setSelectedIndex(0)
         return
       }
 
-      this.selectedIndex += 1
+      this.setSelectedIndex(this.selectedIndex + 1)
     }
   }
 }
