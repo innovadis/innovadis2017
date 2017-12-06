@@ -17,8 +17,8 @@
     box(
       v-if='selectedIndex === 1',
       key='box1',
-      title='Vakmanschap1',
-      text='Jarenlange ervaring en intensief speurwerk heeft ons veel kennis gebracht. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. Kwaliteit is voor ons geen cijfer maar een blije relatie waarmee we aan het einde van de reis een groot stuk taart eten.',
+      title='Persoonlijk',
+      text='We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.',
       imageUrl='/static/images/cover/cultuur_persoonlijk.jpg',
       iconUrl='/static/images/svg/innovadis_persoonlijk_icon.svg'
       )
@@ -26,8 +26,8 @@
     box(
       v-if='selectedIndex === 2',
       key='box2',
-      title='Vakmanschap2',
-      text='Jarenlange ervaring en intensief speurwerk heeft ons veel kennis gebracht. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. Kwaliteit is voor ons geen cijfer maar een blije relatie waarmee we aan het einde van de reis een groot stuk taart eten.',
+      title='Innovatie',
+      text='De techniek heeft voor ons geen geheimen. Onze ontwikkelaars gaan geen uitdaging uit de weg, zij zoeken ze op. Ons eeuwige verlangen om te ontdekken brengt ons langs andere werelden en geeft ons nieuwe inzichten. Het stelt ons in staat om innovatieve oplossingen te ontwikkelen voor onze opdrachtgevers en hun klanten.',
       imageUrl='/static/images/cover/cultuur_collegas.jpg',
       iconUrl='/static/images/svg/innovadis_innovatie_icon.svg'
       )

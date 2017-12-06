@@ -24,7 +24,7 @@ export default {
 
   methods: {
     async animate () {
-      await timeout(330)
+      await timeout(400)
 
       for (let i = 0; i < this.amount; i++) {
         const ref = this.$refs['icon' + i][0]
@@ -33,7 +33,7 @@ export default {
         ref.style.opacity = 1
 
         const angle = Math.random() * 360
-        const distance = Math.random() * 100 + 800
+        const distance = Math.random() * 400 + 400
 
         const x = Math.cos(angle * Math.PI / 180) * distance
         const y = Math.sin(angle * Math.PI / 180) * distance

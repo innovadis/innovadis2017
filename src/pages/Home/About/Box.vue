@@ -69,6 +69,10 @@ export default {
     padding: 70px $gutter $gutter $gutter;
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
+
+    p {
+      margin-bottom: 0;
+    }
   }
 }
 </style>
