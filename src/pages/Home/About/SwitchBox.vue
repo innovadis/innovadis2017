@@ -33,7 +33,7 @@
       )
 
   .icons
-    i.icons8-advance.flip(@click='next')
+    i.icons8-advance.flip(@click='next', :class='{ disabled: buttonDisabled }')
 </template>
 
 <script>
@@ -52,7 +52,8 @@ export default {
 
   data () {
     return {
-      selectedIndex: 0
+      selectedIndex: 0,
+      buttonDisabled: false
     }
   },
 
@@ -64,6 +65,12 @@ export default {
       this.$refs['iconEffect' + 0].reset()
       this.$refs['iconEffect' + 1].reset()
       this.$refs['iconEffect' + 2].reset()
+
+      this.buttonDisabled = true
+
+      setTimeout(() => {
+        this.buttonDisabled = false
+      }, 2000)
     },
 
     next () {
@@ -120,6 +127,11 @@ export default {
 
       &.hidden {
         visibility: hidden;
+      }
+
+      &.disabled {
+        pointer-events: none;
+        color: $gray1;
       }
     }
   }
