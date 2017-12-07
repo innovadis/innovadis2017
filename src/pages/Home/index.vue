@@ -47,12 +47,17 @@ export default {
 
   &.open {
     overflow: hidden;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    height: 100vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
 
     .page-wrapper {
       overflow: hidden;
       border-radius: $border-radius;
       filter: blur(7px);
+
+      /deep/ .page-about .top {
+        background: none !important; // because page size goes into desktop width since we are pushing the content to the side
+      }
 
       @include phone {
         transform: translateX(100vw);
