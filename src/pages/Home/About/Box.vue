@@ -2,7 +2,7 @@
 .box
   .image(:style='{ background: "url(" + imageUrl + ")" }')
   .flex.flex-justify-center
-    orb(:size='100', :initialX='-70', :initialY='-70', :shadow='false')
+    orb(:size='100', :initialX='-70', :initialY='-70', :shadow='false', :transitionDelay='0')
     .relative
       .icon(:style='{ background: "url(" + iconUrl + ")" }', v-inview:class='["visible"]')
   .text
@@ -32,6 +32,7 @@ export default {
 .box {
   box-shadow: $shadow-large;
   width: 442px;
+  max-width: calc(100vw - #{$gutter / 2});
   position: absolute;
 
   .relative {
@@ -45,7 +46,7 @@ export default {
       top: -$size/2;
       left: -$size/2;
       opacity: 0;
-      transition: opacity 0.5s ease-out 1.5s;
+      transition: opacity 0.5s ease-out 0.5s;
 
       &.visible {
         opacity: 1;
@@ -69,6 +70,8 @@ export default {
     padding: 70px $gutter $gutter $gutter;
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
+    margin: 0 auto;
+    max-width: 100vw;
 
     p {
       margin-bottom: 0;

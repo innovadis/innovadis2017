@@ -1,5 +1,11 @@
+Smart health/industry:
+ - items moeten card flyleft worden op mobiel, met index bolletjes onderaan. desktop laten zoals het is.
 
-footer: orbs intead of background
+
+contact triangle moet cirkel uitroepteken zijn
+
+redo socialhof case mobiel pagina, popups voor meer info
+
 
 WACHTEN:
 placeholder bij nieuws image, image optioneel (niet tonen in bericht zelf, alleen overview)

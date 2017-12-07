@@ -33,7 +33,7 @@
       )
 
   .icons
-    i.icons8-refresh(@click='next')
+    i.icons8-advance.flip(@click='next')
 </template>
 
 <script>
@@ -61,6 +61,9 @@ export default {
       this.selectedIndex = index
 
       this.$refs['iconEffect' + index].animate()
+      this.$refs['iconEffect' + 0].reset()
+      this.$refs['iconEffect' + 1].reset()
+      this.$refs['iconEffect' + 2].reset()
     },
 
     next () {
@@ -98,17 +101,20 @@ export default {
       cursor: pointer;
       transition: $transition;
       display: inline-block;
+      background: white;
+      box-shadow: 0 4px 5px 0 $gray1;
 
       &:hover {
-        box-shadow: 0 4px 5px 0 $gray1;
         color: $inno-blue;
+        box-shadow: 0 4px 10px 4px $gray1;
       }
 
       &.flip {
         transform: rotate(180deg);
+        box-shadow: 0 -4px 5px 0 $gray1;
 
         &:hover {
-          box-shadow: 0 -4px 5px 0 $gray1;
+          box-shadow: 0 -4px 10px 4px $gray1;
         }
       }
 

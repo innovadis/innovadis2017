@@ -79,7 +79,7 @@ export default {
       height: 100%;
       width: 100%;
       position: absolute;
-      top: -200px;
+      top: -100px;
       left: 0;
       z-index: -1;
 
@@ -108,6 +108,10 @@ export default {
   img {
     height: 450px;
     margin: $gutter 0 100px 0;
+
+    @include phone {
+      height: 200px;
+    }
   }
 }
 </style>

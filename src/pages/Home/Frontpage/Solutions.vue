@@ -7,7 +7,7 @@
 
   .image
     img(src='/static/images/cover/meeting2.jpg')
-    inno-button(label='De Innovadis manier', yellow, inverted, :to='{ name: "world" }')
+    inno-button(label='De Innovadis manier', yellow, inverted, :to='{ name: "about" }')
 </template>
 
 <script>

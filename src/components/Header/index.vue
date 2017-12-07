@@ -135,6 +135,10 @@ $transition: 0.3s ease-in-out;
 
   img.logo {
     margin: $gutter $gutter $gutter 0;
+
+    @media (max-width: $pageWidth) {
+      margin-left: $gutter;
+    }
   }
 
   .wrapper {

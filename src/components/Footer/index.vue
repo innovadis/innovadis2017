@@ -63,7 +63,7 @@ footer {
   }
 
   .top {
-    background: url('/static/images/svg/footer_orbs.svg'), linear-gradient(270deg, $inno-blue 0%, $inno-blue-dark 100%);
+    background: url('/static/images/svg/footer.svg'), linear-gradient(270deg, $inno-blue 0%, $inno-blue-dark 100%);
     background-repeat: no-repeat;
     background-size: 100% contain;
     background-position: center bottom;

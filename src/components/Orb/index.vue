@@ -1,7 +1,7 @@
 <template lang="pug">
 .orb-wrapper(v-inview:once.enter='showOrb')
   transition(name='showorb')
-    .fade-in(v-show='show')
+    .fade-in(v-show='show', :style='{ "transition-delay": transitionDelay + "s" }')
       //- .orb(l
         ref='orb',
         :style='style'
@@ -58,21 +58,25 @@ export default {
     z: {
       type: Number,
       default: 0
+    },
+    transitionDelay: {
+      type: Number,
+      default: 0.5
     }
   },
 
-  data() {
+  data () {
     return {
       show: false
     }
   },
 
   computed: {
-    iconClass() {
+    iconClass () {
       return 'icons8-' + this.icon
     },
 
-    style() {
+    style () {
       const style = {
         left: this.initialX + 'px',
         top: this.initialY + 'px',
@@ -89,17 +93,17 @@ export default {
       return style
     },
 
-    ORB_WOBBLE() {
+    ORB_WOBBLE () {
       return 3
     }
   },
 
   methods: {
-    showOrb() {
+    showOrb () {
       this.show = true
     },
 
-    animate() {
+    animate () {
       Anime({
         targets: this.$refs.orb,
         translateX: () => {
@@ -119,7 +123,7 @@ export default {
   },
 
   watch: {
-    show(v) {
+    show (v) {
       if (v) this.animate()
     }
   }
@@ -127,7 +131,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .orb-wrapper {
   position: relative;
@@ -152,7 +156,7 @@ export default {
 
 .showorb-enter-active,
 .showorb-leave-active {
-  transition: all 1s ease-in-out 0.5s;
+  transition: all 1s ease-in-out;
 }
 
 .showorb-enter,

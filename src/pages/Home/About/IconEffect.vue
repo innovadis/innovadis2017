@@ -7,7 +7,7 @@
 <script>
 import Anime from 'animejs'
 
-function timeout(ms) {
+function timeout (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
@@ -32,7 +32,10 @@ export default {
         ref.style.top = 0
         ref.style.opacity = 1
 
-        const angle = Math.random() * 360
+        const ANGLE_MINMAX = 30
+
+        const r = Math.random() * ANGLE_MINMAX * 4
+        const angle = r > ANGLE_MINMAX * 2 ? r + 180 - ANGLE_MINMAX * 3 : r - ANGLE_MINMAX
         const distance = Math.random() * 400 + 400
 
         const x = Math.cos(angle * Math.PI / 180) * distance
@@ -43,11 +46,23 @@ export default {
             targets: ref,
             left: x,
             top: y,
-            opacity: 0,
+            opacity: 0.5,
             duration: 3000,
             rotate: Math.random() * 720,
             easing: 'easeOutSine'
           })
+      }
+    },
+
+    reset () {
+      for (let i = 0; i < this.amount; i++) {
+        const ref = this.$refs['icon' + i][0]
+
+        Anime({
+          targets: ref,
+          opacity: 0,
+          duration: 2000
+        })
       }
     }
   }
@@ -66,6 +81,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include phone {
+    display: none;
+  }
 
   .icon-effect {
     position: absolute;
