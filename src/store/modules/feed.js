@@ -63,10 +63,10 @@ const actions = {
     } else {
       await timeout(500)
 
-      instagramObject = require('src/assets/rickandmorty.json') // TODO remove from src
+      instagramObject = require('src/assets/rickandmorty.json')
     }
 
-    const instagram = instagramObject.items.map(x => {
+    const instagram = instagramObject.user.media.nodes.map(x => {
       return Object.assign(x, {
         feedType: 'instagram',
         feedCreated: new Date(x.created_time * 1000),

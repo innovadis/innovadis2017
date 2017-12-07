@@ -69,10 +69,10 @@ export default {
       switch (this.item.feedType) {
         case 'instagram':
           feedItem.type = 'Instagram'
-          feedItem.imageUrl = this.item.images.standard_resolution.url
-          feedItem.title = this.item.caption ? this.item.caption.text : ''
+          feedItem.imageUrl = this.item.display_src
+          feedItem.title = this.item.caption || ''
           feedItem.likes = this.item.likes.count
-          feedItem.url = this.item.link
+          feedItem.url = 'https://www.instagram.com/p/' + this.item.code
           break
         case 'blog':
           feedItem.type = 'Blog'

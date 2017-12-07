@@ -8,6 +8,9 @@ redo socialhof case mobiel pagina, popups voor meer info
 
 mobile header kan je omlaag scrollen
 
+switchbox button uit even na klik
+
+fix instagram
 
 WACHTEN:
 placeholder bij nieuws image, image optioneel (niet tonen in bericht zelf, alleen overview)
