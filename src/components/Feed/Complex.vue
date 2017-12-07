@@ -133,7 +133,7 @@ export default {
       if (this.tagSelected.length > 0) {
         let filteredItems = items.filter(x => (x.tags && x.tags.some(y => this.tagSelected.includes(y))))
 
-        filteredItems = filteredItems.concat(items.filter(x => x.caption && this.tagSelected.some(y => x.caption.text.includes('#' + y))))
+        filteredItems = filteredItems.concat(items.filter(x => x.caption && this.tagSelected.some(y => x.caption.includes('#' + y))))
 
         return filteredItems
       }

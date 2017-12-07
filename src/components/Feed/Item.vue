@@ -27,7 +27,7 @@
             | {{ feedItem.likes }}
         .wrapper
           a(:href='feedItem.url', target='_blank')
-            orb(:size='30', :initialX='-20', :initialY='-15', icon='instagram')
+            orb(:size='40', :initialX='-25', :initialY='-20', icon='instagram', single)
             span Volgen
       .image(:style='{ "background-image": "url(" + feedItem.imageUrl + ")" }')
 </template>

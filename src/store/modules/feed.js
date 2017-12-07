@@ -63,13 +63,13 @@ const actions = {
     } else {
       await timeout(500)
 
-      instagramObject = require('src/assets/rickandmorty.json')
+      instagramObject = require('src/assets/instagram.json')
     }
 
     const instagram = instagramObject.user.media.nodes.map(x => {
       return Object.assign(x, {
         feedType: 'instagram',
-        feedCreated: new Date(x.created_time * 1000),
+        feedCreated: new Date(x.date * 1000),
         feedId: x.id
       })
     })
@@ -121,7 +121,7 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
 
-    const instagram = state.instagram.filter(x => x.caption && x.caption.text.toLowerCase().includes('#' + MARKET_SMART_HEALTH))
+    const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_HEALTH))
 
     const items = [].concat(events, news, blog, instagram)
 
@@ -138,7 +138,7 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
 
-    const instagram = state.instagram.filter(x => x.caption && x.caption.text.toLowerCase().includes('#' + MARKET_SMART_INDUSTRY))
+    const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_INDUSTRY))
 
     const items = [].concat(events, news, blog, instagram)
 
@@ -187,7 +187,7 @@ const getters = {
     const itemsWithTags = (tags, filterTitle) => {
       const items = allItems.filter(item => {
         if (item.feedType === 'instagram') {
-          if (item.caption && tags.some(t => item.caption.text.toLowerCase().includes('#' + t.toLowerCase()))) {
+          if (item.caption && tags.some(t => item.caption.toLowerCase().includes('#' + t.toLowerCase()))) {
             return item
           }
         } else {
@@ -212,7 +212,7 @@ const getters = {
 
     for (const post of state.instagram) {
       if (post.caption) {
-        const hashtags = post.caption.text.match(HASHTAG_REGEX)
+        const hashtags = post.caption.match(HASHTAG_REGEX)
 
         if (hashtags) {
           for (const tag of hashtags) {
