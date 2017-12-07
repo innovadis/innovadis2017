@@ -31,6 +31,10 @@ a {
   &:visited {
     color: $gray3;
   }
+
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .cp {

@@ -47,6 +47,7 @@ export default {
 
 .hero {
   background-image: url('/static/images/cover/contact.jpg');
+  background-position: left;
   width: 100vw;
   margin-bottom: -200px;
 }

@@ -46,6 +46,9 @@ export default {
 
     @include phablet {
       flex-direction: column !important;
+    }
+
+    @include tablet {
       max-width: 450px;
     }
 

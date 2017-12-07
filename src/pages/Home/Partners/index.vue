@@ -8,15 +8,15 @@
 
   .map
     .background
-    google-map.hidden-phone(:center='partners.umbraco.location', :zoom='6', :options='options', ref='map')
+    google-map.hidden-phablet(:center='partners.umbraco.location', :zoom='6', :options='options', ref='map')
       google-map-marker(
         :position.sync='selectedPartner.location',
         v-if='selectedPartner'
         :opacity='markerOpacityNumber',
-        :icon="{ path: 'M 100, 100 m -75, 0 a 75,75 0 1,0 150,0 a 75,75 0 1,0 -150,0', fillColor: 'rgba(255, 255, 255, 1)', fillOpacity: 1, strokeWeight: 0, scale: 0.2 }"
+        :icon="{ path: 'M0,18.5c0,8.3,5,13.2,13.6,13.2c11.5,0,18.4-7.2,18.4-18.4c0-8.5-5.1-13.1-13.8-13.1C6.7,0.3,0,7.2,0,18.5', fillColor: 'rgba(255, 255, 255, 1)', fillOpacity: 1, strokeWeight: 0, scale: 0.7 }"
         )
-    .gradient.hidden-phone
-    .radial-gradient.hidden-phone
+    .gradient.hidden-phablet
+    .radial-gradient.hidden-phablet
     .partners.flex.flex-align-center
       .names.flex.flex-column
         .name(v-for='partner in partnerObjects', @click='setSelectedPartner(partner.key)', :class='{ selected: selectedPartnerKey === partner.key }') {{ partner.name }}
@@ -249,7 +249,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
   position: relative;
   overflow: hidden;
 
-  @include phone {
+  @include phablet {
     height: 1000px;
   }
 
@@ -284,7 +284,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
   .partners {
     display: flex;
 
-    @include phone {
+    @include phablet {
       flex-direction: column;
       margin: $gutter 0;
     }
@@ -292,7 +292,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
     .names {
       margin-left: 50px;
 
-      @include phone {
+      @include phablet {
         margin-left: 0;
       }
 
@@ -319,7 +319,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
       border-radius: $border-radius;
       max-width: 400px;
 
-      @include phone {
+      @include phablet {
         margin-left: 0;
         margin: $gutter;
       }

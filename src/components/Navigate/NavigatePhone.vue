@@ -10,7 +10,7 @@
   .navigate.flex.flex-column.flex-align-center
     orb(:size='60', icon='driver', :initialX='-50', :initialY='-90', :shadow='false')
     .flex.flex-align-center
-      a(href='https://www.google.com/maps?f=d&daddr=Innovadis+Enschede', target='_blank') Navigeer naar Innovadis
+      a(href='https://www.google.com/maps?f=d&daddr=Innovadis+Enschede', target='_blank') Routebeschrijving
       i.icons8-advance
 
 </template>
@@ -36,6 +36,7 @@ export default {
   width: calc(100vw - #{$gutter*2});
   display: none;
   flex-direction: column;
+  margin-top: 160px;
 
   @include phone {
     display: flex;
@@ -67,10 +68,5 @@ a {
   color: $gray3;
   transition: all 0.2s ease-in-out;
   display: table;
-
-  &:hover {
-    color: $inno-blue;
-    text-shadow: 0px 0px 20px $inno-blue;
-  }
 }
 </style>
