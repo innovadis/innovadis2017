@@ -74,7 +74,8 @@ export default {
 
   @include phablet {
     left: 0;
-    top: 140px;
+    top: 120px;
+    width: 25%;
   }
 
   @include phone {
@@ -89,6 +90,10 @@ export default {
     position: relative;
     z-index: 1;
     left: -40px;
+
+    @include tablet {
+      top: -60px;
+    }
   }
 
   .orb {

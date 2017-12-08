@@ -16,7 +16,8 @@ export default {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  min-width: 600px;
+  width: 600px;
+  max-width: 40vw;
   min-height: 600px;
   position: absolute;
   right: 0;

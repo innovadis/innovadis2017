@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name='modal')
-    .modal-mask(@click='click', @touchstart='click')
+    .modal-mask(@click='click', @touchstart='click', v-if='model')
       .modal-wrapper
         .modal-container
           slot
@@ -8,18 +8,40 @@
 
 <script>
 export default {
+  props: {
+    value: Boolean
+  },
+
+  data () {
+    return {
+      model: this.value
+    }
+  },
+
   methods: {
-    click(e) {
+    click (e) {
       if ((new Array(...e.target.classList)).includes('modal-wrapper')) {
+        this.model = false
+
         this.$emit('close')
       }
+    }
+  },
+
+  watch: {
+    model(v) {
+      this.$emit('input', v)
+    },
+
+    value(v) {
+      this.model = v
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .modal-mask {
   position: fixed;
@@ -28,7 +50,7 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: table;
   transition: all 0.5s ease-out;
 }
@@ -39,17 +61,17 @@ export default {
 }
 
 .modal-container {
-  height: 75vh;
-  max-height: 600px;
+  // height: 75vh;
+  // max-height: 600px;
+  // overflow: hidden;
   width: 1200px;
   max-width: 90vw;
   margin: 0px auto;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.5s ease-out;
   font-family: Helvetica, Arial, sans-serif;
   border-radius: $border-radius;
-  overflow: hidden;
 
   @include phone {
     margin: $gutter/2;
