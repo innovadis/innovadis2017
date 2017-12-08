@@ -4,7 +4,7 @@
     h1.dot {{ newsItem.title }}
     b: p.intro {{ newsItem.lead }}
 
-  .hero-image(:style='{ background: "url(" + newsItem.heroImage + ")" }', v-if='newsItem.heroImage')
+  .hero-image(:style='{ background: "url(" + heroImage + ")" }')
 
   .container(v-html='newsItem.body')
 
@@ -39,6 +39,10 @@ export default {
       if (this.$store.state.feed.news.length === 0) return
 
       return this.$store.state.feed.news.find(x => Slug(x.title) === this.$route.params.name)
+    },
+
+    heroImage() {
+      return this.newsItem.heroImage || '/static/images/news_item_header.png'
     },
 
     date() {
@@ -91,17 +95,6 @@ export default {
 
   .hero-image {
     height: 400px;
-  }
-
-  .video {
-    background: url('https://placehold.it/600?text=video') no-repeat center;
-    background-size: cover;
-    height: 450px;
-    width: 120%;
-    position: relative;
-    left: -10%;
-    margin-bottom: $gutter;
-    border-radius: $border-radius;
   }
 
   .feed {

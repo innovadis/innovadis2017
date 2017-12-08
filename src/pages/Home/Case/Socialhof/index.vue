@@ -47,16 +47,16 @@
 
           .orbs
             .row
-              orb(icon='birthday-cake', :size='50', :initialX='-25', :initialY='-23', single)
+              orb(icon='brain-settings', :size='50', :initialX='-25', :initialY='-23', single)
               | Geen technische kennis benodigd
             .row
-              orb(icon='birthday-cake', :size='50', :initialX='-25', :initialY='-23', single)
+              orb(icon='identification-documents', :size='50', :initialX='-25', :initialY='-23', single)
               | Gebruikersbeheer
             .row
-              orb(icon='birthday-cake', :size='50', :initialX='-25', :initialY='-23', single)
+              orb(icon='picture', :size='50', :initialX='-25', :initialY='-23', single)
               | Controle over gepubliceerde berichten
             .row
-              orb(icon='birthday-cake', :size='50', :initialX='-25', :initialY='-23', single)
+              orb(icon='user-options', :size='50', :initialX='-25', :initialY='-23', single)
               | Rollen en rechten
 
         macbook

@@ -74,6 +74,7 @@ export default {
           feedItem.likes = this.item.likes.count
           feedItem.url = 'https://www.instagram.com/p/' + this.item.code
           break
+
         case 'blog':
           feedItem.type = 'Blog'
           feedItem.imageUrl = this.item.heroImage // TODO thumbnail?
@@ -83,13 +84,15 @@ export default {
         case 'news':
           feedItem.type = 'Nieuws'
           feedItem.title = this.item.title
+          feedItem.imageUrl = this.item.heroImage || '/static/images/news_item_thumbnail.jpg' // TODO heroImage thumbnail from headless?
           break
 
         case 'event':
           feedItem.type = 'Evenement'
-          feedItem.imageUrl = this.item.heroImage // TODO thumbnail?
+          feedItem.imageUrl = this.item.heroImage
           feedItem.title = this.item.title
           break
+
         default:
           throw new Error('unknown type')
       }

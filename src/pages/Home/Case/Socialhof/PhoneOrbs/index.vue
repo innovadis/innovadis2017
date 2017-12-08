@@ -1,11 +1,11 @@
 <template lang="pug">
 .phone-container(v-inview:once.enter='animateOrbs')
   .phone
-  orb.orb(ref='orb0', icon='birthday-cake', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
-  orb.orb(ref='orb1', icon='birthday-cake', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
-  orb.orb(ref='orb2', icon='birthday-cake', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
-  orb.orb(ref='orb3', icon='birthday-cake', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
-  orb.orb(ref='orb4', icon='birthday-cake', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
+  orb.orb(ref='orb0', icon='movie', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
+  orb.orb(ref='orb1', icon='chat', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
+  orb.orb(ref='orb2', icon='todo-list', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
+  orb.orb(ref='orb3', icon='user-options', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
+  orb.orb(ref='orb4', icon='camera', :fadeIn='false', single, :size='50', :initialX='-20', :initialY='-20')
   orb-path.path(ref='path0')
   orb-path.path(ref='path1')
   orb-path.path(ref='path2')
