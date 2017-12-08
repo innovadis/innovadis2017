@@ -29,7 +29,7 @@
       i.icons8-ok
   transition(name='fade')
     .icon-invalid(v-if='valid === false')
-      i.icons8-attention-sign
+      i.icons8-explanation-mark
 </template>
 
 <script>

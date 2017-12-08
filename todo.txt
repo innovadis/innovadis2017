@@ -2,15 +2,3 @@ Smart health/industry:
  - items moeten card flyleft worden op mobiel, met index bolletjes onderaan. desktop laten zoals het is.
 
 redo socialhof case mobiel pagina, popups voor meer info
-
-switchbox button uit even na klik
-
-fix instagram
-
-WACHTEN:
-placeholder bij nieuws image, image optioneel (niet tonen in bericht zelf, alleen overview)
-  - luck maakt placeholder
-
-icons8 voor de 5 socialhof icons
-&
-contact triangle moet cirkel uitroepteken zijn
