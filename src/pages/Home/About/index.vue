@@ -7,8 +7,8 @@
       p.intro We gaan voor duurzame relaties met al onze opdrachtgevers en partners. Opdrachtgevers waar we al meer dan 10 jaar mee samenwerken zijn geen uitzondering. Wij worden blij wanneer onze oplossingen mensen daadwerkelijk verder helpen en toegevoegde waarde leveren.
       p.intro Innovadis verbindt.
 
-  .yellow.flex.flex-justify-center
-    switch-box
+  .yellow
+    switch-box(:content='switchboxContents', :height='750')
 
   .container.pt
     h2.dot Wij zijn een partner voor de toekomst
@@ -22,7 +22,35 @@
 <script>
 export default {
   components: {
-    SwitchBox: require('./SwitchBox')
+    SwitchBox: require('src/components/SwitchBox')
+  },
+
+  data () {
+    return {
+      switchboxContents: [
+        {
+          title: 'Vakmanschap',
+          text: 'Jarenlange ervaring en intensief speurwerk heeft ons veel kennis gebracht. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. Kwaliteit is voor ons geen cijfer maar een blije relatie waarmee we aan het einde van de reis een groot stuk taart eten.',
+          imageUrl: '/static/images/cover/cultuur_vakmanschap.jpg',
+          iconUrl: '/static/images/svg/innovadis_vakmanschap_icon.svg',
+          backgroundIconUrl: '/static/images/svg/innovadis_vakmanschap_icon_black.svg'
+        },
+        {
+          title: 'Persoonlijk',
+          text: 'We zijn zowel intern als extern informeel en professioneel. Wij gaan een duurzame samenwerking aan met al onze relaties. Wij begrijpen de behoeften van onze opdrachtgevers en vinden een nieuwe route wanneer deze verandert. Enthousiasme is onze drijfveer.',
+          imageUrl: '/static/images/cover/cultuur_persoonlijk.jpg',
+          iconUrl: '/static/images/svg/innovadis_persoonlijk_icon.svg',
+          backgroundIconUrl: '/static/images/svg/innovadis_persoonlijk_icon_black.svg'
+        },
+        {
+          title: 'Innovatie',
+          text: 'De techniek heeft voor ons geen geheimen. Onze ontwikkelaars gaan geen uitdaging uit de weg, zij zoeken ze op. Ons eeuwige verlangen om te ontdekken brengt ons langs andere werelden en geeft ons nieuwe inzichten. Het stelt ons in staat om innovatieve oplossingen te ontwikkelen voor onze opdrachtgevers en hun klanten.',
+          imageUrl: '/static/images/cover/cultuur_collegas.jpg',
+          iconUrl: '/static/images/svg/innovadis_innovatie_icon.svg',
+          backgroundIconUrl: '/static/images/svg/innovadis_innovatie_icon_black.svg'
+        }
+      ]
+    }
   }
 }
 </script>
@@ -63,10 +91,9 @@ export default {
   }
 
   .yellow {
-    padding: 100px 0 140px 0;
+    padding: 100px 0 60px 0;
     position: relative;
     z-index: 0;
-    height: 660px; // because switchbox is absolute due to animation
     background: linear-gradient(
       to top,
       $inno-yellow 0%,

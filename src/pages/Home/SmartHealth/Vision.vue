@@ -3,7 +3,12 @@
   h2.dot.short Onze visie voor de zorg
   p // TODO More and more people are opting to live the herbal life: moving away from chemicals and scientific medicines, and taking traditional herbs to do everything from losing weight to relieving pain.
 
-  select-box(:items='selectBoxItems')
+  .hidden-phone
+    select-box(:items='selectBoxItems')
+
+  .hidden-tablet.hidden-desktop
+    .flex.flex-justify-center
+      switch-box(:content='switchboxContent', :height='380')
 
   h2.dot.margin-top Smart health in de praktijk
   p Dat Smart health bij Innovadis niet bij een visie blijft, bewijzen de ervaringen van onze opdrachtgevers. Voor veel bedrijven binnen de sector zijn wij gesprekspartner, adviseur maar bovenal leverancier van hoogwaardige technologische oplossingen die bijdragen aan hun succes.
@@ -14,10 +19,11 @@
 <script>
 export default {
   components: {
-    SelectBox: require('src/components/SelectBox')
+    SelectBox: require('src/components/SelectBox'),
+    SwitchBox: require('src/components/SwitchBox')
   },
 
-  data() {
+  data () {
     return {
       selectBoxItems: [
         {
@@ -36,6 +42,17 @@ export default {
           text: 'Met toegankelijke en gebruikersvriendelijke portalen de communicatie tussen cliënten onderling en tussen cliënten en zorgverleners stimuleren.'
         }
       ]
+    }
+  },
+
+  computed: {
+    switchboxContent () {
+      return this.selectBoxItems.map(x => {
+        return {
+          title: x.label,
+          text: x.text
+        }
+      })
     }
   }
 }

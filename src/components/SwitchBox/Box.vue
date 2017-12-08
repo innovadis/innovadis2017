@@ -1,7 +1,7 @@
 <template lang="pug">
 .box
-  .image(:style='{ background: "url(" + imageUrl + ")" }')
-  .flex.flex-justify-center
+  .image(:style='{ background: "url(" + imageUrl + ")" }', v-if='imageUrl')
+  .flex.flex-justify-center(v-if='iconUrl')
     orb(:size='100', :initialX='-70', :initialY='-70', :shadow='false', :transitionDelay='0')
     .relative
       .icon(:style='{ background: "url(" + iconUrl + ")" }', v-inview:class='["visible"]')

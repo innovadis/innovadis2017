@@ -4,7 +4,7 @@
   icon-effect(iconUrl='/static/images/svg/innovadis_persoonlijk_icon_black.svg', ref='iconEffect1')
   icon-effect(iconUrl='/static/images/svg/innovadis_innovatie_icon_black.svg', ref='iconEffect2')
 
-  transition-group.flex.f.flex-justify-center(name='flyleft', mode='out-in')
+  transition-group.flex.flex-justify-center(name='flyleft', mode='out-in')
     box(
       v-if='selectedIndex === 0',
       key='box0',

@@ -11,7 +11,13 @@
     h2.dot Voor welke uitdaging staat uw bedrijf
     p Heel veel ontwikkelingen, maar waar moet je nu beginnen. Ieder bedrijf, sterker nog, ieder mens is uniek. Daarom geloven wij dat IT en technologie succesvol toepassen in iedere situatie een andere aanpak vraagt en altijd begint met duidelijke doelen. Zo wordt het een middel en geen doel op zich.
 
-    select-box(:items='selectBoxItems')
+    .hidden-phone
+      select-box(:items='selectBoxItems')
+
+    .hidden-tablet.hidden-desktop
+      .flex.flex-justify-center
+        switch-box(:content='switchboxContent', :height='550')
+
 
   .container.pt
     h2.dot Smart industry in de praktijk
@@ -36,6 +42,7 @@ export default {
     Intro: require('./Intro'),
     ImageBlock: require('./../SmartHealth/ImageBlock'),
     SelectBox: require('src/components/SelectBox'),
+    SwitchBox: require('src/components/SwitchBox'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     SimpleFeed: require('src/components/Feed/Simple')
   },
@@ -64,6 +71,17 @@ export default {
           text: 'Steeds meer apparaten zijn verbonden met internet en kunnen waardevolle data leveren. Innovadis heeft onderzoek gedaan naar de praktische toepassing van deze ontwikkeling binnen de industrie. Op basis daarvan hebben we een methode ontwikkeld, waarmee we onze opdrachtgevers kunnen helpen met oplossingen die daadwerkelijk bedragen aan het bedrijf. Denk aan efficiënter onderhoud door verlaging van kosten als gevolg van uitval of preventief vervangen van onderdelen. De mogelijkheden zijn eindeloos.'
         }
       ]
+    }
+  },
+
+  computed: {
+    switchboxContent () {
+      return this.selectBoxItems.map(x => {
+        return {
+          title: x.label,
+          text: x.text
+        }
+      })
     }
   }
 }
