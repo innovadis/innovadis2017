@@ -2,14 +2,16 @@
   transition(name='modal')
     .modal-mask(@click='click', @touchstart='click', v-if='model')
       .modal-wrapper
-        .modal-container
+        .modal-container(:class='{ closable }')
+          .close(@click='model = false'): span Sluiten
           slot
 </template>
 
 <script>
 export default {
   props: {
-    value: Boolean
+    value: Boolean,
+    closable: Boolean
   },
 
   data () {
@@ -29,11 +31,11 @@ export default {
   },
 
   watch: {
-    model(v) {
+    model (v) {
       this.$emit('input', v)
     },
 
-    value(v) {
+    value (v) {
       this.model = v
     }
   }
@@ -61,9 +63,6 @@ export default {
 }
 
 .modal-container {
-  // height: 75vh;
-  // max-height: 600px;
-  // overflow: hidden;
   width: 1200px;
   max-width: 90vw;
   margin: 0px auto;
@@ -72,6 +71,28 @@ export default {
   transition: all 0.5s ease-out;
   font-family: Helvetica, Arial, sans-serif;
   border-radius: $border-radius;
+  position: relative;
+
+  .close {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+
+    span {
+      color: $inno-yellow;
+    }
+  }
+
+  &.closable {
+    padding-bottom: 30px;
+
+    .close {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
   @include phone {
     margin: $gutter/2;

@@ -1,4 +1,3 @@
-Smart health/industry:
- - items moeten card flyleft worden op mobiel, met index bolletjes onderaan. desktop laten zoals het is.
+flyleft moet nog bolletjes krijgen
 
-redo socialhof case mobiel pagina, popups voor meer info
+feedback jordy

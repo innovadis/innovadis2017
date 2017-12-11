@@ -17,14 +17,15 @@
     )
     .dialog-content
       .info
-        h3 {{ feedItem.title }}
-        .divider
-        .flex.flex-justify-between.flex-align-center.flex-column-phablet
-          .date Datum:
-            span {{ feedItem.created }}
-          .likes
-            i.icons8-like-filled
-            | {{ feedItem.likes }}
+        div
+          h3 {{ feedItem.title }}
+          .divider
+          .flex.flex-justify-between.flex-align-center.flex-column-phablet
+            .date Datum:
+              span {{ feedItem.created }}
+            .likes
+              i.icons8-like-filled
+              | {{ feedItem.likes }}
         .wrapper
           a(:href='feedItem.url', target='_blank')
             orb(:size='40', :initialX='-25', :initialY='-20', icon='instagram', single)
@@ -203,7 +204,6 @@ export default {
   .info {
     width: calc(50% - #{$gutter*2});
     padding: 0 $gutter;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -288,7 +288,7 @@ export default {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
-    height: 100%;
+    height: 600px;
     width: 50%;
 
     @include phone {

@@ -71,9 +71,9 @@
         .flex.flex-column
           h3 Eén platform voor alle leuke en nuttige informatie.
           button-alternate(label='Meer informatie', yellow, @click='dialogOpen1 = true')
-        img(src='https://placehold.it/100x200')
+        img(src='/static/images/smarthealth_mobile_orbs.png', height='280px', style='margin: 0 -20px 20px 20px')
 
-        info-dialog(v-model='dialogOpen1')
+        info-dialog(v-model='dialogOpen1', closable)
           .dialog-container
             p {{ text1 }}
 
@@ -83,7 +83,7 @@
       button-alternate(label='Meer informatie', yellow, @click='dialogOpen2 = true', style='z-index: 1')
       img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin-top: -60px')
 
-      info-dialog(v-model='dialogOpen2')
+      info-dialog(v-model='dialogOpen2', closable)
         .dialog-container
           p {{ text2 }}
 
@@ -94,7 +94,7 @@
           h3 Chatten zoals je gewend bent, maar gescheiden van je privé leven.
           button-alternate(label='Meer informatie', yellow, @click='dialogOpen3 = true')
 
-          info-dialog(v-model='dialogOpen3')
+          info-dialog(v-model='dialogOpen3', closable)
             .dialog-container
               p {{ text3 }}
 
@@ -105,7 +105,7 @@
           button-alternate(label='Meer informatie', yellow, @click='dialogOpen4 = true')
         img(src='/static/cases/socialhof/2phones_overlap.png', height='250px')
 
-        info-dialog(v-model='dialogOpen4')
+        info-dialog(v-model='dialogOpen4', closable)
           .dialog-container
             p {{ text4 }}
 
@@ -115,7 +115,7 @@
           button-alternate(label='Meer informatie', yellow, @click='dialogOpen5 = true')
         img(src='/static/cases/socialhof/macbook.png', height='250px')
 
-        info-dialog(v-model='dialogOpen5')
+        info-dialog(v-model='dialogOpen5', closable)
           .dialog-container
             p {{ text5 }}
 
