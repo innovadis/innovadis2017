@@ -67,11 +67,12 @@ export default {
   .text {
     text-align: center;
     background: white;
-    padding: 70px $gutter $gutter $gutter;
+    padding: 70px $gutter 60px $gutter;
     border-bottom-right-radius: $border-radius;
     border-bottom-left-radius: $border-radius;
     margin: 0 auto;
     max-width: 100vw;
+    min-height: 280px;
 
     p {
       margin-bottom: 0;

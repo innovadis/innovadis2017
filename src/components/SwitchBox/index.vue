@@ -14,8 +14,10 @@
         :iconUrl='c.iconUrl'
         )
 
+    gooey-paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
+
     .icons
-      i.icons8-advance.flip(@click='next', :class='{ disabled: buttonDisabled }')
+      i.icons8-advance(@click='next', :class='{ disabled: buttonDisabled }')
 </template>
 
 <script>
@@ -29,7 +31,8 @@ scroll.init({
 export default {
   components: {
     Box: require('./Box'),
-    IconEffect: require('./IconEffect')
+    IconEffect: require('./IconEffect'),
+    GooeyPaging: require('./GooeyPaging')
   },
 
   props: {
@@ -47,7 +50,20 @@ export default {
   methods: {
     setSelectedIndex (index) {
       this.selectedIndex = index
+    },
 
+    next () {
+      if (this.selectedIndex === 2) {
+        this.setSelectedIndex(0)
+        return
+      }
+
+      this.setSelectedIndex(this.selectedIndex + 1)
+    }
+  },
+
+  watch: {
+    selectedIndex (index) {
       this.$refs['iconEffect' + index][0].animate()
       this.$refs['iconEffect' + 0][0].reset()
       this.$refs['iconEffect' + 1][0].reset()
@@ -60,15 +76,6 @@ export default {
       setTimeout(() => {
         this.buttonDisabled = false
       }, timeout)
-    },
-
-    next () {
-      if (this.selectedIndex === 2) {
-        this.setSelectedIndex(0)
-        return
-      }
-
-      this.setSelectedIndex(this.selectedIndex + 1)
     }
   }
 }
@@ -78,17 +85,15 @@ export default {
 @import "src/styles/variables";
 
 .switchbox-container {
-
   .switchbox {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // position: absolute;
+    position: relative;
     justify-content: space-between;
-    // height: 750px;
 
     .icons {
-      margin: 20px;
+      margin: 40px 0 0 0;
       z-index: 1;
 
       i {
@@ -140,10 +145,10 @@ export default {
 }
 
 .flyleft-enter {
-  transform: translateX(100vw) rotate(15deg);
+  transform: translateX(-100vw) rotate(15deg);
 }
 
 .flyleft-leave-to {
-  transform: translateX(-100vw) rotate(5deg);
+  transform: translateX(100vw) rotate(5deg);
 }
 </style>
