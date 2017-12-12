@@ -11,8 +11,8 @@
     switch-box(:content='switchboxContents', :height='750')
 
   .container.pt
-    h2.dot Wij zijn een partner voor de toekomst
-    p Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle. The circular loop of diamonds signifies eternal and unending love. This sentiment is what makes the eternity band a perfect gift for couples on special occasions, such as anniversaries, childbirth or anything that makes a difference to their life.Eternity bands are also known as the wedding bands. They are lined with diamonds and look like precious gemstones in a circle.
+    h2.dot Een partner voor de toekomst
+    p Innovadis combineert kennis van techniek met kennis van de wereld van haar opdrachtgevers en legt verbindingen tussen techniek en bedrijfsprocessen. Innovadis is kennispartner en helpt haar opdrachtgevers stap voor stap naar succes.
 
   .flex.flex-justify-center
     img(src='/static/images/cover/meeting1.png')
