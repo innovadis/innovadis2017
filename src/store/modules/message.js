@@ -14,11 +14,15 @@ const actions = {
       return new Promise(resolve => setTimeout(resolve, ms))
     }
 
-    if (!to) to = 'a.vandijk@innovadis.com'
+    if (!to) to = 'a.vandijk@innovadis.com' // TODO formspree
 
     await timeout(500)
 
-    return // TODO enable message
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('DEBUG: did not send mail')
+      return
+    }
+
     await axios.post('https://formspree.io/' + to, {
       _subject: subject || `Nieuw bericht van ${name} via contactformulier Innovadis.com`,
       email: from,
