@@ -142,6 +142,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible;
     filter: drop-shadow(10px 50px 15px rgba(0, 0, 0, 0.2));
   }
 

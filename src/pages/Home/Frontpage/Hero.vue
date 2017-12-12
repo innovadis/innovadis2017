@@ -95,7 +95,7 @@ export default {
         }
       } else {
         return {
-          x: -75,
+          x: -100,
           y: 390,
           targetX: 300,
           targetY: -100
