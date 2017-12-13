@@ -1,7 +1,7 @@
 <template lang="pug">
 .vision.container
   h2.dot.short Onze visie voor de zorg
-  p // TODO More and more people are opting to live the herbal life: moving away from chemicals and scientific medicines, and taking traditional herbs to do everything from losing weight to relieving pain.
+  p Door onder andere de toenemende vergrijzing en zorgvraag staat onze zorg staat midden in de digitale transformatie. Wij geloven dat technologie een noodzakelijke bijdrage kan leveren aan de toegankelijkheid en kwaliteit van de zorg. Onze oplossingen ondersteunen cliënten, mantelzorgers en zorgverleners in hun onderlinge communicatie.
 
   .hidden-phone
     select-box(:items='selectBoxItems')
