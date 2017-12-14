@@ -11,6 +11,7 @@ import VueInView from 'vueinview'
 import Moment from 'moment'
 import VueHead from 'vue-head'
 import VueAnalytics from 'vue-analytics'
+import VueTouch from 'vue-touch'
 
 Vue.use(VueAnalytics, {
   id: 'UA-5365402-7',
@@ -25,6 +26,7 @@ Vue.config.productionTip = false
 Vue.use(Vuelidate)
 Vue.use(VueInView)
 Vue.use(VueHead)
+Vue.use(VueTouch, {name: 'v-touch'})
 
 Vue.component('InnoButton', Button)
 Vue.component('InnoButtonAlternate', ButtonAlternate)

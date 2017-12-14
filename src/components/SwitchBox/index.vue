@@ -3,16 +3,17 @@
   .switchbox(ref='switchbox')
     icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
 
-    transition-group.flex.flex-justify-center(name='flyleft', mode='out-in')
-      box(
-        v-for='(c, i) in content',
-        v-if='selectedIndex === i',
-        :key='"box" + i',
-        :title='c.title',
-        :text='c.text',
-        :imageUrl='c.imageUrl',
-        :iconUrl='c.iconUrl'
-        )
+    v-touch(v-on:swiperight='next')
+      transition-group.flex.flex-justify-center(name='flyleft', mode='out-in')
+        box(
+          v-for='(c, i) in content',
+          v-if='selectedIndex === i',
+          :key='"box" + i',
+          :title='c.title',
+          :text='c.text',
+          :imageUrl='c.imageUrl',
+          :iconUrl='c.iconUrl'
+          )
 
     paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
 
