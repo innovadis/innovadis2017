@@ -70,7 +70,7 @@
       .with-image.flex.pt.flex-align-center
         .flex.flex-column
           h3 Eén platform voor alle leuke en nuttige informatie.
-          button-alternate(label='Meer informatie', yellow, @click='dialogOpen1 = true')
+          inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
         img(src='/static/images/smarthealth_mobile_orbs.png', height='280px', style='margin: 0 -20px 20px 20px')
 
         info-dialog(v-model='dialogOpen1', closable)
@@ -80,7 +80,7 @@
     .gray.container.pt.flex.flex-column.flex-align-center
       h3 Deel eenvoudig informatie.
       p.text-center Het grote touchscreen in de centrale hal biedt een unieke ervaring.
-      button-alternate(label='Meer informatie', yellow, @click='dialogOpen2 = true', style='z-index: 1')
+      inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
       img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin-top: -60px')
 
       info-dialog(v-model='dialogOpen2', closable)
@@ -92,7 +92,7 @@
 
         .flex.flex-column
           h3 Chatten zoals je gewend bent, maar gescheiden van je privé leven.
-          button-alternate(label='Meer informatie', yellow, @click='dialogOpen3 = true')
+          inno-button(label='Meer info', small, yellow, @click='dialogOpen3 = true')
 
           info-dialog(v-model='dialogOpen3', closable)
             .dialog-container
@@ -102,7 +102,7 @@
       .flex.flex-align-center(style='margin: 100px 0')
         .flex.flex-column
           h3 Laat weten welke activiteiten er zijn voor personeel en bewoners.
-          button-alternate(label='Meer informatie', yellow, @click='dialogOpen4 = true')
+          inno-button(label='Meer info', small, yellow, @click='dialogOpen4 = true')
         img(src='/static/cases/socialhof/2phones_overlap.png', height='250px')
 
         info-dialog(v-model='dialogOpen4', closable)
@@ -112,7 +112,7 @@
       .flex.flex-align-center(style='padding: 100px 0')
         .flex.flex-column
           h3 Easy to use beheeromgeving.
-          button-alternate(label='Meer informatie', yellow, @click='dialogOpen5 = true')
+          inno-button(label='Meer info', small, yellow, @click='dialogOpen5 = true')
         img(src='/static/cases/socialhof/macbook.png', height='250px')
 
         info-dialog(v-model='dialogOpen5', closable)
@@ -135,6 +135,7 @@ export default {
     Macbook: require('./Macbook'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     ButtonAlternate: require('src/components/ButtonAlternate'),
+    InnoButton: require('src/components/Button'),
     InfoDialog: require('src/components/Feed/Dialog')
   },
 

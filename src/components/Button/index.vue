@@ -31,13 +31,16 @@ export default {
     small: Boolean,
     nomargin: Boolean,
     transparent: Boolean,
-    icon: String
+    icon: String,
+    href: String
   },
 
   methods: {
     click() {
       if (this.to) {
         this.$router.push(this.to)
+      } else if (this.href) {
+        window.location = this.href
       } else {
         this.$emit('click')
       }

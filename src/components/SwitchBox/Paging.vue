@@ -50,11 +50,11 @@ export default {
 
 <style lang="scss" scoped>
 @import "src/styles/variables";
-$size: 15px;
+$size: 10px;
 
 .paging-dots {
-  position: absolute;
-  bottom: 80px;
+  position: relative;
+  top: 40px;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -74,7 +74,7 @@ $size: 15px;
     cursor: pointer;
 
     &.active {
-      transform: scale(1.3);
+      transform: scale(1.5);
     }
   }
 
@@ -88,7 +88,7 @@ $size: 15px;
   }
 
   &.invisible {
-    opacity: 0;
+    // opacity: 0;
   }
 }
 </style>
