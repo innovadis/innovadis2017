@@ -25,6 +25,16 @@ export default {
   background-size: cover !important;
   position: relative;
 
+  &:before {
+    content: '';
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
   .text {
     max-width: 400px;
     position: absolute;
