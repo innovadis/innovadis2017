@@ -14,7 +14,7 @@
         :iconUrl='c.iconUrl'
         )
 
-    gooey-paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
+    paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
 
     .icons
       i.icons8-advance(@click='next', :class='{ disabled: buttonDisabled }')
@@ -32,7 +32,7 @@ export default {
   components: {
     Box: require('./Box'),
     IconEffect: require('./IconEffect'),
-    GooeyPaging: require('./GooeyPaging')
+    Paging: require('./Paging')
   },
 
   props: {

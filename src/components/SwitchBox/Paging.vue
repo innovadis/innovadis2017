@@ -1,17 +1,13 @@
 <template lang="pug">
-.goo-dots(:class='{ disabled, invisible }')
-  .goo-dot(
+.paging-dots(:class='{ disabled, invisible }')
+  .paging-dot(
     v-for='n in amount',
+    :class='{ active: model === n - 1}',
     @click='changeDot(n)'
     )
-  .active-dot(ref='activeDot')
 </template>
 
 <script>
-const DOT_OFFSET = 31 // based on dot size and margins
-
-import Anime from 'animejs'
-
 export default {
   props: {
     amount: Number,
@@ -38,18 +34,11 @@ export default {
     model (index) {
       this.$emit('input', index)
 
-      Anime({
-        targets: this.$refs.activeDot,
-        left: DOT_OFFSET * index,
-        duration: 150,
-        easing: 'easeOutElastic'
-      })
-
       this.invisible = true
 
       setTimeout(() => {
         this.invisible = false
-      }, 500)
+      }, 600)
     },
 
     value (v) {
@@ -63,20 +52,18 @@ export default {
 @import "src/styles/variables";
 $size: 15px;
 
-.goo-dots {
+.paging-dots {
   position: absolute;
   bottom: 80px;
   z-index: 1;
   display: flex;
   align-items: center;
-  background: white;
-  filter: contrast(10);
   overflow: hidden;
   padding: 10px;
-  transition: $transition, opacity 150ms;
+  transition: $transition, opacity 300ms;
 
   .active-dot,
-  .goo-dot {
+  .paging-dot {
     height: $size;
     width: $size;
     overflow: hidden;
@@ -84,28 +71,24 @@ $size: 15px;
     border-radius: 50%;
     margin: 0 8px;
     transition: all 0.15s ease-in-out;
-    filter: blur(3px);
     cursor: pointer;
-  }
 
-  .active-dot {
-    position: absolute;
-    left: 0;
-    margin-left: $size;
-    transform: scale(1.3);
+    &.active {
+      transform: scale(1.3);
+    }
   }
 
   &.disabled {
     opacity: 0.6;
 
-    .goo-dot,
+    .paging-dot,
     .active-dot {
       cursor: initial;
     }
   }
 
   &.invisible {
-    // opacity: 0;
+    opacity: 0;
   }
 }
 </style>
