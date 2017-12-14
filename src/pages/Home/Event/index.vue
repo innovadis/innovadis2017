@@ -82,15 +82,15 @@ export default {
       return [
         // Google+
         { itemprop: 'name', content: this.eventItem.title },
-        { itemprop: 'description', content: this.eventItem.lead },
+        { itemprop: 'description', content: this.eventItem.meta_description },
 
         // Twitter
         { name: 'twitter:title', content: this.eventItem.title },
-        { name: 'twitter:description', content: this.eventItem.lead },
+        { name: 'twitter:description', content: this.eventItem.meta_description },
 
         // Facebook
         { property: 'og:title', content: this.eventItem.title },
-        { property: 'og:description', content: this.eventItem.lead }
+        { property: 'og:description', content: this.eventItem.meta_description }
       ]
     }
   }

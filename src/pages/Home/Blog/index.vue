@@ -60,15 +60,15 @@ export default {
       return [
         // Google+
         { itemprop: 'name', content: this.blogItem.title },
-        { itemprop: 'description', content: this.blogItem.lead },
+        { itemprop: 'description', content: this.blogItem.meta_description },
 
         // Twitter
         { name: 'twitter:title', content: this.blogItem.title },
-        { name: 'twitter:description', content: this.blogItem.lead },
+        { name: 'twitter:description', content: this.blogItem.meta_description },
 
         // Facebook
         { property: 'og:title', content: this.blogItem.title },
-        { property: 'og:description', content: this.blogItem.lead }
+        { property: 'og:description', content: this.blogItem.meta_description }
       ]
     }
   }
