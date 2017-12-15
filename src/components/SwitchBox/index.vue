@@ -3,7 +3,8 @@
   paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
 
   .switchbox(ref='switchbox')
-    icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
+    .icon-effect-container(:style='{ height: height + "px" }')
+      icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
 
     v-touch(v-on:swiperight='next', v-on:swipeleft='previous')
       transition-group.flex.flex-justify-center(:name='lastSwipeDirection === "left" ? "flyleft" : "flyright"', mode='out-in')
@@ -107,9 +108,21 @@ export default {
     position: relative;
     justify-content: space-between;
 
+    .icon-effect-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+
+      @include phone {
+        display: none;
+      }
+    }
+
     .icons {
-      margin: 40px 0 0 0;
       z-index: 1;
+      position: relative;
+      top: -70px;
 
       i {
         font-size: 40px;
