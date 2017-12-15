@@ -32,9 +32,33 @@ export default {
     SimpleFeed: require('src/components/Feed/Simple')
   },
 
+  data() {
+    return {
+      title: 'Smart Health',
+      description: 'Wij geloven dat we door slim toepassen van moderne technologie de zorg kunnen verbeteren.  Wij helpen de zorg graag vooruit.'
+    }
+  },
+
   head: {
     title: {
-      inner: 'Smart Health'
+      inner: 'Smart Health' // TODO dynamic from data
+    },
+    meta () {
+      return [
+        { name: 'description', content: this.description },
+
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.description },
+
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.description },
+
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description }
+      ]
     }
   }
 }

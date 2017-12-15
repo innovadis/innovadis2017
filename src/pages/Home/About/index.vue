@@ -49,6 +49,32 @@ export default {
           iconUrl: '/static/images/svg/innovadis_innovatie_icon.svg',
           backgroundIconUrl: '/static/images/svg/innovadis_innovatie_icon_black.svg'
         }
+      ],
+
+      title: 'Cultuur',
+      description: 'Wij worden blij wanneer onze oplossingen mensen daadwerkelijk verder helpen en toegevoegde waarde leveren.'
+    }
+  },
+
+  head: {
+    title: {
+      inner: 'Cultuur' // TODO dynamic from data
+    },
+    meta () {
+      return [
+        { name: 'description', content: this.description },
+
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.description },
+
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.description },
+
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description }
       ]
     }
   }
