@@ -10,7 +10,8 @@
     "build": "npm run fetchContent && node build/build.js",
     "fetchContent": "node build/headless.js",
     "lint": "eslint --ext .js,.vue src",
-    "storybook": "start-storybook -p 8086"
+    "storybook": "start-storybook -p 8086",
+    "postinstall": "npm run fetchContent"
   },
   "dependencies": {
     "@storybook/vue": "^3.2.12",

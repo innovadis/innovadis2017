@@ -1,10 +1,13 @@
 <template lang="pug">
-.switchbox-container.flex.flex-justify-center(:style='{ height: height + "px" }')
-  .switchbox(ref='switchbox')
-    icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
+.switchbox-container.flex.flex-align-center.flex-column(:style='{ height: height + "px" }')
+  paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
 
-    v-touch(v-on:swiperight='next')
-      transition-group.flex.flex-justify-center(name='flyleft', mode='out-in')
+  .switchbox(ref='switchbox')
+    .icon-effect-container(:style='{ height: height + "px" }')
+      icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
+
+    v-touch(v-on:swiperight='next', v-on:swipeleft='previous')
+      transition-group.flex.flex-justify-center(:name='lastSwipeDirection === "left" ? "flyleft" : "flyright"', mode='out-in')
         box(
           v-for='(c, i) in content',
           v-if='selectedIndex === i',
@@ -15,9 +18,7 @@
           :iconUrl='c.iconUrl'
           )
 
-    paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
-
-    .icons
+    .icons.hidden-phone
       i.icons8-advance(@click='next', :class='{ disabled: buttonDisabled }')
 </template>
 
@@ -44,7 +45,8 @@ export default {
   data () {
     return {
       selectedIndex: 0,
-      buttonDisabled: false
+      buttonDisabled: false,
+      lastSwipeDirection: null
     }
   },
 
@@ -54,12 +56,25 @@ export default {
     },
 
     next () {
-      if (this.selectedIndex === 2) {
+      this.lastSwipeDirection = 'left'
+
+      if (this.selectedIndex === this.content.length - 1) {
         this.setSelectedIndex(0)
         return
       }
 
       this.setSelectedIndex(this.selectedIndex + 1)
+    },
+
+    previous () {
+      this.lastSwipeDirection = 'right'
+
+      if (this.selectedIndex === 0) {
+        this.setSelectedIndex(this.content.length - 1)
+        return
+      }
+
+      this.setSelectedIndex(this.selectedIndex - 1)
     }
   },
 
@@ -93,9 +108,21 @@ export default {
     position: relative;
     justify-content: space-between;
 
+    .icon-effect-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+
+      @include phone {
+        display: none;
+      }
+    }
+
     .icons {
-      margin: 40px 0 0 0;
       z-index: 1;
+      position: relative;
+      top: -70px;
 
       i {
         font-size: 40px;
@@ -135,11 +162,15 @@ export default {
   }
 }
 
+.flyright-enter-active,
+.flyright-leave-active,
 .flyleft-enter-active,
 .flyleft-leave-active {
   transition: all 0.5s ease;
 }
 
+.flyright-enter,
+.flyright-leave-to,
 .flyleft-enter,
 .flyleft-leave-to {
   opacity: 0.5;
@@ -151,5 +182,13 @@ export default {
 
 .flyleft-leave-to {
   transform: translateX(100vw) rotate(5deg);
+}
+
+.flyright-enter {
+  transform: translateX(100vw) rotate(15deg);
+}
+
+.flyright-leave-to {
+  transform: translateX(-100vw) rotate(15deg);
 }
 </style>

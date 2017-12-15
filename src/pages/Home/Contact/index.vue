@@ -6,7 +6,6 @@
 
   send-box-with-slot(
     backgroundUrl='/static/images/contact_corner.png',
-    flip,
     text='Laat hieronder uw gegevens achter en we berichten of bellen u terug.',
     to='support@innovadis.com'
     )

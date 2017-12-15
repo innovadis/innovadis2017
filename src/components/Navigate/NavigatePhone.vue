@@ -4,8 +4,13 @@
   span {{ address }}
   span {{ postalCode }}
   br
-  a(:href='"tel:" + phoneNumber ') {{ phoneNumberLabel }}
-  a(:href='"mailto:" + email ') {{ email }}
+  .contact
+    a.flex.flex-align-center(:href='"tel:" + phoneNumber ')
+      i.icons8-phone
+      | {{ phoneNumberLabel }}
+    a.flex.flex-align-center(:href='"mailto:" + email ')
+      i.icons8-email-2
+      | {{ email }}
 
   .navigate.flex.flex-column.flex-align-center
     orb(:size='60', icon='driver', :initialX='-50', :initialY='-90', :shadow='false')
@@ -26,8 +31,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
-@import 'src/styles/layout';
+@import "src/styles/variables";
+@import "src/styles/layout";
 
 .navigate-phone {
   background: $inno-yellow-light;
@@ -40,6 +45,17 @@ export default {
 
   @include phone {
     display: flex;
+  }
+
+  .contact {
+    a {
+      margin: 5px 0;
+
+      i {
+        font-size: 28px;
+        margin-right: 8px;
+      }
+    }
   }
 
   .navigate {

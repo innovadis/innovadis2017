@@ -11,8 +11,12 @@
     span {{ address }}
     span {{ postalCode }}
     br
-    a(:href='"tel:" + phoneNumber ') {{ phoneNumberLabel }}
-    a(:href='"mailto:" + email ') {{ email }}
+    a.flex.flex-align-center(:href='"tel:" + phoneNumber ')
+      i.icons8-phone
+      | {{ phoneNumberLabel }}
+    a.flex.flex-align-center(:href='"mailto:" + email ')
+      i.icons8-email-2
+      | {{ email }}
 
   .navigate
     orb(:size='60', icon='driver', :initialX='-100', :initialY='-50', :shadow='false', single)
@@ -170,6 +174,16 @@ export default {
       font-family: Bitter;
       margin-bottom: 5px;
     }
+
+    a {
+      margin: 5px 0;
+      z-index: 1;
+
+      i {
+        font-size: 28px;
+        margin-right: 8px;
+      }
+    }
   }
 
   .navigate {
@@ -199,7 +213,6 @@ export default {
 
   a {
     color: $gray3;
-    display: table;
   }
 }
 </style>

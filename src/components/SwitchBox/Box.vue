@@ -72,7 +72,6 @@ export default {
     border-bottom-left-radius: $border-radius;
     margin: 0 auto;
     max-width: 100vw;
-    min-height: 280px;
 
     p {
       margin-bottom: 0;

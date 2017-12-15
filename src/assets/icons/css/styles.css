@@ -15,12 +15,12 @@
 
 @font-face {
   font-family: "Innovadis-2017";
-  src: url("../fonts/Innovadis-2017_4eb86461f29701e735da0603bfa02e75.eot");
-  src: url("../fonts/Innovadis-2017_4eb86461f29701e735da0603bfa02e75.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/Innovadis-2017_4eb86461f29701e735da0603bfa02e75.woff2") format("woff2"),
-       url("../fonts/Innovadis-2017_4eb86461f29701e735da0603bfa02e75.woff") format("woff"),
-       url("../fonts/Innovadis-2017_4eb86461f29701e735da0603bfa02e75.ttf") format("truetype"),
-       url("../fonts/Innovadis-2017_4eb86461f29701e735da0603bfa02e75.svg#Innovadis-2017") format("svg");
+  src: url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.eot");
+  src: url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.woff2") format("woff2"),
+       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.woff") format("woff"),
+       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.ttf") format("truetype"),
+       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.svg#Innovadis-2017") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -28,7 +28,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Innovadis-2017";
-    src: url("../fonts/Innovadis-2017_4eb86461f29701e735da0603bfa02e75.svg#Innovadis-2017") format("svg");
+    src: url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.svg#Innovadis-2017") format("svg");
   }
 }
 
@@ -46,6 +46,8 @@
 .icons8-delete:before,
 .icons8-download:before,
 .icons8-driver:before,
+.icons8-email:before,
+.icons8-email-2:before,
 .icons8-expand-arrow:before,
 .icons8-explanation-mark:before,
 .icons8-facebook:before,
@@ -62,6 +64,7 @@
 .icons8-ok:before,
 .icons8-online:before,
 .icons8-order-on-the-way:before,
+.icons8-phone:before,
 .icons8-picture:before,
 .icons8-play:before,
 .icons8-refresh:before,
@@ -95,6 +98,8 @@
 .icons8-delete:before { content: "\f10e"; }
 .icons8-download:before { content: "\f115"; }
 .icons8-driver:before { content: "\f10b"; }
+.icons8-email:before { content: "\f12d"; }
+.icons8-email-2:before { content: "\f12e"; }
 .icons8-expand-arrow:before { content: "\f106"; }
 .icons8-explanation-mark:before { content: "\f127"; }
 .icons8-facebook:before { content: "\f11c"; }
@@ -111,6 +116,7 @@
 .icons8-ok:before { content: "\f100"; }
 .icons8-online:before { content: "\f117"; }
 .icons8-order-on-the-way:before { content: "\f112"; }
+.icons8-phone:before { content: "\f12c"; }
 .icons8-picture:before { content: "\f129"; }
 .icons8-play:before { content: "\f104"; }
 .icons8-refresh:before { content: "\f101"; }
