@@ -4,7 +4,7 @@
 
   image-block(
     text='Met onze kennis en ervaring van de afgelopen twintig jaar en de huidige technologische ontwikkelingen, hebben wij alles in handen om hier een bijdrage aan te leveren. Dat noemen wij Smart Health.'
-    imageUrl='/static/images/smarthealth_hero.jpg'
+    imageUrl='/static/images/smarthealth_h'
     )
 
   vision
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .margin-top {
   margin-top: 160px;
