@@ -227,6 +227,8 @@ export default {
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
+      background: url('/static/images/sendbox_arrows.png');
+      background-size: contain;
     }
   }
 
