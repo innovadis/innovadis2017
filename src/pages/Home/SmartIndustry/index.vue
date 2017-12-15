@@ -24,6 +24,14 @@
 
     p Wij geloven in de kracht van samenwerken, bundelen en delen van kennis en samen tot de beste oplossing komen. Binnen de industrie werken we o.a. voor Apollo Vredestein, Pentair, Henkelman, Edmac en de Morssinkhof groep.
 
+    .logos
+      img(src='/static/images/logos/customers/apollo.png')
+      img(src='/static/images/logos/customers/axa.png')
+      img(src='/static/images/logos/customers/henkelman.png')
+      img(src='/static/images/logos/customers/morssinkhof.png')
+      img(src='/static/images/logos/customers/pentair.png')
+      img(src='/static/images/logos/customers/vredestein.png')
+
   .container.pt
     send-box-with-slot.margin-top(flip, subject='Reactie op Smart Health pagina')
       h2.dot Neem contact met ons op
@@ -89,4 +97,26 @@ export default {
 
 <style lang="scss" scoped>
 @import "src/styles/variables";
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: -$gutter;
+
+  @include phone {
+    margin-left: -10px;
+  }
+
+  img {
+    height: 100px;
+    margin: $gutter;
+
+    @include phone {
+      height: 70px;
+      margin: $gutter 10px;
+    }
+  }
+}
 </style>
