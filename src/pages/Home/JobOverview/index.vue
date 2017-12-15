@@ -12,7 +12,7 @@
     dark
     )
 
-  send-box-with-slot.pt(flip, subject='Reactie op vacture overzicht pagina')
+  send-box-with-slot.pt(flip, subject='Reactie op vacture overzicht pagina', to='sollicitatie@innovadis.com')
     h2 Staat je baan er niet tussen?
 
 </template>
