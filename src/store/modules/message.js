@@ -14,7 +14,12 @@ const actions = {
       return new Promise(resolve => setTimeout(resolve, ms))
     }
 
-    if (!to) to = 'a.vandijk@innovadis.com' // TODO formspree
+    let cc = null
+
+    if (!to) {
+      to = 'sales@innovadis.com'
+      cc = 'info@innovadis.com'
+    }
 
     await timeout(500)
 
@@ -23,14 +28,20 @@ const actions = {
       return
     }
 
-    await axios.post('https://formspree.io/' + to, {
+    const emailObject = {
       _subject: subject || `Nieuw bericht van ${name} via contactformulier Innovadis.com`,
       email: from,
       name,
       phone,
       message,
       _language: 'nl'
-    })
+    }
+
+    if (cc) {
+      emailObject.cc = cc
+    }
+
+    await axios.post('https://formspree.io/' + to, emailObject)
   }
 }
 
