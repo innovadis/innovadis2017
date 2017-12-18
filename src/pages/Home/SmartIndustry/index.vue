@@ -97,8 +97,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Smart Industry' // TODO from data prop, but test it
+    title () {
+      return {
+        inner: this.title
+      }
     },
     meta () {
       return [

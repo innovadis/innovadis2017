@@ -236,8 +236,10 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
   },
 
   head: {
-    title: {
-      inner: 'Onze Partners' // TODO dynamic from data
+    title () {
+      return {
+        inner: this.title
+      }
     },
     meta () {
       return [

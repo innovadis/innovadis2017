@@ -17,8 +17,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Onze Wereld' // TODO dynamic from data
+    title () {
+      return {
+        inner: this.title
+      }
     },
     meta () {
       return [

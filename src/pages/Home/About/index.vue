@@ -57,8 +57,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Cultuur' // TODO dynamic from data
+    title () {
+      return {
+        inner: this.title
+      }
     },
     meta () {
       return [

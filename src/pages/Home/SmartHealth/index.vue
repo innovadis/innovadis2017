@@ -40,8 +40,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Smart Health' // TODO dynamic from data
+    title () {
+      return {
+        inner: this.title
+      }
     },
     meta () {
       return [
