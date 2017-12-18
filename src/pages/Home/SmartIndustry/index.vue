@@ -78,7 +78,10 @@ export default {
           icon: 'database-view',
           text: 'Steeds meer apparaten zijn verbonden met internet en kunnen waardevolle data leveren. Innovadis heeft onderzoek gedaan naar de praktische toepassing van deze ontwikkeling binnen de industrie. Op basis daarvan hebben we een methode ontwikkeld, waarmee we onze opdrachtgevers kunnen helpen met oplossingen die daadwerkelijk bedragen aan het bedrijf. Denk aan efficiënter onderhoud door verlaging van kosten als gevolg van uitval of preventief vervangen van onderdelen. De mogelijkheden zijn eindeloos.'
         }
-      ]
+      ],
+
+      title: 'Smart Industry',
+      description: 'Wij geloven in de kracht van samenwerken, bundelen en delen van kennis en samen tot de beste Smart Industry oplossing komen.'
     }
   },
 
@@ -90,6 +93,31 @@ export default {
           text: x.text
         }
       })
+    }
+  },
+
+  head: {
+    title () {
+      return {
+        inner: this.title
+      }
+    },
+    meta () {
+      return [
+        { name: 'description', content: this.description },
+
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.description },
+
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.description },
+
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description }
+      ]
     }
   }
 }

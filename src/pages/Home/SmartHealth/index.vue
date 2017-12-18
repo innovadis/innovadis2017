@@ -4,7 +4,7 @@
 
   image-block(
     text='Met onze kennis en ervaring van de afgelopen twintig jaar en de huidige technologische ontwikkelingen, hebben wij alles in handen om hier een bijdrage aan te leveren. Dat noemen wij Smart Health.'
-    imageUrl='/static/images/smarthealth_hero.jpg'
+    imageUrl='/static/images/smarthealth_h'
     )
 
   vision
@@ -32,16 +32,42 @@ export default {
     SimpleFeed: require('src/components/Feed/Simple')
   },
 
+  data() {
+    return {
+      title: 'Smart Health',
+      description: 'Wij geloven dat we door slim toepassen van moderne technologie de zorg kunnen verbeteren.  Wij helpen de zorg graag vooruit.'
+    }
+  },
+
   head: {
-    title: {
-      inner: 'Smart Health'
+    title () {
+      return {
+        inner: this.title
+      }
+    },
+    meta () {
+      return [
+        { name: 'description', content: this.description },
+
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.description },
+
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.description },
+
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description }
+      ]
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .margin-top {
   margin-top: 160px;
