@@ -1,22 +1,44 @@
 /proxy/instagram/*  https://www.instagram.com/:splat  200
 
-/themas /index.html 301
+/themas / 301
 /afas_webshop / 301
+/exact_webshop / 301
+/nav_webshop / 301
+/umbraco_cms / 301
+/ax_webshop / 301
+/DigiD_klantportaal / 301
+/dynamicweb_e-commerce / 301
+/b2b_webshop / 301
+/ridder-koppeling-webshop / 301
+/themas/social-care/stadsbanken / 301
+/themas/self-care/ardanta / 301
+/stage-afstudeer-opdracht-product-marketing / 301
+/themas/social-care / 301
+/themas/self-care / 301
+/onze-vacatures/allround-marketing-specialist / 301
+/onze-vacatures/vacature-ontwerper-webdesigner-fulltime-of-part-time / 301
+
+/onze-vacatures	/werkenbij 301
+/algemene-voorwaarden	/voorwaarden 301
+/blog	/wereld 301
+/themas/business-care/vredestein	/smart-industry 301
 /syncforce  /partners 301
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/themas/health-care	/smart-health 301
+/themas/business-care	/smart-industry 301
+/onze-vacatures/vacature-net-back-end-developer	/vacature/NET-back-end-developer 301
+/blog/shopping-today-software-eats-the-world	/blog/Shopping-Today-Software-eats-the-world 301
+/blog/smart-industry-2017	/blog/Smart-Industry-2017-Slim-om-over-na-te-denken 301
+/onze-vacatures/stagiair-marketingcommunicatie	/vacature/Stagiair-Marketingcommunicatie 301
+/blog/waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen	/blog/Waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen 301
+/onze-vacatures/front-end-developer	/vacature/Ervaren-front-end-Developer 301
+/blog/portaal-schulddienstverlening-voor-gemeenten	/blog/Portaal-schulddienstverlening-voor-gemeenten 301
+/blog/innovadis-en-virtual-reality	/blog/Innovadis-en-virtual-reality 301
+/onze-vacatures/digital-strategy-consultan	/vacature/Digital-Strategy-Consultant 301
+/blog/wat-zijn-story-points-en-wat-heb-ik-er-aan	/blog/Wat-zijn-story-points-en-wat-heb-ik-er-aan 301
+/blog/het-belang-van-de-juiste-conten	/blog/Online-gevonden-worden-Jij-bedoelt-wat-ik-begrijp 301
+/blog/de-nieuwste-it-revolutie-augmented-reality	/blog/De-nieuwste-IT-revolutie-augmented-reality 301
+/onze-vacatures/vacature-front-end-developer-fulltime-of-part-time	/vacature/Ervaren-front-end-Developer 301
 
 /*    /index.html   200
 
