@@ -68,7 +68,7 @@ export default {
     title: String,
     text: String,
     subject: String,
-    to: String
+    formbucketId: String
   },
 
   data() {
@@ -94,7 +94,7 @@ export default {
       const startTimeMs = (new Date()).getTime()
 
       await this.$store.dispatch('message/send', {
-        to: this.to,
+        formbucketId: this.formbucketId,
         subject: this.subject,
         from: this.email,
         name: this.name,
