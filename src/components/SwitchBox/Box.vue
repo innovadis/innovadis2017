@@ -73,6 +73,10 @@ export default {
     margin: 0 auto;
     max-width: 100vw;
 
+    @include mini {
+      padding: 70px 10px 40px 10px;
+    }
+
     p {
       margin-bottom: 0;
     }

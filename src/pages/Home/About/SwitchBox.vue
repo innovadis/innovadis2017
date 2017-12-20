@@ -37,13 +37,6 @@
 </template>
 
 <script>
-import SmoothScroll from 'smooth-scroll'
-
-const scroll = new SmoothScroll()
-scroll.init({
-  speed: 1000
-})
-
 export default {
   components: {
     Box: require('./Box'),

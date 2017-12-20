@@ -18,7 +18,7 @@
     .dialog-content
       .info
         div
-          h3 {{ feedItem.title }}
+          h3.title {{ feedItem.title }}
           .divider
           .flex.flex-justify-between.flex-align-center.flex-column-phablet
             .date Datum:
@@ -217,6 +217,10 @@ export default {
       height: auto;
       flex-grow: 1;
       padding-bottom: 140px;
+    }
+
+    .title {
+      white-space: pre-line;
     }
 
     .divider {

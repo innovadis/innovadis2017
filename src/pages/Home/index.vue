@@ -2,7 +2,7 @@
 .main(:class='{ "open": $store.state.phoneMenuOpen }')
   inno-header
 
-  .page-wrapper(@click='closePhoneMenu')
+  .page-wrapper
     transition(name='slidetop', mode='out-in')
       router-view
 
@@ -14,18 +14,6 @@ export default {
   components: {
     InnoHeader: require('src/components/Header'),
     InnoFooter: require('src/components/Footer')
-  },
-
-  data() {
-    return {
-      phoneMenuOpen: false
-    }
-  },
-
-  methods: {
-    closePhoneMenu() {
-      this.$store.commit('setPhoneMenuState', false)
-    }
   }
 }
 </script>
@@ -38,7 +26,7 @@ export default {
   .page-wrapper {
     padding-top: $headerHeight;
     transform-origin: top;
-    transition: all 0.3s ease-in-out, height 1s ease-in-out; // background: linear-gradient(180deg, #FFFFFF 0%, #E7E7E7 68.71%, #D0D0D0 100%);
+    transition: all 0.3s ease-in-out, height 1s ease-in-out;
 
     @include phablet {
       padding-top: $headerHeight - 25px;
@@ -46,26 +34,12 @@ export default {
   }
 
   &.open {
-    overflow: hidden;
-    height: 100vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
-
     .page-wrapper {
-      overflow: hidden;
-      border-radius: $border-radius;
-      filter: blur(7px);
+      display: none;
+    }
 
-      /deep/ .page-about .top {
-        background: none !important; // because page size goes into desktop width since we are pushing the content to the side
-      }
-
-      @include phone {
-        transform: translateX(100vw);
-      }
-
-      @include tablet {
-        transform: translateX(calc(500px));
-      }
+    footer {
+      display: none;
     }
   }
 }

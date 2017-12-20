@@ -1,6 +1,6 @@
 <template lang="pug">
   transition(name='modal')
-    .modal-mask(@click='click', @touchstart='click', v-if='model')
+    .modal-mask(@click='click', @touchstart='click')
       .modal-wrapper
         .modal-container(:class='{ closable }')
           .close(@click='model = false'): span Sluiten

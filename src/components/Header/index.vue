@@ -45,8 +45,15 @@ header
 </template>
 
 <script>
+import SmoothScroll from 'smooth-scroll'
+
+const scroll = new SmoothScroll()
+scroll.init({
+  speed: 750
+})
+
 export default {
-  data() {
+  data () {
     return {
       menuOpen: null,
       lastScrollY: null,
@@ -57,26 +64,20 @@ export default {
   },
 
   methods: {
-    togglePhoneMenuState() {
+    togglePhoneMenuState () {
       this.$store.commit('setPhoneMenuState', !this.$store.state.phoneMenuOpen)
-    },
 
-    scroll(e) {
-      if (this.lastScrollY === null) {
+      if (this.$store.state.phoneMenuOpen) {
         this.lastScrollY = window.scrollY
-        return
-      }
-
-      if (window.scrollY <= 0 || window.scrollY < this.lastScrollY) {
-        this.showHeader = true
+        window.scroll(0, 0)
       } else {
-        this.showHeader = false
+        setTimeout(() => {
+          scroll.animateScroll(this.lastScrollY)
+        }, 100)
       }
-
-      this.lastScrollY = window.scrollY
     },
 
-    getMenuLeft(menuRef) {
+    getMenuLeft (menuRef) {
       const POPUP_WIDTH = 300 // also in scss
       const menu = this.$refs[menuRef]
 
@@ -87,7 +88,7 @@ export default {
       return leftDistanceUntilMenuHeader - (POPUP_WIDTH / 2) + (menuWidth / 2)
     },
 
-    openMenu(menuName) {
+    openMenu (menuName) {
       clearTimeout(this.closeMenuTimeout)
 
       if (this.canOpenHeaderMenu) {
@@ -95,7 +96,7 @@ export default {
       }
     },
 
-    closeMenu(overide) {
+    closeMenu (overide) {
       this.closeMenuTimeout = setTimeout(() => {
         this.menuOpen = null
       }, 100)
@@ -108,17 +109,13 @@ export default {
         }, 1000)
       }
     }
-  },
-
-  destroyed() {
-    window.removeEventListener('scroll', this.scroll)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
-@import 'src/styles/layout';
+@import "src/styles/variables";
+@import "src/styles/layout";
 $transition: 0.3s ease-in-out;
 
 .header {
@@ -154,7 +151,7 @@ $transition: 0.3s ease-in-out;
       align-items: center;
 
       .menu {
-        font-family: 'Bitter';
+        font-family: "Bitter";
         font-weight: bold;
         margin: 0 15px;
         padding: 40px 0;
@@ -194,7 +191,7 @@ $transition: 0.3s ease-in-out;
         height: $size;
         border-radius: 3px;
         background: $inno-blue;
-        content: '';
+        content: "";
         transform: rotate(45deg);
         z-index: -1;
       }
@@ -225,7 +222,7 @@ $transition: 0.3s ease-in-out;
             width: $size;
             height: $size;
             background: $inno-yellow;
-            content: '';
+            content: "";
             border-radius: 45%;
           }
         }
@@ -270,7 +267,7 @@ $transition: 0.3s ease-in-out;
       width: $width;
       background: black;
       position: absolute;
-      content: '';
+      content: "";
       left: 0;
       transition: all $transition;
     }
@@ -288,15 +285,17 @@ $transition: 0.3s ease-in-out;
     position: absolute;
     left: 0;
     top: 75px;
-    width: 90%; // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start; // background: white;
-    padding: 20px;
+    width: 100vw;
+    background: linear-gradient(
+      to top,
+      transparent 0%,
+      rgba(0, 0, 0, 0.1),
+      transparent
+    );
     border-bottom-right-radius: $border-radius;
     opacity: 0;
     transition: all 0.2s ease-in;
     visibility: hidden;
-    max-width: 460px;
 
     section {
       &:first-child {
@@ -336,11 +335,11 @@ $transition: 0.3s ease-in-out;
         margin-bottom: 20px;
       }
     }
-
   }
 
   &.open {
     background: transparent;
+    position: initial;
 
     .icon-menu {
       background: transparent;
@@ -374,7 +373,6 @@ $transition: 0.3s ease-in-out;
     }
   }
 }
-
 
 // Transition
 .headerfade-enter-active,

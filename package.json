@@ -5,13 +5,11 @@
   "author": "Christiaan Maks <christilut@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
+    "dev": "npm run fetchContent && node build/dev-server.js",
     "build": "npm run fetchContent && node build/build.js",
     "fetchContent": "node build/headless.js",
     "lint": "eslint --ext .js,.vue src",
-    "storybook": "start-storybook -p 8086",
-    "postinstall": "npm run fetchContent"
+    "storybook": "start-storybook -p 8086"
   },
   "dependencies": {
     "@storybook/vue": "^3.2.12",
@@ -38,9 +36,7 @@
     "vue2-google-maps": "^0.8.3",
     "vueinview": "github:rachmanzz/vue-inview",
     "vuelidate": "^0.6.0",
-    "vuex": "^2.4.1"
-  },
-  "devDependencies": {
+    "vuex": "^2.4.1",
     "autoprefixer": "^7.1.5",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",

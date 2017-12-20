@@ -29,7 +29,7 @@
       img(src='/static/images/logos/customers/axa.png')
       img(src='/static/images/logos/customers/henkelman.png')
       img(src='/static/images/logos/customers/morssinkhof.png')
-      img(src='/static/images/logos/customers/pentair.png')
+      img(src='/static/images/logos/customers/pentair.svg')
       img(src='/static/images/logos/customers/vredestein.png')
 
   .container.pt
@@ -138,8 +138,8 @@ export default {
   }
 
   img {
-    height: 100px;
     margin: $gutter;
+    max-width: 200px;
 
     @include phone {
       height: 70px;

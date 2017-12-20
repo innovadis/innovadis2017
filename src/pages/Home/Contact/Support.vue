@@ -10,7 +10,7 @@
           | +31 (0)53 850 7503
       .box.flex.flex-column
         p Meld 24 uur per dag online problemen of storingen en blijf op de hoogte van de status van uw meldingen.
-        inno-button(blue, small, label='Contact via ons supportportaal', href='https://innovadissupport.zendesk.com')
+        inno-button(blue, small, label='Contact via ons supportportaal', href='https://innovadissupport.zendesk.com', :newTab='true')
 </template>
 
 <script>
