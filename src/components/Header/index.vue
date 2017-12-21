@@ -23,7 +23,8 @@ header
           router-link(:to='{ name: "partners" }', @click.native='closeMenu(true)') Onze partners
 
   .phone-header(:class='{ "open": $store.state.phoneMenuOpen }')
-    .icon-menu(@click='togglePhoneMenuState')
+    .icon-menu-container(@click='togglePhoneMenuState')
+      .icon-menu
     router-link.flex.flex-align-center.cp(:to='{ name: "home" }', tag='div')
       img(src='/static/images/svg/logo.svg')
     .items
@@ -249,35 +250,43 @@ $transition: 0.3s ease-in-out;
     display: flex;
   }
 
-  .icon-menu {
-    $height: 2px;
-    $width: 28px;
-
-    height: $height;
-    width: $width;
-    background: black;
+  .icon-menu-container {
     position: absolute;
-    left: 25px;
-    top: 35px;
-    transition: background $transition;
+    left: 15px;
+    top: 15px;
+    height: 45px;
+    width: 50px;
 
-    &:after,
-    &:before {
+    .icon-menu {
+      $height: 2px;
+      $width: 28px;
+
       height: $height;
       width: $width;
       background: black;
-      position: absolute;
-      content: "";
-      left: 0;
-      transition: all $transition;
-    }
+      position: relative;
+      left: 10px;
+      top: 20px;
+      transition: background $transition;
 
-    &:after {
-      top: -10px;
-    }
+      &:after,
+      &:before {
+        height: $height;
+        width: $width;
+        background: black;
+        position: absolute;
+        content: "";
+        left: 0;
+        transition: all $transition;
+      }
 
-    &:before {
-      top: 10px;
+      &:after {
+        top: -10px;
+      }
+
+      &:before {
+        top: 10px;
+      }
     }
   }
 
