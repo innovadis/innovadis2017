@@ -1,5 +1,5 @@
 <template lang="pug">
-.carcrash(v-inview:enter='timelinePark')
+.carcrash(v-inview:once.enter='timelinePark')
   buildings.buildings(ref='buildings')
   car.car(ref='car', @click.native='resetButCrash')
   tree.tree1(ref='tree1')
