@@ -6,7 +6,7 @@
     .icon-effect-container(:style='{ height: height + "px" }')
       icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
 
-    v-touch(v-on:swiperight='next', v-on:swipeleft='previous')
+    v-touch(v-on:swiperight='previous', v-on:swipeleft='next')
       transition-group.flex.flex-justify-center(:name='lastSwipeDirection === "left" ? "flyleft" : "flyright"', mode='out-in')
         box(
           v-for='(c, i) in content',
