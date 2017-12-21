@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       title: 'Innovadis',
-      description: 'Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. '
+      description: 'Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek.'
     }
   },
 
