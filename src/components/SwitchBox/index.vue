@@ -49,7 +49,7 @@ export default {
     },
 
     next () {
-      this.lastSwipeDirection = 'left'
+      this.lastSwipeDirection = 'right'
 
       if (this.selectedIndex === this.content.length - 1) {
         this.setSelectedIndex(0)
@@ -60,7 +60,7 @@ export default {
     },
 
     previous () {
-      this.lastSwipeDirection = 'right'
+      this.lastSwipeDirection = 'left'
 
       if (this.selectedIndex === 0) {
         this.setSelectedIndex(this.content.length - 1)

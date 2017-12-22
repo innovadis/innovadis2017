@@ -35,6 +35,10 @@ export default {
   max-width: calc(100vw - #{$gutter / 2});
   position: absolute;
 
+  @include mini { // iPhone SE fix
+    right: calc(-50vw + #{$gutter/4});
+  }
+
   .relative {
     position: relative;
 
