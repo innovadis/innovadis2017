@@ -37,6 +37,8 @@
 import Moment from 'moment'
 import Slug from 'slug'
 
+Slug.defaults.mode = 'rfc3986'
+
 export default {
   components: {
     Orb: require('src/components/Orb'),
