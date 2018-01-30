@@ -2,7 +2,7 @@
 .privacy-statement
   .container.pt
     h3.dot Privacy Statement
-    p Voor ons is een zorgvuldige omgang met persoonsgegevens van groot belang. Persoonlijke gegevens worden dan ook zorgvuldig verwerkt, beveiligd en vertrouwelijk behandeld. Innovadis de verantwoordelijke voor de gegevensverwerking. Omdat onze verwerkingen binnen de wettelijke vrijstellingsregelingen vallen, zijn deze niet aangemeld bij het College Bescherming Persoonsgegevens. In deze privacyverklaring leggen wij uit welke persoonsgegevens wij verzamelen en gebruiken en met welk doel. Deze privacyverklaring is voor het laatst aangepast op 01 februari 2018.
+    p Voor ons is een zorgvuldige omgang met persoonsgegevens van groot belang. Persoonlijke gegevens worden dan ook zorgvuldig verwerkt, beveiligd en vertrouwelijk behandeld. Innovadis is de verantwoordelijke voor de gegevensverwerking. Omdat onze verwerkingen binnen de wettelijke vrijstellingsregelingen vallen, zijn deze niet aangemeld bij het College Bescherming Persoonsgegevens. In deze privacyverklaring leggen wij uit welke persoonsgegevens wij verzamelen en gebruiken en met welk doel. Deze privacyverklaring is voor het laatst aangepast op 01 februari 2018.
     br
     h3.dot Vastleggen en verwerken van gegevens
     p Wij bewaren en gebruiken uitsluitend die persoonsgegevens die rechtstreeks door u worden opgegeven of waarvan bij opgave duidelijk is dat ze aan ons worden verstrekt. Persoonsgegevens die niet langer nodig zijn worden verwijderd. U kunt ook zelf vragen om inzage, wijziging of verwijdering van gegevens. Zie hiervoor de contactgegevens onderaan. Wij slaan persoonsgegevens op die voor de levering van onze diensten noodzakelijk zijn. Denk hierbij aan gegevens die voor facturatie noodzakelijk zijn.
@@ -19,7 +19,8 @@
     p Wij behouden ons het recht voor om wijzigingen aan te brengen in deze verklaring. Het verdient aanbeveling om deze verklaring geregeld te raadplegen, zodat u van deze wijzigingen op de hoogte bent.v
     br
     h3.dot Inzage en wijzigen van uw gegevens
-    p Vragen over ons privacybeleid of vragen omtrent inzage en wijzigingen in (of verwijdering van) uw persoonsgegevens kunt u te allen tijde richten aan: info@innovadis.com
+    p Vragen over ons privacybeleid of vragen omtrent inzage en wijzigingen in (of verwijdering van) uw persoonsgegevens kunt u te allen tijde richten aan:
+      a(href='mailto:info@innovadis.com') info@innovadis.com
 </template>
 
 <script>
@@ -29,10 +30,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .privacy-statement {
   padding-bottom: 100px;
 
+  a {
+    margin-left: 5px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      color: $inno-yellow;
+    }
+  }
 }
 </style>
