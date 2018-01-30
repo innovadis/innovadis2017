@@ -32,15 +32,20 @@ export default {
     nomargin: Boolean,
     transparent: Boolean,
     icon: String,
-    href: String
+    href: String,
+    newTab: Boolean
   },
 
   methods: {
-    click() {
+    click () {
       if (this.to) {
         this.$router.push(this.to)
       } else if (this.href) {
-        window.location = this.href
+        if (this.newTab) {
+          window.open(this.href, '_blank')
+        } else {
+          window.location = this.href
+        }
       } else {
         this.$emit('click')
       }
@@ -50,8 +55,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
-@import 'src/styles/layout';
+@import "src/styles/variables";
+@import "src/styles/layout";
 
 .button {
   display: table;
@@ -175,7 +180,8 @@ export default {
   }
 
   &.active {
-    &:hover { // blue only right now
+    &:hover {
+      // blue only right now
       color: $inno-blue;
       box-shadow: $shadow;
 

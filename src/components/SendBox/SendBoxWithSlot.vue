@@ -5,7 +5,7 @@
       slot
     send-box(
       :subject='subject',
-      :to='to'
+      :formbucketId='formbucketId'
       )
 
 </template>
@@ -20,7 +20,7 @@ export default {
     flip: Boolean,
     backgroundUrl: String,
     subject: String,
-    to: String
+    formbucketId: String
   }
 }
 </script>

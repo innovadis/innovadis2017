@@ -32,6 +32,10 @@ export default {
     flex-direction: column;
   }
 
+  .button {
+    margin-left: 0;
+  }
+
   .box {
     max-width: 38%;
     margin-left: $gutter;

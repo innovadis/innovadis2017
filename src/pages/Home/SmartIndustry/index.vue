@@ -24,6 +24,14 @@
 
     p Wij geloven in de kracht van samenwerken, bundelen en delen van kennis en samen tot de beste oplossing komen. Binnen de industrie werken we o.a. voor Apollo Vredestein, Pentair, Henkelman, Edmac en de Morssinkhof groep.
 
+    .logos
+      img(src='/static/images/logos/customers/apollo.png')
+      img(src='/static/images/logos/customers/axa.png')
+      img(src='/static/images/logos/customers/henkelman.png')
+      img(src='/static/images/logos/customers/morssinkhof.png')
+      img(src='/static/images/logos/customers/pentair.svg')
+      img(src='/static/images/logos/customers/vredestein.png')
+
   .container.pt
     send-box-with-slot.margin-top(flip, subject='Reactie op Smart Health pagina')
       h2.dot Neem contact met ons op
@@ -70,7 +78,10 @@ export default {
           icon: 'database-view',
           text: 'Steeds meer apparaten zijn verbonden met internet en kunnen waardevolle data leveren. Innovadis heeft onderzoek gedaan naar de praktische toepassing van deze ontwikkeling binnen de industrie. Op basis daarvan hebben we een methode ontwikkeld, waarmee we onze opdrachtgevers kunnen helpen met oplossingen die daadwerkelijk bedragen aan het bedrijf. Denk aan efficiënter onderhoud door verlaging van kosten als gevolg van uitval of preventief vervangen van onderdelen. De mogelijkheden zijn eindeloos.'
         }
-      ]
+      ],
+
+      title: 'Smart Industry',
+      description: 'Wij geloven in de kracht van samenwerken, bundelen en delen van kennis en samen tot de beste Smart Industry oplossing komen.'
     }
   },
 
@@ -83,10 +94,57 @@ export default {
         }
       })
     }
+  },
+
+  head: {
+    title () {
+      return {
+        inner: this.title
+      }
+    },
+    meta () {
+      return [
+        { name: 'description', content: this.description },
+
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.description },
+
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.description },
+
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description }
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "src/styles/variables";
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: -$gutter;
+
+  @include phone {
+    margin-left: -10px;
+  }
+
+  img {
+    margin: $gutter;
+    max-width: 200px;
+
+    @include phone {
+      height: 70px;
+      margin: $gutter 10px;
+    }
+  }
+}
 </style>

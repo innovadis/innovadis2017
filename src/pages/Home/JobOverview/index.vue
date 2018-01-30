@@ -12,7 +12,7 @@
     dark
     )
 
-  send-box-with-slot.pt(flip, subject='Reactie op vacture overzicht pagina')
+  send-box-with-slot.pt(flip, subject='Reactie op vacture overzicht pagina', formbucketId='buk_MyNMWcTiZ7hle63zZIEAjjGT')
     h2 Staat je baan er niet tussen?
 
 </template>
@@ -27,9 +27,35 @@ export default {
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot')
   },
 
+  data() {
+    return {
+      title: 'Werken Bij',
+      description: 'Innovadiër worden? Bekijk onze vacatures en wie weet maak jij binnenkort deel uit van ons gepassioneerde team.'
+    }
+  },
+
   head: {
-    title: {
-      inner: 'Werken bij'
+    title () {
+      return {
+        inner: this.title
+      }
+    },
+    meta () {
+      return [
+        { name: 'description', content: this.description },
+
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.description },
+
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.description },
+
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description }
+      ]
     }
   }
 }

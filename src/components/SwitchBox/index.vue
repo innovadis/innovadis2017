@@ -3,9 +3,10 @@
   paging(:amount='content.length', v-model='selectedIndex', :disabled='buttonDisabled')
 
   .switchbox(ref='switchbox')
-    icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
+    .icon-effect-container(:style='{ height: height + "px" }')
+      icon-effect(v-for='(c, i) in content', :iconUrl='c.backgroundIconUrl', :ref='"iconEffect" + i', :key='"iconEffect" + i')
 
-    v-touch(v-on:swiperight='next', v-on:swipeleft='previous')
+    v-touch(v-on:swiperight='previous', v-on:swipeleft='next')
       transition-group.flex.flex-justify-center(:name='lastSwipeDirection === "left" ? "flyleft" : "flyright"', mode='out-in')
         box(
           v-for='(c, i) in content',
@@ -22,13 +23,6 @@
 </template>
 
 <script>
-import SmoothScroll from 'smooth-scroll'
-
-const scroll = new SmoothScroll()
-scroll.init({
-  speed: 1000
-})
-
 export default {
   components: {
     Box: require('./Box'),
@@ -55,7 +49,7 @@ export default {
     },
 
     next () {
-      this.lastSwipeDirection = 'left'
+      this.lastSwipeDirection = 'right'
 
       if (this.selectedIndex === this.content.length - 1) {
         this.setSelectedIndex(0)
@@ -66,7 +60,7 @@ export default {
     },
 
     previous () {
-      this.lastSwipeDirection = 'right'
+      this.lastSwipeDirection = 'left'
 
       if (this.selectedIndex === 0) {
         this.setSelectedIndex(this.content.length - 1)
@@ -107,9 +101,21 @@ export default {
     position: relative;
     justify-content: space-between;
 
+    .icon-effect-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+
+      @include phone {
+        display: none;
+      }
+    }
+
     .icons {
-      margin: 40px 0 0 0;
       z-index: 1;
+      position: relative;
+      top: -70px;
 
       i {
         font-size: 40px;

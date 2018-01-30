@@ -62,6 +62,7 @@
 
           macbook
 
+  //- Phone only
   .hidden-desktop.hidden-tablet
     .gray.container.pt
       h2.text-center Door en voor de zorg
@@ -69,11 +70,11 @@
 
       .with-image.flex.pt.flex-align-center
         .flex.flex-column
-          h3 Eén platform voor alle leuke en nuttige informatie.
+          h3(style='margin-bottom: 20px') Eén platform voor alle leuke en nuttige informatie.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
         img(src='/static/images/smarthealth_mobile_orbs.png', height='280px', style='margin: 0 -20px 20px 20px')
 
-        info-dialog(v-model='dialogOpen1', closable)
+        info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
             p {{ text1 }}
 
@@ -81,9 +82,9 @@
       h3 Deel eenvoudig informatie.
       p.text-center Het grote touchscreen in de centrale hal biedt een unieke ervaring.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
-      img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin-top: -60px')
+      img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin-top: -40px')
 
-      info-dialog(v-model='dialogOpen2', closable)
+      info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
           p {{ text2 }}
 
@@ -91,31 +92,31 @@
         img(src='/static/cases/socialhof/2phones_sidebyside.png', height='200px', style='margin-right: 20px')
 
         .flex.flex-column
-          h3 Chatten zoals je gewend bent, maar gescheiden van je privé leven.
+          h3(style='margin-bottom: 20px') Chatten zoals je gewend bent, maar gescheiden van je privé leven.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen3 = true')
 
-          info-dialog(v-model='dialogOpen3', closable)
+          info-dialog(v-model='dialogOpen3', closable, v-if='dialogOpen3')
             .dialog-container
               p {{ text3 }}
 
     .gray.container.pt
       .flex.flex-align-center(style='margin: 100px 0')
         .flex.flex-column
-          h3 Laat weten welke activiteiten er zijn voor personeel en bewoners.
+          h3(style='margin-bottom: 20px') Laat weten welke activiteiten er zijn voor personeel en bewoners.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen4 = true')
         img(src='/static/cases/socialhof/2phones_overlap.png', height='250px')
 
-        info-dialog(v-model='dialogOpen4', closable)
+        info-dialog(v-model='dialogOpen4', closable, v-if='dialogOpen4')
           .dialog-container
             p {{ text4 }}
 
       .flex.flex-align-center(style='padding: 100px 0')
         .flex.flex-column
-          h3 Easy to use beheeromgeving.
+          h3(style='margin-bottom: 20px') Easy to use beheeromgeving.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen5 = true')
         img(src='/static/cases/socialhof/macbook.png', height='250px')
 
-        info-dialog(v-model='dialogOpen5', closable)
+        info-dialog(v-model='dialogOpen5', closable, v-if='dialogOpen5')
           .dialog-container
             p {{ text5 }}
 

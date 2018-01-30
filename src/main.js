@@ -26,7 +26,13 @@ Vue.config.productionTip = false
 Vue.use(Vuelidate)
 Vue.use(VueInView)
 Vue.use(VueHead)
-Vue.use(VueTouch, {name: 'v-touch'})
+Vue.use(VueTouch, {
+  name: 'v-touch'
+})
+
+VueTouch.config.swipe = {
+  direction: 'horizontal'
+}
 
 Vue.component('InnoButton', Button)
 Vue.component('InnoButtonAlternate', ButtonAlternate)

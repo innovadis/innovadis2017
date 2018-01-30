@@ -47,7 +47,7 @@ export default {
     GoogleMapMarker: Marker
   },
 
-  data() {
+  data () {
     return {
       options: {
         styles: require('./mapStyle.json'),
@@ -133,12 +133,15 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
       lastSelectedPartnerKey: null,
       selectedPartnerKey: 'ceecee',
       panPath: [],   // An array of points the current panning action will use
-      panQueue: []  // An array of subsequent panTo actions to take
+      panQueue: [],  // An array of subsequent panTo actions to take
+
+      title: 'Onze Partners',
+      description: 'Wij geloven dat door samen te werken met innovatieve partners, we gezamenlijk de meeste waarde kunnen creëren voor onze opdrachtgevers.'
     }
   },
 
   computed: {
-    partnerObjects() {
+    partnerObjects () {
       return Object.keys(this.partners).map(x => {
         return {
           key: x,
@@ -147,17 +150,17 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
       })
     },
 
-    selectedPartner() {
+    selectedPartner () {
       return this.partners[this.selectedPartnerKey]
     },
 
-    markerOpacityNumber() { // Because: https://github.com/juliangarnier/anime/issues/116
+    markerOpacityNumber () { // Because: https://github.com/juliangarnier/anime/issues/116
       return typeof this.markerOpacity === 'string' ? parseFloat(this.markerOpacity) : this.markerOpacity
     }
   },
 
   methods: {
-    setSelectedPartner(key) {
+    setSelectedPartner (key) {
       this.selectedPartnerKey = key
 
       this.panTo(this.partners[key].location.lat, this.partners[key].location.lng)
@@ -169,7 +172,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
       this.lastSelectedPartnerKey = this.selectedPartnerKey
     },
 
-    increaseMarkerOpacity() {
+    increaseMarkerOpacity () {
       this.markerOpacityTimeout = setTimeout(() => {
         this.markerOpacity += 0.05
 
@@ -177,7 +180,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
       }, 50)
     },
 
-    panTo(newLat, newLng) {
+    panTo (newLat, newLng) {
       const { panPath, panQueue } = this
       const map = this.$refs.map
 
@@ -207,7 +210,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
       }
     },
 
-    doPan() {
+    doPan () {
       const { panPath, panQueue } = this
       const map = this.$refs.map
 
@@ -226,22 +229,41 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
     }
   },
 
-  mounted() {
+  mounted () {
     setTimeout(() => {
       this.increaseMarkerOpacity()
     }, 1000)
   },
 
   head: {
-    title: {
-      inner: 'Onze partners'
+    title () {
+      return {
+        inner: this.title
+      }
+    },
+    meta () {
+      return [
+        { name: 'description', content: this.description },
+
+        // Google+
+        { itemprop: 'name', content: this.title },
+        { itemprop: 'description', content: this.description },
+
+        // Twitter
+        { name: 'twitter:title', content: this.title },
+        { name: 'twitter:description', content: this.description },
+
+        // Facebook
+        { property: 'og:title', content: this.title },
+        { property: 'og:description', content: this.description }
+      ]
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .map {
   height: 800px;
@@ -274,11 +296,20 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
   }
 
   .gradient {
-    background: linear-gradient(to right, $inno-blue-dark, $inno-blue-dark 30%, transparent 60%);
+    background: linear-gradient(
+      to right,
+      $inno-blue-dark,
+      $inno-blue-dark 30%,
+      transparent 60%
+    );
   }
 
   .radial-gradient {
-    background-image: radial-gradient(circle farthest-corner at 80% center, transparent, $inno-blue-dark 35%);
+    background-image: radial-gradient(
+      circle farthest-corner at 80% center,
+      transparent,
+      $inno-blue-dark 35%
+    );
   }
 
   .partners {
@@ -343,7 +374,7 @@ Onze praktijkervaring delen we met studenten door gastcolleges te geven.`
 </style>
 
 <style lang="scss">
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .gm-style {
   background: $inno-blue-dark;

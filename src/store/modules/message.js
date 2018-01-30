@@ -9,12 +9,14 @@ const mutations = {
 }
 
 const actions = {
-  async send(context, { to, from, name, phone, message, subject }) {
+  async send(context, { formbucketId, from, name, phone, message, subject }) {
     function timeout(ms) {
       return new Promise(resolve => setTimeout(resolve, ms))
     }
 
-    if (!to) to = 'a.vandijk@innovadis.com' // TODO formspree
+    if (!formbucketId) {
+      formbucketId = 'buk_2d5nDVdsWTa9AqmvwHDIAcpB' // Default sales & info@innovadis.com
+    }
 
     await timeout(500)
 
@@ -23,14 +25,15 @@ const actions = {
       return
     }
 
-    await axios.post('https://formspree.io/' + to, {
+    const emailObject = {
       _subject: subject || `Nieuw bericht van ${name} via contactformulier Innovadis.com`,
       email: from,
-      name,
-      phone,
-      message,
-      _language: 'nl'
-    })
+      naam: name,
+      telefoonnummer: phone,
+      bericht: message
+    }
+
+    await axios.post('https://api.formbucket.com/f/' + formbucketId, emailObject)
   }
 }
 

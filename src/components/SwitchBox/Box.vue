@@ -35,6 +35,10 @@ export default {
   max-width: calc(100vw - #{$gutter / 2});
   position: absolute;
 
+  @include mini { // iPhone SE fix
+    right: calc(-50vw + #{$gutter/4});
+  }
+
   .relative {
     position: relative;
 
@@ -72,6 +76,10 @@ export default {
     border-bottom-left-radius: $border-radius;
     margin: 0 auto;
     max-width: 100vw;
+
+    @include mini {
+      padding: 70px 10px 40px 10px;
+    }
 
     p {
       margin-bottom: 0;
