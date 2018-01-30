@@ -86,6 +86,11 @@ const router = new Router({
           component: require('src/pages/Home/Conditions')
         },
         {
+          path: '/privacy-statement',
+          name: 'privacy statement',
+          component: require('src/pages/Home/PrivacyStatement')
+        },
+        {
           path: '404',
           component: require('src/pages/Home/NotFound'),
           meta: {
