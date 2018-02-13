@@ -10,7 +10,7 @@
     formbucketId='buk_c8o6YA2lQrEweXqOAZQheGbK'
     )
     h2.dot Stuur ons een bericht
-    p Laat hiernaast je gegevens achter en we berichten of bellen je terug.
+    p Laat hiernaast je gegevens achter en we nemen contact met je op.
 </template>
 
 <script>

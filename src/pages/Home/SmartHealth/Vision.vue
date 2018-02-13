@@ -1,7 +1,7 @@
 <template lang="pug">
 .vision.container
   h2.dot.short Onze visie voor de zorg
-  p Door onder andere de toenemende vergrijzing en zorgvraag staat onze zorg staat midden in de digitale transformatie. Wij geloven dat technologie een noodzakelijke bijdrage kan leveren aan de toegankelijkheid en kwaliteit van de zorg. Onze oplossingen ondersteunen cliënten, mantelzorgers en zorgverleners in hun onderlinge communicatie.
+  p Door onder andere de toenemende vergrijzing en zorgvraag staat onze zorg in de digitale transformatie. Wij geloven dat technologie een noodzakelijke bijdrage kan leveren aan de toegankelijkheid en kwaliteit van de zorg. Onze oplossingen ondersteunen cliënten, mantelzorgers en zorgverleners in hun onderlinge communicatie.
 
   .hidden-phone
     select-box(:items='selectBoxItems')
@@ -10,10 +10,10 @@
     .flex.flex-justify-center
       switch-box(:content='switchboxContent', :height='380')
 
-  h2.dot.margin-top Smart health in de praktijk
-  p Dat Smart health bij Innovadis niet bij een visie blijft, bewijzen de ervaringen van onze opdrachtgevers. Voor veel bedrijven binnen de sector zijn wij gesprekspartner, adviseur maar bovenal leverancier van hoogwaardige technologische oplossingen die bijdragen aan hun succes.
+  h2.dot.margin-top Smart Health in de praktijk
+  p Dat Smart Health bij Innovadis niet bij een visie blijft bewijzen de ervaringen van onze opdrachtgevers. Voor veel bedrijven binnen de sector zijn wij gesprekspartner of adviseur maar bovenal leverancier van hoogwaardige technologische oplossingen die bijdragen aan hun succes.
 
-  p Wij geloven in de kracht van samenwerken, bundelen en delen van kennis en samen tot de beste oplossing komen. Binnen de zorg werken we o.a. voor Livio en De Vriezenhof.
+  p Wij geloven in de kracht van samenwerken. Wij bundelen en delen kennis om zo samen tot de beste oplossing komen.
 </template>
 
 <script>
@@ -39,7 +39,7 @@ export default {
         {
           label: 'Eenzaamheid verminderen',
           icon: 'database-view',
-          text: 'Met toegankelijke en gebruikersvriendelijke portalen de communicatie tussen cliënten onderling en tussen cliënten en zorgverleners stimuleren.'
+          text: 'Met toegankelijke en gebruikersvriendelijke portalen stimuleren wij de communicatie tussen cliënten onderling en tussen cliënten en zorgverleners.'
         }
       ]
     }
