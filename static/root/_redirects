@@ -1,5 +1,10 @@
 /proxy/instagram/*  https://www.instagram.com/:splat  200
 
+# Redirect domain aliases to primary domain
+https://innovadis.nl/* https://www.innovadis.com/:splat 301!
+https://innovadis.eu/* https://www.innovadis.com/:splat 301!
+https://innovadis.info/* https://www.innovadis.com/:splat 301!
+
 # To root
 /themas / 301
 /afas_webshop / 301
