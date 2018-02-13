@@ -67,8 +67,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Vacature'
+    title () {
+      return {
+        inner: this.job.title
+      }
     },
     meta() {
       return [

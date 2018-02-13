@@ -75,8 +75,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Evenement'
+    title () {
+      return {
+        inner: this.eventItem.title
+      }
     },
     meta() {
       return [

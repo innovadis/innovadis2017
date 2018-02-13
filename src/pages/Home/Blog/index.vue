@@ -37,26 +37,28 @@ export default {
   },
 
   computed: {
-    blogItem() {
+    blogItem () {
       if (this.$store.state.feed.blog.length === 0) return
 
       return this.$store.state.feed.blog.find(x => Slug(x.title).toLowerCase() === this.$route.params.name.toLowerCase())
     },
 
-    date() {
+    date () {
       return Moment(this.blogItem.publish_date).format('DD MMMM YYYY')
     },
 
-    feedItems() {
+    feedItems () {
       return this.$store.getters['feed/contentTags'](this.blogItem.tags, this.blogItem.title)
     }
   },
 
   head: {
-    title: {
-      inner: 'Blog'
+    title () {
+      return {
+        inner: this.blogItem.title
+      }
     },
-    meta() {
+    meta () {
       return [
         // Google+
         { itemprop: 'name', content: this.blogItem.title },
@@ -76,5 +78,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 </style>

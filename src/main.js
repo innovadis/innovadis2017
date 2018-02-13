@@ -25,7 +25,9 @@ Moment.locale('nl')
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
 Vue.use(VueInView)
-Vue.use(VueHead)
+Vue.use(VueHead, {
+  complement: 'Innovadis'
+})
 Vue.use(VueTouch, {
   name: 'v-touch'
 })

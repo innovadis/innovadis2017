@@ -55,8 +55,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Nieuws'
+    title () {
+      return {
+        inner: this.newsItem.title
+      }
     },
     meta() {
       return [
