@@ -52,7 +52,7 @@ export default {
   created() {
     if (this.$store.state.jobs.all.length === 0) return
 
-    const job = this.$store.state.jobs.all.find(x => Slug(x.content.nl.title) === this.$route.params.slug)
+    const job = this.$store.state.jobs.all.find(x => Slug(x.content.nl.title).toLowerCase() === this.$route.params.slug.toLowerCase())
 
     if (!job) {
       // Note: this is the preferred way but it causes the target router-view to be empty for unknown reason. So workaround with window.location

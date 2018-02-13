@@ -40,7 +40,7 @@ export default {
     blogItem() {
       if (this.$store.state.feed.blog.length === 0) return
 
-      return this.$store.state.feed.blog.find(x => Slug(x.title) === this.$route.params.name)
+      return this.$store.state.feed.blog.find(x => Slug(x.title).toLowerCase() === this.$route.params.name.toLowerCase())
     },
 
     date() {
