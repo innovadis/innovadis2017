@@ -1,5 +1,5 @@
 <template lang="pug">
-.complex.flex.flex-column-phablet(:class='{ "controls-open": controlsOpen }')
+.complex.flex.flex-column-phablet.flex-justify-center(:class='{ "controls-open": controlsOpen }')
   .controls.flex.flex-column.flex-justify-center
     h1.dot.hidden-phablet Onze wereld
     .filter-phablet(@click='controlsOpen = false')
@@ -53,7 +53,7 @@
       inno-button.ma-0(label='Reset', nomargin, small, transparent, @click='reset()')
       inno-button(primary, small, label='Toepassen', @click='controlsOpen = false')
 
-  .no-scrollbar
+  .scrollbar-container
     .filter-phablet(@click='controlsOpen = true')
       i.icons8-sorting-options
       | Filters
@@ -81,7 +81,7 @@ export default {
     Item: require('./Item')
   },
 
-  data() {
+  data () {
     return {
       mobileVersion: window.innerWidth <= 900,
       marketSelected: null,
@@ -127,7 +127,7 @@ export default {
   },
 
   computed: {
-    feedItems() {
+    feedItems () {
       const items = this.$store.getters['feed/' + this.feedGetter]
 
       if (this.tagSelected.length > 0) {
@@ -141,7 +141,7 @@ export default {
       return items
     },
 
-    oddItems() {
+    oddItems () {
       const odd = []
 
       for (var index = 0; index < this.feedItems.length; index++) {
@@ -155,7 +155,7 @@ export default {
       return odd
     },
 
-    evenItems() {
+    evenItems () {
       const even = []
 
       for (var index = 0; index < this.feedItems.length; index++) {
@@ -169,17 +169,17 @@ export default {
       return even
     },
 
-    canReset() {
+    canReset () {
       return this.mediaSelected !== null || this.tagSelected.length !== 0 || this.marketSelected !== null
     }
   },
 
   methods: {
-    dialogOpen(open) {
+    dialogOpen (open) {
       this.anyDialogOpen = open
     },
 
-    marketChange(v) {
+    marketChange (v) {
       this.mediaSelected = null
       this.tagSelected = []
 
@@ -194,7 +194,7 @@ export default {
       }
     },
 
-    mediaChange(v) {
+    mediaChange (v) {
       this.marketSelected = null
       this.tagSelected = []
 
@@ -213,14 +213,14 @@ export default {
       }
     },
 
-    tagChange(v) {
+    tagChange (v) {
       this.marketSelected = null
       this.mediaSelected = null
 
       this.feedGetter = 'contentAll'
     },
 
-    reset() {
+    reset () {
       this.marketSelected = null
       this.mediaSelected = null
       this.tagSelected = []
@@ -228,12 +228,12 @@ export default {
       this.feedGetter = 'contentAll'
     },
 
-    resizeEvent() {
+    resizeEvent () {
       this.mobileVersion = window.innerWidth <= 900
     }
   },
 
-  mounted() {
+  mounted () {
     const arrows = document.querySelectorAll('.multiselect__select')
 
     for (const arrow of arrows) {
@@ -247,14 +247,14 @@ export default {
     window.addEventListener('resize', this.resizeEvent)
   },
 
-  destroyed() {
+  destroyed () {
     window.removeEventListener('resize', this.resizeEvent)
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .complex {
   height: calc(100vh - #{$headerHeight});
@@ -370,14 +370,36 @@ export default {
     }
   }
 
-  .no-scrollbar {
+  .scrollbar-container {
     overflow-x: hidden;
-    overflow-y: auto;
-    width: 930px;
 
     &::-webkit-scrollbar {
-      width: 0px;
-      background: transparent;
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: lighten($background, 3%);
+
+      &:hover {
+        // background: #666666;
+      }
+
+      &:active {
+        // background: #333333;
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $inno-yellow;
+      border-radius: $border-radius/2;
+
+      &:hover {
+        // background-color: #aaa;
+      }
+
+      &:active {
+        // background: #000000;
+      }
     }
 
     @include phablet {
@@ -432,7 +454,7 @@ export default {
         top: 0;
       }
 
-      .no-scrollbar {
+      .scrollbar-container {
         top: 0;
       }
     }
