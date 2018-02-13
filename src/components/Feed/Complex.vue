@@ -379,27 +379,11 @@ export default {
 
     &::-webkit-scrollbar-track {
       background-color: lighten($background, 3%);
-
-      &:hover {
-        // background: #666666;
-      }
-
-      &:active {
-        // background: #333333;
-      }
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: $inno-yellow;
       border-radius: $border-radius/2;
-
-      &:hover {
-        // background-color: #aaa;
-      }
-
-      &:active {
-        // background: #000000;
-      }
     }
 
     @include phablet {
@@ -410,7 +394,7 @@ export default {
       background: $background;
       transition: all 0.5s ease-in-out;
       position: relative;
-      top: -100vh;
+      top: -45vh;
     }
 
     .news-items {
@@ -451,11 +435,11 @@ export default {
       overflow: hidden;
 
       .controls {
-        top: 0;
+        top: 35vh;
       }
 
       .scrollbar-container {
-        top: 0;
+        top: 65vh;
       }
     }
   }
