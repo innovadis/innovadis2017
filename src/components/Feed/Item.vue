@@ -48,21 +48,21 @@ export default {
     large: Boolean
   },
 
-  data() {
+  data () {
     return {
       dialogDetailOpen: false
     }
   },
 
   computed: {
-    style() {
+    style () {
       return {
         'background-image': `linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(${this.feedItem.imageUrl})`
         // height: window.innerWidth > 600 ? (this.large ? 410 : 155) + 'px' : 200 + 'px'
       }
     },
 
-    feedItem() {
+    feedItem () {
       let feedItem = {}
 
       feedItem.created = Moment(this.item.feedCreated).format('DD MMMM YYYY')
@@ -103,7 +103,7 @@ export default {
   },
 
   methods: {
-    openItem() {
+    openItem () {
       if (this.item.feedType === 'instagram') {
         this.dialogDetailOpen = true
       } else {
@@ -118,7 +118,7 @@ export default {
   },
 
   watch: {
-    dialogDetailOpen(v) {
+    dialogDetailOpen (v) {
       this.$emit('dialogOpen', v, this)
     }
   }
@@ -126,8 +126,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
-@import 'src/styles/layout';
+@import "src/styles/variables";
+@import "src/styles/layout";
+
+  @include phone {
+    h3 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
 
 .item {
   background-size: cover !important;
@@ -153,6 +160,8 @@ export default {
       height: 440px;
     }
   }
+
+
 
   @include phablet {
     margin: 10px 10px 10px 0;
@@ -196,6 +205,7 @@ export default {
   width: 100%;
   height: 100%;
   display: flex;
+  max-height: 90vh;
 
   @include phone {
     flex-direction: column-reverse; // width: 100vw;
@@ -203,7 +213,7 @@ export default {
 
   .info {
     width: calc(50% - #{$gutter*2});
-    padding: 0 $gutter;
+    padding: $gutter;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -211,12 +221,14 @@ export default {
 
     @include phone {
       width: auto;
-      max-width: calc(100% - #{$gutter*2});
+
       padding: $gutter/2;
       justify-content: flex-start;
       height: auto;
       flex-grow: 1;
-      padding-bottom: 140px;
+
+      overflow: hidden; // ook overal
+      overflow-y: scroll; //ook overal
     }
 
     .title {
@@ -264,6 +276,13 @@ export default {
       width: 100%;
       display: flex;
       justify-content: center;
+      margin-top: 20px;
+
+      @include phone {
+        position: unset;
+        bottom: unset;
+        left: unset;
+      }
 
       a {
         font-weight: bold;
@@ -297,7 +316,7 @@ export default {
 
     @include phone {
       width: 100%;
-      height: 50%;
+      height: 300px;
     }
   }
 }
