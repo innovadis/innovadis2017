@@ -227,8 +227,8 @@ export default {
       height: auto;
       flex-grow: 1;
 
-      overflow: hidden; // ook overal
-      overflow-y: scroll; //ook overal
+      overflow: hidden;
+      overflow-y: scroll;
     }
 
     .title {
