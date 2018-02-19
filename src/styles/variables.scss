@@ -49,6 +49,14 @@ a {
   }
 }
 
+.pb {
+  padding-bottom: 100px !important;
+
+  @include phone {
+    padding-bottom: 40px !important;
+  }
+}
+
 .dot {
   &:after {
     content: '.';

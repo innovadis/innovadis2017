@@ -26,14 +26,14 @@
 
   social-share
 
-  send-box-with-slot(flip, :subject='"Aanmelding voor evenement: " + this.eventItem.title')
-    h2.dot Aanmelden voor het event
-
   simple-feed(
     title='Ook interessant',
     :items='feedItems',
     dark
     )
+
+  send-box-with-slot(flip, :subject='"Aanmelding voor evenement: " + this.eventItem.title')
+    h2.dot Aanmelden voor het event
 
 </template>
 
@@ -58,7 +58,7 @@ export default {
     eventItem() {
       if (this.$store.state.feed.events.length === 0) return
 
-      return this.$store.state.feed.events.find(x => Slug(x.title) === this.$route.params.name)
+      return this.$store.state.feed.events.find(x => Slug(x.title).toLowerCase() === this.$route.params.name.toLowerCase())
     },
 
     date() {
@@ -75,8 +75,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Evenement'
+    title () {
+      return {
+        inner: this.eventItem.title
+      }
     },
     meta() {
       return [

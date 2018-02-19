@@ -38,7 +38,7 @@ export default {
     newsItem() {
       if (this.$store.state.feed.news.length === 0) return
 
-      return this.$store.state.feed.news.find(x => Slug(x.title) === this.$route.params.name)
+      return this.$store.state.feed.news.find(x => Slug(x.title).toLowerCase() === this.$route.params.name.toLowerCase())
     },
 
     heroImage() {
@@ -55,8 +55,10 @@ export default {
   },
 
   head: {
-    title: {
-      inner: 'Nieuws'
+    title () {
+      return {
+        inner: this.newsItem.title
+      }
     },
     meta() {
       return [

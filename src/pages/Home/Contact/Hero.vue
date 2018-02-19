@@ -2,7 +2,7 @@
 .flex.flex-align-center.flex-justify-end.flex-column.flex-justify-center-phone
   .container.pt
     h1.dot Contact
-    p.intro Als echte IT-professionals kunnen we alles automatiseren, maar uiteindelijk vinden ook wij persoonlijk contact leuker. Heb je ondersteuning nodig, een supportvraag, een (IT)-uitdaging waar we ons in vast mogen bijten of wil je een van onze medewerkers spreken?
+    p.intro Als echte IT-professionals kunnen we alles automatiseren, maar uiteindelijk vinden ook wij persoonlijk contact leuker. Heb je ondersteuning nodig, een supportvraag, een (IT)-uitdaging waar we ons in vast mogen bijten of wil je een van onze medewerkers spreken? Neem dan vooral contact met ons op!
 
   .hero
 

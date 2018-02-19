@@ -11,14 +11,21 @@
 
   inno-case
 
-  send-box-with-slot.margin-top(flip, subject='Reactie op Smart Health pagina')
-    h2.dot Wij helpen de zorg graag vooruit
+  .container.pt.pb
+    h2.dot Smart Health in de praktijk
+    p Dat Smart Health bij Innovadis niet bij een visie blijft bewijzen de ervaringen van onze opdrachtgevers. Voor veel bedrijven binnen de sector zijn wij gesprekspartner of adviseur maar bovenal leverancier van hoogwaardige technologische oplossingen die bijdragen aan hun succes.
+
+    p Wij geloven in de kracht van samenwerken. Wij bundelen en delen kennis om zo samen tot de beste oplossing komen.
 
   simple-feed(
     title='Onze wereld in de Health',
     feedGetter='contentTagSmartHealth',
     dark
     )
+
+  send-box-with-slot.margin-top(flip, subject='Reactie op Smart Health pagina')
+    h2.dot Wij helpen de zorg graag vooruit
+
 </template>
 
 <script>

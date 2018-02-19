@@ -13,7 +13,7 @@ export default {
 
 .hero {
   background-image: url('/static/images/jobs_hero.png');
-  background-position: 0 -100px;
+  background-position: center;
   position: relative;
 
   &:after {
