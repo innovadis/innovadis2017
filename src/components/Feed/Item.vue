@@ -18,19 +18,21 @@
     .dialog-content
       .info
         div
-          h3.title {{ feedItem.title }}
-          .divider
-          .flex.flex-justify-between.flex-align-center.flex-column-phablet
+          .flex.flex-justify-between.flex-align-center
             .date Datum:
               span {{ feedItem.created }}
             .likes
               i.icons8-like-filled
               | {{ feedItem.likes }}
+          .divider
+          .title {{ feedItem.title }}
+
+
+      .image.flex.flex-align-end(:style='{ "background-image": "url(" + feedItem.imageUrl + ")" }')
         .wrapper
-          a(:href='feedItem.url', target='_blank')
+          a.flex.flex-align-center(:href='feedItem.url', target='_blank')
             orb(:size='40', :initialX='-25', :initialY='-20', icon='instagram', single)
             span Volgen
-      .image(:style='{ "background-image": "url(" + feedItem.imageUrl + ")" }')
 </template>
 
 <script>
@@ -61,7 +63,6 @@ export default {
         // height: window.innerWidth > 600 ? (this.large ? 410 : 155) + 'px' : 200 + 'px'
       }
     },
-
     feedItem () {
       let feedItem = {}
 
@@ -129,13 +130,6 @@ export default {
 @import "src/styles/variables";
 @import "src/styles/layout";
 
-  @include phone {
-    h3 {
-      font-size: 16px;
-      line-height: 24px;
-    }
-  }
-
 .item {
   background-size: cover !important;
   background-position: center !important;
@@ -160,8 +154,6 @@ export default {
       height: 440px;
     }
   }
-
-
 
   @include phablet {
     margin: 10px 10px 10px 0;
@@ -188,10 +180,12 @@ export default {
       border-bottom: 1px solid $bottomColor;
       padding-bottom: 10px;
       margin: 0;
-      max-height: 108px;
+      max-height: 77px;
+      text-overflow: ellipsis;
       overflow: hidden;
-      display: flex;
-      align-items: flex-start;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
 
     .source {
@@ -214,21 +208,13 @@ export default {
   .info {
     width: calc(50% - #{$gutter*2});
     padding: $gutter;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
 
     @include phone {
       width: auto;
-
       padding: $gutter/2;
-      justify-content: flex-start;
       height: auto;
-      flex-grow: 1;
-
-      overflow: hidden;
-      overflow-y: scroll;
     }
 
     .title {
@@ -243,20 +229,26 @@ export default {
     .date {
       font-style: italic;
       color: $gray2;
+      font-size: 16px;
+
+      @include phone {
+        font-size: 14px;
+      }
 
       span {
-        margin-left: 10px;
-        font-style: normal;
+        margin-left: 4px;
+        font-size: 16px;
+
+        @include phone {
+          font-size: 14px;
+        }
       }
     }
 
     .likes {
       display: flex;
       align-items: center;
-
-      @include phablet {
-        margin-top: 20px;
-      }
+      font-size: 16px;
 
       i {
         font-size: 36px;
@@ -266,42 +258,47 @@ export default {
         animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
+
+        @include phone {
+          font-size: 22px;
+        }
       }
     }
+  }
 
-    .wrapper {
-      position: absolute;
-      bottom: $gutter/2;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    a {
+      font-weight: bold;
+      box-shadow: $shadow;
+      display: table;
+      height: 40px;
+      padding: 10px 20px;
+      border-radius: $border-radius;
+      transition: background-color 0.2s ease-out;
+      background-color: white;
 
       @include phone {
-        position: unset;
-        bottom: unset;
-        left: unset;
+        padding: 4px 20px;
       }
 
-      a {
-        font-weight: bold;
-        box-shadow: $shadow;
-        display: table;
-        height: 40px;
-        padding: 10px 20px;
-        border-radius: $border-radius;
-        transition: background-color 0.2s ease-out;
+      &:hover {
+        background: $gray0;
+      }
 
-        &:hover {
-          background: $gray0;
-        }
+      span {
+        margin-left: 50px;
+        position: relative;
+        top: 7px;
+        color: $gray2;
+        font-size: 16px;
 
-        span {
-          margin-left: 50px;
-          position: relative;
-          top: 7px;
-          color: $gray2;
+        @include phone {
+          font-size: 14px;
         }
       }
     }
