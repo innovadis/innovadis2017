@@ -6,8 +6,7 @@
 
   send-box-with-slot(
     backgroundUrl='/static/images/contact_corner.png',
-    text='Laat hieronder uw gegevens achter en we berichten of bellen u terug.',
-    formbucketId='buk_c8o6YA2lQrEweXqOAZQheGbK'
+    text='Laat hieronder uw gegevens achter en we berichten of bellen u terug.'
     )
     h2.dot Stuur ons een bericht
     p Laat hiernaast je gegevens achter en we nemen contact met je op.
