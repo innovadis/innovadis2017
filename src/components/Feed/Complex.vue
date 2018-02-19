@@ -378,12 +378,12 @@ export default {
     }
 
     &::-webkit-scrollbar-track {
-      background-color: lighten($background, 3%);
+      background-color: #092732;
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: $inno-yellow;
-      border-radius: $border-radius/2;
+      background-color: #8d9ca1;
+      border-radius: $border-radius;
     }
 
     @include phablet {
@@ -399,7 +399,7 @@ export default {
 
     .news-items {
       padding: $gutter;
-      width: 890px;
+      width: 840px;
       margin: 0 20px;
 
       @media (max-width: 1400px) {
