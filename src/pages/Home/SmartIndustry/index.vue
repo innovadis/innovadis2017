@@ -32,16 +32,17 @@
       img(src='/static/images/logos/customers/pentair.svg')
       img(src='/static/images/logos/customers/vredestein.png')
 
-  .container.pt
-    send-box-with-slot.margin-top(flip, subject='Reactie op Smart Health pagina')
-      h2.dot Neem contact met ons op
-      p Nieuwsgierig geworden naar de mogelijkheden voor uw bedrijf?
-
   simple-feed(
     title='Gerelateerd in de industrie',
     feedGetter='contentTagSmartIndustry',
     dark
     )
+
+  .container.pt
+    send-box-with-slot.margin-top(flip, subject='Reactie op Smart Health pagina')
+      h2.dot Neem contact met ons op
+      p Nieuwsgierig geworden naar de mogelijkheden voor uw bedrijf?
+
 </template>
 
 <script>
