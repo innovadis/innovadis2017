@@ -56,6 +56,8 @@
 
   .container.pt
     send-box-with-slot.margin-top(flip, subject='Reactie op PIM pagina')
+      div
+        img(src='/static/cases/pim/alex.jpg')
       h2.dot Bel of mail Alexander
       p Bel mij op #[a(href='tel:+31649879390') 06 498 793 90] of laat hiernaast een bericht achter en ik bel je terug!
 
