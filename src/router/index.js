@@ -91,6 +91,11 @@ const router = new Router({
           component: require('src/pages/Home/PrivacyStatement')
         },
         {
+          path: '/pim',
+          name: 'pim',
+          component: require('src/pages/Home/PIM')
+        },
+        {
           path: '404',
           component: require('src/pages/Home/NotFound'),
           meta: {
