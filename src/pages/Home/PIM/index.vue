@@ -108,8 +108,10 @@ export default {
 
 .page-pim {
   .intro {
-    font-size: initial;
-    line-height: 24px;
+    @include phone {
+      font-size: initial;
+      line-height: 24px;
+    }
   }
 }
 </style>
