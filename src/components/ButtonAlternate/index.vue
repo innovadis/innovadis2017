@@ -34,7 +34,7 @@ export default {
 
 .button {
   cursor: pointer;
-  color: white;
+  color: $inno-yellow;
   padding: 15px 0;
   display: flex;
   align-items: center;

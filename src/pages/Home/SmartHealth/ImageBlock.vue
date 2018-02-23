@@ -1,5 +1,5 @@
 <template lang="pug">
-.image-block(:style='{ background: "url(" + imageUrl + ")" }')
+.image-block(:style='{ background: "url(" + imageUrl + ")" }', :class='{ shadow: shadow }')
   .container
     .text
       p {{ text }}
@@ -9,13 +9,17 @@
 export default {
   props: {
     text: String,
-    imageUrl: String
+    imageUrl: String,
+    shadow: {
+      type: Boolean,
+      default: true
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .image-block {
   height: 750px;
@@ -25,14 +29,16 @@ export default {
   background-size: cover !important;
   position: relative;
 
-  &:before {
-    content: '';
-    height: 300px;
-    width: 100%;
-    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  &.shadow {
+    &:before {
+      content: "";
+      height: 300px;
+      width: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
   }
 
   .text {

@@ -6,10 +6,15 @@
   transition(name='fade', mode='out-in')
     .box(v-if='selectedOption === i', :key='"selectbox" + i', v-for='(item, i) in items')
       p {{ item.text }}
+      button-alternate(v-if='item.to', :to='item.to', :label='item.toLabel')
 </template>
 
 <script>
 export default {
+  components: {
+    ButtonAlternate: require('src/components/ButtonAlternate')
+  },
+
   props: {
     items: Array
   },
@@ -41,6 +46,7 @@ export default {
     margin-left: $gutter;
     display: flex;
     align-items: center;
+    flex-direction: column;
 
     @include phone {
       max-width: initial;

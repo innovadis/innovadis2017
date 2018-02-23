@@ -13,6 +13,7 @@ var sitemap = sm.createSitemap({
     { url: '/partners' },
     { url: '/contact' },
     { url: '/werkenbij' },
+    { url: '/pim' },
     { url: '/cases/socialhof' },
   ]
 })
