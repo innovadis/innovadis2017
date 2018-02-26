@@ -63,7 +63,9 @@ export default {
           label: 'Productinformatie management',
           icon: 'refresh',
           text: 'Met de digitalisering neemt ook de vraag naar goede content toe. Denk bijvoorbeeld aan een productbeschrijving in 6 talen, een hoge resolutieafbeelding voor een folder, een technische handleiding voor een klant, om nog maar te zwijgen over het vullen van een complete webshop of catalogus. Veel bedrijven worstelen met het beheren van die content.',
-          to: '/pim',
+          to: {
+            name: 'pim'
+          },
           toLabel: 'Productinformatie management'
         },
         {
@@ -93,7 +95,9 @@ export default {
       return this.selectBoxItems.map(x => {
         return {
           title: x.label,
-          text: x.text
+          text: x.text,
+          to: x.to,
+          toLabel: x.toLabel
         }
       })
     }

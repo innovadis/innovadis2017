@@ -8,6 +8,7 @@
   .text
     h4 {{ title }}
     p {{ text }}
+    inno-button-alternate(:label='toLabel', :to='to', v-if='to')
 
 </template>
 
@@ -21,7 +22,9 @@ export default {
     title: String,
     text: String,
     imageUrl: String,
-    iconUrl: String
+    iconUrl: String,
+    to: Object,
+    toLabel: String
   }
 }
 </script>
@@ -76,6 +79,9 @@ export default {
     border-bottom-left-radius: $border-radius;
     margin: 0 auto;
     max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @include mini {
       padding: 70px 10px 40px 10px;
