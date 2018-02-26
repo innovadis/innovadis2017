@@ -15,7 +15,9 @@
           :title='c.title',
           :text='c.text',
           :imageUrl='c.imageUrl',
-          :iconUrl='c.iconUrl'
+          :iconUrl='c.iconUrl',
+          :to='c.to',
+          :toLabel='c.toLabel'
           )
 
     .icons.hidden-phone
