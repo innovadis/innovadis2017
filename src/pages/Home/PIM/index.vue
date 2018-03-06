@@ -50,7 +50,7 @@
     p Innovadis helpt fabrikanten met hun multichannel strategie waarbij wij onze marktkennis inzetten en gebruik maken van PIM/DAM, websites, portalen en commerce platforms.
 
     h2.dot.pt Referenties
-    img(src='/static/cases/pim/referenties.jpg', width='100%')
+    img(src='/static/cases/pim/referenties.png', width='100%')
     p Kijk gerust eens op de website van onze partner #[a(href='https://www.syncforce.com/', target='_blank') SyncForce] voor meer informatie!
 
 
