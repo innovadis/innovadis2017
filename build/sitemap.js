@@ -50,5 +50,5 @@ var sitemap = sm.createSitemap({
   }
 }
 
-fs.outputFileSync(path.join(__dirname, '../dist/sitemap.json'), JSON.stringify(sitemap.urls))
-fs.outputFileSync(path.join(__dirname, '../dist/sitemap.xml'), sitemap.toString())
+fs.outputFileSync(path.join(__dirname, '..', 'dist', 'sitemap.json'), JSON.stringify(sitemap.urls))
+fs.outputFileSync(path.join(__dirname, '..', 'dist', 'sitemap.xml'), sitemap.toString())
