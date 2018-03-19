@@ -9,7 +9,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
-const sitemap = require(path.join(__dirname, '..', 'dist', 'sitemap.json')
+const sitemap = require(path.join(__dirname, '..', 'dist', 'sitemap.json'))
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 var env = config.build.env
