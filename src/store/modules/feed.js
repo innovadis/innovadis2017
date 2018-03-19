@@ -66,11 +66,12 @@ const actions = {
       instagramObject = require('src/assets/instagram.json')
     }
 
-    const instagram = instagramObject.user.media.nodes.map(x => {
-      return Object.assign(x, {
+    // Instagram API is not actually public... it works but may change without notice
+    const instagram = instagramObject.graphql.user.edge_owner_to_timeline_media.edges.map(x => {
+      return Object.assign(x.node, {
         feedType: 'instagram',
-        feedCreated: new Date(x.date * 1000),
-        feedId: x.id
+        feedCreated: new Date(x.node.taken_at_timestamp * 1000),
+        feedId: x.node.id
       })
     })
 
