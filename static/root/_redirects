@@ -161,6 +161,9 @@ https://innovadis.biz/* https://www.innovadis.com/:splat 301!
 /themas/health-care	/smart-health 301
 /themas/business-care	/smart-industry 301
 
+# 404 catchall, it will work for all routes except index.html because that file exists (see Netlify docs)
+/*    /404.html     404
+
 # Root catchall needed because this is SPA, must be last
 /*    /index.html   200
 
