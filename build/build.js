@@ -18,6 +18,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
 
   fs.copySync(path.join(__dirname, '..', 'static/root/_redirects'), path.join(__dirname, '..', 'dist/_redirects'))
+  fs.copySync(path.join(__dirname, '..', 'static/root/404.html'), path.join(__dirname, '..', 'dist/404.html'))
 
   require('./sitemap')
 
