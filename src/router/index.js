@@ -96,6 +96,11 @@ const router = new Router({
           component: require('src/pages/Home/PIM')
         },
         {
+          path: '/404',
+          name: '404',
+          component: require('src/pages/NotFound')
+        },
+        {
           path: '*', // must be last
           beforeEnter: () => {
             window.location = '404'

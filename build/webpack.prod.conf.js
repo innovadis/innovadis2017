@@ -8,6 +8,9 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const sitemap = require('../dist/sitemap.json')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 var env = config.build.env
 
@@ -90,7 +93,15 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    new PrerenderSPAPlugin({
+      // Required - The path to the webpack-outputted app to prerender.
+      staticDir: path.join(__dirname, '..', 'dist'),
+      indexPath: path.join(__dirname, '..', 'dist', 'index.html'),
+      // Required - Routes to render.
+      routes: sitemap.map(x => x.url).push('/404')
+    })
   ]
 })
 
