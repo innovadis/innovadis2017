@@ -19,8 +19,6 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
 
   fs.copySync(path.join(__dirname, '..', 'static/root/_redirects'), path.join(__dirname, '..', 'dist/_redirects'))
 
-  require('./sitemap')
-
   webpack(webpackConfig, function (err, stats) {
     spinner.stop()
     if (err) throw err
