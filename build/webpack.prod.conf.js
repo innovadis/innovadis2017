@@ -17,6 +17,9 @@ const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 var env = config.build.env
 
+const prerenderRoutes = sitemap.map(x => x.url)
+prerenderRoutes.push('/404')
+
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -103,7 +106,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       staticDir: path.join(__dirname, '..', 'dist'),
       indexPath: path.join(__dirname, '..', 'dist', 'index.html'),
       // Required - Routes to render.
-      routes: sitemap.map(x => x.url).push('/404')
+      routes: prerenderRoutes
     })
   ]
 })
