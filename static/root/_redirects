@@ -163,8 +163,3 @@ https://innovadis.biz/* https://www.innovadis.com/:splat 301!
 
 # Root catchall needed because this is SPA, must be last
 /*    /index.html   200
-
-# 404 catchall, it will work for all routes except index.html because that file exists (see Netlify docs)
-/*    /404.html     404
-
-

@@ -104,10 +104,13 @@ const router = new Router({
         },
         {
           path: '*', // must be last
-          component: require('src/pages/Home/NotFound'),
-          meta: {
-            hideFooter: true
+          beforeEnter: () => {
+            window.location = '404.html'
           }
+          // component: require('src/pages/Home/NotFound'),
+          // meta: {
+          //   hideFooter: true
+          // }
         }
       ]
     }
