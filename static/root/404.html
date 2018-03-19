@@ -35,6 +35,21 @@
   </script>
   <style>
     // Note: converted from  NotFound.vue, layout.scss, variables.scss and fonts.scss.
+    header {}
+
+    header img {
+      margin: 40px 40px 40px 0;
+    }
+
+    header .container {
+      height: 100px;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+    }
+
     .text-center {
       text-align: center;
     }
@@ -2164,7 +2179,14 @@
   </script>
 </head>
 
-<body>
+<body style="margin: 0">
+  <header>
+    <div class="container">
+      <a href="/">
+        <img src="https://www.innovadis.com/static/images/svg/logo.svg">
+      </a>
+    </div>
+  </header>
   <div id="app" class="game2048 flex flex-justify-center flex-column-pablet">
     <div class="flex flex-column flex-align-center">
       <div class="heading text-center">
