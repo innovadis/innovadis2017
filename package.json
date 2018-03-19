@@ -72,7 +72,7 @@
     "vue-touch": "^2.0.0-beta.4",
     "vue-youtube-embed": "^2.1.2",
     "vue2-google-maps": "^0.8.3",
-    "vueinview": "github:rachmanzz/vue-inview",
+    "vueinview": "github:rachmanzz/vue-inview#9f264046bfa526bb3580e090ba6fc976e874539b",
     "vuelidate": "^0.6.0",
     "vuex": "^2.4.1",
     "webpack": "^2.6.1",

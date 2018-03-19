@@ -98,7 +98,7 @@ const router = new Router({
         {
           path: '/404',
           name: '404',
-          component: require('src/pages/NotFound')
+          component: require('src/pages/Home/NotFound')
         },
         {
           path: '*', // must be last
