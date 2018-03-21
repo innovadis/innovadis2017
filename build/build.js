@@ -17,7 +17,9 @@ spinner.start()
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
 
+  // TODO copy folder contents instead of manually
   fs.copySync(path.join(__dirname, '..', 'static/root/_redirects'), path.join(__dirname, '..', 'dist/_redirects'))
+  fs.copySync(path.join(__dirname, '..', 'static/root/robots.txt'), path.join(__dirname, '..', 'dist/robots.txt'))
 
   require('./sitemap')
 
