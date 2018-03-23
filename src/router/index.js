@@ -96,17 +96,14 @@ const router = new Router({
           component: require('src/pages/Home/PIM')
         },
         {
-          path: '404',
-          component: require('src/pages/Home/NotFound'),
-          meta: {
-            hideFooter: true
-          }
+          path: '/404',
+          name: '404',
+          component: require('src/pages/Home/NotFound')
         },
         {
           path: '*', // must be last
-          component: require('src/pages/Home/NotFound'),
-          meta: {
-            hideFooter: true
+          beforeEnter: () => {
+            window.location = '404'
           }
         }
       ]

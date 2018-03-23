@@ -8,8 +8,18 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+
+require('./sitemap')
+
+const sitemap = require(path.join(__dirname, '..', 'dist', 'sitemap.json'))
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 var env = config.build.env
+
+// const prerenderRoutes = sitemap.map(x => x.url)
+const prerenderRoutes = [] // Only 404 for now, since prerendering crashes the docker image on netlify
+prerenderRoutes.push('/404')
 
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -90,7 +100,20 @@ var webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+
+    new PrerenderSPAPlugin({
+      // Required - The path to the webpack-outputted app to prerender.
+      staticDir: path.join(__dirname, '..', 'dist'),
+      indexPath: path.join(__dirname, '..', 'dist', 'index.html'),
+      // Required - Routes to render.
+      routes: prerenderRoutes,
+
+      // renderer: new Renderer({
+      //   executablePath: '/opt/buildhome/chromium-latest-linux/latest/chrome2',
+      //   args: ['--disable-dev-shm-usage']
+      // })
+    })
   ]
 })
 
