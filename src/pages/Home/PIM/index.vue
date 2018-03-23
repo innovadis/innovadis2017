@@ -20,11 +20,15 @@
     p Iedere fabrikant heeft ermee te maken; datapools. Een van de grootste uitdagingen voor fabrikanten is het voorzien van klanten van de juiste productinformatie via datapools. Datakwaliteit is complex door snel veranderende assortimenten en toenemende informatie eisen. De PIM oplossing van SyncForce heeft een standaard connector voor veel datapools.
     p Zo koppelen wij binnen de bouw en constructie branche bijvoorbeeld met #[a(href='http://ez-base.nl/nl/syncforce/', target='_blank') EZ-base], #[a(href='https://www.2ba.nl/wat-biedt-2ba/voor-de-fabrikant/software-partners', target='_blank') 2BA], #[a(href='https://www.gs1.nl/syncforce', target='_blank') GS1] en #[a(href='https://www.ib.nl/', target='_blank') IB]. Dankzij de standaard integratie werkt alles volledig geautomatiseerd en is handwerk verleden tijd. Hierdoor beschikken klanten altijd over de volledige en actuele product-, prijs- en logistieke informatie. Zo kunnen producten snel en gelijktijdig in alle verkoopkanalen op de markt gebracht worden met volledige en eenduidige productinformatie.
 
-    .flex.flex-wrap
-      img(src='/static/cases/pim/datapools/2ba.jpg')
-      img(src='/static/cases/pim/datapools/ezbase.jpg')
-      img(src='/static/cases/pim/datapools/gs1.jpg')
-      img(src='/static/cases/pim/datapools/ib.jpg')
+    .flex.flex-wrap.images
+      a(href='https://www.2ba.nl/wat-biedt-2ba/voor-de-fabrikant/software-partners', target='_blank')
+        img(src='/static/cases/pim/datapools/2ba.jpg')
+      a(href='http://ez-base.nl/nl/syncforce/', target='_blank')
+        img(src='/static/cases/pim/datapools/ezbase.jpg')
+      a(href='https://www.gs1.nl/syncforce', target='_blank')
+        img(src='/static/cases/pim/datapools/gs1.jpg')
+      a(href='https://www.ib.nl/', target='_blank')
+        img(src='/static/cases/pim/datapools/ib.jpg')
 
     h2.dot.pt Print (Automatische document publicatie)
     p Vanuit SyncForce is het mogelijk om volledig geautomatiseerd meertalige documenten te publiceren. Denk hierbij aan meertalige catalogi, commerciële- en technische productdocumentatie en prijslijsten. Dit zonder gedoe met sjablonen maar volledig geautomatiseerd. Als er productinformatie wordt gewijzigd, of er wordt een nieuw product toegevoegd, wordt de documentatie automatisch voorzien van de juiste informatie.
@@ -35,15 +39,23 @@
     h2.dot.pt E-tail/ Retail en groothandel
     p Bijna alle fabrikanten leveren hun producten aan de groothandel die professionele online verkoopkanalen inzetten om de eindklant te bedienen. Ook de traditionele retailer werkt tegenwoordig met een professioneel commerce platform, al dan niet gekoppeld aan een PIM systeem om het platform  te voorzien van product portfolio content. En als laatste is er de opkomst van de e-tailer die enkel online verkoopkanalen inzet. Denk hierbij aan bol.com, Amazon en e-Bay. Wat al deze bedrijven allemaal nodig hebben is goede productinformatie, hoe meer hoe beter. Dit allemaal om de eindgebruiker optimaal te bedienen met juiste en volledige productinformatie. Voorbeelden van kanalen met een grote vraag naar productinformatie zijn:
 
-    .flex.flex-wrap
-      img(src='/static/cases/pim/logos/amazon.jpg')
-      img(src='/static/cases/pim/logos/bol.com.jpg')
-      img(src='/static/cases/pim/logos/destil.jpg')
-      img(src='/static/cases/pim/logos/ebay.jpg')
-      img(src='/static/cases/pim/logos/google.jpg')
-      img(src='/static/cases/pim/logos/oosterberg.jpg')
-      img(src='/static/cases/pim/logos/rexel.jpg')
-      img(src='/static/cases/pim/logos/technische-unie.jpg')
+    .flex.flex-wrap.images
+      a(href='https://www.amazon.com', target='_blank')
+        img(src='/static/cases/pim/logos/amazon.jpg')
+      a(href='https://www.bol.com/nl/', target='_blank')
+        img(src='/static/cases/pim/logos/bol.com.jpg')
+      a(href='https://www.destil.nl', target='_blank')
+        img(src='/static/cases/pim/logos/destil.jpg')
+      a(href='https://www.ebay.nl', target='_blank')
+        img(src='/static/cases/pim/logos/ebay.jpg')
+      a(href='https://www.google.nl', target='_blank')
+        img(src='/static/cases/pim/logos/google.jpg')
+      a(href='https://www.oosterberg.nl', target='_blank')
+        img(src='/static/cases/pim/logos/oosterberg.jpg')
+      a(href='http://www.rexel.com/en/', target='_blank')
+        img(src='/static/cases/pim/logos/rexel.jpg')
+      a(href='https://www.technischeunie.nl', target='_blank')
+        img(src='/static/cases/pim/logos/technische-unie.jpg')
 
     h2.dot.pt Waarom gebruik maken van deze oplossing?
     p Dankzij de slimme integratie met verschillende systemen bieden wij een oplossing waarbij alle productinformatie wordt opgeslagen en beheerd via één centrale hub. Van hieruit wordt er gecommuniceerd met alle aanwezige systemen en kan er met één klik alle informatie van een nieuw product naar de desbetreffende datapool(s) gestuurd worden. Ook maak je direct een nieuwe brochure en wordt het product toegevoegd op de website, in het commerce platform, aan de productcatalogus en de prijslijst. En dat is nog maar een kleine opsomming van de eindeloze mogelijkheden.
@@ -113,6 +125,12 @@ export default {
     @include phone {
       font-size: initial;
       line-height: 24px;
+    }
+  }
+
+  .images {
+    a {
+      border: none;
     }
   }
 }
