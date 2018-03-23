@@ -50,7 +50,7 @@
     "opn": "^5.1.0",
     "optimize-css-assets-webpack-plugin": "^2.0.0",
     "ora": "^1.2.0",
-    "prerender-spa-plugin": "github:chrisvfritz/prerender-spa-plugin#v3",
+    "prerender-spa-plugin": "^3.0.0",
     "pug": "^2.0.0-rc.3",
     "pug-loader": "^2.3.0",
     "rimraf": "^2.6.2",

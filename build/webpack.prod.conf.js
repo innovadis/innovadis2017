@@ -17,7 +17,8 @@ const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 var env = config.build.env
 
-const prerenderRoutes = sitemap.map(x => x.url)
+// const prerenderRoutes = sitemap.map(x => x.url)
+const prerenderRoutes = [] // Only 404 for now, since prerendering crashes the docker image on netlify
 prerenderRoutes.push('/404')
 
 var webpackConfig = merge(baseWebpackConfig, {
@@ -106,7 +107,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       staticDir: path.join(__dirname, '..', 'dist'),
       indexPath: path.join(__dirname, '..', 'dist', 'index.html'),
       // Required - Routes to render.
-      routes: prerenderRoutes
+      routes: prerenderRoutes,
+
+      // renderer: new Renderer({
+      //   executablePath: '/opt/buildhome/chromium-latest-linux/latest/chrome2',
+      //   args: ['--disable-dev-shm-usage']
+      // })
     })
   ]
 })
