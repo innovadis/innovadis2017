@@ -18,37 +18,37 @@ var sitemap = sm.createSitemap({
   ]
 })
 
-{
-  const items = fs.readJSONSync(path.join(__dirname, '../headless/content/blog.json'))
+// {
+//   const items = fs.readJSONSync(path.join(__dirname, '../headless/content/blog.json'))
 
-  for (const item of items) {
-    sitemap.add({ url: '/blog/' + slug(item.content.nl.title), changefreq: 'weekly' })
-  }
-}
+//   for (const item of items) {
+//     sitemap.add({ url: '/blog/' + slug(item.content.nl.title), changefreq: 'weekly' })
+//   }
+// }
 
-{
-  const items = fs.readJSONSync(path.join(__dirname, '../headless/content/events.json'))
+// {
+//   const items = fs.readJSONSync(path.join(__dirname, '../headless/content/events.json'))
 
-  for (const item of items) {
-    sitemap.add({ url: '/evenement/' + slug(item.content.nl.title), changefreq: 'weekly' })
-  }
-}
+//   for (const item of items) {
+//     sitemap.add({ url: '/evenement/' + slug(item.content.nl.title), changefreq: 'weekly' })
+//   }
+// }
 
-{
-  const items = fs.readJSONSync(path.join(__dirname, '../headless/content/news.json'))
+// {
+//   const items = fs.readJSONSync(path.join(__dirname, '../headless/content/news.json'))
 
-  for (const item of items) {
-    sitemap.add({ url: '/nieuws/' + slug(item.content.nl.title), changefreq: 'weekly' })
-  }
-}
+//   for (const item of items) {
+//     sitemap.add({ url: '/nieuws/' + slug(item.content.nl.title), changefreq: 'weekly' })
+//   }
+// }
 
-{
-  const items = fs.readJSONSync(path.join(__dirname, '../headless/content/jobs.json'))
+// {
+//   const items = fs.readJSONSync(path.join(__dirname, '../headless/content/jobs.json'))
 
-  for (const item of items) {
-    sitemap.add({ url: '/vacature/' + slug(item.content.nl.title), changefreq: 'weekly' })
-  }
-}
+//   for (const item of items) {
+//     sitemap.add({ url: '/vacature/' + slug(item.content.nl.title), changefreq: 'weekly' })
+//   }
+// }
 
 fs.ensureDirSync(path.join(__dirname, '..', 'dist'))
 fs.outputFileSync(path.join(__dirname, '..', 'dist', 'sitemap.json'), JSON.stringify(sitemap.urls))
