@@ -18,4 +18,9 @@ npm run build
 npm run build --report
 ```
 
+## Deployment
+
+This will push the master branch to Heroku which triggers the build process and automatically deploys.
+`npm run deploy`
+
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
