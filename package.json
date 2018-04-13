@@ -10,7 +10,8 @@
     "fetchContent": "node build/headless.js",
     "lint": "eslint --ext .js,.vue src",
     "storybook": "start-storybook -p 8086",
-    "start": "npm run build && npm run server",
+    "heroku-postbuild": "npm run build",
+    "start": "npm run server",
     "server": "node src/server.js",
     "deploy": "git push heroku master"
   },
