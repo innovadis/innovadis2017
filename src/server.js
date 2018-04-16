@@ -5,7 +5,7 @@ const path = require('path')
 const app = express()
 
 app.use(compression())
-app.enable('trust proxy')
+// app.enable('trust proxy')
 
 app.use(express.static(path.join(__dirname, '..', 'dist')))
 

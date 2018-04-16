@@ -44,10 +44,14 @@ store.dispatch('feed/load')
 store.dispatch('jobs/load')
 
 /* eslint-disable no-new */
-new Vue({
+const root = new Vue({
   el: '#app',
   router,
   store,
   template: '<App/>',
   components: { App }
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  root.$mount('#app')
 })
