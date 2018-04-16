@@ -108,10 +108,12 @@ var webpackConfig = merge(baseWebpackConfig, {
       // Required - Routes to render.
       routes: prerenderRoutes,
 
-      // renderer: new Renderer({
+
+      renderer: new Renderer({
+	renderAfterElementExists: '.main'
       //   executablePath: '/opt/buildhome/chromium-latest-linux/latest/chrome2',
       //   args: ['--disable-dev-shm-usage']
-      // })
+      })
     })
   ]
 })
