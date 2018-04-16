@@ -7,7 +7,7 @@ const app = express()
 app.use(compression())
 app.enable('trust proxy')
 
-app.use(express.static(path.join(__dirname, 'dist')))
+app.use(express.static(path.join(__dirname, '..', 'dist')))
 
 const port = process.env.PORT || 3000
 
