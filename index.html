@@ -14,23 +14,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="nl_NL" />
   <script>
-    var ua = window.navigator.userAgent
-
-    var isIe = false
-
-    var msie = ua.indexOf('MSIE ')
-    if (msie > 0) {
-      isIe = true
-    }
-
-    var trident = ua.indexOf('Trident/')
-    if (trident > 0) {
-      isIe = true
-    }
-
-    if (isIe) {
-      window.alert('Helaas is uw browser verouderd en wordt niet meer ondersteund. Wij raden u aan om een nieuwe browser te installeren. Kijk op http://outdatedbrowser.com/nl voor de mogelijkheden.')
-    }
+    var ua = window.navigator.userAgent, isIe = !1, msie = ua.indexOf('MSIE '); msie > 0 && (isIe = !0); var trident = ua.indexOf('Trident/'); trident > 0 && (isIe = !0), isIe && window.alert('Helaas is uw browser verouderd en wordt niet meer ondersteund. Wij raden u aan om een nieuwe browser te installeren. Kijk op http://outdatedbrowser.com/nl voor de mogelijkheden.')
   </script>
 </head>
 
