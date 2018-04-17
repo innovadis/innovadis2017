@@ -81,17 +81,17 @@ const router = new Router({
           component: require('src/pages/Home/Blog')
         },
         {
-          path: '/voorwaarden',
+          path: '/voorwaarden',  // Note: also in build/sitemap.js
           name: 'conditions',
           component: require('src/pages/Home/Conditions')
         },
         {
-          path: '/privacy-statement',
+          path: '/privacy-statement',  // Note: also in build/sitemap.js
           name: 'privacy statement',
           component: require('src/pages/Home/PrivacyStatement')
         },
         {
-          path: '/pim',
+          path: '/pim',  // Note: also in build/sitemap.js
           name: 'pim',
           component: require('src/pages/Home/PIM')
         },
@@ -103,11 +103,9 @@ const router = new Router({
         {
           path: '*', // must be last
           beforeEnter: (to, from, next) => {
-            if (!to.path.includes('404')) {
-              next({
-                name: '404'
-              })
-            }
+            next({
+              name: '404'
+            })
           }
         }
       ]
