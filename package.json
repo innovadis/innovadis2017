@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.vue src",
     "storybook": "start-storybook -p 8086",
     "server": "node src/server.js",
-    "deploy": "npm run build && scp -r dist/ root@innovadis-website:/root/innovadiscorporatesmart/dist/"
+    "deploy": "git checkout production && git pull && npm run build && scp -r dist/ root@innovadis-website:/root/innovadiscorporatesmart/dist/"
   },
   "dependencies": {
     "@storybook/vue": "^3.2.12",

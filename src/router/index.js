@@ -102,8 +102,10 @@ const router = new Router({
         },
         {
           path: '*', // must be last
-          beforeEnter: () => {
-            window.location = '404'
+          beforeEnter: (to, from, next) => {
+            next({
+              name: '404'
+            })
           }
         }
       ]

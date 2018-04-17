@@ -19,14 +19,10 @@ app.get('/proxy/instagram/:splat', async (req, res) => {
   }
 })
 
-app.get('/404', (req, res) => {
-  res.status(404).sendFile(path.resolve(__dirname, '..', 'dist', '404', 'index.html'))
-})
-
 app.use(express.static(path.join(__dirname, '..', 'dist')))
 
 app.get('*', (req, res) => {
-  res.status(200).sendFile(path.resolve(__dirname, '..', 'dist', 'index.html'))
+  res.status(404).sendFile(path.resolve(__dirname, '..', 'dist', '404', 'index.html'))
 })
 
 app.listen(port, () => {

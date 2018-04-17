@@ -15,6 +15,8 @@ var sitemap = sm.createSitemap({
     { url: '/werkenbij' },
     { url: '/pim' },
     { url: '/cases/socialhof' },
+    { url: '/privacy-statement' },
+    { url: '/voorwaarden' }
   ]
 })
 
