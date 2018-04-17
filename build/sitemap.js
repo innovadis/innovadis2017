@@ -4,7 +4,7 @@ const path = require('path')
 const slug = require('slug')
 
 var sitemap = sm.createSitemap({
-  hostname: 'http://www.innovadis.com',
+  hostname: 'https://www.innovadis.com',
   cacheTime: 600000,  //600 sec (10 min) cache purge period
   urls: [
     { url: '/' }, // TODO should generate from router.js really
