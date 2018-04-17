@@ -58,7 +58,7 @@ export default {
     eventItem() {
       if (this.$store.state.feed.events.length === 0) return
 
-      return this.$store.state.feed.events.find(x => Slug(x.title).toLowerCase() === this.$route.params.name.toLowerCase())
+      return this.$store.state.feed.events.find(x => x.slug === this.$route.params.name.toLowerCase())
     },
 
     date() {

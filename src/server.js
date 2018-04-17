@@ -22,6 +22,7 @@ app.get('/proxy/instagram/:splat', async (req, res) => {
 app.use(express.static(path.join(__dirname, '..', 'dist')))
 
 app.get('*', (req, res) => {
+  console.log(req.url)
   res.status(404).sendFile(path.resolve(__dirname, '..', 'dist', '404', 'index.html'))
 })
 

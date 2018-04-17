@@ -38,7 +38,7 @@ export default {
     newsItem() {
       if (this.$store.state.feed.news.length === 0) return
 
-      return this.$store.state.feed.news.find(x => Slug(x.title).toLowerCase() === this.$route.params.name.toLowerCase())
+      return this.$store.state.feed.news.find(x => x.slug === this.$route.params.name.toLowerCase())
     },
 
     heroImage() {

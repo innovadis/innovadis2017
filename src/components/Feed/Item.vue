@@ -88,18 +88,21 @@ export default {
           feedItem.type = 'Blog'
           feedItem.imageUrl = this.item.heroImage // TODO thumbnail?
           feedItem.title = this.item.title
+          feedItem.slug = this.item.slug
           break
 
         case 'news':
           feedItem.type = 'Nieuws'
           feedItem.title = this.item.title
           feedItem.imageUrl = this.item.heroImage || '/static/images/news_item_thumbnail.jpg' // TODO heroImage thumbnail from headless?
+          feedItem.slug = this.item.slug
           break
 
         case 'event':
           feedItem.type = 'Evenement'
           feedItem.imageUrl = this.item.heroImage
           feedItem.title = this.item.title
+          feedItem.slug = this.item.slug
           break
 
         default:
@@ -118,7 +121,7 @@ export default {
         this.$router.push({
           name: this.item.feedType,
           params: {
-            name: Slug(this.item.title)
+            name: Slug(this.item.slug)
           }
         })
       }

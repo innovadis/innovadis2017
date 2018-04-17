@@ -1,5 +1,6 @@
 import axios from 'axios'
 import store from 'src/store'
+import slug from 'slug'
 
 const MARKET_SMART_INDUSTRY = 'smart-industry'
 const MARKET_SMART_HEALTH = 'smart-health'
@@ -22,7 +23,8 @@ const mutations = {
       return Object.assign(x.content.nl, {
         feedType: 'blog',
         feedCreated: new Date(x.content.nl.publish_date),
-        feedId: 'blog' + x.content.nl.title
+        feedId: 'blog' + x.content.nl.title,
+        slug: slug(x.content.nl.title).replace('.', '')
       })
     })
 
@@ -30,7 +32,8 @@ const mutations = {
       return Object.assign(x.content.nl, {
         feedType: 'news',
         feedCreated: new Date(x.content.nl.publish_date),
-        feedId: 'news' + x.content.nl.title
+        feedId: 'news' + x.content.nl.title,
+        slug: slug(x.content.nl.title).replace('.', '')
       })
     })
 
@@ -38,7 +41,8 @@ const mutations = {
       return Object.assign(x.content.nl, {
         feedType: 'event',
         feedCreated: new Date(x.content.nl.publish_date),
-        feedId: 'event' + x.content.nl.title
+        feedId: 'event' + x.content.nl.title,
+        slug: slug(x.content.nl.title).replace('.', '')
       })
     })
 
@@ -128,9 +132,10 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
 
-    const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_HEALTH))
+    // const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_HEALTH))
 
-    const items = [].concat(events, news, blog, instagram)
+    // const items = [].concat(events, news, blog, instagram)
+    const items = [].concat(events, news, blog)
 
     return items
   },
@@ -145,9 +150,10 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
 
-    const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_INDUSTRY))
+    // const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_INDUSTRY))
 
-    const items = [].concat(events, news, blog, instagram)
+    // const items = [].concat(events, news, blog, instagram)
+    const items = [].concat(events, news, blog)
 
     return items
   },
