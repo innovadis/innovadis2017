@@ -7,8 +7,8 @@ var sitemap = sm.createSitemap({
   hostname: 'http://www.innovadis.com',
   cacheTime: 600000,  //600 sec (10 min) cache purge period
   urls: [
-    { url: '/' },
-    { url: '/over' },
+    { url: '/' }, // TODO should generate from router.js really
+    { url: '/over-ons' },
     { url: '/wereld' },
     { url: '/partners' },
     { url: '/contact' },

@@ -28,7 +28,7 @@ const router = new Router({
           component: require('src/pages/Home/SmartIndustry')
         },
         {
-          path: '/wereld',
+          path: '/blog',
           name: 'world',
           component: require('src/pages/Home/World'),
           meta: {
@@ -36,7 +36,7 @@ const router = new Router({
           }
         },
         {
-          path: '/over',
+          path: '/over-ons',
           name: 'about',
           component: require('src/pages/Home/About')
         },
@@ -81,17 +81,17 @@ const router = new Router({
           component: require('src/pages/Home/Blog')
         },
         {
-          path: '/voorwaarden',  // Note: also in build/sitemap.js
+          path: '/voorwaarden',
           name: 'conditions',
           component: require('src/pages/Home/Conditions')
         },
         {
-          path: '/privacy-statement',  // Note: also in build/sitemap.js
+          path: '/privacy-statement',
           name: 'privacy statement',
           component: require('src/pages/Home/PrivacyStatement')
         },
         {
-          path: '/pim',  // Note: also in build/sitemap.js
+          path: '/pim',
           name: 'pim',
           component: require('src/pages/Home/PIM')
         },

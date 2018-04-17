@@ -51,7 +51,7 @@ export default {
         }
       ],
 
-      title: 'Cultuur',
+      title: 'Over ons',
       description: 'Wij worden blij wanneer onze oplossingen mensen daadwerkelijk verder helpen en toegevoegde waarde leveren.'
     }
   },
