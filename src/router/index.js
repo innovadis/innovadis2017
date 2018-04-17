@@ -103,9 +103,11 @@ const router = new Router({
         {
           path: '*', // must be last
           beforeEnter: (to, from, next) => {
-            next({
-              name: '404'
-            })
+            if (!to.path.includes('404')) {
+              next({
+                name: '404'
+              })
+            }
           }
         }
       ]
