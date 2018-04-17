@@ -110,7 +110,7 @@ var webpackConfig = merge(baseWebpackConfig, {
 
 
       renderer: new Renderer({
-	renderAfterElementExists: '.main'
+	      renderAfterElementExists: '.main'
       //   executablePath: '/opt/buildhome/chromium-latest-linux/latest/chrome2',
       //   args: ['--disable-dev-shm-usage']
       })
