@@ -9,7 +9,7 @@ var sitemap = sm.createSitemap({
   urls: [
     { url: '/' }, // TODO should generate from router.js really
     { url: '/over-ons' },
-    { url: '/wereld' },
+    { url: '/blog' },
     { url: '/partners' },
     { url: '/contact' },
     { url: '/werkenbij' },
