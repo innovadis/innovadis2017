@@ -5,7 +5,7 @@ const MARKET_SMART_INDUSTRY = 'smart-industry'
 const MARKET_SMART_HEALTH = 'smart-health'
 const HASHTAG_REGEX = new RegExp(/(#[a-z0-9][a-z0-9\-_]*)/ig)
 
-function timeout(ms) {
+function timeout (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
@@ -17,7 +17,7 @@ const state = {
 }
 
 const mutations = {
-  load(state) {
+  load (state) {
     const blog = require('src/../headless/content/blog.json').map(x => {
       return Object.assign(x.content.nl, {
         feedType: 'blog',
@@ -47,40 +47,46 @@ const mutations = {
     state.events = events
   },
 
-  setInstagram(state, instagram) {
+  setInstagram (state, instagram) {
     state.instagram = instagram
   }
 }
 
 const actions = {
-  async load(context) {
-    let instagramObject
+  async load (context) {
+    let instagramObject = null
 
     if (process.env.NODE_ENV === 'production') {
-      const instagramRes = await axios.get('https://innovadis2018.netlify.com/proxy/instagram/innovadis/?__a=1')
+      try {
+        const instagramRes = await axios.get('/proxy/instagram/innovadis/?__a=1')
 
-      instagramObject = instagramRes.data
+        instagramObject = instagramRes.data
+      } catch (error) {
+        // nothing
+      }
     } else {
       await timeout(500)
 
       instagramObject = require('src/assets/instagram.json')
     }
 
-    // Instagram API is not actually public... it works but may change without notice
-    const instagram = instagramObject.graphql.user.edge_owner_to_timeline_media.edges.map(x => {
-      return Object.assign(x.node, {
-        feedType: 'instagram',
-        feedCreated: new Date(x.node.taken_at_timestamp * 1000),
-        feedId: x.node.id
+    if (instagramObject) {
+      // Instagram API is not actually public... it works but may change without notice
+      const instagram = instagramObject.graphql.user.edge_owner_to_timeline_media.edges.map(x => {
+        return Object.assign(x.node, {
+          feedType: 'instagram',
+          feedCreated: new Date(x.node.taken_at_timestamp * 1000),
+          feedId: x.node.id
+        })
       })
-    })
 
-    context.commit('setInstagram', instagram)
+      context.commit('setInstagram', instagram)
+    }
   }
 }
 
 const getters = {
-  contentAll(state) {
+  contentAll (state) {
     const all = [].concat(state.instagram, state.news, state.events, state.blog)
 
     all.sort((a, b) => b.feedCreated.toISOString().localeCompare(a.feedCreated.toISOString()))
@@ -88,7 +94,7 @@ const getters = {
     return all
   },
 
-  contentNone() {
+  contentNone () {
     return []
   },
 
@@ -97,7 +103,7 @@ const getters = {
    * - If event available, show it as first (there should never be 2 events at the same time, events are rare...)
    * - Fill with latest items, no relevancy needed
    */
-  contentFrontpage(state) {
+  contentFrontpage (state) {
     const all = store.getters['feed/contentAll']
 
     // take first event, if any, and make it the first element
@@ -117,7 +123,7 @@ const getters = {
    * - show only blog with type 'smart-health'
    * - show only news/events/instagram with tag 'smart-health'
    */
-  contentMarketSmartHealth(state) {
+  contentMarketSmartHealth (state) {
     const events = state.events.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
@@ -134,7 +140,7 @@ const getters = {
  * - show only blog with type 'smart-industry'
  * - show only news/events/instagram with tag 'smart-industry'
  */
-  contentMarketSmartIndustry(state) {
+  contentMarketSmartIndustry (state) {
     const events = state.events.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
@@ -146,23 +152,23 @@ const getters = {
     return items
   },
 
-  contentBlog(state) {
+  contentBlog (state) {
     return state.blog
   },
 
-  contentNews(state) {
+  contentNews (state) {
     return state.news
   },
 
-  contentEvents(state) {
+  contentEvents (state) {
     return state.events
   },
 
-  contentInstagram(state) {
+  contentInstagram (state) {
     return state.instagram
   },
 
-  contentTagSmartHealth(state) {
+  contentTagSmartHealth (state) {
     const events = state.events.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
@@ -172,7 +178,7 @@ const getters = {
     return items
   },
 
-  contentTagSmartIndustry(state) {
+  contentTagSmartIndustry (state) {
     const events = state.events.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
@@ -182,7 +188,7 @@ const getters = {
     return items
   },
 
-  contentTags(state) {
+  contentTags (state) {
     const allItems = store.getters['feed/contentAll']
 
     const itemsWithTags = (tags, filterTitle) => {
@@ -204,7 +210,7 @@ const getters = {
     return itemsWithTags
   },
 
-  tags(state) {
+  tags (state) {
     let tags = [].concat(
       state.events.reduce((acc, val) => { return acc.concat(val.tags) }, []),
       state.blog.reduce((acc, val) => { return acc.concat(val.tags) }, []),

@@ -20,7 +20,11 @@ npm run build --report
 
 ## Deployment
 
-This will push the master branch to Heroku which triggers the build process and automatically deploys.
+Because of SEO, prerendering is required. Sadly the Netlify docker image does not have enough memory to prerender our site, so we cannot do that there.
+So this site is now running on a DigitalOcean VPS with Caddy as reverse proxy and Express.js as web server.
+
+Temporary deployment (permanent deployment not yet finished):
+
 `npm run deploy`
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
