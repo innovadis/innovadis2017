@@ -13,6 +13,8 @@ var sitemap = sm.createSitemap({
     { url: '/partners' },
     { url: '/contact' },
     { url: '/werkenbij' },
+    { url: '/smart-health' },
+    { url: '/smart-industry' },
     { url: '/pim' },
     { url: '/cases/socialhof' },
     { url: '/privacy-statement' },
