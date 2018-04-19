@@ -110,7 +110,10 @@ var webpackConfig = merge(baseWebpackConfig, {
 
 
       renderer: new Renderer({
-	      renderAfterElementExists: '.main'
+        renderAfterElementExists: '.main',
+        skipThirdPartyRequests: true, // dont make analytics etc requests during prerender
+        maxConcurrentRoutes: 1 // otherwise Puppeteer/Chrome hangs on VPS (cause unknown)
+        // dumpio: true
       //   executablePath: '/opt/buildhome/chromium-latest-linux/latest/chrome2',
       //   args: ['--disable-dev-shm-usage']
       })
