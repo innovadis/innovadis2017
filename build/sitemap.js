@@ -7,7 +7,7 @@ var sitemap = sm.createSitemap({
   hostname: 'https://www.innovadis.com',
   cacheTime: 600000,  //600 sec (10 min) cache purge period
   urls: [
-    { url: '/' }, // TODO should generate from router.js really
+    { url: '/' }, // TODO should generate from router.js really but problematic since router imports all Vue files that node doesnt understand
     { url: '/over-ons' },
     { url: '/blog' },
     { url: '/partners' },

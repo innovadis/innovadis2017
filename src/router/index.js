@@ -5,6 +5,9 @@ import SmoothScroll from 'smooth-scroll'
 
 Vue.use(Router)
 
+// Note: make sure to add static paths to sitemap.js so they are in the sitemap and will get prerendered (prerenderer uses sitemap).
+// Dynamic paths should also be added in sitemap.js but as custom code.
+
 const router = new Router({
   mode: 'history',
   routes: [
