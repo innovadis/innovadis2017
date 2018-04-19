@@ -1,0 +1,168 @@
+innovadis.com, www.innovadis.com {
+	redir 301 {
+		if {host} starts_with innovadis.com
+		/ https://www.innovadis.com{uri}
+	}
+
+	proxy / localhost:3000
+	
+	redir 301 {
+                # Algemeen		
+                /themas	/
+                /afas_webshop	/
+                /exact_webshop	/
+                /nav_webshop	/
+                /umbraco_cms	/
+                /ax_webshop	/
+                /DigiD_klantportaal	/
+                /dynamicweb_e-commerce	/
+                /b2b_webshop	/
+                /ridder-koppeling-webshop	/
+                /stage-afstudeer-opdracht-product-marketing	/
+                /cases	/
+                /cases/apollo-vredestein	/
+                /cases/edmac-europe	/
+                /cases/cook-co	/
+                /cases/leen-bakker	/
+                /cases/lifehammer	/
+                /cases/asito	/
+                /cases/ardanta-doodgaanendoorgaan	/
+                /cases/suurmond	/
+                /cases/nordic-timber-export	/
+                /cases/twentsewelle	/
+                /cases/fromm	/
+                /cases/tuinmeubelen-nl	/
+                /cases/magville	/
+                /cases/vakantiexperts	/
+                /cases/stadsbank-oost-nederland	/
+                /cases/gkb-assen	/
+                /cases/gemeente-groningen	/
+                /cases/volkskredietbank	/
+                /cases/gemeente-leiden	/
+                /cases/gemeente-spijkenisse	/
+                /cases/gemeente-zwolle	/
+                /cases/gemeente-apeldoorn	/
+                /cases/gemeente-zaanstad	/
+                /cases/gemeente-rotterdam	/
+                /cases/wolky-1	/
+                /cases/den-bosch	/
+                /start	/
+                /diensten/internet-of-things-/-smart-industry?Pagina=1&Subpagina=4	/
+                /Default.aspx?ID=116	/
+                /innovadis_groep	/
+                /Default.aspx?ID=97&M=News&NewsID=471	/
+                /aanpak	/
+                    
+                /Standard/Klanten/Succesverhalen/CookandCo.aspx	/
+                /diensten/e-commerce/b2c-e-commerce	/
+                /diensten/e-commerce/b2b-e-commerce	/
+                /diensten/grafisch-en-interaction-design	/
+                /uitnodiging/	/
+                /diensten/schuldhulpverlening	/
+                    
+                # Contact		
+                /Standard/Contact/support.aspx	/contact/
+                /Standard/Klanten/Succesverhalen/Nordic-Timber-Export.aspx	/contact/
+                /Standard/Contact/Adres-en-route.aspx?Purge=True	/contact/
+                /Standard/Contact/Werken-bij-Innovadis.aspx?PID=3997&M=NewsV2&Action=1&NewsId=453	/contact/
+                /Standard/Contact/Werken-bij-Innovadis.aspx?PID=3974&M=NewsV2&Action=1&NewsId=360	/contact/
+                /Standard/Contact.aspx	/contact/
+                /support	/contact/
+                /contact-1	/contact/
+                /contact/route	/contact/
+                    
+                # Over-ons		
+                /over	/over-ons/
+                /Standard/Klanten/Succesverhalen/Edmac-Europe.aspx	/over-ons/
+                /Standard/Diensten---Producten/Procesoptimalisatie.aspx	/over-ons/
+                /Standard/Klanten/Succesverhalen/Asito-corporate-website.aspx	/over-ons/
+                /Standard/Over-Innovadis/Corporate-beschrijving/Virtuele-tour.aspx	/over-ons/
+                /Standard/Diensten---Producten/Web-ontwikkeling/Intranet.aspx	/over-ons/
+                /over-ons/nieuws/hoera-15-jaar-in-dienst?PID=31&Action=1	/over-ons/
+                /Standard/Over-Innovadis/Nieuws.aspx?PID=9&M=NewsV2&Action=1&NewsId=514	/over-ons/
+                /over-ons/nieuws/facebook-domineert-social-e-commerce?PID=31&Action=1&currentPage=8	/over-ons/
+                /over-ons/nieuws/innovadis-wordt-implementation-partner-syncforce-pim-1?PID=31&Action=1	/over-ons/
+                /over-ons/nieuws/extra-drukte-webwinkeliers-tijdens-feestdagen?PID=31&Action=1&currentPage=6	/over-ons/
+                /over-ons/nieuws/innovadis-heeft-tpm-gereed?PID=31&Action=1&currentPage=7	/over-ons/
+                /over-ons/nieuws/nederland-in-top-5-e-commerce-landen?PID=31&Action=1&currentPage=5	/over-ons/
+                /over-ons/nieuws/nederland-in-top-5-e-commerce-landen	/over-ons/
+                /Standard/Succesverhalen/Laser-Company.aspx	/over-ons/
+                /Standard/Klanten/Succesverhalen/Unitron.aspx	/over-ons/
+                /Standard/Over-Innovadis/Corporate-beschrijving.aspx	/over-ons/
+                /Standard/Klanten/Succesverhalen/Tuincentrum-Overvecht.aspx	/over-ons/
+                /Standard/Klanten/Succesverhalen/TwentseWelle.aspx	/over-ons/
+                /over-ons/nieuws/facebook-domineert-social-e-commerce?PID=31&Action=1&currentPage=4	/over-ons/
+                /Standard/Diensten---Producten/ecommerce/webshops/Webshops-B2B.aspx	/over-ons/
+                /Standard/Over-Innovadis/Nieuws.aspx?PID=9&M=NewsV2&Action=1&NewsId=451	/over-ons/
+                /Standard/Klanten/Succesverhalen/Ten-Cate-Houstex-Products.aspx	/over-ons/
+                /over-ons/nieuws/online-handel-stijgt--offline-handel-daalt?PID=31&Action=1&currentPage=7	/over-ons/
+                /over-ons/nieuws/omni-channel-belangrijke-trend-groothandels?PID=31&Action=1	/over-ons/
+                /Standard/Over-Innovadis/Werken-bij-Innovadis.aspx?PID=43&M=NewsV2&Action=1&NewsId=453	/over-ons/
+                /Standard/Klanten/Succesverhalen/Fromm.aspx	/over-ons/
+                /Standard/Over-Innovadis/Werken-bij-Innovadis.aspx?PID=3974&M=NewsV2&Action=1&NewsId=513	/over-ons/
+                /over-ons/nieuws/online-bestedingen-stijgen-naar-twaalf-miljard-euro?PID=31&Action=1&currentPage=3	/over-ons/
+                /Standard/Over-Innovadis/Nieuws.aspx?PID=9&M=NewsV2&Action=1&NewsId=508	/over-ons/
+                /Standard/Over-Innovadis/Nieuws.aspx?PID=9&M=NewsV2&Action=1&NewsId=501	/over-ons/
+                /over-ons/nieuws/online-handel-stijgt--offline-handel-daalt?PID=31&M=NewsV2&Action=1&currentPage=2	/over-ons/
+                /diensten	/over-ons/
+                /over-ons/onze-partners	/over-ons/
+                /over-ons/nieuws	/over-ons/
+                    
+                /Default.aspx?ID=97&M=News&NewsID=459	/over-ons/
+                /diensten/internet-of-things-/-smart-industry?Pagina=1&Subpagina=1&Subsubpagina=2	/over-ons/
+                /media/1063/ict_office_moduleplus2_ontwikkeling_van_programmateur.pdf	/over-ons/
+                    
+                # Werkenbij		
+                /vacatures	/werkenbij/
+                /diensten/e-commerce	/werkenbij/
+                /overig/b2b-website.asp	/werkenbij/
+                /stage-bij-innovadis	/werkenbij/
+                    
+                # Blog		
+                /De-nieuwste-IT-revolutie-augmented-reality	/blog/de-nieuwste-IT-revolutie-augmented-reality/
+                /Innovadis-en-virtual-reality	/blog/innovadis-en-virtual-reality/
+                /Online-gevonden-worden-Jij-bedoelt-wat-ik-begrijp	/blog/online-gevonden-worden-Jij-bedoelt-wat-ik-begrijp/
+                /Shopping-Today-Software-eats-the-world	/blog/shopping-Today-Software-eats-the-world/
+                /Waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen	/blog/waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen/
+                /Wat-zijn-story-points-en-wat-heb-ik-er-aan	/blog/wat-zijn-story-points-en-wat-heb-ik-er-aan/
+                /het-belang-van-de-juiste-content	/blog/	
+                /Files/Billeder/Nieuws/Plattegrond%20webwinkelvakdagen%202014%20Innovadis.pdf	/blog/
+                /Standard/Nieuws.aspx?Action=1&NewsId=446&M=NewsV2&PID=9	/blog/
+                /over-ons/nieuws/webportaal-shv-gemeente-spijkenisse?PID=31&Action=1&currentPage=6	/blog/
+                /over-ons/nieuws/innovadis-lanceert-platform-vredestein?PID=31&Action=1&currentPage=10	/blog/
+                /over-ons/nieuws/innovadis-heeft-tpm-gereed?PID=31&Action=1&currentPage=4	/blog/
+                /Standard/Over-Innovadis/Nieuws.aspx?PID=9&M=NewsV2&Action=1&NewsId=485	/blog/
+                /Standard/Nieuws/Archief.aspx?PID=120&M=NewsV2&Action=1&NewsId=196&currentPage=4	/blog/
+                /Standard/Nieuws/Archief.aspx?PID=120&M=NewsV2&Action=1&NewsId=205&currentPage=3	/blog/
+                /Standard/Nieuws.aspx?Action=1&NewsId=330&PID=9	/blog/
+                /Standard/Nieuws.aspx?PID=9&M=NewsV2&Action=1&NewsId=371	/blog/
+                /Standard/Nieuws/Archief.aspx?PID=120&M=NewsV2&Action=1&NewsId=228&currentPage=14	/blog/
+                /kies_het_juiste_veiligheidsprotocol	/blog/waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen/
+                    
+                # Others		
+                /onze-vacatures	/werkenbij/
+                /algemene-voorwaarden	/voorwaarden/
+                /themas/business-care/vredestein	/smart-industry/
+                /syncforce	/partners
+                /themas/health-care	/smart-health/
+                /themas/business-care	/smart-industry/
+                /themas/social-care/stadsbanken	/smart-health/
+                /themas/self-care/ardanta	/smart-health/
+                /themas/social-care	/smart-health/
+                /themas/self-care	/smart-health/
+                /smart-industry-2017		/smart-industry/                
+                /cookieverklaring	/privacy-statement/
+	}
+}
+
+innovadis.nl {
+        redir https://www.innovadis.com
+}
+
+innovadis.eu {
+        redir https://www.innovadis.com
+}
+
+innovadis.info {
+        redir https://www.innovadis.com
+}
