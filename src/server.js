@@ -12,13 +12,13 @@ app.use(bodyParser.json())
 app.use(compression())
 
 async function redeploy () {
-  await shelljs.exec('git pull && npm run build && forever restart websiteServer', {
+  await shelljs.exec('cd /root/innovadis2017 && git pull && npm run build && forever restart websiteServer', {
     async: true
   })
 }
 
 async function startBuild () {
-  await shelljs.exec('npm run build', {
+  await shelljs.exec('cd /root/innovadis2017 && npm run build', {
     async: true
   })
 }
