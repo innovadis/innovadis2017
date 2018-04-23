@@ -1,6 +1,7 @@
 # Innovadis Landing Page 2017
 
 Innovadis website made in Vue.js
+
 Frontend only, no backend
 
 Formbucket for form sending

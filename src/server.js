@@ -3,10 +3,23 @@ const compression = require('compression')
 const path = require('path')
 const app = express()
 const axios = require('axios')
+const shelljs = require('shelljs')
 
 const port = process.env.PORT || 3000
 
 app.use(compression())
+
+async function redeploy () {
+  await shelljs.exec('git pull && npm run build && forever restart websiteServer', {
+    async: true
+  })
+}
+
+async function startBuild () {
+  await shelljs.exec('npm run build', {
+    async: true
+  })
+}
 
 app.get('/proxy/instagram/:splat', async (req, res) => {
   const proxyUrl = req.url.replace('/proxy/instagram', '')
@@ -19,10 +32,29 @@ app.get('/proxy/instagram/:splat', async (req, res) => {
   }
 })
 
+app.post('/webhook/rebuild/9ed8830c2242', async (req, res) => {
+  // for headless webhook
+  // kill running builds (not yet implemented, maybe not needed)
+  // run new build
+  // results in new files in ./dist
+  startBuild() // dont await
+
+  res.sendStatus(200)
+})
+
+app.post('/webhook/redeploy/783494748a15', async (req, res) => {
+  // triggered by github
+  // check if it was push event to production branch
+  // git pull and restart forever process and run build
+  console.log(req.body)
+  // redeploy()
+
+  res.sendStatus(200)
+})
+
 app.use(express.static(path.join(__dirname, '..', 'dist')))
 
 app.get('*', (req, res) => {
-  console.log(req.url)
   res.status(404).sendFile(path.resolve(__dirname, '..', 'dist', '404', 'index.html'))
 })
 
