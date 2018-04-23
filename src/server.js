@@ -4,9 +4,11 @@ const path = require('path')
 const app = express()
 const axios = require('axios')
 const shelljs = require('shelljs')
+const bodyParser = require('body-parser')
 
 const port = process.env.PORT || 3000
 
+app.use(bodyParser.json())
 app.use(compression())
 
 async function redeploy () {
