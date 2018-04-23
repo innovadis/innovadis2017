@@ -39,7 +39,6 @@ app.post('/webhook/rebuild/9ed8830c2242', async (req, res) => {
   // kill running builds (not yet implemented, maybe not needed)
   // run new build
   // results in new files in ./dist
-
   startBuild() // dont await
 
   res.sendStatus(200)
