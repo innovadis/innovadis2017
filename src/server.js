@@ -46,7 +46,7 @@ app.post('/webhook/redeploy/783494748a15', async (req, res) => {
   // triggered by github
   // check if it was push event to production branch
   // git pull and restart forever process and run build
-  console.log(req.body)
+  console.log(req)
   // redeploy()
 
   res.sendStatus(200)
