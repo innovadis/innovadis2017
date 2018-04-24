@@ -65,7 +65,7 @@ const actions = {
     if (process.env.NODE_ENV === 'production') {
       const res = await axios.get('https://www.innovadis.com/static/instagram.json')
 
-      context.commit('setInstagram', res.body)
+      context.commit('setInstagram', res.data)
     } else {
       setTimeout(() => {
         const instagramObject = require('src/assets/instagram.json')
