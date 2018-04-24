@@ -41,13 +41,14 @@
       deselect-label='',
       selected-label='',
       @input='tagChange',
-      :close-on-select='false'
+      :close-on-select='true'
       )
 
     transition(name='fade')
-      .reset(@click='reset', v-show='canReset')
-        i.icons8-delete
-        a Reset
+      .reset-wrapper.flex.flex-align-center.flex-justify-center(v-show='canReset')
+        .reset(@click='reset')
+          i.icons8-delete
+          a Reset
 
     .buttons.flex.flex-align-center.flex-justify-between
       inno-button.ma-0(label='Reset', nomargin, small, transparent, @click='reset()')
@@ -133,7 +134,7 @@ export default {
       if (this.tagSelected.length > 0) {
         let filteredItems = items.filter(x => (x.tags && x.tags.some(y => this.tagSelected.includes(y))))
 
-        filteredItems = filteredItems.concat(items.filter(x => x.caption && this.tagSelected.some(y => x.caption.includes('#' + y))))
+        filteredItems = filteredItems.concat(items.filter(x => x.caption && x.caption.text && this.tagSelected.some(y => x.caption.text.includes('#' + y))))
 
         return filteredItems
       }
@@ -339,32 +340,38 @@ export default {
       }
     }
 
-    .reset {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 5px;
-      cursor: pointer;
+    .reset-wrapper {
+      position: relative;
 
-      @include phablet {
-        display: none;
-      }
+      .reset {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
 
-      i,
-      a {
-        color: white;
-      }
+        @include phablet {
+          display: none;
+        }
 
-      i {
-        margin-right: 5px;
-        font-size: 24px;
-        margin-top: 2px;
-        transition: transform 0.3s ease-in-out;
-      }
+        i,
+        a {
+          color: white;
+        }
 
-      &:hover {
         i {
-          transform: rotate(180deg);
+          margin-right: 5px;
+          font-size: 24px;
+          margin-top: 2px;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        &:hover {
+          i {
+            transform: rotate(180deg);
+          }
         }
       }
     }
