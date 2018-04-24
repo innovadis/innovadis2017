@@ -7,6 +7,7 @@ const app = express()
 const axios = require('axios')
 const shelljs = require('shelljs')
 const bodyParser = require('body-parser')
+const crypto = require('crypto')
 
 const port = process.env.PORT || 3000
 
@@ -58,6 +59,13 @@ app.post('/webhook/redeploy', async (req, res) => {
   // triggered by github
   // check if it was push event to production branch
   // git pull and restart forever process and run build
+  const githubSignature = req.headers['x-hub-signature']
+
+  const hmac = crypto.createHmac('sha1', WEBHOOK_REDEPLOY_SECRET)
+  const calculatedSignature = 'sha1=' + hmac.update(JSON.stringify(req.body)).digest('hex')
+
+  if (githubSignature !== calculatedSignature) return res.sendStatus(403)
+
   if (req.body.ref === 'refs/heads/production') {
     redeploy()
   }
