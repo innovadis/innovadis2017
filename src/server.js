@@ -42,7 +42,7 @@ app.get('/proxy/instagram/:splat', async (req, res) => {
   }
 })
 
-app.post('/webhook/rebuild/9ed8830c2242', async (req, res) => {
+app.post('/webhook/rebuild', async (req, res) => {
   // for headless webhook
   // kill running builds (not yet implemented, maybe not needed)
   // run new build
@@ -52,7 +52,7 @@ app.post('/webhook/rebuild/9ed8830c2242', async (req, res) => {
   res.sendStatus(200)
 })
 
-app.post('/webhook/redeploy/783494748a15', async (req, res) => {
+app.post('/webhook/redeploy', async (req, res) => {
   // triggered by github
   // check if it was push event to production branch
   // git pull and restart forever process and run build
