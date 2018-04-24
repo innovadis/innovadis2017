@@ -6,10 +6,6 @@ const MARKET_SMART_INDUSTRY = 'smart-industry'
 const MARKET_SMART_HEALTH = 'smart-health'
 const HASHTAG_REGEX = new RegExp(/(#[a-z0-9][a-z0-9\-_]*)/ig)
 
-function timeout (ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
 const state = {
   instagram: [],
   news: [],
@@ -51,34 +47,31 @@ const mutations = {
     state.events = events
   },
 
-  setInstagram (state, instagram) {
-    state.instagram = instagram
+  setInstagram (state, sourceObj) {
+    const enhancedObj = sourceObj.data.map(x => {
+      return Object.assign(x, {
+        feedType: 'instagram',
+        feedCreated: new Date(x.created_time * 1000),
+        feedId: x.id
+      })
+    })
+
+    state.instagram = enhancedObj
   }
 }
 
 const actions = {
   async load (context) {
-    let instagramObject = null
-
     if (process.env.NODE_ENV === 'production') {
       const res = await axios.get('https://www.innovadis.com/static/instagram.json')
 
-      instagramObject = res.body
+      context.commit('setInstagram', res.body)
     } else {
-      instagramObject = require('src/assets/instagram.json')
-    }
+      setTimeout(() => {
+        const instagramObject = require('src/assets/instagram.json')
 
-    if (instagramObject) {
-      // Instagram API is not actually public... it works but may change without notice
-      const instagram = instagramObject.data.map(x => {
-        return Object.assign(x, {
-          feedType: 'instagram',
-          feedCreated: new Date(x.created_time * 1000),
-          feedId: x.id
-        })
-      })
-
-      context.commit('setInstagram', instagram)
+        context.commit('setInstagram', instagramObject)
+      }, 200)
     }
   }
 }
