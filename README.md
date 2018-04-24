@@ -38,3 +38,6 @@ Now you can check the prerendered pages by viewing their source and they should 
 
 
 To deploy simply push or merge to the `production` branch. Github will send a webhook to the VPS which triggers a redeploy.
+
+## Instagram
+Instagram recently closed their public (and unofficial) API so in order to get Instagram posts without requiring the user to login (or expose our secrets) we have to download the Instagram JSON through a script. This is done with `npm run updateInstagram` and should be in a cron job that triggers periodically.
