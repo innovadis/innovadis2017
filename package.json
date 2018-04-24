@@ -6,8 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "npm run fetchContent && node build/dev-server.js",
-    "build": "npm run fetchContent && node build/build.js",
+    "build": "npm run fetchContent && node build/build.js && npm run updateInstagram",
     "fetchContent": "node build/headless.js",
+    "updateInstagram": "node src/instagram.js",
     "lint": "eslint --ext .js,.vue src",
     "storybook": "start-storybook -p 8086",
     "server": "node src/server.js"

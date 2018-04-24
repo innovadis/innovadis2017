@@ -61,7 +61,9 @@ const actions = {
     let instagramObject = null
 
     if (process.env.NODE_ENV === 'production') {
-      instagramObject = require('https://www.innovadis.com/static/instagram.json')
+      const res = await axios.get('https://www.innovadis.com/static/instagram.json')
+
+      instagramObject = res.body
     } else {
       instagramObject = require('src/assets/instagram.json')
     }
