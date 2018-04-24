@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 const express = require('express')
 const compression = require('compression')
 const path = require('path')
@@ -8,6 +6,8 @@ const axios = require('axios')
 const shelljs = require('shelljs')
 const bodyParser = require('body-parser')
 const crypto = require('crypto')
+
+require('dotenv').config({ path: path.join(__dirname, '..', '.env') })
 
 const port = process.env.PORT || 3000
 
@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 app.use(compression())
 
 async function redeploy () {
-  await shelljs.exec('cd /root/innovadis2017 && git pull && npm run build && forever restart websiteServer', {
+  await shelljs.exec('cd /root/innovadis2017 && git pull && npm install && npm run build && forever restart websiteServer', {
     async: true
   })
 }
