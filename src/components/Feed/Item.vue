@@ -73,15 +73,15 @@ export default {
       switch (this.item.feedType) {
         case 'instagram':
           feedItem.type = 'Instagram'
-          feedItem.imageUrl = this.item.display_url
+          feedItem.imageUrl = this.item.images.standard_resolution.url // TODO thumbnail possible here
 
           feedItem.title = ''
-          if (this.item.edge_media_to_caption.edges[0]) {
-            feedItem.title = this.item.edge_media_to_caption.edges[0].node.text || ''
+          if (this.item.caption && this.item.caption.text) {
+            feedItem.title = this.item.caption.text
           }
 
-          feedItem.likes = this.item.edge_liked_by.count
-          feedItem.url = 'https://www.instagram.com/p/' + this.item.shortcode
+          feedItem.likes = this.item.likes.count
+          feedItem.url = this.item.link
           break
 
         case 'blog':

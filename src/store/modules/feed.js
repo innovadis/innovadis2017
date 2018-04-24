@@ -61,26 +61,18 @@ const actions = {
     let instagramObject = null
 
     if (process.env.NODE_ENV === 'production') {
-      try {
-        const instagramRes = await axios.get('/proxy/instagram/innovadis/?__a=1')
-
-        instagramObject = instagramRes.data
-      } catch (error) {
-        // nothing
-      }
+      instagramObject = require('https://www.innovadis.com/static/instagram.json')
     } else {
-      await timeout(500)
-
       instagramObject = require('src/assets/instagram.json')
     }
 
     if (instagramObject) {
       // Instagram API is not actually public... it works but may change without notice
-      const instagram = instagramObject.graphql.user.edge_owner_to_timeline_media.edges.map(x => {
-        return Object.assign(x.node, {
+      const instagram = instagramObject.data.map(x => {
+        return Object.assign(x, {
           feedType: 'instagram',
-          feedCreated: new Date(x.node.taken_at_timestamp * 1000),
-          feedId: x.node.id
+          feedCreated: new Date(x.created_time * 1000),
+          feedId: x.id
         })
       })
 
@@ -132,10 +124,9 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_HEALTH))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_HEALTH)
 
-    // const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_HEALTH))
+    const instagram = state.instagram.filter(x => x.caption.text.toLowerCase().includes('#' + MARKET_SMART_HEALTH))
 
-    // const items = [].concat(events, news, blog, instagram)
-    const items = [].concat(events, news, blog)
+    const items = [].concat(events, news, blog, instagram)
 
     return items
   },
@@ -150,10 +141,9 @@ const getters = {
     const news = state.news.filter(x => x.tags.includes(MARKET_SMART_INDUSTRY))
     const blog = state.blog.filter(x => x.blogType === MARKET_SMART_INDUSTRY)
 
-    // const instagram = state.instagram.filter(x => x.caption.toLowerCase().includes('#' + MARKET_SMART_INDUSTRY))
+    const instagram = state.instagram.filter(x => x.caption.text.toLowerCase().includes('#' + MARKET_SMART_INDUSTRY))
 
-    // const items = [].concat(events, news, blog, instagram)
-    const items = [].concat(events, news, blog)
+    const items = [].concat(events, news, blog, instagram)
 
     return items
   },
@@ -200,7 +190,7 @@ const getters = {
     const itemsWithTags = (tags, filterTitle) => {
       const items = allItems.filter(item => {
         if (item.feedType === 'instagram') {
-          if (item.caption && tags.some(t => item.caption.toLowerCase().includes('#' + t.toLowerCase()))) {
+          if (item.caption.text && tags.some(t => item.caption.text.toLowerCase().includes('#' + t.toLowerCase()))) {
             return item
           }
         } else {
@@ -225,7 +215,7 @@ const getters = {
 
     for (const post of state.instagram) {
       if (post.caption) {
-        const hashtags = post.caption.match(HASHTAG_REGEX)
+        const hashtags = post.caption.text.match(HASHTAG_REGEX)
 
         if (hashtags) {
           for (const tag of hashtags) {
