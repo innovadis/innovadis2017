@@ -48,7 +48,10 @@ app.post('/webhook/rebuild', async (req, res) => {
   // kill running builds (not yet implemented, maybe not needed)
   // run new build
   // results in new files in ./dist
-  if (req.query.secret !== WEBHOOK_REBUILD_SECRET) return res.sendStatus(403)
+  if (req.query.secret !== WEBHOOK_REBUILD_SECRET) {
+    console.log('Invalid rebuild secret found, aborting request')
+    return res.sendStatus(403)
+  }
 
   startBuild() // dont await
 
@@ -64,7 +67,10 @@ app.post('/webhook/redeploy', async (req, res) => {
   const hmac = crypto.createHmac('sha1', WEBHOOK_REDEPLOY_SECRET)
   const calculatedSignature = 'sha1=' + hmac.update(JSON.stringify(req.body)).digest('hex')
 
-  if (githubSignature !== calculatedSignature) return res.sendStatus(403)
+  if (githubSignature !== calculatedSignature) {
+    console.log('Invalid github signature found, aborting request')
+    return res.sendStatus(403)
+  }
 
   if (req.body.ref === 'refs/heads/production') {
     redeploy()
