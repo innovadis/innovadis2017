@@ -29,7 +29,7 @@ So this site is now running on a DigitalOcean VPS with Caddy as reverse proxy an
 
 Before running the server or deploying, make sure to `npm run build`. This compiles the Vue project and prerenders all content.
 
-Create a .env file with WEBHOOK_REBUILD_SECRET and WEBHOOK_REDEPLOY_SECRET (otherwhise anyone can DDoS our server quite easily).
+Copy the .env.example to .env and set the correct values. (otherwhise anyone can DDoS our server quite easily).
 
 Test the Express web server by running (this is exactly what the VPS does too):
 `npm run server`
