@@ -29,10 +29,12 @@ So this site is now running on a DigitalOcean VPS with Caddy as reverse proxy an
 
 Before running the server or deploying, make sure to `npm run build`. This compiles the Vue project and prerenders all content.
 
+Create a .env file with WEBHOOK_REBUILD_SECRET and WEBHOOK_REDEPLOY_SECRET (otherwhise anyone can DDoS our server quite easily).
+
 Test the Express web server by running (this is exactly what the VPS does too):
 `npm run server`
 
-Temporary deployment (permanent deployment not yet finished):
-`npm run deploy`
+Now you can check the prerendered pages by viewing their source and they should contain everything for the best SEO results.
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+To deploy simply push or merge to the `production` branch. Github will send a webhook to the VPS which triggers a redeploy.

@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const compression = require('compression')
 const path = require('path')
@@ -7,6 +9,12 @@ const shelljs = require('shelljs')
 const bodyParser = require('body-parser')
 
 const port = process.env.PORT || 3000
+
+const WEBHOOK_REBUILD_SECRET = process.env.WEBHOOK_REBUILD_SECRET
+const WEBHOOK_REDEPLOY_SECRET = process.env.WEBHOOK_REDEPLOY_SECRET
+
+if (!WEBHOOK_REBUILD_SECRET) throw new Error('Environment variable WEBHOOK_REBUILD_SECRET must be set')
+if (!WEBHOOK_REDEPLOY_SECRET) throw new Error('Environment variable WEBHOOK_REDEPLOY_SECRET must be set')
 
 app.use(bodyParser.json())
 app.use(compression())
