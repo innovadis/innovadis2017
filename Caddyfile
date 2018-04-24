@@ -5,9 +5,9 @@ innovadis.com, www.innovadis.com {
 	}
 
 	proxy / localhost:3000
-	
+
 	redir 301 {
-                # Algemeen		
+                # Algemeen
                 /themas	/
                 /afas_webshop	/
                 /exact_webshop	/
@@ -52,15 +52,15 @@ innovadis.com, www.innovadis.com {
                 /innovadis_groep	/
                 /Default.aspx?ID=97&M=News&NewsID=471	/
                 /aanpak	/
-                    
+
                 /Standard/Klanten/Succesverhalen/CookandCo.aspx	/
                 /diensten/e-commerce/b2c-e-commerce	/
                 /diensten/e-commerce/b2b-e-commerce	/
                 /diensten/grafisch-en-interaction-design	/
                 /uitnodiging/	/
                 /diensten/schuldhulpverlening	/
-                    
-                # Contact		
+
+                # Contact
                 /Standard/Contact/support.aspx	/contact/
                 /Standard/Klanten/Succesverhalen/Nordic-Timber-Export.aspx	/contact/
                 /Standard/Contact/Adres-en-route.aspx?Purge=True	/contact/
@@ -70,8 +70,8 @@ innovadis.com, www.innovadis.com {
                 /support	/contact/
                 /contact-1	/contact/
                 /contact/route	/contact/
-                    
-                # Over-ons		
+
+                # Over-ons
                 /over	/over-ons/
                 /Standard/Klanten/Succesverhalen/Edmac-Europe.aspx	/over-ons/
                 /Standard/Diensten---Producten/Procesoptimalisatie.aspx	/over-ons/
@@ -107,25 +107,25 @@ innovadis.com, www.innovadis.com {
                 /diensten	/over-ons/
                 /over-ons/onze-partners	/over-ons/
                 /over-ons/nieuws	/over-ons/
-                    
+
                 /Default.aspx?ID=97&M=News&NewsID=459	/over-ons/
                 /diensten/internet-of-things-/-smart-industry?Pagina=1&Subpagina=1&Subsubpagina=2	/over-ons/
                 /media/1063/ict_office_moduleplus2_ontwikkeling_van_programmateur.pdf	/over-ons/
-                    
-                # Werkenbij		
+
+                # Werkenbij
                 /vacatures	/werkenbij/
                 /diensten/e-commerce	/werkenbij/
                 /overig/b2b-website.asp	/werkenbij/
                 /stage-bij-innovadis	/werkenbij/
-                    
-                # Blog		
+
+                # Blog
                 /De-nieuwste-IT-revolutie-augmented-reality	/blog/de-nieuwste-IT-revolutie-augmented-reality/
                 /Innovadis-en-virtual-reality	/blog/innovadis-en-virtual-reality/
                 /Online-gevonden-worden-Jij-bedoelt-wat-ik-begrijp	/blog/online-gevonden-worden-Jij-bedoelt-wat-ik-begrijp/
                 /Shopping-Today-Software-eats-the-world	/blog/shopping-Today-Software-eats-the-world/
                 /Waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen	/blog/waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen/
                 /Wat-zijn-story-points-en-wat-heb-ik-er-aan	/blog/wat-zijn-story-points-en-wat-heb-ik-er-aan/
-                /het-belang-van-de-juiste-content	/blog/	
+                /het-belang-van-de-juiste-content	/blog/
                 /Files/Billeder/Nieuws/Plattegrond%20webwinkelvakdagen%202014%20Innovadis.pdf	/blog/
                 /Standard/Nieuws.aspx?Action=1&NewsId=446&M=NewsV2&PID=9	/blog/
                 /over-ons/nieuws/webportaal-shv-gemeente-spijkenisse?PID=31&Action=1&currentPage=6	/blog/
@@ -138,8 +138,8 @@ innovadis.com, www.innovadis.com {
                 /Standard/Nieuws.aspx?PID=9&M=NewsV2&Action=1&NewsId=371	/blog/
                 /Standard/Nieuws/Archief.aspx?PID=120&M=NewsV2&Action=1&NewsId=228&currentPage=14	/blog/
                 /kies_het_juiste_veiligheidsprotocol	/blog/waarom-een-veiligheidscertificaat-en-welke-moet-ik-kiezen/
-                    
-                # Others		
+
+                # Others
                 /onze-vacatures	/werkenbij/
                 /algemene-voorwaarden	/voorwaarden/
                 /themas/business-care/vredestein	/smart-industry/
@@ -150,19 +150,19 @@ innovadis.com, www.innovadis.com {
                 /themas/self-care/ardanta	/smart-health/
                 /themas/social-care	/smart-health/
                 /themas/self-care	/smart-health/
-                /smart-industry-2017		/smart-industry/                
+                /smart-industry-2017		/smart-industry/
                 /cookieverklaring	/privacy-statement/
 	}
 }
 
-innovadis.nl {
+www.innovadis.nl, innovadis.nl {
         redir https://www.innovadis.com
 }
 
-innovadis.eu {
+www.innovadis.eu, innovadis.eu {
         redir https://www.innovadis.com
 }
 
-innovadis.info {
+www.innovadis.info, innovadis.info {
         redir https://www.innovadis.com
 }
