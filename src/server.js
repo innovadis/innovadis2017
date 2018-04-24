@@ -47,6 +47,8 @@ app.post('/webhook/rebuild', async (req, res) => {
   // kill running builds (not yet implemented, maybe not needed)
   // run new build
   // results in new files in ./dist
+  if (req.query.secret !== WEBHOOK_REBUILD_SECRET) return res.sendStatus(403)
+
   startBuild() // dont await
 
   res.sendStatus(200)
