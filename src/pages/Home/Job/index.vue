@@ -54,7 +54,14 @@ export default {
 
     const job = this.$store.state.jobs.all.find(x => Slug(x.content.nl.title).toLowerCase() === this.$route.params.slug.toLowerCase())
 
-    if (job) {
+    if (!job) {
+      // Note: this is the preferred way but it causes the target router-view to be empty for unknown reason. So workaround with window.location
+      // this.$router.push({
+      //   name: 'jobs'
+      // })
+
+      // window.location = '/werkenbij'
+    } else {
       this.job = job.content.nl
     }
   },

@@ -19,7 +19,7 @@ export default {
 
   computed: {
     slug() {
-      return Slug(this.job.title)
+      return Slug(this.job.title).replace('.', '')
     }
   }
 }
