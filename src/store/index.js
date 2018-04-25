@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 
 import message from './modules/message'
 import feed from './modules/feed'
-import jobs from './modules/jobs'
 
 const state = {
   phoneMenuOpen: false
@@ -22,7 +21,6 @@ export default new Vuex.Store({
   mutations,
   modules: {
     message,
-    feed,
-    jobs
+    feed
   }
 })

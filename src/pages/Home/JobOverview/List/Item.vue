@@ -10,23 +10,21 @@ router-link.jobitem.flex.flex-justify-between.flex-align-center(tag='div', :to='
 </template>
 
 <script>
-import Slug from 'slug'
-
 export default {
   props: {
     job: Object
   },
 
   computed: {
-    slug() {
-      return Slug(this.job.title).replace('.', '')
+    slug () {
+      return this.job.slug
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 
 .jobitem {
   padding: 20px;

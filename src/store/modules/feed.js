@@ -10,7 +10,8 @@ const state = {
   instagram: [],
   news: [],
   events: [],
-  blog: []
+  blog: [],
+  jobs: []
 }
 
 const mutations = {
@@ -42,9 +43,19 @@ const mutations = {
       })
     })
 
+    const jobs = require('src/../headless/content/jobs.json').map(x => {
+      return Object.assign(x.content.nl, {
+        feedType: 'job',
+        feedCreated: new Date(x.content.nl.publish_date),
+        feedId: 'job' + x.content.nl.title,
+        slug: slug(x.content.nl.title).replace('.', '')
+      })
+    })
+
     state.blog = blog
     state.news = news
     state.events = events
+    state.jobs = jobs
   },
 
   setInstagram (state, sourceObj) {

@@ -19,7 +19,7 @@
     .list.flex.flex-column
       //- TODO transitions not yet working
       transition-group(name='list', tag='div')
-        job-item(v-for='(job, i) in jobs', :key='i', :job='job.content.nl')
+        job-item(v-for='(job, i) in jobs', :key='i', :job='job')
 
 </template>
 
@@ -40,11 +40,11 @@ export default {
 
   computed: {
     jobTypeOptions() {
-      return [...new Set(this.jobs.map(x => x.content.nl.jobType))] // new Set is for deduping
+      return [...new Set(this.jobs.map(x => x.jobType))] // new Set is for deduping
     },
 
     jobs() {
-      return this.$store.state.jobs.all.filter(x => !this.selectedJobType || x.content.nl.jobType === this.selectedJobType)
+      return this.$store.state.feed.jobs.filter(x => !this.selectedJobType || x.jobType === this.selectedJobType)
     }
   }
 }

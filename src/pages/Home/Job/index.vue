@@ -25,7 +25,6 @@
 
 <script>
 import SmoothScroll from 'smooth-scroll'
-import Slug from 'slug'
 
 export default {
   components: {
@@ -50,19 +49,12 @@ export default {
   },
 
   created() {
-    if (this.$store.state.jobs.all.length === 0) return
+    if (this.$store.state.feed.jobs.length === 0) return
 
-    const job = this.$store.state.jobs.all.find(x => Slug(x.content.nl.title).toLowerCase() === this.$route.params.slug.toLowerCase())
+    const job = this.$store.state.feed.jobs.find(x => x.slug === this.$route.params.slug.toLowerCase())
 
-    if (!job) {
-      // Note: this is the preferred way but it causes the target router-view to be empty for unknown reason. So workaround with window.location
-      // this.$router.push({
-      //   name: 'jobs'
-      // })
-
-      // window.location = '/werkenbij'
-    } else {
-      this.job = job.content.nl
+    if (job) {
+      this.job = job
     }
   },
 
