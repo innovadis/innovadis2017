@@ -6,12 +6,16 @@ import feed from './modules/feed'
 import jobs from './modules/jobs'
 
 const state = {
-  phoneMenuOpen: false
+  phoneMenuOpen: false,
+  lang: 'nl'
 }
 
 const mutations = {
   setPhoneMenuState(state, v) {
     state.phoneMenuOpen = v
+  },
+  setLanguage(stage, v) {
+    state.lang = v
   }
 }
 

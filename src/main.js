@@ -12,7 +12,7 @@ import Moment from 'moment'
 import VueHead from 'vue-head'
 import VueAnalytics from 'vue-analytics'
 import VueTouch from 'vue-touch'
-import VueI18n from 'vue-i18n'
+import vuexI18n from 'vuex-i18n'
 
 Vue.use(VueAnalytics, {
   id: 'UA-5365402-7',
@@ -32,7 +32,6 @@ Vue.use(VueHead, {
 Vue.use(VueTouch, {
   name: 'v-touch'
 })
-Vue.use(VueI18n)
 
 VueTouch.config.swipe = {
   direction: 'horizontal'
@@ -47,30 +46,29 @@ store.dispatch('jobs/load')
 
 const messages = {
   nl: {
-    menu: {
-      aboutUs: 'Over ons.',
-      contact: 'Contact.'
-    }
+    'aboutUs': 'Over ons.',
+    'contact': 'Contact.'
   },
   en: {
-    menu: {
-      aboutUs: 'About us.',
-      contact: 'Contact.'
-    }
+    'Over ons.': 'About us.',
+    'Contact.': 'Contact.'
   }
 }
 
-const i18n = new VueI18n({
-  locale: 'nl', // set locale
-  messages
-})
+Vue.use(vuexI18n.plugin, store)
+
+Vue.i18n.add('en', messages.en)
+Vue.i18n.add('nl', messages.nl)
+
+// Vue.i18n.set('nl')
+
+store.commit('setLanguage', 'nl')
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
-  i18n,
   template: '<App/>',
   components: { App }
 })

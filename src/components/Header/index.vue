@@ -7,8 +7,8 @@ header
 
       .header-menus(ref='headerMenus')
         .menu(@mousemove='openMenu("attentionAreas")', @mouseleave='closeMenu', ref='menuAttentionAreas') Vakgebieden.
-        .menu(@mousemove='openMenu("about")', @mouseleave='closeMenu', ref='menuAbout') {{ $t("menu.aboutUs") }}
-        .menu: router-link(:to='{ name: "contact" }')  {{ $t("menu.contact") }}
+        .menu(@mousemove='openMenu("about")', @mouseleave='closeMenu', ref='menuAbout') {{ $t("aboutUs") }}
+        .menu: router-link(:to='{ name: "contact" }')  {{ $t("contact") }}
         .menu: inno-button(label='Werken bij.', :to='{ name: "jobs" }', yellow)
 
       transition(name='headerfade')

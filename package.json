@@ -76,6 +76,7 @@
     "vueinview": "github:rachmanzz/vue-inview#9f264046bfa526bb3580e090ba6fc976e874539b",
     "vuelidate": "^0.6.0",
     "vuex": "^2.4.1",
+    "vuex-i18n": "^1.10.5",
     "webpack": "^2.6.1",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",

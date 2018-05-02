@@ -7810,6 +7810,10 @@ vuelidate@^0.6.0:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/vuelidate/-/vuelidate-0.6.2.tgz#b417f5367407b047a2548119b25db56fe2bd5753"
 
+vuex-i18n@^1.10.5:
+  version "1.10.5"
+  resolved "https://registry.yarnpkg.com/vuex-i18n/-/vuex-i18n-1.10.5.tgz#635ea2204e0aa3f8fd512f0fab7f6b994d3f666c"
+
 vuex@^2.4.1:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-2.5.0.tgz#20f0265ade6c9a5ac6724a405d3ffdb4726c9741"

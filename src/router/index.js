@@ -9,7 +9,7 @@ const router = new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
+      path: '/:lang([a-z]{2})?',
       component: require('src/pages/Home'),
       children: [
         {
@@ -46,7 +46,7 @@ const router = new Router({
           component: require('src/pages/Home/Partners')
         },
         {
-          path: '/contact',
+          path: 'contact',
           name: 'contact',
           component: require('src/pages/Home/Contact')
         },
@@ -112,6 +112,10 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+  store.commit('setLanguage', to.params.lang)
+
+  Vue.i18n.set(to.params.lang)
+
   store.commit('setPhoneMenuState', false)
 
   const scroll = new SmoothScroll()
