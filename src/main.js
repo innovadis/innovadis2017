@@ -50,8 +50,8 @@ const messages = {
     'contact': 'Contact.'
   },
   en: {
-    'Over ons.': 'About us.',
-    'Contact.': 'Contact.'
+    'aboutUs': 'About us.',
+    'contact': 'Contact.'
   }
 }
 
@@ -60,7 +60,7 @@ Vue.use(vuexI18n.plugin, store)
 Vue.i18n.add('en', messages.en)
 Vue.i18n.add('nl', messages.nl)
 
-// Vue.i18n.set('nl')
+Vue.i18n.set('nl')
 
 store.commit('setLanguage', 'nl')
 
