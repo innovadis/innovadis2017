@@ -113,7 +113,6 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   store.commit('setLanguage', to.params.lang)
-
   Vue.i18n.set(to.params.lang)
 
   store.commit('setPhoneMenuState', false)

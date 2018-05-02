@@ -26,9 +26,11 @@ Moment.locale('nl')
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
 Vue.use(VueInView)
+
 Vue.use(VueHead, {
   complement: 'Innovadis'
 })
+
 Vue.use(VueTouch, {
   name: 'v-touch'
 })
@@ -55,20 +57,28 @@ const messages = {
   }
 }
 
-Vue.use(vuexI18n.plugin, store)
+// Vue.use(vuexI18n.plugin, store)
 
-Vue.i18n.add('en', messages.en)
+Vue.use(vuexI18n.plugin, store, {
+  moduleName: 'i18n',
+  onTranslationNotFound(locale, key) {
+    console.warn(`i18n :: Key '${key}' not found for locale '${locale}'`);
+  }
+})
+
 Vue.i18n.add('nl', messages.nl)
+Vue.i18n.add('en', messages.en)
 
 Vue.i18n.set('nl')
-
 store.commit('setLanguage', 'nl')
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
   store,
+  router,
+  el: '#app',
   template: '<App/>',
-  components: { App }
+  components: {
+    App
+  }
 })
