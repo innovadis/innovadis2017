@@ -14,10 +14,10 @@
     p Op de website worden algemene bezoekgegevens bijgehouden. Wij maken gebruik van Google Analytics om inzicht in de bezochte pagina’s te krijgen. Echter, alle bezoekgegevens zijn geanonimiseerd, hierdoor kunnen wij nooit herleiden vanaf welk IP-adres onze website is bezocht, oftewel wie de bezoeker is geweest. Hiermee voldoen wij aan de nieuwste AVG-wetgeving die per 25 mei 2018 geldt.  
     br
     h3.dot Websites van derden
-    p ze verklaring is niet van toepassing op websites van derden die door middel van links met deze website zijn verbonden. Wij kunnen niet garanderen dat deze derden op een betrouwbare of veilige manier met uw persoonsgegevens omgaan. Wij raden u aan de privacyverklaring van deze websites te lezen alvorens van deze websites gebruik te maken.    
+    p Deze verklaring is niet van toepassing op websites van derden die door middel van links met deze website zijn verbonden. Wij kunnen niet garanderen dat deze derden op een betrouwbare of veilige manier met uw persoonsgegevens omgaan. Wij raden u aan de privacyverklaring van deze websites te lezen alvorens van deze websites gebruik te maken.    
     br
     h3.dot Wijzigingen privacy verklaring
-    p Wij behouden ons het recht voor om wijzigingen aan te brengen in deze verklaring. Het verdient aanbeveling om deze verklaring geregeld te raadplegen, zodat u van deze wijzigingen op de hoogte bent.v
+    p Wij behouden ons het recht voor om wijzigingen aan te brengen in deze verklaring. Het verdient aanbeveling om deze verklaring geregeld te raadplegen, zodat u van deze wijzigingen op de hoogte bent.
     br
     h3.dot Inzage en wijzigen van uw gegevens
     p Vragen over ons privacybeleid of vragen omtrent inzage en wijzigingen in (of verwijdering van) uw persoonsgegevens kunt u te allen tijde richten aan:
