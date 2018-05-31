@@ -34,6 +34,7 @@ footer(v-if='!$route.meta.hideFooter')
 
         router-link.conditions(:to='{ name: "conditions" }') Algemene voorwaarden
         router-link.privacy-statement(:to='{ name: "privacy statement" }') Privacy Statement
+        router-link.info-security-policy(:to='{ name: "info security policy" }') Informatiebeveiligingsbeleid
 
   //- .bottom
     .container.flex.flex-justify-end.flex-column-reverse-phablet
@@ -145,7 +146,8 @@ footer {
         font-size: 14px;
       }
 
-      .privacy-statement {
+      .privacy-statement,
+      .info-security-policy {
         margin-top: 5px;
         font-size: 14px;
       }

@@ -4,14 +4,17 @@
 
 [data-icons8]:before,
 .icons8-advance:before,
+.icons8-anonymous-user:before,
 .icons8-birthday-cake:before,
 .icons8-brain-settings:before,
 .icons8-camera:before,
 .icons8-chat:before,
 .icons8-clock:before,
 .icons8-collapse-arrow:before,
+.icons8-customer-support:before,
 .icons8-database-view:before,
 .icons8-delete:before,
+.icons8-developer:before,
 .icons8-download:before,
 .icons8-driver:before,
 .icons8-email:before,
@@ -24,6 +27,7 @@
 .icons8-instagram:before,
 .icons8-like-filled:before,
 .icons8-linkedin:before,
+.icons8-manager:before,
 .icons8-menu:before,
 .icons8-minion-2:before,
 .icons8-movie:before,
@@ -46,14 +50,17 @@
 [data-icons8]:before { content: attr(data-icons8); }
 
 .icons8-advance:before { content: $icons8-var-advance; }
+.icons8-anonymous-user:before { content: $icons8-var-anonymous-user; }
 .icons8-birthday-cake:before { content: $icons8-var-birthday-cake; }
 .icons8-brain-settings:before { content: $icons8-var-brain-settings; }
 .icons8-camera:before { content: $icons8-var-camera; }
 .icons8-chat:before { content: $icons8-var-chat; }
 .icons8-clock:before { content: $icons8-var-clock; }
 .icons8-collapse-arrow:before { content: $icons8-var-collapse-arrow; }
+.icons8-customer-support:before { content: $icons8-var-customer-support; }
 .icons8-database-view:before { content: $icons8-var-database-view; }
 .icons8-delete:before { content: $icons8-var-delete; }
+.icons8-developer:before { content: $icons8-var-developer; }
 .icons8-download:before { content: $icons8-var-download; }
 .icons8-driver:before { content: $icons8-var-driver; }
 .icons8-email:before { content: $icons8-var-email; }
@@ -66,6 +73,7 @@
 .icons8-instagram:before { content: $icons8-var-instagram; }
 .icons8-like-filled:before { content: $icons8-var-like-filled; }
 .icons8-linkedin:before { content: $icons8-var-linkedin; }
+.icons8-manager:before { content: $icons8-var-manager; }
 .icons8-menu:before { content: $icons8-var-menu; }
 .icons8-minion-2:before { content: $icons8-var-minion-2; }
 .icons8-movie:before { content: $icons8-var-movie; }
