@@ -94,6 +94,11 @@ const router = new Router({
           component: require('src/pages/Home/PrivacyStatement')
         },
         {
+          path: '/informatiebeveiligingsbeleid',
+          name: 'info security policy',
+          component: require('src/pages/Home/InfoSecurityPolicy')
+        },
+        {
           path: '/pim',
           name: 'pim',
           component: require('src/pages/Home/PIM')
