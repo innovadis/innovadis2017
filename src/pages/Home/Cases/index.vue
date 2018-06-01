@@ -74,17 +74,21 @@ export default {
   &__item {
     flex: 0 1 23%;
     margin: 1%;
-    background-size: cover !important;
+    background-size: contain !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
     border-radius: 5px;
     position: relative;
     padding: 40px;
     box-sizing: border-box;
+    transition: transform .3s ease;
     &:after {
       content: '';
       display: block;
       padding-top: 50%;
+    }
+    &:hover {
+      transform: scale(1.05);
     }
     @include phablet {
       flex: 0 1 48%;
@@ -94,21 +98,24 @@ export default {
     }
   }
   &__title {
-    color: #fff;
-    border-bottom: 1px solid hsla(0,0%,100%,.7);
-    padding-bottom: 10px;
+    color: $inno-blue-dark;
+    padding-bottom: 0px;
     margin: 0;
+    padding: 10px;
     max-height: 77px;
+    text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
+    align-items: center;
+    justify-content: center;
   }
   &__text {
     position: absolute;
-    bottom: 40px;
-    left: 40px;
-    text-align: left;
-    width: calc(100% - 80px);
+    top: 0;
+    left: 0;
+    text-align: center;
+    width:100%;
   }
 
 }

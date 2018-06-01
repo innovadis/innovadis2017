@@ -25,7 +25,8 @@
             li Het portaal moet een B2B zelfbedieningsmodule bevatten
             li Het portaal moet toegang geven tot meer inzicht en gegevens over de online activiteiten en de interactie met de klant.
 
-        PhoneOrbs  
+        .phone-container
+          .phone 
 
     Vision
 
@@ -49,7 +50,7 @@
           h3(style='margin-bottom: 20px') {{ title2 }}
           p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
-        img(src='/static/images/smarthealth_mobile_orbs.png', height='280px', style='margin: 0 -20px 20px 20px')
+        img(src='/static/cases/Vredestein/ApolloVredestein_Small.png', width='300px', style='margin: 0 -100px 20px 20px')
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
@@ -59,7 +60,7 @@
       h3 {{ title3 }}
       p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
-      img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin: 20px 0')
+      img(src='/static/cases/Vredestein/ApolloVredestein_Small.png', width='100%', style='margin: 20px 0')
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
@@ -76,12 +77,8 @@
 <script>
 export default {
   components: {
-    Orb: require('src/components/Orb'),
-    PhoneOrbs: require('./PhoneOrbs'),
-    Kiosk: require('./Kiosk'),
     PhonesSideBySide: require('./PhonesSideBySide'),
     PhonesOverlap: require('./PhonesOverlap'),
-    Macbook: require('./Macbook'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     ButtonAlternate: require('src/components/ButtonAlternate'),
     InnoButton: require('src/components/Button'),
@@ -183,6 +180,40 @@ export default {
 
   .sendboxwithslot {
     margin-top: 100px;
+  }
+}
+
+.phone-container {
+  position: relative;
+  min-width: 50%;
+  left: 20%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include phablet {
+    left: 0;
+    top: 120px;
+    width: 25%;
+  }
+
+  @include phone {
+    width: 100%;
+  }
+
+  .phone {
+    background: url('/static/cases/Vredestein/Apollo_Tablet_Small.png') no-repeat center;
+    background-size: contain;
+    height: 364px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    left: -40px;
+
+    @include tablet {
+      top: -60px;
+    }
   }
 }
 </style>

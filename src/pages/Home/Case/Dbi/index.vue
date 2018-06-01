@@ -1,5 +1,5 @@
 <template lang="pug">
-.case-socialhof
+.case-dbi
   .container.pt
     h1.dot {{ title }}
     p.intro {{ lead }}
@@ -8,22 +8,22 @@
 
   .hidden-phone
     .gray
-      .container.pt
+      .container.pt.pb
         .padded-container
           h2.dot {{ title1 }}
           p {{ text1 }}
 
-      .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center
-        .padded-container.flex.flex-column
-          h3 {{ title2 }}
-          p {{ text2 }}
-          p Het project zou een relatief snel project zijn, met een korte doorlooptijd en een snelle oplevering. Echter, na een eerste inventarisatie kwamen er al vele andere vragen naar boven. Martijn van Tongeren, Product Owner Innovadis; <i>“We hebben onze klant echt bij de hand meegenomen met alle mogelijkheden en de daarbij behorende mitsen en maren. Vanuit een technisch oogpunt komen er toch altijd weer extra vragen naar boven als je kijkt naar bepaalde functionaliteiten. De ideeën waren er zeker bij de klant, maar hoe dit er dan functioneel uit moest komen te zien was nog een grote vraag voor ze. We hebben onze klant kunnen voorzien van een gepersonaliseerd systeem die echt die functionaliteiten heeft waar behoefte aan is.“</i>
-          p Doordat er meer mogelijkheden en daarbij steeds meer klantwensen boven tafel kwamen werd het project alsmaar groter. Wat in eerste instantie een klein en overzichtelijk traject leek werd uiteindelijk een heel omvangrijk project. <i>“Waar we bij aanvang een projectgrootte van 4 sprints voor ogen hadden, wordt er momenteel gewerkt aan sprint 20. Dit project is voor ons een heel mooi voorbeeld waarin we echt hebben kunnen laten zien dat we meedenken met de klant, meerwaarde bieden, een optimaal resultaat willen behalen en daarin ook nog eens flexibel zijn. Niet alleen functioneel gezien leveren we een meerwaarde, ook qua ontwerp en design hebben een we een optimale combinatie van eenvoud, intuïtief gebruiksgemak, personalisering en helder design neer kunnen zetten.”</i>
-
+    .container.pt
+      .padded-container.flex.flex-column
+        h3 {{ title2 }}
+        p {{ text2 }}
+        p Het project zou een relatief snel project zijn, met een korte doorlooptijd en een snelle oplevering. Echter, na een eerste inventarisatie kwamen er al vele andere vragen naar boven. Martijn van Tongeren, Product Owner Innovadis; <i>“We hebben onze klant echt bij de hand meegenomen met alle mogelijkheden en de daarbij behorende mitsen en maren. Vanuit een technisch oogpunt komen er toch altijd weer extra vragen naar boven als je kijkt naar bepaalde functionaliteiten. De ideeën waren er zeker bij de klant, maar hoe dit er dan functioneel uit moest komen te zien was nog een grote vraag voor ze. We hebben onze klant kunnen voorzien van een gepersonaliseerd systeem die echt die functionaliteiten heeft waar behoefte aan is.“</i>
+        p Doordat er meer mogelijkheden en daarbij steeds meer klantwensen boven tafel kwamen werd het project alsmaar groter. Wat in eerste instantie een klein en overzichtelijk traject leek werd uiteindelijk een heel omvangrijk project. <i>“Waar we bij aanvang een projectgrootte van 4 sprints voor ogen hadden, wordt er momenteel gewerkt aan sprint 20. Dit project is voor ons een heel mooi voorbeeld waarin we echt hebben kunnen laten zien dat we meedenken met de klant, meerwaarde bieden, een optimaal resultaat willen behalen en daarin ook nog eens flexibel zijn. Niet alleen functioneel gezien leveren we een meerwaarde, ook qua ontwerp en design hebben een we een optimale combinatie van eenvoud, intuïtief gebruiksgemak, personalisering en helder design neer kunnen zetten.”</i>
+        img(src='/static/cases/DBI/DBIBigScreen.png', width='100%')
+    Vision
 
     .gray
       .container.flex.pt
-        phones-side-by-side
         .flex.flex-column
           h3 {{ title3 }}
           p {{ text3 }}
@@ -33,7 +33,7 @@
 
           h4 Afrekening per gewicht i.p.v. per transactie
           p Op dit moment wordt de consument afgerekend per transactie. Momenteel wordt er gekeken om dit te doen op basis van gewicht in plaats van op basis van aantallen. Dit betekent een ander afrekensysteem en dus een andere koppeling in ons portaal.
-    Vision
+          phones-side-by-side
 
 
   //- Phone only
@@ -47,7 +47,7 @@
           h3(style='margin-bottom: 20px') {{ title2 }}
           p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
-        img(src='/static/images/smarthealth_mobile_orbs.png', height='280px', style='margin: 0 -20px 20px 20px')
+        img(src='/static/cases/DBI/DBI_SMall.png', width="200px", style='margin: 0 -20px 20px 20px')
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
@@ -57,7 +57,7 @@
       h3 {{ title3 }}
       p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
-      img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin: 20px 0')
+      img(src='/static/cases/DBI/DBIBigScreen.png', width='100%', style='margin: 20px')
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
@@ -74,12 +74,8 @@
 <script>
 export default {
   components: {
-    Orb: require('src/components/Orb'),
-    PhoneOrbs: require('./PhoneOrbs'),
-    Kiosk: require('./Kiosk'),
     PhonesSideBySide: require('./PhonesSideBySide'),
     PhonesOverlap: require('./PhonesOverlap'),
-    Macbook: require('./Macbook'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     ButtonAlternate: require('src/components/ButtonAlternate'),
     InnoButton: require('src/components/Button'),
@@ -129,9 +125,9 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
-.case-socialhof {
+.case-dbi {
   .gray {
-    background: linear-gradient(180deg, #FFFFFF 0%, #F1F1F1 100%);
+    background:#F1F1F1;
   }
 
   .small {
@@ -144,7 +140,7 @@ export default {
 
   .hero {
     margin-top: $gutter;
-    background-image: url('/static/cases/socialhof/banner.png');
+    background-image: url('/static/cases/DBI/DBICaseHeader.png');
   }
 
   .with-macbook {
