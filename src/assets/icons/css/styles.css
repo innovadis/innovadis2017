@@ -15,12 +15,12 @@
 
 @font-face {
   font-family: "Innovadis-2017";
-  src: url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.eot");
-  src: url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.woff2") format("woff2"),
-       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.woff") format("woff"),
-       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.ttf") format("truetype"),
-       url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.svg#Innovadis-2017") format("svg");
+  src: url("../fonts/Innovadis-2017.eot");
+  src: url("../fonts/Innovadis-2017.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Innovadis-2017.woff2") format("woff2"),
+       url("../fonts/Innovadis-2017.woff") format("woff"),
+       url("../fonts/Innovadis-2017.ttf") format("truetype"),
+       url("../fonts/Innovadis-2017.svg#Innovadis-2017") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -28,7 +28,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Innovadis-2017";
-    src: url("../fonts/Innovadis-2017_087ca7f4e42cf7432aaec4be0cbeeb63.svg#Innovadis-2017") format("svg");
+    src: url("../fonts/Innovadis-2017.svg#Innovadis-2017") format("svg");
   }
 }
 
@@ -36,14 +36,17 @@
 
 .icons8, [data-icons8]:before,
 .icons8-advance:before,
+.icons8-anonymous-user:before,
 .icons8-birthday-cake:before,
 .icons8-brain-settings:before,
 .icons8-camera:before,
 .icons8-chat:before,
 .icons8-clock:before,
 .icons8-collapse-arrow:before,
+.icons8-customer-support:before,
 .icons8-database-view:before,
 .icons8-delete:before,
+.icons8-developer:before,
 .icons8-download:before,
 .icons8-driver:before,
 .icons8-email:before,
@@ -56,6 +59,7 @@
 .icons8-instagram:before,
 .icons8-like-filled:before,
 .icons8-linkedin:before,
+.icons8-manager:before,
 .icons8-menu:before,
 .icons8-minion-2:before,
 .icons8-movie:before,
@@ -88,14 +92,17 @@
 }
 
 .icons8-advance:before { content: "\f107"; }
+.icons8-anonymous-user:before { content: "\f131"; }
 .icons8-birthday-cake:before { content: "\f110"; }
 .icons8-brain-settings:before { content: "\f12a"; }
 .icons8-camera:before { content: "\f123"; }
 .icons8-chat:before { content: "\f122"; }
 .icons8-clock:before { content: "\f109"; }
 .icons8-collapse-arrow:before { content: "\f105"; }
+.icons8-customer-support:before { content: "\f136"; }
 .icons8-database-view:before { content: "\f102"; }
 .icons8-delete:before { content: "\f10e"; }
+.icons8-developer:before { content: "\f135"; }
 .icons8-download:before { content: "\f115"; }
 .icons8-driver:before { content: "\f10b"; }
 .icons8-email:before { content: "\f12d"; }
@@ -108,6 +115,7 @@
 .icons8-instagram:before { content: "\f11a"; }
 .icons8-like-filled:before { content: "\f10a"; }
 .icons8-linkedin:before { content: "\f11d"; }
+.icons8-manager:before { content: "\f133"; }
 .icons8-menu:before { content: "\f10c"; }
 .icons8-minion-2:before { content: "\f111"; }
 .icons8-movie:before { content: "\f126"; }

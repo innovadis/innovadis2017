@@ -17,7 +17,10 @@ Vue.use(VueAnalytics, {
   id: 'UA-5365402-7',
   router,
   checkDuplicatedScript: true,
-  disableScriptLoader: process.env.NODE_ENV !== 'production'
+  disableScriptLoader: process.env.NODE_ENV !== 'production',
+  set: [
+    { field: 'anonymizeIp', fieldValue: true }
+  ]
 })
 
 Moment.locale('nl')
