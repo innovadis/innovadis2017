@@ -241,8 +241,7 @@ export default {
       }
 
       &.selected {
-        color: $inno-yellow;
-        font-weight: bold;
+        color:$inno-yellow;
       }
     }
   }
