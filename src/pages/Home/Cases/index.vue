@@ -25,27 +25,27 @@ export default {
       cases: [
         {
           title: 'Socialhof',
-          imageUrl: '/static/images/cover/cultuur_vakmanschap.jpg',
+          imageUrl: '/static/cases/Mockup_Case_SHV.jpg',
           link: 'socialhof'
         },
         {
           title: 'Apollo Vredestein',
-          imageUrl: '/static/images/cover/cultuur_vakmanschap.jpg',
+          imageUrl: '/static/cases/Mockup_Case_Vredestein.jpg',
           link: 'apollo-vredestein'
         },
         {
           title: 'DBI Container Service',
-          imageUrl: '/static/images/cover/cultuur_vakmanschap.jpg',
+          imageUrl: '/static/cases/Mockup_Case_DBI.jpg',
           link: 'dbi-container-service'
         },
         {
           title: 'Comfoor',
-          imageUrl: '/static/images/cover/cultuur_vakmanschap.jpg',
+          imageUrl: '/static/cases/Mockup_Case_Comfoor.jpg',
           link: 'comfoor'
         },
         {
           title: 'Webportaal SHV',
-          imageUrl: '/static/images/cover/cultuur_vakmanschap.jpg',
+          imageUrl: '/static/cases/Mockup_Case_SHV.jpg',
           link: 'webportaal-shv'
         }
       ]

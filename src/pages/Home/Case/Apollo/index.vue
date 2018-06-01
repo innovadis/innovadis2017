@@ -1,5 +1,5 @@
 <template lang="pug">
-.case-socialhof
+.case-apollo
   .container.pt
     h1.dot {{ title }}
     p.intro {{ lead }}
@@ -7,25 +7,27 @@
   .hero
 
   .hidden-phone
-    .gray
-      .container.pt
+    .gray.pt.pb
+      .container
         .padded-container
           h2.dot {{ title1 }}
           p {{ text1 }}
 
-      .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center
-        .padded-container.flex.flex-column.small
-          h3 {{ title2 }}
-          p {{ text2 }}
+    .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center.flex-wrap
+      .padded-container.flex.flex-column
+        h3 {{ title2 }}
+        p {{ text2 }}
+      .padded-container.flex
+        p Daarnaast formuleerde Apollo Vredestein een aantal doelen die het nieuwe platform aan moest kunnen:
+          ul
+            li Een verhoging van de online verkoop
+            li Het portaal moet efficiënter en meer gebruikersvriendelijk zijn
+            li Het portaal moet een B2B zelfbedieningsmodule bevatten
+            li Het portaal moet toegang geven tot meer inzicht en gegevens over de online activiteiten en de interactie met de klant.
 
-          p Daarnaast formuleerde Apollo Vredestein een aantal doelen die het nieuwe platform aan moest kunnen:
-            ul
-              li Een verhoging van de online verkoop
-              li Het portaal moet efficiënter en meer gebruikersvriendelijk zijn
-              li Het portaal moet een B2B zelfbedieningsmodule bevatten
-              li Het portaal moet toegang geven tot meer inzicht en gegevens over de online activiteiten en de interactie met de klant.
+        PhoneOrbs  
 
-        phone-orbs
+    Vision
 
     .gray
       .container.flex.pt
@@ -34,7 +36,6 @@
           h3 {{ title3 }}
           p {{ text3 }}
 
-    Vision
 
 
   //- Phone only
@@ -130,9 +131,9 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
-.case-socialhof {
+.case-apollo {
   .gray {
-    background: linear-gradient(180deg, #FFFFFF 0%, #F1F1F1 100%);
+    background: #F1F1F1;
   }
 
   .small {
@@ -145,7 +146,7 @@ export default {
 
   .hero {
     margin-top: $gutter;
-    background-image: url('/static/cases/socialhof/banner.png');
+    background-image: url('/static/cases/Vredestein/ApolloVredesteinCaseHeader.png');
   }
 
   .with-macbook {
