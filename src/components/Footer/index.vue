@@ -33,8 +33,8 @@ footer(v-if='!$route.meta.hideFooter')
             a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
 
         router-link.conditions(:to='{ name: "conditions" }') Algemene voorwaarden
-        router-link.privacy-statement(:to='{ name: "privacy statement" }') Privacy Statement
         router-link.info-security-policy(:to='{ name: "info security policy" }') Informatiebeveiligingsbeleid
+        router-link.privacy-statement(:to='{ name: "privacy statement" }') Privacy Statement
 
   //- .bottom
     .container.flex.flex-justify-end.flex-column-reverse-phablet
