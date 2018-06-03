@@ -5,7 +5,9 @@
 
   transition(name='fade', mode='out-in')
     .box(v-if='selectedOption === i', :key='"selectbox" + i', v-for='(item, i) in items')
-      p {{ item.text }}
+      p(v-if='item.text') {{ item.text }}
+      div(v-if='item.multipleLines')
+        p(v-for='line in item.multipleLines') {{line}}
       button-alternate(v-if='item.to', :to='item.to', :label='item.toLabel')
 </template>
 
