@@ -13,7 +13,9 @@
 
     h2.dot Informatie beveiligingsbeleid
     .headers
-      .header(v-for='(header, i) in headers', @click='selectedHeader = headers[i]', :class='{ selected: selectedHeader === header }') {{header}}
+      .header.flex(v-for='(header, i) in headers', @click='selectedHeader = headers[i]', :class='{ selected: selectedHeader === header }') {{header}}
+        .icons8-advance(:class='{ selected: selectedHeader === header }')
+
 
     transition(name='fade', mode='out-in')
       div(v-if='selectedHeader === headers[0]' key="headers[0]")
@@ -229,19 +231,36 @@ export default {
   }
 
   .headers {
-    max-width: 480px;
+    max-width: 500px;
     margin: 20px;
 
     .header {
       font-size: 16px;
       cursor: pointer;
+      transition: all 0.3s ease;
+
+      .icons8-advance {
+        opacity: 0;
+        font-size: 28px;
+        color: $inno-yellow;
+        transition: opacity 0.8s ease-out;
+      }
 
       &:hover {
         color: $inno-yellow;
       }
 
+      &:hover .icons8-advance {
+        animation: hover 0.6s ease-out forwards;
+      }
+
       &.selected {
-        color:$inno-yellow;
+        color: $inno-yellow;
+      }
+
+      &.selected .icons8-advance{
+        opacity: 1;
+        margin-left: 10px;
       }
     }
   }
@@ -285,5 +304,10 @@ export default {
   .select-box .box {
     max-width: 58% !important;
   }
+}
+
+@keyframes hover {
+  50% {transform: translate(10px); }
+  100% {transform: translate(10px);  opacity:1}
 }
 </style>
