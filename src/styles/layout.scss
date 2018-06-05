@@ -1,50 +1,16 @@
 $phone-width: 600px;
 $tablet-width: 900px;
 $desktop-width: 1200px;
-
-$devices: (
-  none: null,
-  phone: $phone-width,
-  tablet: $tablet-width,
-  phablet: $desktop-width,
-  desktop: null
-  );
-
+$devices: ( none: null, phone: $phone-width, tablet: $tablet-width, phablet: $desktop-width, desktop: null);
 // this array gets prefixed wth flex-
 // first arg: css prop
 // second arg: css value
 // third arg: custom name (if empty: uses css value as class name)
-$props-flex: (
-  (flex-direction, row)
-  (flex-direction, row-reverse)
-  (flex-direction, column)
-  (flex-direction, column-reverse)
-  (justify-content, flex-start, justify-start)
-  (justify-content, flex-end, justify-end)
-  (justify-content, center, justify-center)
-  (justify-content, space-between, justify-between)
-  (justify-content, space-around, justify-around)
-  (align-items, baseline, align-baseline)
-  (align-items, center, align-center)
-  (align-items, flex-start, align-start)
-  (align-items, flex-end, align-end)
-  (align-self, flex-start, self-start)
-  (align-self, flex-end, self-end)
-  (align-self, center, self-center)
-  (flex-wrap, wrap)
-  (flex-grow, 1, grow-1)
-  (flex-grow, 2, grow-2)
-  );
-
-$props: (
-  (text-align, center, text-center)
-  (text-align, left, text-left)
-  (text-align, right, text-right)
-  (display, none, hidden)
-);
-
+$props-flex: ( (flex-direction, row) (flex-direction, row-reverse) (flex-direction, column) (flex-direction, column-reverse) (justify-content, flex-start, justify-start) (justify-content, flex-end, justify-end) (justify-content, center, justify-center) (justify-content, space-between, justify-between) (justify-content, space-around, justify-around) (align-items, baseline, align-baseline) (align-items, center, align-center) (align-items, flex-start, align-start) (align-items, flex-end, align-end) (align-self, flex-start, self-start) (align-self, flex-end, self-end) (align-self, center, self-center) (flex-wrap, wrap) (flex-grow, 1, grow-1) (flex-grow, 2, grow-2));
+$props: ( (text-align, center, text-center) (text-align, left, text-left) (text-align, right, text-right) (display, none, hidden));
 // Mixins for custom styles
-@mixin mini { // for iphone5 special cases
+@mixin mini {
+  // for iphone5 special cases
   @media (max-width: 374px) {
     @content;
   }
@@ -72,7 +38,6 @@ $props: (
   @include phone {
     @content;
   }
-
   @include tablet {
     @content;
   }
@@ -80,43 +45,38 @@ $props: (
 
 @mixin generate($proplist, $isFlex) {
   @each $prop in $proplist {
-    @each $device, $width in $devices {
-     $className: nth($prop, 2);
-
-     @if (length($prop) == 3) {
-         $className: nth($prop, 3);
-     }
-
-     @if ($isFlex == true) {
-         $className: flex-#{$className}
-     }
-
-      @if $device == none {
+    @each $device,
+    $width in $devices {
+      $className: nth($prop, 2);
+      @if (length($prop)==3) {
+        $className: nth($prop, 3);
+      }
+      @if ($isFlex==true) {
+        $className: flex-#{$className}
+      }
+      @if $device==none {
         .#{$className} {
           #{nth($prop, 1)}: #{nth($prop, 2)};
         }
       }
       @else {
         .#{$className}-#{$device} {
-          @if $device == phone {
+          @if $device==phone {
             @media (max-width: $width) {
               #{nth($prop, 1)}: #{nth($prop, 2)};
             }
           }
-
-          @if $device == tablet {
+          @if $device==tablet {
             @media (min-width: $phone-width) and (max-width: $width) {
               #{nth($prop, 1)}: #{nth($prop, 2)};
             }
           }
-
-          @if $device == phablet {
+          @if $device==phablet {
             @media (max-width: $tablet-width) {
               #{nth($prop, 1)}: #{nth($prop, 2)};
             }
           }
-
-          @if $device == desktop {
+          @if $device==desktop {
             @media (min-width: $tablet-width) {
               #{nth($prop, 1)}: #{nth($prop, 2)};
             }
@@ -127,9 +87,8 @@ $props: (
   }
 }
 
-@include generate($props, false)
-@include generate($props-flex, true)
-
+@include generate($props, false);
+@include generate($props-flex, true);
 
 // Additional helper classes
 .full-height {
