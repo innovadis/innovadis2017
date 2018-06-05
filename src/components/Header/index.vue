@@ -7,7 +7,7 @@ header
 
       .header-menus(ref='headerMenus')
         .menu(@mousemove='openMenu("attentionAreas")', @mouseleave='closeMenu', ref='menuAttentionAreas') Vakgebieden.
-        .menu: router-link(:to='{ name: "cases" }') Referenties.
+        //- .menu: router-link(:to='{ name: "cases" }') Referenties.
         .menu(@mousemove='openMenu("about")', @mouseleave='closeMenu', ref='menuAbout') Over ons.
         .menu: router-link(:to='{ name: "contact" }') Contact.
         .menu: inno-button(label='Werken bij.', :to='{ name: "jobs" }', yellow)
