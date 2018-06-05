@@ -1,5 +1,5 @@
 <template lang="pug">
-.case-socialhof
+.case-comfoor
   .container.pt
     h1.dot {{ title }}
     p.intro {{ lead }}
@@ -7,28 +7,29 @@
   .hero
 
   .hidden-phone
-    .gray
-      .container.pt
-        .padded-container
-          h2.dot {{ title1 }}
-          p {{ text1 }}
-          p Het portaal zal een breed scala aan functies en processen ondersteunen. Bij de ontwikkeling van dit portaal staat de uiteindelijke gebruiker centraal. In het geval van Comfoor zijn dit drie doelgroepen; de audicien, de industrie klant en de PBM (persoonlijke beschermingsmiddelen) klant.
-          p 50% van het assortiment zijn direct bestelbare accessoires, daarnaast zijn er de maatwerk (Custom-Fit) producten en het Uni-Fit Pluggerz assortiment. Al deze producten moeten beschikbaar zijn in het portaal. Door alles overzichtelijk in één portaal aan te bieden moeten de verschillende vooraf opgestelde doelen worden behaald. Een aantal daarvan zijn:
-          ul
-            li Efficiëntere dienstverlening per doelgroep
-            li Klanttevredenheid en -loyaliteit vergroten (door het ontzorgen van de klant)
-            li Vergroten selfservice mogelijkheden
-            li Betere informatievoorziening
-            li Verbeteren inzicht in behoeften en gedrag van de klanten
-            li Vereenvoudigen van beheer en onderhoud (door Comfoor zelf)
-            li Optimaliseren van de gehele klantbeleving
+    .container.pt.pb
+      .padded-container
+        h2.dot {{ title1 }}
+        p {{ text1 }}
+        p Het portaal zal een breed scala aan functies en processen ondersteunen. Bij de ontwikkeling van dit portaal staat de uiteindelijke gebruiker centraal. In het geval van Comfoor zijn dit drie doelgroepen; de audicien, de industrie klant en de PBM (persoonlijke beschermingsmiddelen) klant.
+        p 50% van het assortiment zijn direct bestelbare accessoires, daarnaast zijn er de maatwerk (Custom-Fit) producten en het Uni-Fit Pluggerz assortiment. Al deze producten moeten beschikbaar zijn in het portaal. Door alles overzichtelijk in één portaal aan te bieden moeten de verschillende vooraf opgestelde doelen worden behaald. Een aantal daarvan zijn:
+        ul
+          li Efficiëntere dienstverlening per doelgroep
+          li Klanttevredenheid en -loyaliteit vergroten (door het ontzorgen van de klant)
+          li Vergroten selfservice mogelijkheden
+          li Betere informatievoorziening
+          li Verbeteren inzicht in behoeften en gedrag van de klanten
+          li Vereenvoudigen van beheer en onderhoud (door Comfoor zelf)
+          li Optimaliseren van de gehele klantbeleving
 
-      .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center
-        .padded-container.flex.flex-column.small
+    .gray
+      .container.pt.pb
+        .padded-container
           h3 {{ title2 }}
           p {{ text2 }}
+          img(src="/static/cases/Comfoor/Comfoor_BigScreen.png", width="100%")
 
-        phone-orbs
+    Vision
 
     .gray
       .container.flex.pt
@@ -36,9 +37,6 @@
         .flex.flex-column
           h3 {{ title3 }}
           p {{ text3 }}
-
-    Vision
-
 
   //- Phone only
   .hidden-desktop.hidden-tablet
@@ -51,7 +49,7 @@
           h3(style='margin-bottom: 20px') {{ title2 }}
           p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
-        img(src='/static/images/smarthealth_mobile_orbs.png', height='280px', style='margin: 0 -20px 20px 20px')
+        img(src='/static/cases/Comfoor/Comfoor_Small.png', width='200px', style='margin: 0 -20px 20px 20px')
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
@@ -61,7 +59,8 @@
       h3 {{ title3 }}
       p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
-      img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin: 20px 0')
+      img(src="/static/cases/Comfoor/Comfoor_BigScreen.png", width="100%", style='margin: 20px 0')
+
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
@@ -80,10 +79,8 @@ export default {
   components: {
     Orb: require('src/components/Orb'),
     PhoneOrbs: require('./PhoneOrbs'),
-    Kiosk: require('./Kiosk'),
     PhonesSideBySide: require('./PhonesSideBySide'),
     PhonesOverlap: require('./PhonesOverlap'),
-    Macbook: require('./Macbook'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     ButtonAlternate: require('src/components/ButtonAlternate'),
     InnoButton: require('src/components/Button'),
@@ -133,9 +130,9 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
-.case-socialhof {
+.case-comfoor {
   .gray {
-    background: linear-gradient(180deg, #FFFFFF 0%, #F1F1F1 100%);
+    background: #F1F1F1;
   }
 
   .small {
@@ -148,7 +145,7 @@ export default {
 
   .hero {
     margin-top: $gutter;
-    background-image: url('/static/cases/socialhof/banner.png');
+    background-image: url('/static/cases/Comfoor/ComfoorCaseHeader.png');
   }
 
   .with-macbook {

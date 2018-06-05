@@ -23,22 +23,22 @@ export default {
         {
           label: 'Orderinformatie',
           icon: 'advance',
-          text: 'De dealers kunnen gemakkelijk orders plaatsen en volgen, de aankoopgeschiedenis en de productinformatie bekijken, offertes maken en prijzen berekenen.'
+          text: 'Het portaal biedt de dealers de mogelijkheid om gemakkelijk orders te plaatsen en te volgen. Tevens kan de aankoopgeschiedenis en de productinformatie worden bekeken, offertes kunnen gemakkelijk vanuit het platform worden opgesteld en prijzen worden eenvoudig berekend. Hiermee biedt het portaal een uitgebreide orderfunctie, waardoor het order proces een stuk eenvoudiger en sneller is geworden.'
         },
         {
           label: 'Zoekfunctie',
           icon: 'database-view',
-          text: 'Het portaal biedt een zoekfunctie waardoor de gebruikers sneller op een productcode of naam kunnen zoeken, of uitgebreide productgroep filters kunnen gebruiken.'
+          text: 'Dankzij de uitgebreide zoekfunctie kunnen de gebruikers niet alleen sneller op een productcode of naam zoeken, maar ook uitgebreide productgroep filters kunnen worden toegepast. Dit scheelt de gebruiker een hoop tijd doordat er een stuk efficiënter gewerkt kan worden. Tevens geeft het een overzichtelijk zoekresultaat, wat prettig werkt.'
         },
         {
           label: 'Design',
           icon: 'fantasy',
-          text: 'Het nieuwe internationale e-commerce detaillistplatform voldoet aan alle nieuwste normen en eisen qua design. Het platform is responsief zodat de gebruikers het portaal altijd kunnen bezoeken en hun orders kunnen plaatsen, zelfs als zij onderweg zijn.'
+          text: 'Het nieuwe internationale e-commerce detaillistplatform voldoet aan alle nieuwste normen en eisen qua design. Het platform is responsief zodat de gebruikers het portaal altijd kunnen bezoeken en hun orders kunnen plaatsen, zelfs als zij onderweg zijn. Zo is het platform altijd beschikbaar voor de gebruikers, wel zo gemakkelijk en gebruiksvriendelijk.'
         },
         {
           label: 'Realtime',
           icon: 'clock',
-          text: 'Met toegankelijke en gebruikersvriendelijke portalen stimuleren wij de communicatie tussen cliënten onderling en tussen cliënten en zorgverleners.'
+          text: 'Het portaal is sterk geautomatiseerd, hierdoor wordt alles realtime bijgewerkt en teruggekoppeld. Zo berekent het systeem bijvoorbeeld automatisch de specifieke dealerprijs, de persoonlijke korting en de volumekorting voor de klant. Nadat de order is geplaatst en verwerkt wordt deze direct naar het back-end systeem gestuurd om verder verwerkt te kunnen worden. Zo zijn alle systemen met elkaar verbonden en altijd up-to-date.'
         }
       ]
     }

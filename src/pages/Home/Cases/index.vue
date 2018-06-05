@@ -1,17 +1,61 @@
 <template lang="pug">
-.flex.flex-justify-end.flex-column.flex-justify-center-phone
-  .container.pt
-    h1.dot Referenties
+.flex.flex-justify-end.flex-column.flex-justify-center-phone    
+  .feed
+    .title.container
+      h1.dot Referenties
+      p Wij zijn trots op onze opdrachtgevers en op wat wij voor ze mogen doen! En dat delen we graag met jullie. Nieuwsgierig naar wat dit is? Lees hieronder meer over ons werk, bekijk de cases.
+    .items.container
+      router-link.item.large(
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Vredestein/ApolloVredesteinCaseHeader.png)" }',
+        :to='{ name: "case", params: { name: "apollo-vredestein" } }',
+        ) 
+          div.text
+            h3.title Apollo Vredestein
+            .source Webportaal
+      .grid
+        router-link.item(
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/socialhof/banner.png)" }',
+        :to='{ name: "case", params: { name: "socialhof" } }',
+        ) 
+          div.text
+            h3.title Socialhof
+            .source Webportaal
 
-  div.cases__wrapper.flex.flex-wrap.flex-justify-between
-    router-link.cases__item(
-        v-for="(item, index) in this.cases",
-        :style='{ background: "url(" + item.imageUrl + ")" }',
-        :to='{ name: "case", params: { name: item.link } }',
-        :key="index"
-      )
-        div.cases__text
-          h3.cases__title(v-html="item.title")
+        router-link.item(
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/DBI/DBICaseHeader.png)" }',
+        :to='{ name: "case", params: { name: "dbi-container-service" } }',
+        ) 
+          div.text
+            h3.title DBI Container Service
+            .source Webportaal
+    
+    .items.container
+      
+      .grid
+        router-link.item(
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Comfoor/ComfoorCaseHeader.png)" }',
+        :to='{ name: "case", params: { name: "comfoor" } }',
+        ) 
+          div.text
+            h3.title Comfoor
+            .source Webportaal
+
+        //- router-link.item(
+        //- :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_SHV.jpg)" }',
+        //- :to='{ name: "case", params: { name: "webportaal-shv" } }',
+        //- ) 
+        //-   div.cases__text
+        //-     h3.cases__title Webportaal SHV
+        //-     .source Webportaal
+
+      router-link.item.large(
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/SHV/SHVCaseHeader.png" }',
+        :to='{ name: "case", params: { name: "webportaal-shv" } }',
+        ) 
+          div.text
+            h3.title Webportaal SHV
+            .source Webportaal
+      
 
 </template>
 
@@ -22,33 +66,7 @@ export default {
   },
   data () {
     return {
-      cases: [
-        {
-          title: 'Socialhof',
-          imageUrl: '/static/cases/Mockup_Case_SHV.jpg',
-          link: 'socialhof'
-        },
-        {
-          title: 'Apollo Vredestein',
-          imageUrl: '/static/cases/Mockup_Case_Vredestein.jpg',
-          link: 'apollo-vredestein'
-        },
-        {
-          title: 'DBI Container Service',
-          imageUrl: '/static/cases/Mockup_Case_DBI.jpg',
-          link: 'dbi-container-service'
-        },
-        {
-          title: 'Comfoor',
-          imageUrl: '/static/cases/Mockup_Case_Comfoor.jpg',
-          link: 'comfoor'
-        },
-        {
-          title: 'Webportaal SHV',
-          imageUrl: '/static/cases/Mockup_Case_SHV.jpg',
-          link: 'webportaal-shv'
-        }
-      ]
+      cases: []
     }
   },
   computed: {
@@ -62,55 +80,144 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
-.cases {
-  &__wrapper{
-    max-width: 80%;
-    width: 100%;
-    margin: 40px auto;
-    @include desktop {
-      max-width: 90%;
-    }
-  }
-  &__item {
-    flex: 0 1 23%;
-    margin: 1%;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    border-radius: 5px;
-    position: relative;
-    padding: 40px;
-    box-sizing: border-box;
-    &:after {
-      content: '';
-      display: block;
-      padding-top: 50%;
-    }
-    @include phablet {
-      flex: 0 1 48%;
-    }
-    @include phone {
-      flex: 1 1 100%;
-    }
-  }
-  &__title {
-    color: #fff;
-    border-bottom: 1px solid hsla(0,0%,100%,.7);
-    padding-bottom: 10px;
-    margin: 0;
-    max-height: 77px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-  }
-  &__text {
-    position: absolute;
-    bottom: 40px;
-    left: 40px;
-    text-align: left;
-    width: calc(100% - 80px);
+.feed {
+  width: 100vw;
+  padding: 100px 0;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+
+  .title {
+    margin-bottom: $gutter/2;
   }
 
+  h2 {
+    text-align: center; // ios
+  }
+
+  .more {
+    margin-top: $gutter - 10px;
+  }
+
+  @include phablet {
+    padding: 60px 0;
+    justify-content: center;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: $container-width + 70px;
+
+    @include phablet {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      margin: 0;
+      justify-content: flex-start;
+    }
+  }
+
+  &.dark {
+    background: radial-gradient(circle, #000000 0%, #082D3C 100%);
+
+    h2 {
+      color: white;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+
+  @include phablet {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.swipe {
+  display: none;
+
+  @include phablet {
+    display: flex;
+  }
+
+  i {
+    font-size: 40px;
+  }
+
+  &,
+  i {
+    color: white;
+  }
+}
+
+.item {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 170px;
+  width: 415px - $gutter*2;
+  border-radius: 5px;
+  position: relative;
+  padding: $gutter;
+  margin: 10px;
+  break-inside: avoid;
+  cursor: pointer;
+
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.large {
+    @include desktop {
+      height: 440px;
+    }
+  }
+
+  @include phablet {
+    margin: 10px 10px 10px 0;
+    width: 80%;
+    max-width: 500px;
+  }
+
+  .text {
+    position: absolute;
+    bottom: 20px;
+    left: $gutter;
+    text-align: left;
+    width: calc(100% - #{$gutter*2});
+
+    $bottomColor: rgba(255, 255, 255, 0.7);
+
+    @include phablet {
+      left: $gutter/2;
+      width: calc(100% - #{$gutter});
+    }
+
+    .title {
+      color: white;
+      border-bottom: 1px solid $bottomColor;
+      padding-bottom: 10px;
+      margin: 0;
+      max-height: 77px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .source {
+      color: $bottomColor !important;
+      margin-top: 10px;
+    }
+  }
 }
 
 </style>

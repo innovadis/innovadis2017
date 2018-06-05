@@ -1,5 +1,5 @@
 <template lang="pug">
-.case-socialhof
+.case-shv
   .container.pt
     h1.dot {{ title }}
     p.intro {{ lead }}
@@ -7,43 +7,41 @@
   .hero
 
   .hidden-phone
+    .container.pt.pb
+      .padded-container
+        h2.dot {{ title1 }}
+        p De volgende vraagstukken stonden centraal:
+        
+        ul  
+          li Hoe kunnen we vragen van de burger over hun lopende financiële zaken beter beantwoorden?
+          li Hoe kan de dienstverlening transparanter en toegankelijker worden gemaakt?
+          li Hoe kan een burger met schuldhulpverlening meer zelfredzaam worden?
+          li Hoe kan de afhandeling van klantverzoeken en betalingen efficiënter worden uitgevoerd?
+
+        p {{ text1 }}
+
+        p Er is een web portaal ontwikkeld waarmee gemeenten hun klanten inzage kunnen geven in hun schuldhulpverlening. Het portaal is een vorm van internetbankieren die volledig is toegespitst op burgers die in de schuldhulpverlening zitten. Deze vorm van internetbankieren ondersteunt de burger om weer zelfredzaam te worden. 
+
+        p Klanten loggen in via DigiD op het portaal, waarbij voldaan wordt aan alle normen van het ICT beveiligingsassessment van Logius. Ze hebben 24/7 (realtime) inzage in hun lopende betalingen, schuldregeling en lening bij de gemeente (de gemeenten noemen dit ook wel een sociaal krediet). Onder begeleiding regelen zij zelf hun financiële zaken via het portaal, waarmee de zelfredzaamheid wordt vergroot en de schuldhulpverlening transparanter wordt.
+
+        img(src="/static/cases/SHV/SHV_BigScreen.png", width="100%")
+
     .gray
-      .container.pt
-        .padded-container
-          h2.dot {{ title1 }}
-          p De volgende vraagstukken stonden centraal:
-          
-          ul  
-            li Hoe kunnen we vragen van de burger over hun lopende financiële zaken beter beantwoorden?
-            li Hoe kan de dienstverlening transparanter en toegankelijker worden gemaakt?
-            li Hoe kan een burger met schuldhulpverlening meer zelfredzaam worden?
-            li Hoe kan de afhandeling van klantverzoeken en betalingen efficiënter worden uitgevoerd?
-
-          p {{ text1 }}
-
-          p Er is een web portaal ontwikkeld waarmee gemeenten hun klanten inzage kunnen geven in hun schuldhulpverlening. Het portaal is een vorm van internetbankieren die volledig is toegespitst op burgers die in de schuldhulpverlening zitten. Deze vorm van internetbankieren ondersteunt de burger om weer zelfredzaam te worden. 
-
-          p Klanten loggen in via DigiD op het portaal, waarbij voldaan wordt aan alle normen van het ICT beveiligingsassessment van Logius. Ze hebben 24/7 (realtime) inzage in hun lopende betalingen, schuldregeling en lening bij de gemeente (de gemeenten noemen dit ook wel een sociaal krediet). Onder begeleiding regelen zij zelf hun financiële zaken via het portaal, waarmee de zelfredzaamheid wordt vergroot en de schuldhulpverlening transparanter wordt.
-
-
-      .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center
-        .padded-container.flex.flex-column.small
-          h3 {{ title2 }}
-          p {{ text2 }}
-
-          h4 Communicatie tool
-          p Een mooi voorbeeld van een verdere ontwikkeling is de communicatiefunctie (een vorm van een berichten box/mailfunctie) binnen de afgeschermde omgeving. Via het portaal of de app kan de klant inzien hoe de communicatie met de schuldeisers ervoor staat. Ook biedt het de klant de mogelijkheid om te communiceren op een eigen persoonlijke omgeving met zijn consulent(en). De gemeente bepaalt vooraf welke consulent aan de klant wordt gekoppeld. Via de communicatie tool kan de klant informatie uitwisselen over de diensten en producten met zijn persoonlijk toegewezen consulent(en).
-        phone-orbs
-
+     .container.pt.pb.flex.flex-justify-center.flex-column-phablet.flex-align-center
+       .padded-container.flex.flex-column
+         h3 {{ title2 }}
+         p {{ text2 }}
+         h4 Communicatie tool
+         p Een mooi voorbeeld van een verdere ontwikkeling is de communicatiefunctie (een vorm van een berichten box/mailfunctie) binnen de afgeschermde omgeving. Via het portaal of de app kan de klant inzien hoe de communicatie met de schuldeisers ervoor staat. Ook biedt het de klant de mogelijkheid om te communiceren op een eigen persoonlijke omgeving met zijn consulent(en). De gemeente bepaalt vooraf welke consulent aan de klant wordt gekoppeld. Via de communicatie tool kan de klant informatie uitwisselen over de diensten en producten met zijn persoonlijk toegewezen consulent(en).  
+    
+    Vision
+    
     .gray
       .container.flex.pt
         phones-side-by-side
         .flex.flex-column
           h3 {{ title3 }}
           p {{ text3 }}
-
-    Vision
-
 
   //- Phone only
   .hidden-desktop.hidden-tablet
@@ -56,7 +54,8 @@
           h3(style='margin-bottom: 20px') {{ title2 }}
           p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
-        img(src='/static/images/smarthealth_mobile_orbs.png', height='280px', style='margin: 0 -20px 20px 20px')
+        img(src='/static/cases/SHV/SHV_Small.png', width='200px', style='margin: 0 -20px 20px 20px')
+
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
@@ -66,7 +65,7 @@
       h3 {{ title3 }}
       p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
-      img(src='/static/cases/socialhof/kiosk.png', height='250px', style='margin: 20px 0')
+      img(src='/static/cases/SHV/SHV_BigScreen.png', width='100%', style='margin: 20px 0')
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
@@ -83,12 +82,8 @@
 <script>
 export default {
   components: {
-    Orb: require('src/components/Orb'),
-    PhoneOrbs: require('./PhoneOrbs'),
-    Kiosk: require('./Kiosk'),
     PhonesSideBySide: require('./PhonesSideBySide'),
     PhonesOverlap: require('./PhonesOverlap'),
-    Macbook: require('./Macbook'),
     SendBoxWithSlot: require('src/components/SendBox/SendBoxWithSlot'),
     ButtonAlternate: require('src/components/ButtonAlternate'),
     InnoButton: require('src/components/Button'),
@@ -138,9 +133,10 @@ export default {
 <style lang="scss" scoped>
 @import 'src/styles/variables';
 
-.case-socialhof {
+
+.case-shv {
   .gray {
-    background: linear-gradient(180deg, #FFFFFF 0%, #F1F1F1 100%);
+    background:#F1F1F1;
   }
 
   .small {
@@ -153,7 +149,7 @@ export default {
 
   .hero {
     margin-top: $gutter;
-    background-image: url('/static/cases/socialhof/banner.png');
+    background-image: url('/static/cases/SHV/SHVCaseHeader.png');
   }
 
   .with-macbook {
