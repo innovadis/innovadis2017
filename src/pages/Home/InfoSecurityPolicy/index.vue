@@ -2,7 +2,7 @@
 .info-security-policy
   .container.pt
     h2.dot Algemeen
-    p Innovadis hecht belang aan informatiebeveiliging om de continuïteit, integriteit en betrouwbaarheid van de informatievoorziening te borgen. Innovadis geeft continue aandacht aan informatiebeveiliging zodat een veilige en betrouwbare informatiebeveiliging kan worden geborgd.
+    p Innovadis hecht belang aan informatiebeveiliging om zo de continuïteit, integriteit en betrouwbaarheid van de informatievoorziening te borgen. Innovadis geeft continue aandacht aan informatiebeveiliging zodat een veilige en betrouwbare informatiebeveiliging kan worden geborgd.
     br
     h3.dot Kader
     p Innovadis werkt volgens de best practices conform de ISO 27001 en 27002 om de informatiebeveiliging te borgen. Innovadis werkt daarbij volgens het ISMS (Information Security Management System) en de Plan-Do-Check-Act cyclus om informatiebeveiliging integraal onderdeel uit te laten maken van de bedrijfsvoering van Innovadis.
@@ -12,16 +12,10 @@
     br
 
     h2.dot Informatie beveiligingsbeleid
-    multiselect(
-      v-model='selectedHeader',
-      :allow-empty='false',
-      :options='headers',
-      select-label='',
-      deselect-label='',
-      selected-label='',
-      placeholder='Selecteer een onderwerp',
+    .headers
+      .header.flex(v-for='(header, i) in headers', @click='selectedHeader = headers[i]', :class='{ selected: selectedHeader === header }') {{header}}
+        .icons8-advance(:class='{ selected: selectedHeader === header }')
 
-      )
 
     transition(name='fade', mode='out-in')
       div(v-if='selectedHeader === headers[0]' key="headers[0]")
@@ -38,7 +32,7 @@
         .hidden-phone
           select-box(:items='selectBoxItems')
         .hidden-tablet.hidden-desktop
-          multiselect.small-margin(
+          multiselect(
             label='label',
             v-model='selectedRole',
             :allow-empty='false',
@@ -236,12 +230,46 @@ export default {
     margin-top: 0;
   }
 
+  .headers {
+    max-width: 500px;
+    margin: 20px;
+
+    .header {
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      .icons8-advance {
+        opacity: 0;
+        font-size: 28px;
+        color: $inno-yellow;
+        transition: opacity 0.8s ease-out;
+      }
+
+      &:hover {
+        color: $inno-yellow;
+      }
+
+      &:hover .icons8-advance {
+        animation: hover 0.6s ease-out forwards;
+      }
+
+      &.selected {
+        color: $inno-yellow;
+      }
+
+      &.selected .icons8-advance{
+        opacity: 1;
+        margin-left: 10px;
+      }
+    }
+  }
+
   .multiselect {
     margin: $gutter 0;
-    &.small-margin {
-      @include phone {
-        margin: 10px 0;
-      }
+
+    @include phone {
+      margin: 10px 0;
     }
   }
 }
@@ -276,5 +304,10 @@ export default {
   .select-box .box {
     max-width: 58% !important;
   }
+}
+
+@keyframes hover {
+  50% {transform: translate(10px); }
+  100% {transform: translate(10px);  opacity:1}
 }
 </style>

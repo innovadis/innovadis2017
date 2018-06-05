@@ -27,7 +27,6 @@
 
         .phone-container
           .phone 
-
     Vision
 
     .gray
@@ -216,4 +215,5 @@ export default {
     }
   }
 }
+
 </style>

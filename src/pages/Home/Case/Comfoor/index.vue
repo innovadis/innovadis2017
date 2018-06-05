@@ -38,8 +38,6 @@
           h3 {{ title3 }}
           p {{ text3 }}
 
-
-
   //- Phone only
   .hidden-desktop.hidden-tablet
     .gray.container.pt
@@ -62,6 +60,7 @@
       p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
       img(src="/static/cases/Comfoor/Comfoor_BigScreen.png", width="100%", style='margin: 20px 0')
+
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container

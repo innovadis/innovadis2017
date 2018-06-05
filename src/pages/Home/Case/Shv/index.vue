@@ -7,7 +7,6 @@
   .hero
 
   .hidden-phone
-    
     .container.pt.pb
       .padded-container
         h2.dot {{ title1 }}
@@ -44,9 +43,6 @@
           h3 {{ title3 }}
           p {{ text3 }}
 
-    
-
-
   //- Phone only
   .hidden-desktop.hidden-tablet
     .gray.container.pt
@@ -59,6 +55,7 @@
           p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
         img(src='/static/cases/SHV/SHV_Small.png', width='200px', style='margin: 0 -20px 20px 20px')
+
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
@@ -135,6 +132,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+
 
 .case-shv {
   .gray {

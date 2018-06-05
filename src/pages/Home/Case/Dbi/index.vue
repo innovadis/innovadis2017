@@ -33,7 +33,9 @@
 
           h4 Afrekening per gewicht i.p.v. per transactie
           p Op dit moment wordt de consument afgerekend per transactie. Momenteel wordt er gekeken om dit te doen op basis van gewicht in plaats van op basis van aantallen. Dit betekent een ander afrekensysteem en dus een andere koppeling in ons portaal.
+
           phones-side-by-side
+
 
 
   //- Phone only
@@ -49,6 +51,7 @@
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
         img(src='/static/cases/DBI/DBI_SMall.png', width="200px", style='margin: 0 -20px 20px 20px')
 
+
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
             p {{ text2 }}
@@ -58,6 +61,7 @@
       p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
       img(src='/static/cases/DBI/DBIBigScreen.png', width='100%', style='margin: 20px')
+
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
@@ -124,6 +128,7 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+
 
 .case-dbi {
   .gray {

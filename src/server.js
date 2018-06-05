@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 app.use(compression())
 
 async function redeploy () {
-  await shelljs.exec('cd /root/innovadis2017 && git pull && npm install && npm run build && forever restart websiteServer', {
+  await shelljs.exec('cd /root/innovadis2017 && git checkout -- . && git pull && npm install && npm run build && forever restart websiteServer', {
     async: true
   })
 }
