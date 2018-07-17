@@ -1,14 +1,14 @@
 <template lang="pug">
-.flex.flex-justify-end.flex-column.flex-justify-center-phone    
+.flex.flex-justify-end.flex-column.flex-justify-center-phone
   .feed
     .title.container
       h1.dot Referenties
       p Wij zijn trots op onze opdrachtgevers en op wat wij voor ze mogen doen! En dat delen we graag met jullie. Nieuwsgierig naar wat dit is? Lees hieronder meer over ons werk, bekijk de cases.
     .items.container
       router-link.item.large(
-        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Vredestein/ApolloVredesteinCaseHeader.png)" }',
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_Vredestein.jpg)" }',
         :to='{ name: "case", params: { name: "apollo-vredestein" } }',
-        ) 
+        )
           div.text
             h3.title Apollo Vredestein
             .source Webportaal
@@ -16,47 +16,45 @@
         router-link.item(
         :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/socialhof/banner.png)" }',
         :to='{ name: "case", params: { name: "socialhof" } }',
-        ) 
+        )
           div.text
             h3.title Socialhof
             .source Webportaal
 
         router-link.item(
-        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/DBI/DBICaseHeader.png)" }',
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_DBI.jpg)" }',
         :to='{ name: "case", params: { name: "dbi-container-service" } }',
-        ) 
+        )
           div.text
             h3.title DBI Container Service
             .source Webportaal
-    
+
     .items.container
-      
+
       .grid
         router-link.item(
-        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Comfoor/ComfoorCaseHeader.png)" }',
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_Comfoor.jpg)" }',
         :to='{ name: "case", params: { name: "comfoor" } }',
-        ) 
+        )
           div.text
             h3.title Comfoor
             .source Webportaal
 
         //- router-link.item(
-        //- :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_SHV.jpg)" }',
+        //- :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_SHV)" }',
         //- :to='{ name: "case", params: { name: "webportaal-shv" } }',
-        //- ) 
+        //- )
         //-   div.cases__text
         //-     h3.cases__title Webportaal SHV
         //-     .source Webportaal
 
       router-link.item.large(
-        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/SHV/SHVCaseHeader.png" }',
+        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_SHV.jpg" }',
         :to='{ name: "case", params: { name: "webportaal-shv" } }',
-        ) 
+        )
           div.text
             h3.title Webportaal SHV
             .source Webportaal
-      
-
 </template>
 
 <script>

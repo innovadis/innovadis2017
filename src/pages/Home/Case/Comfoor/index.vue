@@ -25,13 +25,30 @@
     .gray
       .container.pt.pb
         .padded-container
-          h3 {{ title2 }}
-          p {{ text2 }}
-          img(src="/static/cases/Comfoor/Comfoor_BigScreen.png", width="100%")
+          h2.question {{ title1 }}
+          p {{ text1 }}
 
-    Vision
 
     .gray
+      .container.pt.pb
+        .padded-container
+          h3 {{ title2 }}
+          p {{ text2 }}
+          img(src="/static/cases/Comfoor/Comfoor_BigScreen@2x.png", width="100%")
+          p Het portaal zal een breed scala aan functies en processen ondersteunen. Bij de ontwikkeling van dit portaal staat de uiteindelijke gebruiker centraal. In het geval van Comfoor zijn dit drie doelgroepen; de audicien, de industrie klant en de PBM (persoonlijke beschermingsmiddelen) klant.
+          p 50% van het assortiment zijn direct bestelbare accessoires, daarnaast zijn er de maatwerk (Custom-Fit) producten en het Uni-Fit Pluggerz assortiment. Al deze producten moeten beschikbaar zijn in het portaal. Door alles overzichtelijk in één portaal aan te bieden moeten de verschillende vooraf opgestelde doelen worden behaald. Een aantal daarvan zijn:
+          ul
+            li Efficiëntere dienstverlening per doelgroep
+            li Klanttevredenheid en -loyaliteit vergroten (door het ontzorgen van de klant)
+            li Vergroten selfservice mogelijkheden
+            li Betere informatievoorziening
+            li Verbeteren inzicht in behoeften en gedrag van de klanten
+            li Vereenvoudigen van beheer en onderhoud (door Comfoor zelf)
+            li Optimaliseren van de gehele klantbeleving
+
+      Vision
+
+
       .container.flex.pt
         phones-side-by-side
         .flex.flex-column
@@ -44,10 +61,10 @@
       h2.text-center {{ title1 }}
       p.text-center {{ text1 }}
 
-      .with-image.flex.pt.flex-align-center
+      .with-image.flex.pt.pb.flex-align-center
         .flex.flex-column
           h3(style='margin-bottom: 20px') {{ title2 }}
-          p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
+          p Comfoor heeft Innovadis gevraagd om een online portaal te bouwen, die uiteraard volledig geïntegreerd is met de huidige IT-systemen en die de interactie tussen klant en consument bevordert en vereenvoudigd.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
         img(src='/static/cases/Comfoor/Comfoor_Small.png', width='200px', style='margin: 0 -20px 20px 20px')
 
@@ -58,19 +75,13 @@
     .gray.container.pt.flex.flex-column.flex-align-center
       h3 {{ title3 }}
       p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
-      inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
       img(src="/static/cases/Comfoor/Comfoor_BigScreen.png", width="100%", style='margin: 20px 0')
 
-
-      info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
-        .dialog-container
-          p {{ text3 }}
-
-  .container.pt
+  .container
     send-box-with-slot.margin-top(flip, subject='Reactie op de Comfoor referentie')
       div
         img(src='/static/images/Jordy.png')
-      h2.dot Bel of mail Jordy Goorman
+      h2.dot Bel of mail Jordy
       p Bel mij op #[a(href='tel:+31617234511') 06 172 345 11] of laat hiernaast een bericht achter en ik bel je terug!
 </template>
 
@@ -92,7 +103,7 @@ export default {
     return {
       title: 'Comfoor',
       lead: 'Comfoor ontwikkelt, produceert en levert al ruim 30 jaar, wereldwijd, verrassend innovatieve topproducten op het gebied van gehoorbescherming en gehoorverbetering. De modernste technieken en continue innovatie zijn belangrijke pijlers voor Comfoor.',
-      title1: 'Wat maakt Comfoor zo uniek?',
+      title1: 'Wat maakt Comfoor zo uniek',
       text1: 'Comfoor heeft ruime ervaring in het vakgebied en blijft verrassend innovatief. Ze zijn gepassioneerd en ontwikkelen met trots, doelgerichtheid en liefde en dat zie je terug in hun producten. Comfoor heeft zelf ook luisterende oren, ze denken mee in oplossingen en nemen verantwoordelijkheid voor anderen, zichzelf en de wereld van morgen. Comfoor levert twee merken; Comfoor en Pluggerz, beide op maat gemaakte producten. Samen zijn ze goed voor meer dan 500 producten (gehoorbescherming en gehoor verbetering).',
       dialogOpen1: false,
       title2: 'De case',
@@ -132,7 +143,7 @@ export default {
 
 .case-comfoor {
   .gray {
-    background: #F1F1F1;
+    background: $bg-gradient;
   }
 
   .small {
@@ -145,7 +156,7 @@ export default {
 
   .hero {
     margin-top: $gutter;
-    background-image: url('/static/cases/Comfoor/ComfoorCaseHeader.png');
+    background-image: url('/static/cases/Comfoor/ComfoorCaseHeader@2x.jpg');
   }
 
   .with-macbook {

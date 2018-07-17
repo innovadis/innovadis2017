@@ -12,7 +12,7 @@ export default {
 @import 'src/styles/variables';
 
 .image {
-  background-image: url('/static/cases/Comfoor/Comfoor_Small.png');
+  background-image: url('/static/cases/Comfoor/Comfoor_Small@2x.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

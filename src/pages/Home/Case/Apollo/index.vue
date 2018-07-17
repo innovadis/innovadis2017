@@ -10,7 +10,7 @@
     .gray.pt.pb
       .container
         .padded-container
-          h2.dot {{ title1 }}
+          h2.question {{ title1 }}
           p {{ text1 }}
 
     .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center.flex-wrap
@@ -26,11 +26,11 @@
             li Het portaal moet toegang geven tot meer inzicht en gegevens over de online activiteiten en de interactie met de klant.
 
         .phone-container
-          .phone 
+          .phone
     Vision
 
     .gray
-      .container.flex.pt
+      .container.flex
         phones-side-by-side
         .flex.flex-column
           h3 {{ title3 }}
@@ -49,7 +49,7 @@
           h3(style='margin-bottom: 20px') {{ title2 }}
           p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
-        img(src='/static/cases/Vredestein/ApolloVredestein_Small.png', width='300px', style='margin: 0 -100px 20px 20px')
+        img(src='/static/cases/Vredestein/Apollo_Tablet_Small@2x.png', width='300px', style='margin: 0 -100px 20px 5px')
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
@@ -65,11 +65,11 @@
         .dialog-container
           p {{ text3 }}
 
-  .container.pt
+  .container
     send-box-with-slot.margin-top(flip, subject='Reactie op de Apollo Vredestein referentie')
       div
         img(src='/static/images/Jordy.png')
-      h2.dot Bel of mail Jordy Goorman
+      h2.dot Bel of mail Jordy
       p Bel mij op #[a(href='tel:+31617234511') 06 172 345 11] of laat hiernaast een bericht achter en ik bel je terug!
 </template>
 
@@ -89,7 +89,7 @@ export default {
     return {
       title: 'Apollo Vredestein',
       lead: 'Apollo Vredestein is een toonaangevende bandenproducent voor particuliere automobilisten en voor industrieel en agrarisch gebruik. Apollo Vredestein begon in 1972 als single brand organisatie, maar in de loop van de jaren is de organisatie gegroeid en uitgebreid met meerdere merken. Apollo Vredestein heeft een breed scala aan klanten, heeft meerdere productieactiviteiten in Afrika, Azië en Europa en exporteert haar banden naar meer dan 100 landen. Met als belangrijkste merken Apollo en Vredestein.',
-      title1: 'Wat maakt Apollo Vredestein zo uniek?',
+      title1: 'Wat maakt Apollo Vredestein zo uniek',
       text1: 'Apollo Vredestein gelooft in het geven van nieuwe mogelijkheden aan klanten waarmee ze zelf in controle zijn en helpt hen de weg voor zich te veroveren. Apollo Vredestein stelt individuen in staat om hun eigen potentieel te bereiken wanneer het gaat om (auto)rijden en in elke fase van het leven, zoals ook hun slogan weerspiegelt; ‘Go the distance’.',
       dialogOpen1: false,
       title2: 'De case',
@@ -129,7 +129,7 @@ export default {
 
 .case-apollo {
   .gray {
-    background: #F1F1F1;
+    background: $bg-gradient;
   }
 
   .small {
@@ -142,7 +142,7 @@ export default {
 
   .hero {
     margin-top: $gutter;
-    background-image: url('/static/cases/Vredestein/ApolloVredesteinCaseHeader.png');
+    background-image: url('/static/cases/Vredestein/ApolloVredesteinCaseHeader@2x.jpg');
   }
 
   .with-macbook {
@@ -202,7 +202,7 @@ export default {
   }
 
   .phone {
-    background: url('/static/cases/Vredestein/Apollo_Tablet_Small.png') no-repeat center;
+    background: url('/static/cases/Vredestein/Apollo_Tablet_Small@2x.png') no-repeat center;
     background-size: contain;
     height: 364px;
     width: 100%;
