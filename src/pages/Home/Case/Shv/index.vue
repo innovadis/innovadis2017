@@ -25,8 +25,6 @@
 
           p Er is een web portaal ontwikkeld waarmee gemeenten hun klanten inzage kunnen geven in hun schuldhulpverlening. Het portaal is een vorm van internetbankieren die volledig is toegespitst op burgers die in de schuldhulpverlening zitten. Deze vorm van internetbankieren ondersteunt de burger om weer zelfredzaam te worden.
 
-          p Klanten loggen in via DigiD op het portaal, waarbij voldaan wordt aan alle normen van het ICT beveiligingsassessment van Logius. Ze hebben 24/7 (realtime) inzage in hun lopende betalingen, schuldregeling en lening bij de gemeente (de gemeenten noemen dit ook wel een sociaal krediet). Onder begeleiding regelen zij zelf hun financiële zaken via het portaal, waarmee de zelfredzaamheid wordt vergroot en de schuldhulpverlening transparanter wordt.
-
       Vision
 
       .container.pb.flex.flex-justify-center.flex-column-phablet.flex-align-center

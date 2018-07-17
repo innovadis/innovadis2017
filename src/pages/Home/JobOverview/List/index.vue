@@ -2,7 +2,7 @@
 .joblist
   .container
     h2.dot Bekijk de vacatures
-    p Zoals de brouwer van zijn bier houdt, zo houden onze ontwerpers van hun getekende vormen en onze ontwikkelaars van hun geschreven code. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek.  Bekijk onze vacatures en wie weet maak jij binnenkort deel uit van ons gepassioneerde team. Bel of mail voor een vrijblijvend oriënterend gesprek.
+    p Zoals de brouwer van zijn bier houdt, zo houden onze ontwerpers van hun getekende vormen en onze ontwikkelaars van hun geschreven code. Onze oplossingen zijn niet vanzelfsprekend. Ze ontstaan door onze passie om de wereld te verbeteren met creativiteit en techniek. Wij staan altijd open voor nieuwe enthousiastelingen in ons team, ook als we geen vacatures open hebben staan. Bekijk onderstaande vacatures/functieprofielen en wie weet maak jij binnenkort deel uit van ons gepassioneerde team. Bel of mail voor een vrijblijvend oriënterend gesprek.
 
     //- Niet nuttig met zo weinig vacatures, dus niet laten zien
     //- .flex

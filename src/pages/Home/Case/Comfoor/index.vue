@@ -7,6 +7,21 @@
   .hero
 
   .hidden-phone
+    .container.pt.pb
+      .padded-container
+        h2.dot {{ title1 }}
+        p {{ text1 }}
+        p Het portaal zal een breed scala aan functies en processen ondersteunen. Bij de ontwikkeling van dit portaal staat de uiteindelijke gebruiker centraal. In het geval van Comfoor zijn dit drie doelgroepen; de audicien, de industrie klant en de PBM (persoonlijke beschermingsmiddelen) klant.
+        p 50% van het assortiment zijn direct bestelbare accessoires, daarnaast zijn er de maatwerk (Custom-Fit) producten en het Uni-Fit Pluggerz assortiment. Al deze producten moeten beschikbaar zijn in het portaal. Door alles overzichtelijk in één portaal aan te bieden moeten de verschillende vooraf opgestelde doelen worden behaald. Een aantal daarvan zijn:
+        ul
+          li Efficiëntere dienstverlening per doelgroep
+          li Klanttevredenheid en -loyaliteit vergroten (door het ontzorgen van de klant)
+          li Vergroten selfservice mogelijkheden
+          li Betere informatievoorziening
+          li Verbeteren inzicht in behoeften en gedrag van de klanten
+          li Vereenvoudigen van beheer en onderhoud (door Comfoor zelf)
+          li Optimaliseren van de gehele klantbeleving
+
     .gray
       .container.pt.pb
         .padded-container
