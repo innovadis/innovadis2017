@@ -33,7 +33,6 @@ export default {
 @import "src/styles/variables";
 
 .select-box {
-  $box: &;
   display: flex;
 
   @include phone {
