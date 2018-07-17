@@ -42,7 +42,7 @@
   .hidden-desktop.hidden-tablet
     .gray.container.pt
       h2.text-center {{ title1 }}
-      p.text-center {{ text1 }}
+      p.text-center(v-html="text1")
 
       .with-image.flex.pt.flex-align-center
         .flex.flex-column
@@ -53,7 +53,7 @@
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
-            p {{ text2 }}
+            p(v-html="text2")
 
     .gray.container.pt.flex.flex-column.flex-align-center
       h3 {{ title3 }}
@@ -63,7 +63,7 @@
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
-          p {{ text3 }}
+          p(v-html="text3")
 
   .container
     send-box-with-slot.margin-top(flip, subject='Reactie op de Apollo Vredestein referentie')
