@@ -13,13 +13,13 @@
           h2.dot {{ title1 }}
           p De volgende vraagstukken stonden centraal:
 
-          ul
+          ul.case__list
             li Hoe kunnen we vragen van de burger over hun lopende financiële zaken beter beantwoorden?
             li Hoe kan de dienstverlening transparanter en toegankelijker worden gemaakt?
             li Hoe kan een burger met schuldhulpverlening meer zelfredzaam worden?
             li Hoe kan de afhandeling van klantverzoeken en betalingen efficiënter worden uitgevoerd?
 
-          img(src="/static/cases/SHV/SHV_BigScreen@2x.png", width="100%")
+          img(src="/static/cases/SHV/SHV_BigScreen@2x.png", width="100%" class="case__image")
 
           p {{ text1 }}
 
@@ -31,7 +31,8 @@
         .flex.flex-column
           h2.dot {{ title2 }}
           p {{ text2 }}
-          img(src="/static/cases/SHV/SHV_Small@2x.png", width="100%")
+
+          img(src="/static/cases/SHV/SHV_Small@2x.png", width="80%", class="case__image")
 
           .flex
             .flex-column.flex-col
@@ -128,9 +129,38 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
-
+.case {
+  &__image {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-self: center;
+  }
+  &__list {
+    margin: 0;
+    padding-left: 20px;
+    list-style: none;
+    li {
+      line-height: 28px;
+      position: relative;
+      padding-left: 15px;
+      &::before {
+        content: '';
+        left: 0;
+        top: 11px;
+        display: inline-block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #000;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
 
 .case-shv {
+  .case
   .gray {
     background:$bg-gradient;
   }

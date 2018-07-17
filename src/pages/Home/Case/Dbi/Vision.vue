@@ -37,7 +37,7 @@ export default {
         },
         {
           label: 'Gebruikersbeheer',
-          icon: 'multiple-users',
+          icon: 'human-resource',
           text: 'Gebruikers kunnen worden aangemaakt, geregistreerd, verwijderd en geblokkeerd, inclusief bijbehorende rollen en rechten. Gemeentes kunnen gemakkelijk worden toegevoegd en toegewezen aan de containers.'
         },
         {
