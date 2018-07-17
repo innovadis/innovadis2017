@@ -3,7 +3,7 @@
   h2.dot.short Een aantal functionaliteiten
 
   .hidden-phone
-    select-box(:items='selectBoxItems')
+    select-box(:items='selectBoxItems', class="select-box__case")
 
   .hidden-tablet.hidden-desktop
     .flex.flex-justify-center
@@ -22,32 +22,32 @@ export default {
       selectBoxItems: [
         {
           label: 'Adressen & locaties',
-          icon: 'order-on-the-way',
+          icon: 'waypoint-map',
           text: 'Alle (breng)locaties staan in het portaal, gekoppeld aan containers en GPS locaties. Tevens is alles beheersbaar; toevoegen, verwijderen, koppelen en locaties tonen op een kaart. '
         },
         {
           label: 'Containers',
-          icon: 'online',
+          icon: 'empty-trash',
           text: 'Zowel de ondergrondse als bovengrondse containers zijn volledig in kaart. Chipnummers zijn gekoppeld, te ondernemen/ondernomen acties zijn zichtbaar, locaties zijn volledig in zicht en alles is koppelbaar. Daarnaast is het gebruik inzichtelijk; aantal ledigingen, gekoppelde passen, transacties etc.'
         },
         {
           label: 'Servicerondes',
-          icon: 'refresh',
+          icon: 'calender',
           text: 'Het portaal geeft een gedetailleerd overzicht van alle servicerondes. Tevens kunnen deze bewerkt worden en acties kunnen worden gekoppeld aan de rondes. Het KCC (Klanten Contact Centrum) van gemeenten kan inwoners direct aangeven wanneer hun klacht/reparatie wordt afgehandeld. Daarnaast kunnen veldwerkers worden toegewezen, statussen worden gewijzigd en werkbonnen kunnen worden beheerd.'
         },
         {
           label: 'Gebruikersbeheer',
-          icon: 'user-options',
+          icon: 'multiple-users',
           text: 'Gebruikers kunnen worden aangemaakt, geregistreerd, verwijderd en geblokkeerd, inclusief bijbehorende rollen en rechten. Gemeentes kunnen gemakkelijk worden toegevoegd en toegewezen aan de containers.'
         },
         {
           label: 'Routes',
-          icon: 'refresh',
+          icon: 'direction-arrow',
           text: 'Met toegankelijke en gebruikersvriendelijke portalen stimuleren wij de communicatie tussen cliënten onderling en tussen cliënten en zorgverleners.'
         },
         {
           label: 'Handheld',
-          icon: 'refresh',
+          icon: 'ipad-and-iphone',
           text: 'Een handheld device is beschikbaar waarin service rondes beschikbaar zijn. Deze handheld werkt realtime en online. Acties behorende bij de rondes (service, onderhoud en opaalrondes) zijn hierin gekoppeld. Tevens kunnen deze aangepast of uitgebreid worden. Ook is de handheld offline beschikbaar waardoor er altijd mee gewerkt kan worden.'
         }
       ]
@@ -76,6 +76,7 @@ export default {
 
   h2.short {
     max-width: 400px;
+    margin-bottom: 15px;
   }
 
   .margin-top {

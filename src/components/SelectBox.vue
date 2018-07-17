@@ -33,6 +33,7 @@ export default {
 @import "src/styles/variables";
 
 .select-box {
+  $box: &;
   display: flex;
 
   @include phone {
@@ -53,6 +54,16 @@ export default {
     @include phone {
       max-width: initial;
       margin: 0;
+    }
+  }
+
+  &__case {
+
+    .box {
+      max-width: 50%;
+    }
+    .button {
+      margin: 12px 40px 10px 0;
     }
   }
 }
