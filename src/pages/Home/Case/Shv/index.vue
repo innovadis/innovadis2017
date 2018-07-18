@@ -13,15 +13,15 @@
           h2.dot {{ title1 }}
           p De volgende vraagstukken stonden centraal:
 
-          ul
+          ul.case__list
             li Hoe kunnen we vragen van de burger over hun lopende financiële zaken beter beantwoorden?
             li Hoe kan de dienstverlening transparanter en toegankelijker worden gemaakt?
             li Hoe kan een burger met schuldhulpverlening meer zelfredzaam worden?
             li Hoe kan de afhandeling van klantverzoeken en betalingen efficiënter worden uitgevoerd?
 
-          img(src="/static/cases/SHV/SHV_BigScreen@2x.png", width="100%")
+          img(src="/static/cases/SHV/SHV_BigScreen@2x.png", width="100%" class="case__image")
 
-          p {{ text1 }}
+          p(v-html="text3")
 
           p Er is een web portaal ontwikkeld waarmee gemeenten hun klanten inzage kunnen geven in hun schuldhulpverlening. Het portaal is een vorm van internetbankieren die volledig is toegespitst op burgers die in de schuldhulpverlening zitten. Deze vorm van internetbankieren ondersteunt de burger om weer zelfredzaam te worden.
 
@@ -30,8 +30,9 @@
       .container.pb.flex.flex-justify-center.flex-column-phablet.flex-align-center
         .flex.flex-column
           h2.dot {{ title2 }}
-          p {{ text2 }}
-          img(src="/static/cases/SHV/SHV_Small@2x.png", width="100%")
+          p(v-html="text2")
+
+          img(src="/static/cases/SHV/SHV_Small@2x.png", width="80%", class="case__image")
 
           .flex
             .flex-column.flex-col
@@ -39,14 +40,14 @@
               p Een mooi voorbeeld van een verdere ontwikkeling is de communicatiefunctie (een vorm van een berichten box/mailfunctie) binnen de afgeschermde omgeving. Via het portaal of de app kan de klant inzien hoe de communicatie met de schuldeisers ervoor staat. Ook biedt het de klant de mogelijkheid om te communiceren op een eigen persoonlijke omgeving met zijn consulent(en). De gemeente bepaalt vooraf welke consulent aan de klant wordt gekoppeld. Via de communicatie tool kan de klant informatie uitwisselen over de diensten en producten met zijn persoonlijk toegewezen consulent(en).
             .flex-column.flex-col
               h3 {{ title3 }}
-              p {{ text3 }}
+              p(v-html="text3")
 
 
   //- Phone only
   .hidden-desktop.hidden-tablet
     .gray.container.pt
       h2.text-center {{ title1 }}
-      p.text-center {{ text1 }}
+      p.text-center(v-html="text1")
 
       .with-image.flex.pt.pb.flex-align-center
         .flex.flex-column
@@ -58,7 +59,7 @@
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
-            p {{ text2 }}
+            p(v-html="text2")
 
     .gray.container.pt.flex.flex-column.flex-align-center
       h3 {{ title3 }}
@@ -68,7 +69,7 @@
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
-          p {{ text3 }}
+          p(v-html="text3")
 
   .container
     send-box-with-slot.margin-top(flip, subject='Reactie op de SHV referentie')
@@ -128,9 +129,38 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
-
+.case {
+  &__image {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-self: center;
+  }
+  &__list {
+    margin: 0;
+    padding-left: 20px;
+    list-style: none;
+    li {
+      line-height: 28px;
+      position: relative;
+      padding-left: 15px;
+      &::before {
+        content: '';
+        left: 0;
+        top: 11px;
+        display: inline-block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #000;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
 
 .case-shv {
+  .case
   .gray {
     background:$bg-gradient;
   }

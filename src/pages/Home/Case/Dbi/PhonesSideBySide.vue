@@ -16,7 +16,7 @@ export default {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  min-width: 410px;
+  min-width: 80%;
   min-height: 450px;
   margin-bottom: 100px;
   margin-right: $gutter;

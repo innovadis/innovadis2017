@@ -2,24 +2,24 @@
 .case-apollo
   .container.pt
     h1.dot {{ title }}
-    p.intro {{ lead }}
+    p.intro(v-html='lead')
 
   .hero
 
   .hidden-phone
     .gray.pt.pb
       .container
-        .padded-container
+
           h2.question {{ title1 }}
-          p {{ text1 }}
+          p(v-html="text1")
 
     .container.pt.flex.flex-justify-center.flex-column-phablet.flex-align-center.flex-wrap
-      .padded-container.flex.flex-column
+      .flex.flex-column
         h3 {{ title2 }}
-        p {{ text2 }}
-      .padded-container.flex
-        p Daarnaast formuleerde Apollo Vredestein een aantal doelen die het nieuwe platform aan moest kunnen:
-          ul
+        p(v-html="text2")
+      .flex
+        p Daarnaast formuleerde <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> een aantal doelen die het nieuwe platform aan moest kunnen:
+          ul.case__list
             li Een verhoging van de online verkoop
             li Het portaal moet efficiënter en meer gebruikersvriendelijk zijn
             li Het portaal moet een B2B zelfbedieningsmodule bevatten
@@ -34,7 +34,7 @@
         phones-side-by-side
         .flex.flex-column
           h3 {{ title3 }}
-          p {{ text3 }}
+          p(v-html="text3")
 
 
 
@@ -42,28 +42,28 @@
   .hidden-desktop.hidden-tablet
     .gray.container.pt
       h2.text-center {{ title1 }}
-      p.text-center {{ text1 }}
+      p.text-center(v-html="text1")
 
       .with-image.flex.pt.flex-align-center
         .flex.flex-column
           h3(style='margin-bottom: 20px') {{ title2 }}
-          p Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
+          p <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
         img(src='/static/cases/Vredestein/Apollo_Tablet_Small@2x.png', width='300px', style='margin: 0 -100px 20px 5px')
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
           .dialog-container
-            p {{ text2 }}
+            p(v-html="text2")
 
     .gray.container.pt.flex.flex-column.flex-align-center
       h3 {{ title3 }}
-      p.text-center Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
+      p.text-center Alles bij elkaar bespaart dit <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders.
       inno-button(label='Meer info', small, yellow, @click='dialogOpen2 = true', style='z-index: 1')
       img(src='/static/cases/Vredestein/ApolloVredestein_Small.png', width='100%', style='margin: 20px 0')
 
       info-dialog(v-model='dialogOpen2', closable, v-if='dialogOpen2')
         .dialog-container
-          p {{ text3 }}
+          p(v-html="text3")
 
   .container
     send-box-with-slot.margin-top(flip, subject='Reactie op de Apollo Vredestein referentie')
@@ -88,15 +88,15 @@ export default {
   data() {
     return {
       title: 'Apollo Vredestein',
-      lead: 'Apollo Vredestein is een toonaangevende bandenproducent voor particuliere automobilisten en voor industrieel en agrarisch gebruik. Apollo Vredestein begon in 1972 als single brand organisatie, maar in de loop van de jaren is de organisatie gegroeid en uitgebreid met meerdere merken. Apollo Vredestein heeft een breed scala aan klanten, heeft meerdere productieactiviteiten in Afrika, Azië en Europa en exporteert haar banden naar meer dan 100 landen. Met als belangrijkste merken Apollo en Vredestein.',
+      lead: '<a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> is een toonaangevende bandenproducent voor particuliere automobilisten en voor industrieel en agrarisch gebruik. <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> begon in 1972 als single brand organisatie, maar in de loop van de jaren is de organisatie gegroeid en uitgebreid met meerdere merken. <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> heeft een breed scala aan klanten, heeft meerdere productieactiviteiten in Afrika, Azië en Europa en exporteert haar banden naar meer dan 100 landen. Met als belangrijkste merken <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> in.',
       title1: 'Wat maakt Apollo Vredestein zo uniek',
-      text1: 'Apollo Vredestein gelooft in het geven van nieuwe mogelijkheden aan klanten waarmee ze zelf in controle zijn en helpt hen de weg voor zich te veroveren. Apollo Vredestein stelt individuen in staat om hun eigen potentieel te bereiken wanneer het gaat om (auto)rijden en in elke fase van het leven, zoals ook hun slogan weerspiegelt; ‘Go the distance’.',
+      text1: '<a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> gelooft in het geven van nieuwe mogelijkheden aan klanten waarmee ze zelf in controle zijn en helpt hen de weg voor zich te veroveren. <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> stelt individuen in staat om hun eigen potentieel te bereiken wanneer het gaat om (auto)rijden en in elke fase van het leven, zoals ook hun slogan weerspiegelt; ‘Go the distance’.',
       dialogOpen1: false,
       title2: 'De case',
-      text2: 'Apollo Vredestein had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland. Er moest een nieuw internationaal e-commerce platform komen om zo ook de internationale wederverkopers te kunnen bedienen. Dit platform moest voorzien worden van internationale orders, betalingen, verzending, BTW en alle andere internationale e-commerce voorschriften die daarbij komen kijken',
+      text2: '<a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> had al een internationaal B2B e-commerce platform, maar dat was alleen beschikbaar voor wederverkopers in Nederland. Er moest een nieuw internationaal e-commerce platform komen om zo ook de internationale wederverkopers te kunnen bedienen. Dit platform moest voorzien worden van internationale orders, betalingen, verzending, BTW en alle andere internationale e-commerce voorschriften die daarbij komen kijken',
       dialogOpen2: false,
       title3: 'Grote voordelen',
-      text3: 'Alles bij elkaar bespaart dit Apollo Vredestein veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders, tijd die zij vervolgens kunnen gebruiken om meer omzet en orders te genereren, waardoor het resultaat van Apollo Vredestein verbetert. Dubbele winst!',
+      text3: 'Alles bij elkaar bespaart dit <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> veel tijd en geld. Dit geldt ook voor hun internationale dealers die minder tijd besteden aan het plaatsen en verwerken van orders, tijd die zij vervolgens kunnen gebruiken om meer omzet en orders te genereren, waardoor het resultaat van <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> verbetert. Dubbele winst!',
       dialogOpen3: false
     }
   },
@@ -126,8 +126,38 @@ export default {
 
 <style lang="scss" scoped>
 @import 'src/styles/variables';
+.case {
+  &__image {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-self: center;
+  }
+  &__list {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    list-style: none;
+    li {
+      line-height: 28px;
+      position: relative;
+      padding-left: 15px;
+      &::before {
+        content: '';
+        left: 0;
+        top: 11px;
+        display: inline-block;
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #000;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
 
 .case-apollo {
+
   .gray {
     background: $bg-gradient;
   }

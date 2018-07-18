@@ -28,6 +28,9 @@ a {
   &:hover {
     font-weight: bold;
   }
+  &.case__link {
+    text-decoration: underline;
+  }
 }
 
 .cp {
