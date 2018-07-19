@@ -16,7 +16,12 @@ var sitemap = sm.createSitemap({
     { url: '/smart-health' },
     { url: '/smart-industry' },
     { url: '/pim' },
+    { url: '/cases'},
     { url: '/cases/socialhof' },
+    { url: '/cases/apollo-vredestein' },
+    { url: '/cases/dbi-container-service' },
+    { url: '/cases/webportaal-shv' },
+    { url: '/cases/comfoor' },
     { url: '/privacy-statement' },
     { url: '/voorwaarden' }
   ]
