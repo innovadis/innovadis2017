@@ -2,7 +2,7 @@
 .flex.flex-justify-end.flex-column.flex-justify-center-phone
   .feed
     .title.container
-      h1.dot Referenties
+      h1.dot Cases
       p Wij zijn trots op onze opdrachtgevers en op wat wij voor ze mogen doen! En dat delen we graag met jullie. Nieuwsgierig naar wat dit is? Lees hieronder meer over ons werk, bekijk de cases.
     .items.container
       router-link.item.large(
@@ -65,6 +65,26 @@ export default {
   data () {
     return {
       cases: []
+    }
+  },
+  head: {
+    title: {
+      inner: 'Cases'
+    },
+    meta() {
+      return [
+        // Google+
+        { itemprop: 'name', content: 'Cases | Innovadis' },
+        { itemprop: 'description', content: 'Wij zijn trots op onze opdrachtgevers en op wat wij voor ze mogen doen! En dat delen we graag met jullie.' },
+
+        // Twitter
+        { name: 'twitter:title', content: 'Cases | Innovadis' },
+        { name: 'twitter:description', content: 'Wij zijn trots op onze opdrachtgevers en op wat wij voor ze mogen doen! En dat delen we graag met jullie.' },
+
+        // Facebook
+        { property: 'og:title', content: 'Cases | Innovadis' },
+        { property: 'og:description', content: 'Wij zijn trots op onze opdrachtgevers en op wat wij voor ze mogen doen! En dat delen we graag met jullie.' }
+      ]
     }
   },
   computed: {
