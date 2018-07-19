@@ -30,6 +30,9 @@ a {
   }
   &.case__link {
     text-decoration: underline;
+    &:hover {
+      font-weight: normal;
+    }
   }
 }
 
