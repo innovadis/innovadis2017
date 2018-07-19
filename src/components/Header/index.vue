@@ -7,7 +7,7 @@ header
 
       .header-menus(ref='headerMenus')
         .menu(@mousemove='openMenu("attentionAreas")', @mouseleave='closeMenu', ref='menuAttentionAreas') Vakgebieden.
-        //- .menu: router-link(:to='{ name: "cases" }') Referenties.
+        .menu: router-link(:to='{ name: "cases" }') Cases.
         .menu(@mousemove='openMenu("about")', @mouseleave='closeMenu', ref='menuAbout') Over ons.
         .menu: router-link(:to='{ name: "contact" }') Contact.
         .menu: inno-button(label='Werken bij.', :to='{ name: "jobs" }', yellow)
@@ -37,6 +37,7 @@ header
 
       section.about
         router-link.item(:to='{ name: "about" }', tag='h4') Over ons.
+        router-link.item(:to='{ name: "cases" }', tag='h4') Cases.
         router-link.item.indent.bold(tag='h3', :to='{ name: "about" }', @click.native='closeMenu(true)') Onze cultuur
         router-link.item.indent.bold(tag='h3', :to='{ name: "world" }', @click.native='closeMenu(true)') Onze wereld
         router-link.item.indent.bold(tag='h3', :to='{ name: "partners" }', @click.native='closeMenu(true)') Onze partners

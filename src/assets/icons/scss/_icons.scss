@@ -5,8 +5,10 @@
 [data-icons8]:before,
 .icons8-advance:before,
 .icons8-anonymous-user:before,
+.icons8-barcode-reader:before,
 .icons8-birthday-cake:before,
 .icons8-brain-settings:before,
+.icons8-calender:before,
 .icons8-camera:before,
 .icons8-chat:before,
 .icons8-clock:before,
@@ -14,22 +16,29 @@
 .icons8-customer-support:before,
 .icons8-database-view:before,
 .icons8-delete:before,
+.icons8-design:before,
 .icons8-developer:before,
+.icons8-direction-arrow:before,
 .icons8-download:before,
 .icons8-driver:before,
 .icons8-email:before,
 .icons8-email-2:before,
+.icons8-empty-trash:before,
 .icons8-expand-arrow:before,
 .icons8-explanation-mark:before,
 .icons8-facebook:before,
 .icons8-fantasy:before,
+.icons8-hand-receiving-money:before,
+.icons8-human-resource:before,
 .icons8-identification-documents:before,
 .icons8-instagram:before,
+.icons8-ipad-and-iphone:before,
 .icons8-like-filled:before,
 .icons8-linkedin:before,
 .icons8-manager:before,
 .icons8-menu:before,
 .icons8-minion-2:before,
+.icons8-mobile-phone:before,
 .icons8-movie:before,
 .icons8-no-entry:before,
 .icons8-offline:before,
@@ -41,18 +50,25 @@
 .icons8-play:before,
 .icons8-refresh:before,
 .icons8-router:before,
+.icons8-search:before,
+.icons8-security:before,
+.icons8-shopping-cart:before,
 .icons8-sorting-options:before,
 .icons8-swipe-left:before,
 .icons8-todo-list:before,
+.icons8-user:before,
 .icons8-user-options:before,
+.icons8-waypoint-map:before,
 { @include icons8-font; }
 
 [data-icons8]:before { content: attr(data-icons8); }
 
 .icons8-advance:before { content: $icons8-var-advance; }
 .icons8-anonymous-user:before { content: $icons8-var-anonymous-user; }
+.icons8-barcode-reader:before { content: $icons8-var-barcode-reader; }
 .icons8-birthday-cake:before { content: $icons8-var-birthday-cake; }
 .icons8-brain-settings:before { content: $icons8-var-brain-settings; }
+.icons8-calender:before { content: $icons8-var-calender; }
 .icons8-camera:before { content: $icons8-var-camera; }
 .icons8-chat:before { content: $icons8-var-chat; }
 .icons8-clock:before { content: $icons8-var-clock; }
@@ -60,22 +76,29 @@
 .icons8-customer-support:before { content: $icons8-var-customer-support; }
 .icons8-database-view:before { content: $icons8-var-database-view; }
 .icons8-delete:before { content: $icons8-var-delete; }
+.icons8-design:before { content: $icons8-var-design; }
 .icons8-developer:before { content: $icons8-var-developer; }
+.icons8-direction-arrow:before { content: $icons8-var-direction-arrow; }
 .icons8-download:before { content: $icons8-var-download; }
 .icons8-driver:before { content: $icons8-var-driver; }
 .icons8-email:before { content: $icons8-var-email; }
 .icons8-email-2:before { content: $icons8-var-email-2; }
+.icons8-empty-trash:before { content: $icons8-var-empty-trash; }
 .icons8-expand-arrow:before { content: $icons8-var-expand-arrow; }
 .icons8-explanation-mark:before { content: $icons8-var-explanation-mark; }
 .icons8-facebook:before { content: $icons8-var-facebook; }
 .icons8-fantasy:before { content: $icons8-var-fantasy; }
+.icons8-hand-receiving-money:before { content: $icons8-var-hand-receiving-money; }
+.icons8-human-resource:before { content: $icons8-var-human-resource; }
 .icons8-identification-documents:before { content: $icons8-var-identification-documents; }
 .icons8-instagram:before { content: $icons8-var-instagram; }
+.icons8-ipad-and-iphone:before { content: $icons8-var-ipad-and-iphone; }
 .icons8-like-filled:before { content: $icons8-var-like-filled; }
 .icons8-linkedin:before { content: $icons8-var-linkedin; }
 .icons8-manager:before { content: $icons8-var-manager; }
 .icons8-menu:before { content: $icons8-var-menu; }
 .icons8-minion-2:before { content: $icons8-var-minion-2; }
+.icons8-mobile-phone:before { content: $icons8-var-mobile-phone; }
 .icons8-movie:before { content: $icons8-var-movie; }
 .icons8-no-entry:before { content: $icons8-var-no-entry; }
 .icons8-offline:before { content: $icons8-var-offline; }
@@ -87,8 +110,13 @@
 .icons8-play:before { content: $icons8-var-play; }
 .icons8-refresh:before { content: $icons8-var-refresh; }
 .icons8-router:before { content: $icons8-var-router; }
+.icons8-search:before { content: $icons8-var-search; }
+.icons8-security:before { content: $icons8-var-security; }
+.icons8-shopping-cart:before { content: $icons8-var-shopping-cart; }
 .icons8-sorting-options:before { content: $icons8-var-sorting-options; }
 .icons8-swipe-left:before { content: $icons8-var-swipe-left; }
 .icons8-todo-list:before { content: $icons8-var-todo-list; }
+.icons8-user:before { content: $icons8-var-user; }
 .icons8-user-options:before { content: $icons8-var-user-options; }
+.icons8-waypoint-map:before { content: $icons8-var-waypoint-map; }
 

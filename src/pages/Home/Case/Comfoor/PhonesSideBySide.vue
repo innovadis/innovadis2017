@@ -12,12 +12,12 @@ export default {
 @import 'src/styles/variables';
 
 .image {
-  background-image: url('/static/cases/socialhof/2phones_sidebyside.png');
+  background-image: url('/static/cases/Comfoor/Comfoor_Small@2x.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   min-width: 410px;
-  min-height: 450px;
+  min-height: 250px;
   margin-bottom: 100px;
   margin-right: $gutter;
 }
