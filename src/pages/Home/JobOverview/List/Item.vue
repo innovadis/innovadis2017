@@ -45,6 +45,10 @@ export default {
   }
 
   .job-details {
+    .hours {
+      max-width: 50%;
+      white-space: normal;
+    }
     .tech {
       max-width: calc(100vw - 250px);
     }
