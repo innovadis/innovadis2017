@@ -49,12 +49,12 @@
       h2.text-center {{ title1 }}
       p.text-center(v-html="text1")
 
-      .with-image.flex.pt.flex-align-center
+      .with-image.flex.pt.pb.flex-align-center
         .flex.flex-column
           h3(style='margin-bottom: 20px') {{ title2 }}
           p <a class="case__link" href="http://www.dbics.nl" target="_blank">DBI</a> zocht een partij die hun ondergrondse en bovengrondse afvalcontainers beheersbaar kon maken in één systeem. Via een gezamenlijke partner kwamen ze bij ons terecht.
           inno-button(label='Meer info', small, yellow, @click='dialogOpen1 = true')
-        img(src='/static/cases/DBI/DBI_SMall.png', width="200px", style='margin: 0 -20px 20px 20px')
+        img(src='/static/cases/DBI/DBI_SMall.png', width="200px", style='margin: 0 -120px 20px 20px')
 
 
         info-dialog(v-model='dialogOpen1', closable, v-if='dialogOpen1')
