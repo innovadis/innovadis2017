@@ -61,11 +61,11 @@ const router = new Router({
       name: 'job',
       component: require('src/pages/Home/Job')
     },
-    // {
-    //   path: '/cases/', // Note: also in build/sitemap.js
-    //   name: 'cases',
-    //   component: require('src/pages/Home/Cases')
-    // },
+    {
+      path: '/cases/', // Note: also in build/sitemap.js
+      name: 'cases',
+      component: require('src/pages/Home/Cases')
+    },
     {
       path: '/cases/:name', // Note: also in build/sitemap.js
       name: 'case',
