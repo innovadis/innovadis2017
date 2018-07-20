@@ -11,7 +11,7 @@
         )
           div.text
             h3.title Apollo Vredestein
-            .source Webportaal
+            .source Webportaal / E-commerce
       .grid
         router-link.item(
         :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/socialhof/banner.png)" }',
@@ -19,7 +19,7 @@
         )
           div.text
             h3.title Socialhof
-            .source Webportaal
+            .source Webportaal / Mobile apps
 
         router-link.item(
         :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_DBI.jpg)" }',
@@ -27,7 +27,7 @@
         )
           div.text
             h3.title DBI Container Service
-            .source Webportaal
+            .source Webportaal / IoT applicatie
 
     .items.container
 
@@ -38,15 +38,7 @@
         )
           div.text
             h3.title Comfoor
-            .source Webportaal
-
-        //- router-link.item(
-        //- :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_SHV)" }',
-        //- :to='{ name: "case", params: { name: "webportaal-shv" } }',
-        //- )
-        //-   div.cases__text
-        //-     h3.cases__title Webportaal SHV
-        //-     .source Webportaal
+            .source Webportaal / B2b-commerce
 
       router-link.item.large(
         :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_SHV.jpg" }',
@@ -54,7 +46,7 @@
         )
           div.text
             h3.title Webportaal SHV
-            .source Webportaal
+            .source Webportaal / Internet bankieren
 </template>
 
 <script>
