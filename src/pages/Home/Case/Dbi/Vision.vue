@@ -43,7 +43,7 @@ export default {
         {
           label: 'Routes',
           icon: 'direction-arrow',
-          text: 'Met toegankelijke en gebruikersvriendelijke portalen stimuleren wij de communicatie tussen cliënten onderling en tussen cliënten en zorgverleners.'
+          text: 'Straten kunnen worden ingedeeld, routes worden gepland, beheerd en uitgezet. Een overzicht van de routes is beschikbaar, tevens kan deze worden geëxporteerd en geoptimaliseerd.'
         },
         {
           label: 'Handheld',
