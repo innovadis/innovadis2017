@@ -62,7 +62,7 @@ const router = new Router({
       component: require('src/pages/Home/Job')
     },
     {
-      path: '/cases/', // Note: also in build/sitemap.js
+      path: '/cases', // Note: also in build/sitemap.js
       name: 'cases',
       component: require('src/pages/Home/Cases')
     },
