@@ -14,31 +14,31 @@
             .source Webportaal / E-commerce
       .grid
         router-link.item(
-        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/socialhof/banner.png)" }',
-        :to='{ name: "case", params: { name: "socialhof" } }',
-        )
-          div.text
-            h3.title Socialhof
-            .source Webportaal / Mobile apps
+          :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/socialhof/banner.png)" }',
+          :to='{ name: "case", params: { name: "socialhof" } }',
+          )
+            div.text
+              h3.title Socialhof
+              .source Webportaal / Mobile apps
 
         router-link.item(
-        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_DBI.jpg)" }',
-        :to='{ name: "case", params: { name: "dbi-container-service" } }',
-        )
-          div.text
-            h3.title DBI Container Service
-            .source Webportaal / IoT applicatie
+          :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_DBI.jpg)" }',
+          :to='{ name: "case", params: { name: "dbi-container-service" } }',
+          )
+            div.text
+              h3.title DBI Container Service
+              .source Webportaal / IoT applicatie
 
     .items.container
 
       .grid
         router-link.item(
-        :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_Comfoor.jpg)" }',
-        :to='{ name: "case", params: { name: "comfoor" } }',
-        )
-          div.text
-            h3.title Comfoor
-            .source Webportaal / B2b-commerce
+          :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_Comfoor.jpg)" }',
+          :to='{ name: "case", params: { name: "comfoor" } }',
+          )
+            div.text
+              h3.title Comfoor
+              .source Webportaal / B2b-commerce
 
       router-link.item.large(
         :style='{ background: "linear-gradient(to top, rgba(0, 0, 0, 0.5) 10%, transparent), url(/static/cases/Mockup_Case_SHV.jpg" }',
