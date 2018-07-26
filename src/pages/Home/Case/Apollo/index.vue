@@ -36,8 +36,6 @@
           h3 {{ title3 }}
           p(v-html="text3")
 
-
-
   //- Phone only
   .hidden-desktop.hidden-tablet
     .gray.container.pt
