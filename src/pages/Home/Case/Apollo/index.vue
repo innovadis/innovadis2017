@@ -1,4 +1,4 @@
-git a<template lang="pug">
+<template lang="pug">
 .case-apollo
   .container.pt
     h1.dot {{ title }}
