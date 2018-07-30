@@ -7,7 +7,7 @@
 
   .hidden-tablet.hidden-desktop
     .flex.flex-justify-center
-      switch-box(:content='switchboxContent', :height='380')
+      switch-box(:content='switchboxContent', :height='500')
 </template>
 
 <script>
@@ -21,14 +21,14 @@ export default {
     return {
       selectBoxItems: [
         {
-          label: 'Veilige toegang',
-          icon: 'security',
-          text: 'Doordat het portaal niet alleen persoonlijke maar ook financiële gegevens weergeeft is een veilige toegang een must. Dankzij het inloggen via DigiD en de garantie op de regeling van veiligheidszaken (inclusief een jaarlijkse toetsing van Logius) wordt de veiligheid van gegevens gewaarborgd.'
-        },
-        {
           label: 'Realtime inzage in lopende financiële zaken',
           icon: 'clock',
           text: 'De klant heeft 24/7 inzage in de stand van zaken. Alle overzichten zijn altijd realtime in te zien, waardoor ze nooit achter hoeven te lopen in de informatievoorziening. De lopende betalingen, de status van de schuldregeling en de status van het sociaal krediet zijn allen direct inzichtelijk. Zo kan de klant altijd de aanvraag inzien, de huidige (aflos)stand per schuldeiser bekijken, statussen van goedkeuring/afwijzingen inzien, afbetalingen zien, openstaande posten weergeven etc.'
+        },
+        {
+          label: 'Veilige toegang',
+          icon: 'security',
+          text: 'Doordat het portaal niet alleen persoonlijke maar ook financiële gegevens weergeeft is een veilige toegang een must. Dankzij het inloggen via DigiD en de garantie op de regeling van veiligheidszaken (inclusief een jaarlijkse toetsing van Logius) wordt de veiligheid van gegevens gewaarborgd.'
         },
         {
           label: 'Budgetbeheer en zelf financiële zaken regelen',

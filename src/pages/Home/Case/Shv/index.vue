@@ -6,7 +6,7 @@
 
   .hero
 
-  .hidden-phone
+  div
     .gray
       .container.pt
 
@@ -34,7 +34,7 @@
 
           img(src="/static/cases/SHV/SHV_Small@2x.png", width="80%", class="case__image")
 
-          .flex
+          .flex.flex-column-phone
             .flex-column.flex-col
               h4 Communicatie tool
               p Een mooi voorbeeld van een verdere ontwikkeling is de communicatiefunctie (een vorm van een berichten box/mailfunctie) binnen de afgeschermde omgeving. Via het portaal of de app kan de klant inzien hoe de communicatie met de schuldeisers ervoor staat. Ook biedt het de klant de mogelijkheid om te communiceren op een eigen persoonlijke omgeving met zijn consulent(en). De gemeente bepaalt vooraf welke consulent aan de klant wordt gekoppeld. Via de communicatie tool kan de klant informatie uitwisselen over de diensten en producten met zijn persoonlijk toegewezen consulent(en).
