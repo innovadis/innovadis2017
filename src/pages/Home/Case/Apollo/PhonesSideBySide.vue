@@ -18,7 +18,7 @@ export default {
   background-repeat: no-repeat;
   min-width: 410px;
   min-height: 300px;
-  margin-bottom: 100px;
+  // margin-bottom: $gutter;
   margin-right: $gutter;
 }
 </style>
