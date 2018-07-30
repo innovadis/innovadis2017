@@ -6,10 +6,9 @@
 
   .hero
 
-  .hidden-phone
+  div
     .gray.pt.pb
       .container
-
           h2.question {{ title1 }}
           p(v-html="text1")
 
@@ -30,7 +29,7 @@
     Vision
 
     .gray
-      .container.flex
+      .container.flex.flex-column-phablet.pb
         phones-side-by-side
         .flex.flex-column
           h3 {{ title3 }}
@@ -83,7 +82,7 @@ export default {
     Vision: require('./Vision')
   },
 
-  data() {
+  data () {
     return {
       title: 'Apollo Vredestein',
       lead: '<a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> is een toonaangevende bandenproducent voor personenwagens, en voor industrieel en agrarisch gebruik. <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> begon in 1909 als single brand organisatie, maar in de loop van de jaren is de organisatie gegroeid en uitgebreid met meerdere merken. <a class="case__link" href="https://www.vredestein.nl/" target="_blank">Apollo Vredestein</a> heeft een breed scala aan klanten, heeft meerdere productieactiviteiten in Afrika, Azië en Europa en exporteert haar banden naar meer dan 100 landen. Met als belangrijkste merken Apollo en Vredestein.',
@@ -103,7 +102,7 @@ export default {
     title: {
       inner: 'Apollo Vredestein'
     },
-    meta() {
+    meta () {
       return [
         // Google+
         { itemprop: 'name', content: this.title },
@@ -123,23 +122,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
+@import "src/styles/variables";
 .case {
   &__image {
     margin-top: 40px;
     margin-bottom: 40px;
     align-self: center;
   }
+
   &__list {
     margin: 10px 0 0 0;
     padding-left: 20px;
     list-style: none;
+
     li {
       line-height: 28px;
       position: relative;
       padding-left: 15px;
+
       &::before {
-        content: '';
+        content: "";
         left: 0;
         top: 11px;
         display: inline-block;
@@ -155,7 +157,6 @@ export default {
 }
 
 .case-apollo {
-
   .gray {
     background: $bg-gradient;
   }
@@ -170,7 +171,7 @@ export default {
 
   .hero {
     margin-top: $gutter;
-    background-image: url('/static/cases/Vredestein/ApolloVredesteinCaseHeader@2x.jpg');
+    background-image: url("/static/cases/Vredestein/ApolloVredesteinCaseHeader@2x.jpg");
   }
 
   .with-macbook {
@@ -220,9 +221,7 @@ export default {
   align-items: center;
 
   @include phablet {
-    left: 0;
-    top: 120px;
-    width: 25%;
+    display: none;
   }
 
   @include phone {
@@ -230,7 +229,8 @@ export default {
   }
 
   .phone {
-    background: url('/static/cases/Vredestein/Apollo_Tablet_Small@2x.png') no-repeat center;
+    background: url("/static/cases/Vredestein/Apollo_Tablet_Small@2x.png")
+      no-repeat center;
     background-size: contain;
     height: 364px;
     width: 100%;
@@ -243,5 +243,4 @@ export default {
     }
   }
 }
-
 </style>

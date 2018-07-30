@@ -6,7 +6,7 @@
 
   .hero
 
-  .hidden-phone
+  div
     .gray
       .container.pt.pb
 
@@ -32,7 +32,7 @@
 
           img(src='/static/cases/DBI/DBI_Small.png', width='80%', class="case-image")
 
-          .flex
+          .flex.flex-column-phone
             .flex-column.flex-col
               h4 {{ title3 }}
               p(v-html="text2")

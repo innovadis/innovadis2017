@@ -6,7 +6,7 @@
 
   .hero
 
-  .hidden-phone
+  div
     .gray
       .container.pt.pb
           h2.question {{ title1 }}
@@ -34,7 +34,7 @@
       Vision
 
 
-      .container.flex.pt
+      .container.flex.pt.flex-column-phablet.pb
         phones-side-by-side
         .flex.flex-column
           h3 {{ title3 }}
