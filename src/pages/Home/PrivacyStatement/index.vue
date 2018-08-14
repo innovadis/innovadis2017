@@ -7,7 +7,7 @@
     h3.dot Vastleggen en verwerken van gegevens
     p Wij bewaren en gebruiken uitsluitend die persoonsgegevens die rechtstreeks door jou worden opgegeven of waarvan bij opgave duidelijk is dat ze aan ons worden verstrekt. Persoonsgegevens die niet langer nodig zijn worden verwijderd. Je kunt ook zelf vragen om inzage, wijziging of verwijdering van gegevens. Zie hiervoor de contactgegevens onderaan onze website. Wij slaan persoonsgegevens op die voor de levering van onze diensten noodzakelijk zijn. Denk hierbij aan gegevens voor facturatie.
     br
-    h3.dot E-mail, nieuwsbrief en andere communicatie uitingen
+    h3.dot E-mail, nieuwsbrief en andere uitingen
     p Als je een contact-, aanvraag of aanmeldformulier op de website invult, of ons een e-mail stuurt, dan worden de gegevens die je ons toestuurt bewaard zolang als naar de aard van het formulier of de inhoud van de e-mail nodig is voor de volledige beantwoording en afhandeling daarvan. Daarnaast bieden wij gepersonaliseerde e-mails en nieuwsbrieven waarmee wij onze klanten, relaties en andere geïnteresseerden willen informeren over onze diensten en aanverwante zaken. Jouw e-mailadres wordt alleen gebruikt voor informatie die aanverwant is aan eerdere aanvragen en daarmee als relevant wordt gezien. Iedere nieuwsbrief/e-mail bevat een link waarmee je je kunt afmelden. Ons abonneebestand van de nieuwsbrief wordt niet aan derden verstrekt.
     br
     h3.dot Klikgedrag en bezoekgegevens
