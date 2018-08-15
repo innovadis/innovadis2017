@@ -32,6 +32,9 @@
     .download.flex.flex-align-center
       i.icons8-download
       a(href='/static/documents/ict_office_moduleplus10_overige_diensten.pdf', target='_blank', title='ict_office_module+10_overige_diensten.pdf') Overige diensten
+    .download.flex.flex-align-center
+      i.icons8-download
+      a(href='/static/documents/ict_office_moduleplus4_application_service_provision.pdf', target='_blank', title='ict_office_module+4_application_service_provision.pdf') Application service provision, software as a service and computerservice
 </template>
 
 <script>
