@@ -17,6 +17,14 @@ footer(v-if='!$route.meta.hideFooter')
             span: a(href='tel:+31538507500') +31 (0)53 850 7500
             span: a(href='mailto:info@innovadis.com') info@innovadis.com
 
+      .urls.flex.flex-column
+        h3.title  Handige links.
+        router-link(:to='{ path: "blog" }') Blogartikelen
+        a(href='https://inspire.innovadis.com/whitepapers', target='_blank') Whitepapers
+        router-link(:to='{ name: "conditions" }') Algemene voorwaarden
+        router-link(:to='{ name: "info security policy" }') Informatiebeveiligingsbeleid
+        router-link(:to='{ name: "privacy statement" }') Privacy Statement
+
       .social.flex.flex-column
         .flex.flex-column
           h3.title Blijf op de hoogte.
@@ -32,9 +40,7 @@ footer(v-if='!$route.meta.hideFooter')
             i.icons8-linkedin
             a(href='https://www.linkedin.com/company/55680/', target='_blank') LinkedIn
 
-        router-link.conditions(:to='{ name: "conditions" }') Algemene voorwaarden
-        router-link.info-security-policy(:to='{ name: "info security policy" }') Informatiebeveiligingsbeleid
-        router-link.privacy-statement(:to='{ name: "privacy statement" }') Privacy Statement
+
 
   //- .bottom
     .container.flex.flex-justify-end.flex-column-reverse-phablet
@@ -53,8 +59,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'src/styles/variables';
-@import 'src/styles/layout';
+@import "src/styles/variables";
+@import "src/styles/layout";
 
 footer {
   width: 100vw;
@@ -65,7 +71,8 @@ footer {
   }
 
   .top {
-    background: url('/static/images/svg/footer.svg'), linear-gradient(270deg, $inno-blue 0%, $inno-blue-dark 100%);
+    background: url("/static/images/svg/footer.svg"),
+      linear-gradient(270deg, $inno-blue 0%, $inno-blue-dark 100%);
     background-repeat: no-repeat;
     background-size: 100% contain;
     background-position: center bottom;
@@ -79,6 +86,10 @@ footer {
 
     * {
       color: white;
+    }
+
+    .title {
+      margin-bottom: 10px;
     }
 
     .quote {
@@ -103,29 +114,26 @@ footer {
     }
 
     .info {
-      width: 350px;
-
       @include phablet {
         margin-bottom: 60px;
         width: auto;
       }
-
-      .title {
-        margin-bottom: 10px;
-      }
-
-      .contact {}
 
       span {
         line-height: 30px;
       }
     }
 
-    .social {
-      .title {
-        margin-bottom: 10px;
+    .urls {
+      a {
+        font-size: 14px;
       }
+      @include phablet {
+        margin-bottom: 60px;
+      }
+    }
 
+    .social {
       .item {
         i {
           font-size: 24px;
@@ -135,21 +143,6 @@ footer {
         a {
           line-height: 30px;
         }
-
-        .title {
-          margin-bottom: 10px;
-        }
-      }
-
-      .conditions {
-        margin-top: 30px;
-        font-size: 14px;
-      }
-
-      .privacy-statement,
-      .info-security-policy {
-        margin-top: 5px;
-        font-size: 14px;
       }
     }
   }
@@ -167,7 +160,7 @@ footer {
 
     .right {
       a {
-        font-family: 'Bitter';
+        font-family: "Bitter";
         margin: 0 20px;
 
         &:last-child {
