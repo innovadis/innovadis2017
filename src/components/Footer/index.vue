@@ -126,7 +126,7 @@ footer {
 
     .urls {
       a {
-        font-size: 14px;
+        line-height: 30px;
       }
       @include phablet {
         margin-bottom: 60px;
