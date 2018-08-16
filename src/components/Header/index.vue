@@ -11,6 +11,7 @@ header
         .menu(@mousemove='openMenu("about")', @mouseleave='closeMenu', ref='menuAbout') Over ons.
         .menu: router-link(:to='{ name: "contact" }') Contact.
         .menu: inno-button(label='Werken bij.', :to='{ name: "jobs" }', yellow)
+        .menu: inno-button(label='Inspire', href='https://inspire.innovadis.com',  :newTab='true',  yellow)
 
       transition(name='headerfade')
         .header-menu(v-if='menuOpen === "attentionAreas"', :style='{ "left": getMenuLeft("menuAttentionAreas") + "px" }', @mouseover='openMenu("attentionAreas")', @mouseleave='closeMenu')
@@ -22,6 +23,7 @@ header
           router-link(:to='{ name: "about" }', @click.native='closeMenu(true)') Onze cultuur
           router-link(:to='{ name: "world" }', @click.native='closeMenu(true)') Onze wereld
           router-link(:to='{ name: "partners" }', @click.native='closeMenu(true)') Onze partners
+          a(href='https://inspire.innovadis.com', @click.native='closeMenu(true)', target='_blank') Get inspired
 
   .phone-header(:class='{ "open": $store.state.phoneMenuOpen }')
     .icon-menu-container(@click='togglePhoneMenuState')
@@ -30,21 +32,20 @@ header
       img(src='/static/images/svg/logo.svg')
     .items
       section.areas.flex.flex-column
-        h4.item Vakgebieden.
         .flex.flex-justify-around.full-width.flex-wrap
           inno-button.item.bold(label='Smart Industry', primary, small, :to='{ name: "smart-industry" }', @click.native='closeMenu(true)')
           inno-button.item.bold(label='Smart Health', primary, small, :to='{ name: "smart-health" }', @click.native='closeMenu(true)')
 
       section.about
-        router-link.item(:to='{ name: "about" }', tag='h4') Over ons.
-        router-link.item(:to='{ name: "cases" }', tag='h4') Cases.
+        router-link.item.indent.bold(tag='h3', :to='{ name: "cases" }', @click.native='closeMenu(true)') Cases
         router-link.item.indent.bold(tag='h3', :to='{ name: "about" }', @click.native='closeMenu(true)') Onze cultuur
         router-link.item.indent.bold(tag='h3', :to='{ name: "world" }', @click.native='closeMenu(true)') Onze wereld
         router-link.item.indent.bold(tag='h3', :to='{ name: "partners" }', @click.native='closeMenu(true)') Onze partners
+        router-link.item.bold(:to='{ name: "contact" }', tag='h3') Contact
 
       section.contact.flex.flex-justify-around.full-width.flex-wrap.flex-align-center
-        router-link.item.bold(:to='{ name: "contact" }', tag='h3') Contact
         inno-button.item(label='Werken bij.', yellow, :to='{ name: "jobs" }')
+        inno-button.item(label='Inspire', href='https://inspire.innovadis.com',  :newTab='true',  yellow)
 </template>
 
 <script>
